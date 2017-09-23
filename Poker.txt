@@ -1,23 +1,23 @@
-Story Title												Estimate	Vote Started				Voting Duration		Avg Voting Time			Fastest			Slowest
-Deploy onto GCP and make sure everything works			5			23/09/2017 21:47:46			0:00:24				0:00:14					Tesia Wu		Sunaina Krishnamoorthy
+Story Title												Estimate	Vote Started				Voting Duration		Avg Voting Time			Track How Long it Took
+Deploy onto GCP and make sure everything works			5			23/09/2017 21:47:46			0:00:24				0:00:14	
 
-Write technical report									40			23/09/2017 21:47:26			0:00:16				0:00:06					Tesia Wu		Sunaina Krishnamoorthy
+Write technical report									40			23/09/2017 21:47:26			0:00:16				0:00:06		
 
 Identify the common attributes of data & 
-	ensure each data has a value for attribute			8			23/09/2017 21:46:39			0:00:44				0:00:17					Tesia Wu		Sunaina Krishnamoorthy
+	ensure each data has a value for attribute			8			23/09/2017 21:46:39			0:00:44				0:00:17		
 
 Collect data of 3 instances of each model from 
-	at least 2 sources via RESTful API					20			23/09/2017 21:46:16			0:00:18				0:00:08					Tesia Wu		Sunaina Krishnamoorthy
+	at least 2 sources via RESTful API					20			23/09/2017 21:46:16			0:00:18				0:00:08	
 
-Create about page & fill it with static info			40			23/09/2017 21:45:02			0:01:11				0:00:28					Tesia Wu		Sunaina Krishnamoorthy
+Create about page & fill it with static info			40			23/09/2017 21:45:02			0:01:11				0:00:28	
 
-Edit template by adding separate pages per model		3			23/09/2017 21:44:29			0:00:28				0:00:16					Tesia Wu		Sunaina Krishnamoorthy
+Edit template by adding separate pages per model		3			23/09/2017 21:44:29			0:00:28				0:00:16	
 
-Select template with Bootstrap							13			23/09/2017 21:43:17			0:01:09				0:00:17					Tesia Wu		Sunaina Krishnamoorthy
+Select template with Bootstrap							13			23/09/2017 21:43:17			0:01:09				0:00:17		
 
-Get domain name from nameCheap.com						0			23/09/2017 21:43:00			0:00:15				0:00:05					Tesia Wu		Sunaina Krishnamoorthy
+Get domain name from nameCheap.com						0			23/09/2017 21:43:00			0:00:15				0:00:05	
 
 "Set up accounts like GitHub, Stack,
-	Trello, Apiary, and GCP"							2			23/09/2017 21:42:30			0:00:25				0:00:14					Tesia Wu		Sunaina Krishnamoorthy
+	Trello, Apiary, and GCP"							2			23/09/2017 21:42:30			0:00:25				0:00:14	
 
-Plan models & attributes for everything					1			23/09/2017 21:34:41			0:07:35				0:05:34					Tesia Wu		Sunaina Krishnamoorthy
+Plan models & attributes for everything					1			23/09/2017 21:34:41			0:07:35				0:05:34
