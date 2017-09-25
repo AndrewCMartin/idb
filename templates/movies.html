@@ -1,2 +1,38 @@
+<!-- This file is the model Movies page, should have a grid of movie instances -->
 {%- extends "base.html" %}
 
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:100px;">    
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><a href="/templates/spidermanhomecoming.html">Spiderman Homecoming</a></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer">
+              Spiderman Homecoming
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4"> 
+          <div class="panel panel-danger">
+            <div class="panel-heading"><a href="/templates/guardiansofthegalaxy.html">Guardians of the Galaxy Vol 2</a></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer">
+                Guardians of the Galaxy Vol 2
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-4"> 
+          <div class="panel panel-success">
+            <div class="panel-heading"><a href="theavengers.html">The Avengers</a></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-footer">
+                The Avengers
+              </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+{% endblock %}

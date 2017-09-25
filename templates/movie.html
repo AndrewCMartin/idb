@@ -1,0 +1,26 @@
+<!-- This is the template for a movie instance-->
+
+
+{%- extends "base.html" %}
+
+{% block title %}Movie instance{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default" >
+        <h1>{{model.name}}</h1>
+
+        <div class="panel-body">
+
+            <h3>Information</h3>
+            <ul>
+                <li><b>Year:</b> {{model.year}}</li>
+                <li><b>Director:</b> {{model.director}}</li>
+                <li><b>Writer:</b> {{model.writer}}</li>
+                <li><b>Cast:</b> {{model.cast}}</li>
+                <li><b>Runtime:</b> {{model.runtime}}</li>
+                <li><b>Rating:</b> {{model.rating}}/10</li>
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}
