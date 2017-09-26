@@ -19,12 +19,11 @@
 {% block styles -%}
     {{super()}}  {# do not forget to call super or Bootstrap's own stylesheets
                     will disappear! #}
-    <!--link rel="stylesheet" type="text/css"
-          href="{{url_for('static', filename='half-slider.css')}}"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='panel-style.css')}}">
 {% endblock %}
 
 {% block scripts -%}
-	
+
 	<!--<script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
