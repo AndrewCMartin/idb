@@ -48,3 +48,11 @@ def comic(name):
         return render_template('%s.html' % name)
     except TemplateNotFound:
         abort(404)
+
+@frontend.route('/person/<name>')
+def person(name):
+    try:
+        return render_template('%s.html' % name)
+    except TemplateNotFound:
+        abort(404)
+
