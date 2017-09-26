@@ -34,3 +34,17 @@ def movie(name):
         return render_template('%s.html' % name)
     except TemplateNotFound:
         abort(404)
+
+@frontend.route('/character/<name>')
+def character(name):
+    try:
+        return render_template('%s.html' % name)
+    except TemplateNotFound:
+        abort(404)
+
+@frontend.route('/comic/<name>')
+def comic(name):
+    try:
+        return render_template('%s.html' % name)
+    except TemplateNotFound:
+        abort(404)
