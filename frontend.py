@@ -8,7 +8,7 @@
 
 from flask import Blueprint, render_template, flash, redirect, url_for
 from nav import nav
-
+import json
 
 frontend = Blueprint('frontend', __name__)
 
@@ -22,7 +22,14 @@ def index():
 
 @frontend.route('/<page>')
 def show(page):
-    if page.endswith('.html'):
+    if page == 'tvshows.html':
+        shows_list = []
+        with open('./static/tv_response.json') as static_response_file:
+            shows_list = json.loads(static_response_file.read())['results']
+        return render_template('tvshows.html', shows=shows_list)
+
+
+    elif page.endswith('.html'):
         try:
             return render_template('%s' % page)
         except TemplateNotFound:
@@ -56,3 +63,6 @@ def person(name):
     except TemplateNotFound:
         abort(404)
 
+@frontend.route('/tvshow/<id>')
+def tvshow():
+    abort(404)
