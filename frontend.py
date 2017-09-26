@@ -30,8 +30,7 @@ def show(page):
 
 @frontend.route('/movie/<name>')
 def movie(name):
-	try:
+    try:
         return render_template('%s.html' % name)
     except TemplateNotFound:
         abort(404)
-	
