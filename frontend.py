@@ -7,7 +7,9 @@
 # http://flask.pocoo.org/docs/blueprints/
 
 from flask import Blueprint, render_template, flash, redirect, url_for, abort
+from jinja2 import TemplateNotFound
 from nav import nav
+
 import json
 
 frontend = Blueprint('frontend', __name__)
