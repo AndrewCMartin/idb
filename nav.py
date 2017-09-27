@@ -13,6 +13,6 @@ nav.register_element('top', Navbar('',
     View('Movies', 'frontend.show', page='movies.html'),
     View('TV Shows', 'frontend.show', page='tvshows.html'),
     View('Comic Series', 'frontend.show', page='comicseries.html'),
-    View('People', 'frontend.show', page='people.html'),
+    View('Actors', 'frontend.show', page='actors.html'),
     View('Events', 'frontend.show', page='events.html'),
     ))
