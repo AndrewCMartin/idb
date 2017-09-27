@@ -40,12 +40,6 @@ def show(page):
         except TemplateNotFound:
             abort(404)
 
-@frontend.route('/movie/<name>')
-def movie2(name):
-    try:
-        return render_template('%s.html' % name)
-    except TemplateNotFound:
-        abort(404)
 
 @frontend.route('/character/<name>')
 def character(name):
@@ -98,11 +92,11 @@ def movie(movie_id):
         shows_list = json.loads(static_response_file.read())['results']
     show = {}
     for s in shows_list:
-        if s['id'] == show_id:
+        if s['id'] == movie_id:
             show = s
             break
     print (show)
     if len(show) > 0:
-        return render_template('movie.html', show=show)
+        return render_template('movie.html', movie=show)
     else:
         abort(404)
