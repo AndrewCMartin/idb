@@ -4,35 +4,25 @@
 {% block title %}Movies{% endblock %}
 
 {% block content %}
-    <div class="container" style="margin-top:100px;">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-info">
-            <div class="panel-heading"><a href="{{url_for('frontend.movie', name='spidermanhomecoming')}}">Spiderman Homecoming</a></div>
-            <div class="panel-body"><a href="{{url_for('frontend.movie', name='spidermanhomecoming')}}"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
-            <div class="panel-footer">
-              Spiderman Homecoming
-            </div>
+<div class="container" style="margin-top:100px;">
+  {% for movie in movies if movie.poster_path %}
+{% if loop.index0 % 3 == 0 %}
+  <div class="row">
+    {% endif %}
+    <div class="col-sm-4">
+
+        <div class="panel panel-info">
+          <div class="panel-heading"><a href="{{url_for('frontend.movie', movie_id=movie.id)}}">{{movie.title}}</a></div>
+          <div class="panel-body">
+            <a href="{{url_for('frontend.movie', movie_id=movie.id)}}">
+            <img src="{%if movie.poster_path%}{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}{% endif %}" class="img-responsive" style="width:100% ">
+            </a>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-danger">
-            <div class="panel-heading"><a href="{{url_for('frontend.movie', name='guardiansofthegalaxy')}}">Guardians of the Galaxy Vol 2</a></div>
-            <div class="panel-body"><a href="{{url_for('frontend.movie', name='guardiansofthegalaxy')}}"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
-            <div class="panel-footer">
-                Guardians of the Galaxy Vol 2
-              </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading"><a href="{{url_for('frontend.movie', name='theavengers')}}">The Avengers</a></div>
-            <div class="panel-body"><a href="{{url_for('frontend.movie', name='theavengers')}}"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
-            <div class="panel-footer">
-                The Avengers
-              </div>
-          </div>
-        </div>
-      </div>
-    </div><br>
-{% endblock %}
+
+    </div>
+    {% if loop.index0 % 3 == 2 %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+</div><br> {% endblock %}

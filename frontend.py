@@ -6,7 +6,7 @@
 # You can find out more about blueprints at
 # http://flask.pocoo.org/docs/blueprints/
 
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, abort
 from nav import nav
 import json
 
@@ -28,6 +28,11 @@ def show(page):
             shows_list = json.loads(static_response_file.read())['results']
         return render_template('tvshows.html', shows=shows_list)
 
+    elif page == 'movies.html':
+        movies_list = []
+        with open('./static/movie_response.json') as static_response_file:
+            movies_list = json.loads(static_response_file.read())['results']
+        return render_template('movies.html', movies=movies_list)
 
     elif page.endswith('.html'):
         try:
@@ -36,7 +41,7 @@ def show(page):
             abort(404)
 
 @frontend.route('/movie/<name>')
-def movie(name):
+def movie2(name):
     try:
         return render_template('%s.html' % name)
     except TemplateNotFound:
@@ -63,6 +68,34 @@ def person(name):
     except TemplateNotFound:
         abort(404)
 
-@frontend.route('/tvshow/<id>')
-def tvshow():
-    abort(404)
+@frontend.route('/tvshow/<int:show_id>')
+def tvshow(show_id):
+    shows_list = []
+    with open('./static/tv_response.json') as static_response_file:
+        shows_list = json.loads(static_response_file.read())['results']
+    show = {}
+    for s in shows_list:
+        if s['id'] == show_id:
+            show = s
+            break
+    print (show)
+    if len(show) > 0:
+        return render_template('tvshow.html', show=show)
+    else:
+        abort(404)
+
+@frontend.route('/movie/<int:movie_id>')
+def movie(movie_id):
+    shows_list = []
+    with open('./static/movie_response.json') as static_response_file:
+        shows_list = json.loads(static_response_file.read())['results']
+    show = {}
+    for s in shows_list:
+        if s['id'] == show_id:
+            show = s
+            break
+    print (show)
+    if len(show) > 0:
+        return render_template('movie.html', show=show)
+    else:
+        abort(404)
