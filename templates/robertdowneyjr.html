@@ -14,9 +14,23 @@
             <ul>
                 <li><b>Name:</b> Robert Downey Jr.</li>
                 <li><b>Birth Year:</b> 1965</li>
-                <li><b>Works:</b>Iron Man, Iron Man 2, The Avengers: Age of Ultron, Captain America: Civil War, Spider-Man: Homecoming, The Avengers: Infinity War</li>
-                <li><b>Character:</b>Iron-Man</li>
-                <li><b>Non-Marvel Works:</b>Sherlock Holmes, Sherlock Holmes; A Game of Shadows, Zodiac</li>
+                <li><b>Works:</b>
+                    <ul>
+                        <li>Iron Man</li>
+                        <li>Iron Man 2</li>
+                        <li><a href="{{url_for('frontend.show', page='theavengers.html')}}">The Avengers</a></li>
+                        <li>The Avengers: Age of Ultron</li>
+                        <li>Captain America: Civil War</li>
+                        <li><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></li>
+                        <li>The Avengers: Infinity War</li>
+                    </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='ironman.html')}}">Iron Man</a></li>
+                <li><b>Non-Marvel Works:</b>
+                    <ul>
+                        <li>Sherlock Holmes</li>
+                        <li>Sherlock Holmes; A Game of Shadows</li>
+                        <li>Zodiac</li>
+                    </ul>
             </ul>
         </div>
     </div>

@@ -14,9 +14,18 @@
             <ul>
                 <li><b>Name:</b> Tom Holland</li>
                 <li><b>Birth Year:</b> 1996</li>
-                <li><b>Works:</b>Captain America: Civil War, Spider-Man: Homecoming, The Avengers: Infinity War</li>
-                <li><b>Character:</b>Spider-Man</li>
-                <li><b>Non-Marvel Works:</b> The Impossible, Locke</li>
+                <li><b>Works:</b>
+                    <ul>
+                        <li>Captain America: Civil War</li>
+                        <li><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></li>
+                        <li>The Avengers: Infinity War</li>
+                    </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='spiderman.html')}}">Spider-Man</a></li>
+                <li><b>Non-Marvel Works:</b>
+                    <ul>
+                        <li>The Impossible</li>
+                        <li>Locke</li>
+                    <ul>
             </ul>
         </div>
     </div>
