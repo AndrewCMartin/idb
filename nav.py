@@ -12,7 +12,7 @@ nav.register_element('top', Navbar('',
     View('Characters', 'frontend.show', page='characters.html'),
     View('Movies', 'frontend.show', page='movies.html'),
     View('TV Shows', 'frontend.show', page='tvshows.html'),
-    View('Comics', 'frontend.show', page='comics.html'),
+    View('Comic Series', 'frontend.show', page='comicseries.html'),
     View('People', 'frontend.show', page='people.html'),
     View('Events', 'frontend.show', page='events.html'),
     ))
