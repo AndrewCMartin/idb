@@ -61,8 +61,15 @@ def comic(name):
     except TemplateNotFound:
         abort(404)
 
-@frontend.route('/person/<name>')
-def person(name):
+@frontend.route('/actor/<name>')
+def actor(name):
+    try:
+        return render_template('%s.html' % name)
+    except TemplateNotFound:
+        abort(404)
+
+@frontend.route('/event/<name>')
+def event(name):
     try:
         return render_template('%s.html' % name)
     except TemplateNotFound:
