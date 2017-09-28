@@ -10,11 +10,14 @@ from flask import Blueprint, render_template, flash, redirect, url_for, abort
 from jinja2 import TemplateNotFound
 from nav import nav
 
-import json
+import json, requests
+import requests_toolbelt.adapters.appengine
+requests_toolbelt.adapters.appengine.monkeypatch()
+
 
 frontend = Blueprint('frontend', __name__)
 
-
+TMDB_BASE_URL = 'https://api.themoviedb.org/3/movie/'
 
 # Our index-page just shows a quick explanation. Check out the template
 # "templates/index.html" documentation for more details.
@@ -105,7 +108,12 @@ def movie(movie_id):
             show = s
             break
     print (show)
+    api_key = '3b1223f4067b19c69b5a3e35f5b0f938'
+    params = {'api_key':api_key, 'append_to_response':'credits'}
+    r = requests.get(TMDB_BASE_URL+str(movie_id), params=params)
+    d = json.loads(r.text)
+    cast = sorted(d['credits']['cast'], key=lambda k: k['cast_id'])
     if len(show) > 0:
-        return render_template('movie.html', movie=show)
+        return render_template('movie.html', movie=d, cast=cast[:15])
     else:
         abort(404)
