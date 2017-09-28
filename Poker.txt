@@ -20,9 +20,7 @@ Story Title                                                Estimate    Vote Star
 -Set up accounts like GitHub, Stack,
     Trello, Apiary, and GCP                                 2            23/09/2017 21:42:30            0:00:25                0:00:14                       30 minutes
 
-<<<<<<< HEAD
 -Plan models & attributes for everything                    1            23/09/2017 21:34:41            0:07:35                0:05:34                       3 hours
-=======
--Plan models & attributes for everything				 1			23/09/2017 21:34:41			0:07:35				0:05:34							3 hours
+
+-Plan models & attributes for everything				    1			23/09/2017 21:34:41			0:07:35				0:05:34							3 hours
  
->>>>>>> d3c49931cfb63c333e276693346ba72ccafd52dd
