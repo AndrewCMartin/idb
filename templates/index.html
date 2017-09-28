@@ -21,6 +21,8 @@
 }
       </style>
       <header>
+        
+        <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon" type="image/x-icon" />
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -29,8 +31,6 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-      <!-- http://www.kissottawa.com/wp-content/uploads/sites/9/2017/07/SPMANNNN.jpg --> 
-      <!-- https://resizing.flixster.com/6cRWp-VbXrYnjn9VfGcG8Mf81LQ=/2048x858/v1.bjsxNjE0NjE1O2o7MTc0Nzg7MTIwMDsyMDQ4Ozg1OA -->
              <div class="item active" style="background-image: url('http://cdn2us.denofgeek.com/sites/denofgeekus/files/2017/06/spider-man_homecoming_reboot_box_office.jpg')">
             <div class="carousel-caption d-none d-md-block">
               <h3><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></h3>
@@ -38,8 +38,6 @@
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <!--  -->
-          <!-- http://liverichlivewell.com/wp-content/uploads/watch-movies.jpg -->
           <div class="item" style="background-image: url('http://static.comicvine.com/uploads/original/9/99801/2244678-23308595.png')">
             <div class="carousel-caption d-none d-md-block">
               <h3><a href="{{url_for('frontend.show', page='theavenger.html')}}">The Avengers</a></h3>
@@ -64,7 +62,6 @@
         </a>
       </div>
     </header>
-
   <section class="py-5">
       <div class="container">
         <h1 align= center style="font-size: 150px ; color: #C80815"><b>MarvelUs</b></h1>
@@ -72,4 +69,3 @@
       </div>
   </section>
 {% endblock %}
-
