@@ -1,0 +1,39 @@
+{%- extends "base.html" %}
+
+{% block title %}Agents of S.H.I.E.L.D.{% endblock %}
+
+{% block content %}
+<div class="container" style="margin: auto; margin-top:100px; width: 500px">
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+          <h1>Agents of S.H.I.E.L.D.</h1>
+
+        <div class="panel-body">
+            <div class="panel-body"><img src="https://image.tmdb.org/t/p/w500/3CFeptFvp0CE6H665Fpzq8JHxWX.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <h3>Information</h3>
+            <ul>
+                <li><b>Name:</b> Agents of S.H.I.E.L.D.</li>
+                <li><b>Overview:</b> Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary. </li>
+                <li><b>Air Date:</b> 2013-09-24</li>
+                <li><b><a href="{{url_for('frontend.show', page='actors.html')}}">Cast:</a></b>
+                        <ul>
+                            <li>Clark Gregg</li>
+                            <li>Ming-Na Wen</li>
+                            <li>Brett Dalton</li>
+                            <li>Chloe Bennet</li>
+                        </ul>
+                </li>
+                <li><b><a href="{{url_for('frontend.show', page='characters.html')}}">Characters:</a></b>
+                    <ul>
+                        <li>Phil Coulson</li>
+                        <li>Melinda May</li>
+                        <li>Grant Ward</li>
+                        <li>Daisy "Skye" Johnson</li>
+                    </ul>
+                </li>
+                <li><b>Average Rating:</b> 66.3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
