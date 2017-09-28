@@ -6,12 +6,13 @@ Home-page: http://github.com/mbr/flask-nav
 Author: Marc Brinkmann
 Author-email: git@marcbrinkmann.de
 License: MIT
+Description-Content-Type: UNKNOWN
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 2
 Classifier: Programming Language :: Python :: 3
-Requires-Dist: dominate
 Requires-Dist: flask
 Requires-Dist: visitor
+Requires-Dist: dominate
 
 Flask-Nav
 =========

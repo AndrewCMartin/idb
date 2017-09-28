@@ -5,7 +5,7 @@
 *.pyo
 env
 env*
-
+lib
 dist
 build
 node_modules
