@@ -71,6 +71,13 @@ def event(name):
     except TemplateNotFound:
         abort(404)
 
+# @frontend.route('/movie/<name>')
+# def movie(movie_id):
+#     try:
+#         return render_template('%s.html' % name)
+#     except TemplateNotFound:
+#         abort(404)
+
 @frontend.route('/tvshow/<int:show_id>')
 def tvshow(show_id):
     shows_list = []

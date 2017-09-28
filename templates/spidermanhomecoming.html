@@ -9,13 +9,31 @@
           <h1>Spiderman Homecoming</h1>
 
         <div class="panel-body">
-            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_UX182_CR0,0,182,268_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_UY1200_CR80,0,630,1200_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
             <h3>Information</h3>
             <ul>
                 <li><b>Year:</b> 2017</li>
                 <li><b>Director:</b> Jon Watts</li>
-                <li><b>Writer:</b> Jonathan Goldstein, John Francis Daley</li>
-                <li><b>Cast:</b> Tom Holland, Michael Keaton, Robert Downey Jr.</li>
+                <li><b>Writer:</b> 
+                    <ul>
+                        <li>Jonathan Goldstein</li>
+                        <li>John Francis Daley</li>
+                    </ul>
+                </li>
+                <li><b>Main Characters:</b>
+                    <ul>
+                        <li><a href="{{url_for('frontend.show', page='spiderman.html')}}">Spider-Man</a></li>
+                        <li><a href="{{url_for('frontend.show', page='ironman.html')}}">Iron Man</a></li>
+                        <li>Vulture</li>
+                    </ul>
+                </li>
+                <li><b>Cast:</b> 
+                    <ul>
+                        <li><a href="{{url_for('frontend.show', page='TomHolland.html')}}">Tom Holland</a></li>
+                        <li>Michael Keaton</li>
+                        <li><a href="{{url_for('frontend.show', page='robertdowneyjr.html')}}">Robert Downey Jr.</a></li>
+                    </ul>
+                </li>
                 <li><b>Runtime:</b> 2h 13min</li>
                 <li><b>Rating:</b> 7.9/10</li>
             </ul>
