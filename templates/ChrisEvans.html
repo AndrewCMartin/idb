@@ -9,14 +9,30 @@
           <h1>Chris Evans</h1>
 
         <div class="panel-body">
-            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NTg1OTQzMF5BMl5BanBnXkFtZTcwNjIyMjkyMg@@._V1_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMzA4ODg1Ml5BMl5BanBnXkFtZTgwNDg1NDE2ODE@._V1_SY1000_CR0,0,714,1000_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
             <h3>Information</h3>
             <ul>
                 <li><b>Name:</b> Chris Evans</li>
                 <li><b>Birth Year:</b> 1981</li>
-                <li><b>Works:</b>Captain America: The First Avenger, Captain America: Super Soldier, The Avengers, Thor: The Dark World, Captain America: The Winter Soldier, Avengers: Age of Ultron, Captain America: Civil War, Spider-Man: Homecoming, Avengers: Infinity War</li>
-                <li><b>Character:</b>Captain America</li>
-                <li><b>Non-Marvel Works:</b> Gifted, Snowpiercer, Scott Pilgrim vs. The World</li>
+                <li><b>Works:</b>
+                    <ul>
+                        <li>Captain America: The First Avenger</li>
+                        <li>Captain America: Super Soldier</li>
+                        <li><a href="{{url_for('frontend.show', page='theavengers.html')}}">The Avengers</a></li>
+                        <li>Thor: The Dark World</li>
+                        <li>Captain America: The Winter Soldier</li>
+                        <li>Avengers: Age of Ultron</li>
+                        <li>Captain America: Civil War</li>
+                        <li><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></li>
+                        <li>Avengers: Infinity War</li>
+                    </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='captainamerica.html')}}"> Captain America</a></li>
+                <li><b>Non-Marvel Works:</b>
+                    <ul>
+                        <li>Gifted</li>
+                        <li>Snowpiercer</li>
+                        <li>Scott Pilgrim vs. The World</li>
+                    </ul>
             </ul>
         </div>
     </div>

@@ -9,14 +9,28 @@
           <h1>Robert Downey Jr.</h1>
 
         <div class="panel-body">
-            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UX214_CR0,0,214,317_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTYyODUxNDU1Nl5BMl5BanBnXkFtZTcwNjI3MDA0OQ@@._V1_SY1000_CR0,0,681,1000_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
             <h3>Information</h3>
             <ul>
                 <li><b>Name:</b> Robert Downey Jr.</li>
                 <li><b>Birth Year:</b> 1965</li>
-                <li><b>Works:</b>Iron Man, Iron Man 2, The Avengers: Age of Ultron, Captain America: Civil War, Spider-Man: Homecoming, The Avengers: Infinity War</li>
-                <li><b>Character:</b>Iron-Man</li>
-                <li><b>Non-Marvel Works:</b>Sherlock Holmes, Sherlock Holmes; A Game of Shadows, Zodiac</li>
+                <li><b>Works:</b>
+                    <ul>
+                        <li>Iron Man</li>
+                        <li>Iron Man 2</li>
+                        <li><a href="{{url_for('frontend.show', page='theavengers.html')}}">The Avengers</a></li>
+                        <li>The Avengers: Age of Ultron</li>
+                        <li>Captain America: Civil War</li>
+                        <li><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></li>
+                        <li>The Avengers: Infinity War</li>
+                    </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='ironman.html')}}"> Iron Man</a></li>
+                <li><b>Non-Marvel Works:</b>
+                    <ul>
+                        <li>Sherlock Holmes</li>
+                        <li>Sherlock Holmes; A Game of Shadows</li>
+                        <li>Zodiac</li>
+                    </ul>
             </ul>
         </div>
     </div>

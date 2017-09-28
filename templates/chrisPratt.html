@@ -14,9 +14,19 @@
             <ul>
                 <li><b>Name:</b> Chris Pratt</li>
                 <li><b>Birth Year:</b> 1979</li>
-                <li><b>Works:</b>Guardians of the Galaxy, Guardians of the Galaxy Vol. 2, The Avengers: Infinity War</li>
-                <li><b>Character:</b>Star_Lord</li>
-                <li><b>Non-Marvel Works:</b> Passenger, Jurassic World, The Magnificent Seven</li>
+                <li>    <b>Works:</b>
+                        <ul>
+                            <li>Guardians of the Galaxy</li>
+                            <li> <a href="{{url_for('frontend.show', page='guardiansofthegalaxy.html')}}">The Guardians of the Galaxy 2</a></li>
+                            <li>The Avengers: Infinity War</li>
+                        </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='starlord.html')}}"> Star-Lord</a></li>
+                <li><b>Non-Marvel Works:</b> 
+                    <ul>
+                        <li>Passenger</li>
+                        <li>Jurassic World</li>
+                        <li>The Magnificent Seven</li>
+                    </ul>
             </ul>
         </div>
     </div>
