@@ -2,10 +2,18 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: marvelus-180722:us-central1:marvelus-db-v1
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: m-db-pass
+
+libraries:
+- name: MySQLdb
+  version: "latest"
 
 # [START handlers]
 handlers:
-- url: /static
+- url: /app/static
   static_dir: static
   application_readable: true
 - url: /vendor

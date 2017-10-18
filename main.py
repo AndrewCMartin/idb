@@ -7,8 +7,8 @@ from flask_nav.elements import Navbar, View
 
 from flask_restplus import Api
 
-from __init__ import create_app
-from frontend import frontend
+from app import create_app
+from app.frontend import frontend
 
 app = create_app()
 app.register_blueprint(frontend)
