@@ -1,0 +1,33 @@
+{%- extends "base.html" %}
+
+{% block title %}Tom Holland{% endblock %}
+
+{% block content %}
+<div class="container" style="margin: auto; margin-top:100px; width: 500px">
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+          <h1>Tom Holland</h1>
+
+        <div class="panel-body">
+            <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MjgxNDk4OV5BMl5BanBnXkFtZTgwMTk2OTM4MjI@._V1_SY1000_CR0,0,666,1000_AL_.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <h3>Information</h3>
+            <ul>
+                <li><b>Name:</b> Tom Holland</li>
+                <li><b>Birth Year:</b> 1996</li>
+                <li><b>Works:</b>
+                    <ul>
+                        <li>Captain America: Civil War</li>
+                        <li><a href="{{url_for('frontend.show', page='spidermanhomecoming.html')}}">Spider-Man: Homecoming</a></li>
+                        <li>The Avengers: Infinity War</li>
+                    </ul>
+                <li><b>Character:</b><a href="{{url_for('frontend.show', page='spiderman.html')}}"> Spider-Man</a></li>
+                <li><b>Non-Marvel Works:</b>
+                    <ul>
+                        <li>The Impossible</li>
+                        <li>Locke</li>
+                    <ul>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{%- extends "base.html" %}
+
+{% block title %}Iron Man{% endblock %}
+
+{% block content %}
+      <div class="container" style="margin: auto; margin-top:100px; width: 500px">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+            <h1>Iron Man</h1>
+
+            <div class="panel-body">
+                <div class="panel-body"><img src="https://i.pinimg.com/736x/2c/bb/04/2cbb04e7ef9266e1e57a9b0e75bc555f--iron-man-avengers-marvel-iron-man.jpg" class="img-responsive" class="img-responsive" style="width:100%" alt="Image"></div>
+                <h3>Information</h3>
+                <ul>
+                    <li><b>Name:</b> Iron Man</li>
+                    <li><b>Power:</b> Iron Suit</li>
+                    <li><b>Origin:</b> Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.</li>
+                    <li><b>Real Name:</b> Tony Stark</li>
+                    <li>
+                        <b>Relevant Movies/TV Shows:</b>
+                        <ul> 
+                            <li>Iron Man</li>    
+                            <li>Iron Man 2</li>    
+                            <li>Iron Man 3</li>    
+                            <li><a href="{{url_for('frontend.show', page='theavengers.html')}}">The Avengers</a></li>    
+                            <li>The Avengers: Age of Ultron</li>
+                            <li>Captain America: Civil War</li>
+                            <li>Spider-Man Homecoming</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Comic Series:</b>
+                        <ul> 
+                            <li><a href="{{url_for('frontend.comic', name='comicseries2')}}">A+X (2012 - Present)</a></li>     
+                            <li>Adam: Legend of the Blue Marvel (2008)</li> 
+                            <li>Age of Heroes (2010)</li> 
+                            <li>Age of X: Universe (2011)</li> 
+                            <li>All-New Iron Manual (2008)</li> 
+                            <li>All-New, All-Different Avengers (2015 - Present)</li> 
+                            <li>Alpha Flight (1983 - 1994)</li> 
+                            <li>Amazing Spider-Man (1999 - 2013)</li> 
+                            <li>Amazing Spider-Man (1963 - 1998)</li>
+                            <li>Amazing Spider-Man (2015 - Present)</li> 
+                            <li>Amazing Spider-Man Annual (2012)</li> 
+                            <li>Amazing Spider-Man Annual (1964 - 2009)</li> 
+                            <li>Amazing Spider-Man Vol. 10: New Avengers (2005)</li>
+                            <li>Amazing Spider-Man Vol. 6 (2004)</li> 
+                            <li>Annihilation Classic (2008)</li> 
+                            <li>Annihilators: Earthfall (2011)</li> 
+                            <li>Art of Marvel Studios TPB Slipcase (2011 - Present)</li>
+                            <li>Astonishing Spider-Man/Wolverine (2010 - 2011)</li>
+                        </ul> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

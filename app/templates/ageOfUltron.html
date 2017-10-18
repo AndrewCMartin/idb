@@ -1,0 +1,25 @@
+{%- extends "base.html" %}
+
+{% block title %}Age of Ultron!{% endblock %}
+
+{% block content %}
+<div class="container" style="margin: auto; margin-top:100px; width: 500px">
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+          <h1>Age of Ultron!</h1>
+
+        <div class="panel-body">
+            <div class="panel-body"><img src="https://i.annihil.us/u/prod/marvel/i/mg/c/d0/51ed8cf71fd82/detail.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <h3>Information</h3>
+            <ul>
+                <li><b>Writers:</b> Brian Michael Bendis</li>
+                <li><b>Plot Points:</b> The surviving Avengers, X-Men and others must fight through time and space in the hope of defeating their foe by any means necessary!</li>
+                <li><b>Characters:</b> Moon Knight, <a href="{{url_for('frontend.character', name='spiderman')}}"> Spider-Man</a>, Avengers, Ultron</li>
+                <li><b>Date:</b> December, 1989 - January, 2008</li>
+                <li><b>Illustrators:</b> Bryan Hitch, Carlos Pacheco, Brandon Peterson</li>
+                <li><b>Corresponding Comic Series:</b><a href="{{url_for('frontend.comic', name='comicseries2')}}"> A+X</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
