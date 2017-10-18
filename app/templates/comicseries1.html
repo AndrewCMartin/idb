@@ -1,0 +1,26 @@
+{%- extends "base.html" %}
+
+{% block title %}Generations: Sam Wilson Captain America & Steve Rogers Captain America (2017){% endblock %}
+
+{% block content %}
+    <div class="container" style="margin: auto; margin-top:100px; width: 500px">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+            <h1>Generations: Sam Wilson Captain America & Steve Rogers Captain America (2017)</h1>
+
+            <div class="panel-body">
+                <div class="panel-body"><img src="https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/543192/copyOfFirstPage._SX1280_QL80_TTD_.jpg" class="img-responsive" class="img-responsive" style="width:100%" alt="Image"></div>
+                <h3>Information</h3>
+                <ul>
+                    <li><b>Series Title:</b> Generations: Sam Wilson Captain America & Steve Rogers Captain America (2017)</li>
+                    <li><b>Main Character:</b> <a href="{{url_for('frontend.character', name='captainamerica')}}">Captain America</a></li>
+                    <li><b>Year:</b> 2017</li>
+                    <li><b>Creators:</b> Tom Brevoort, Paul Renaud, Nick Spencer</li>
+                    <li><b>Type:</b> One shot</li>
+                    <li><b>No. Issues:</b> N/A</li>
+                    <li><b>Event:</b> <a href="{{url_for('frontend.show', page='actsOfVengeance.html')}}">Acts of Vengeance</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

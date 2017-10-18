@@ -1,0 +1,25 @@
+{%- extends "base.html" %}
+
+{% block title %}Acts of Vengeance!{% endblock %}
+
+{% block content %}
+<div class="container" style="margin: auto; margin-top:100px; width: 500px">
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+          <h1>Acts of Vengeance!</h1>
+
+        <div class="panel-body">
+            <div class="panel-body"><img src="https://i.annihil.us/u/prod/marvel/i/mg/3/b0/588b583ed0523/detail.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+            <h3>Information</h3>
+            <ul>
+                <li><b>Writers:</b> John Byrne</li>
+                <li><b>Plot Points:</b> Loki sets about convincing the super-villains of Earth to attack heroes other than those they normally fight in an attempt to destroy the Avengers to absolve his guilt over inadvertently creating the team in the first place.</li>
+                <li><b>Characters:</b><a href="{{url_for('frontend.character', name='spiderman')}}"> Spider-Man</a>, Avengers, Thor, <a href="{{url_for('frontend.character', name='captainamerica')}}"> Captain America</a></li>
+                <li><b>Date:</b> December, 1989 - January, 2008</li>
+                <li><b>Illustrators:</b> Paul Ryan</li>
+                <li><b>Corresponding Comic Series:</b><a href="{{url_for('frontend.comic', name='comicseries1')}}"> Generations: Sam Wilson Captain America & Steve Rogers Captain America</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

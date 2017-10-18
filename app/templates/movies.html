@@ -1,0 +1,28 @@
+<!-- This file is the model Movies page, should have a grid of movie instances -->
+{%- extends "base.html" %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top:100px;">
+  {% for movie in movies if movie.poster_path %}
+{% if loop.index0 % 3 == 0 %}
+  <div class="row">
+    {% endif %}
+    <div class="col-sm-4">
+
+        <div class="panel panel-info">
+          <div class="panel-heading"><a href="{{url_for('frontend.movie', movie_id=movie.id)}}">{{movie.title}}</a></div>
+          <div class="panel-body">
+            <a href="{{url_for('frontend.movie', movie_id=movie.id)}}">
+            <img src="{%if movie.poster_path%}{{'https://image.tmdb.org/t/p/w500'+movie.poster_path}}{% endif %}" class="img-responsive" style="width:100% ">
+            </a>
+          </div>
+        </div>
+
+    </div>
+    {% if loop.index0 % 3 == 2 %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+</div><br> {% endblock %}

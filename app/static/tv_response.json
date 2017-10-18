@@ -1,0 +1,422 @@
+{
+    "page": 1,
+    "total_results": 45,
+    "total_pages": 3,
+    "results": [
+        {
+            "original_name": "Marvel's Iron Fist",
+            "id": 62127,
+            "name": "Marvel's Iron Fist",
+            "vote_count": 295,
+            "vote_average": 6.43,
+            "poster_path": "/nv4nLXbDhcISPP8C1mgaxKU50KO.jpg",
+            "first_air_date": "2017-03-17",
+            "popularity": 116.651527,
+            "genre_ids": [
+                10759,
+                80,
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/2uXQRWzzIWdh6jiG6rBIirYQyNK.jpg",
+            "overview": "Danny Rand resurfaces 15 years after being presumed dead. Now, with the power of the Iron Fist, he seeks to reclaim his past and fulfill his destiny.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Daredevil",
+            "id": 61889,
+            "name": "Marvel's Daredevil",
+            "vote_count": 780,
+            "vote_average": 7.59,
+            "poster_path": "/cidOqJL8tayqvv3TpfTQCsgeITu.jpg",
+            "first_air_date": "2015-04-10",
+            "popularity": 68.082606,
+            "genre_ids": [
+                28,
+                80
+            ],
+            "original_language": "en",
+            "backdrop_path": "/dpNeXLEnuKzAvbNwveJhNEiQvXZ.jpg",
+            "overview": "Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Inhumans",
+            "id": 68716,
+            "name": "Inhumans",
+            "vote_count": 2,
+            "vote_average": 1,
+            "poster_path": "/6BCa0ehCpbtwP1WJi54W4v79gfI.jpg",
+            "first_air_date": "2017-09-29",
+            "popularity": 15.985525,
+            "genre_ids": [
+                10759,
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/9GNdPoCSzWYeo2eYKFVLvzcG6Wg.jpg",
+            "overview": "After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Agents of S.H.I.E.L.D.",
+            "id": 1403,
+            "name": "Marvel's Agents of S.H.I.E.L.D.",
+            "vote_count": 740,
+            "vote_average": 6.63,
+            "poster_path": "/3CFeptFvp0CE6H665Fpzq8JHxWX.jpg",
+            "first_air_date": "2013-09-24",
+            "popularity": 62.08995,
+            "genre_ids": [
+                14,
+                18,
+                28,
+                12,
+                878
+            ],
+            "original_language": "en",
+            "backdrop_path": "/jOrfoGipT8QoDi54Qd9f5yhJCgw.jpg",
+            "overview": "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Luke Cage",
+            "id": 62126,
+            "name": "Marvel's Luke Cage",
+            "vote_count": 269,
+            "vote_average": 7.06,
+            "poster_path": "/9nWZZ1ghE0LuXEWJi7QjCymHygi.jpg",
+            "first_air_date": "2016-09-30",
+            "popularity": 19.696335,
+            "genre_ids": [
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/jM31AtkE5QEfateaLXjc0gkY8Ih.jpg",
+            "overview": "Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Jessica Jones",
+            "id": 38472,
+            "name": "Marvel's Jessica Jones",
+            "vote_count": 426,
+            "vote_average": 7.49,
+            "poster_path": "/8a7e2GNpMnjI2hgRZH3jq2c7ffv.jpg",
+            "first_air_date": "2015-11-20",
+            "popularity": 27.512984,
+            "genre_ids": [
+                10765,
+                18
+            ],
+            "original_language": "en",
+            "backdrop_path": "/ihzq7HgeInN7iz8Y9K5yb71LVDJ.jpg",
+            "overview": "After a tragic ending to her short-lived super hero stint, Jessica Jones is rebuilding her personal life and career as a detective who gets pulled into cases involving people with extraordinary abilities in New York City.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "The Gifted",
+            "id": 69629,
+            "name": "The Gifted",
+            "vote_count": 1,
+            "vote_average": 0,
+            "poster_path": "/uhzere8wpagFd6WJe5XaA3r7FVy.jpg",
+            "first_air_date": "2017-10-02",
+            "popularity": 9.482465,
+            "genre_ids": [
+                10759,
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/69B7OxexJKlH5dskE0eKaAnL3CD.jpg",
+            "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Agent Carter",
+            "id": 61550,
+            "name": "Marvel's Agent Carter",
+            "vote_count": 219,
+            "vote_average": 7.2,
+            "poster_path": "/mQWBExOnHrGVsjkpWczJjo6bhZy.jpg",
+            "first_air_date": "2015-01-06",
+            "popularity": 19.34172,
+            "genre_ids": [
+                28,
+                12
+            ],
+            "original_language": "en",
+            "backdrop_path": "/5yZJ62afDczR8M0qNDNSPSFnF0w.jpg",
+            "overview": "It's 1946, and peace has dealt Peggy Carter a serious blow as she finds herself marginalized when the men return home from fighting abroad. Working for the covert SSR (Strategic Scientific Reserve), Peggy must balance doing administrative work and going on secret missions for Howard Stark all while trying to navigate life as a single woman in America, in the wake of losing the love of her life - Steve Rogers.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's The Defenders",
+            "id": 62285,
+            "name": "Marvel's The Defenders",
+            "vote_count": 99,
+            "vote_average": 7.13,
+            "poster_path": "/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg",
+            "first_air_date": "2017-08-18",
+            "popularity": 19.128785,
+            "genre_ids": [
+                10759,
+                80,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/7eV2vDrj1AwlTffUud66v9o0Ytq.jpg",
+            "overview": "Daredevil, Jessica Jones, Luke Cage and Iron Fist join forces to take on common enemies as a sinister conspiracy threatens New York City.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Spider-Man",
+            "id": 72705,
+            "name": "Marvel's Spider-Man",
+            "vote_count": 6,
+            "vote_average": 10,
+            "poster_path": "/ty4elPPA9zifK9yCVMlDq1dS1Y.jpg",
+            "first_air_date": "2017-08-19",
+            "popularity": 11.334167,
+            "genre_ids": [
+                16,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/1K8EidFcHrh4x41O4urE1xG81fa.jpg",
+            "overview": "An insecure but courageous and intelligent teen named Peter Parker, a new student of Midtown High, is bitten by a radioactive spider and given powers. He becomes a hero named Spider-Man after the death of his uncle and he must adapt to this new way of life.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's The Punisher",
+            "id": 67178,
+            "name": "Marvel's The Punisher",
+            "vote_count": 0,
+            "vote_average": 0,
+            "poster_path": "/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg",
+            "first_air_date": "2017-10-13",
+            "popularity": 6.681151,
+            "genre_ids": [
+                80,
+                18
+            ],
+            "original_language": "en",
+            "backdrop_path": "/nWe9puh0F0VJthKHz9AUmqeGnoV.jpg",
+            "overview": "After the murder of his family, Frank Castle is both haunted and hunted. In the criminal underworld, he’ll become known as The Punisher.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Avengers Assemble",
+            "id": 59427,
+            "name": "Marvel's Avengers Assemble",
+            "vote_count": 40,
+            "vote_average": 6.31,
+            "poster_path": "/gW2wTB5yBDEy2wKWy0hkkZP0nXf.jpg",
+            "first_air_date": "2013-11-09",
+            "popularity": 8.402259,
+            "genre_ids": [
+                10759,
+                16
+            ],
+            "original_language": "en",
+            "backdrop_path": "/jh12MzXiUTaC6AE3DXqjvDOFK46.jpg",
+            "overview": "Marvel's Avengers Assemble is an animated series, based on the fictional Marvel Comics superhero team the Avengers, which has been designed to capitalize on the success of the 2012 film adaptation. Avengers Assemble premiered on May 26, 2013, on Disney XD. The series is a replacement for The Avengers: Earth's Mightiest Heroes. It airs alongside Ultimate Spider-Man, while Hulk and the Agents of S.M.A.S.H. will be added to the \"Marvel Universe\" television block in August 2013. Additionally, it features a near-identical cast and crew with both shows, and shares continuity with them as part of the block. Joe Casey, Joe Kelly, Duncan Rouleau and Steven T. Seagle, a group known as Man of Action, have been confirmed to be the executive producers of the series. On the Mighty Marvel Podcast #122 it was revealed the series would debut with an hour long slot featuring episodes 101 and 102 titled \"The Avengers Protocol Part 1\" and \"The Avengers Protocol Part 2\", respectively.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Runaways",
+            "id": 67466,
+            "name": "Marvel's Runaways",
+            "vote_count": 0,
+            "vote_average": 0,
+            "poster_path": "/5AaKWFv2U12uogUW0SgmjwqUACl.jpg",
+            "first_air_date": "2018-01-01",
+            "popularity": 1.999742,
+            "genre_ids": [
+                10759,
+                80,
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/3IQuUfYYwWndQ2YV4CvsG0HKgos.jpg",
+            "overview": "Runaways follows a group of six teenagers in the Marvel universe – Nico Minoru, Karolina Dean, Molly Hayes, Chase Stein, Alex Wilder, and Gertrude Yorkes - who discover that their parents are secretly members of a supervillain cabal called The Pride. After deciding they’re no longer safe in their own homes, the kids go on the run. In the midst of hiding from their elders, the teens learn about themselves and become a family of their own.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Legion",
+            "id": 67195,
+            "name": "Legion",
+            "vote_count": 263,
+            "vote_average": 7.7,
+            "poster_path": "/zvyA5E4YxQw79gX0hzZ2pQKJpKy.jpg",
+            "first_air_date": "2017-02-08",
+            "popularity": 19.25397,
+            "genre_ids": [
+                10759,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": "/ejMim7XfNOviARyhEOzUd6ALGWs.jpg",
+            "overview": "David Haller, AKA Legion, is a troubled young man who may be more than human. Diagnosed as schizophrenic, David has been in and out of psychiatric hospitals for years. But after a strange encounter with a fellow patient, he’s confronted with the possibility that the voices he hears and the visions he sees might be real.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Guardians of the Galaxy",
+            "id": 63181,
+            "name": "Marvel's Guardians of the Galaxy",
+            "vote_count": 14,
+            "vote_average": 6.89,
+            "poster_path": "/g4LKIwDc0uWa0xdDgvuCBKrU4iE.jpg",
+            "first_air_date": "2015-09-05",
+            "popularity": 9.062483,
+            "genre_ids": [
+                10759,
+                16
+            ],
+            "original_language": "en",
+            "backdrop_path": "/vb0e74baBF2iAtvsKhUFjJ4fOt8.jpg",
+            "overview": "Peter Quill is Star-Lord, the brash adventurer who, to save the universe from its greatest threats, joins forces with a quartet of disparate misfits — fan-favorite Rocket Raccoon, a tree-like humanoid named Groot, the enigmatic, expert fighter Gamora and the rough edged warrior Drax the Destroyer.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "The Marvel Super Heroes",
+            "id": 2164,
+            "name": "The Marvel Super Heroes",
+            "vote_count": 1,
+            "vote_average": 7,
+            "poster_path": "/7deU750ZXTClzSjm43xDMFfgS7s.jpg",
+            "first_air_date": "1966-09-01",
+            "popularity": 1.669934,
+            "genre_ids": [
+                16,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": null,
+            "overview": "The Marvel Super Heroes is an American and Canadian-made animated television series starring five comic-book superheroes from Marvel Comics. It was first syndicated, on U.S. television, in 1966.\n\nProduced by Grantray-Lawrence Animation, headed by Grant Simmons, Ray Patterson and Robert Lawrence, it was an umbrella series of five segments, each approximately seven minutes long, broadcast on local television stations that aired the show at different times. The series ran initially as a half-hour program made up of three seven-minute segments of a single superhero, separated by a short description of one of the other four heroes. It has also been broadcast as a mixture of various heroes in a half-hour timeslot, and as individual segments as filler or within a children's TV program.\n\nThe segments, and their original rotations, were:\n\n⁕Monday: Captain America\n\n⁕Tuesday: The Incredible Hulk\n\n⁕Wednesday: The Invincible Iron Man\n\n⁕Thursday: The Mighty Thor\n\n⁕Friday: Prince Namor the Sub-Mariner",
+            "origin_country": [
+                "CA",
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's New Warriors",
+            "id": 71106,
+            "name": "Marvel's New Warriors",
+            "vote_count": 0,
+            "vote_average": 0,
+            "poster_path": null,
+            "first_air_date": "2018-01-01",
+            "popularity": 1.294666,
+            "genre_ids": [
+                10759,
+                35,
+                9648,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": null,
+            "overview": "TV show Based on the Marvel comic book of the same name",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Captain Marvel",
+            "id": 67211,
+            "name": "Captain Marvel",
+            "vote_count": 1,
+            "vote_average": 8,
+            "poster_path": "/vDSWpez6UlMifbwVfbTw09SUNUA.jpg",
+            "first_air_date": "1941-01-01",
+            "popularity": 1.054345,
+            "genre_ids": [
+                10759,
+                18,
+                10765
+            ],
+            "original_language": "en",
+            "backdrop_path": null,
+            "overview": "Classic 12 Episode Serial in which Captain Marvel originates. Shazaam!!!\n\nTo protect a magic talisman from being used for evil, a boy is given the power to become an adult superhero with a single magic word.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "LEGO MARVEL Super Heroes: Maximum Overload",
+            "id": 62576,
+            "name": "LEGO MARVEL Super Heroes: Maximum Overload",
+            "vote_count": 3,
+            "vote_average": 6.5,
+            "poster_path": "/h1Iy5b1kKXTJvBfO8K52kOwl06a.jpg",
+            "first_air_date": "2013-11-05",
+            "popularity": 1.556397,
+            "genre_ids": [
+                16,
+                10762
+            ],
+            "original_language": "en",
+            "backdrop_path": "/7LzUHACQk1RdjywKiLWZ8IWH4pG.jpg",
+            "overview": "Spider-Man and Marvel's Super Heroes take on a mischievous Loki and a team of super villains in an all-new LEGO adventure.",
+            "origin_country": [
+                "US"
+            ]
+        },
+        {
+            "original_name": "Marvel's Ultimate Spider-Man",
+            "id": 34391,
+            "name": "Marvel's Ultimate Spider-Man",
+            "vote_count": 38,
+            "vote_average": 5.97,
+            "poster_path": "/tTrImtQ8h6kDTajfnByOLmUQjEQ.jpg",
+            "first_air_date": "2012-04-01",
+            "popularity": 8.915864,
+            "genre_ids": [
+                10759,
+                16,
+                35
+            ],
+            "original_language": "en",
+            "backdrop_path": "/sER4CeV1AWUAee18O4wOVqRMqg.jpg",
+            "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+            "origin_country": [
+                "US"
+            ]
+        }
+    ]
+}
