@@ -1,3 +1,27 @@
+import hashlib, requests
+import time, json
+
+base_url = 'https://gateway.marvel.com/v1/public/'
+k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
+k_pub = '7f39855a0661b5fe55f842d7afa8cd9f'
+
+def compute_hash():
+    m = hashlib.md5()
+    ts = str(time.time())
+    m.update(ts.encode('utf-8'))
+    m.update(k_priv.encode('utf-8'))
+    m.update(k_pub.encode('utf-8'))
+    h = m.hexdigest()
+    return (ts, h)
+ 
+
+def marvel_get(endpoint, params=None):
+    ts, h = compute_hash()
+    data = {'ts':ts, 'hash': h, 'apikey': k_pub}
+    if params:
+        data.update(params)
+    return requests.get(base_url+endpoint, params=data)
+
 import pprint as pp
 for offset in range(0, 2000, 20):
 
@@ -11,9 +35,20 @@ for offset in range(0, 2000, 20):
             for comic in comic_data:
                 if comic['id'] != "":
                     for comic_attr_keys, comic_attr in comic.items():
-                        if comic_attr_keys == 'title':
+                        if comic_attr_keys == 'id':
+                            id_name = str(comic_attr)
+                            print('ID: ' + id_name)
+                        elif comic_attr_keys == 'title':
                             title = str(comic_attr)
                             print('Title: ' + title)
+                        elif comic_attr_keys == 'thumbnail':
+                            path = str(comic_attr['path'])
+                            for v in path.split('/'):
+                                if v == 'image_not_available':
+                                    path = None
+
+                            if path != None:
+                                path = path + '.' + comic_attr['extension']
                         elif comic_attr_keys == 'description':
                             descr = str(comic_attr)
                             print('Description: ' + descr)
