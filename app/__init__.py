@@ -13,6 +13,6 @@ def create_app():
 
     # Create API endpoints, which will be available at /api/<tablename> by
     # default. Allowed HTTP methods can be specified as well.
-    manager.create_api(models.Actor, methods=['GET'])
+    manager.create_api(models.Actor, methods=['GET', 'POST'])
     manager.create_api(models.Character, methods=['GET'])
     return app
