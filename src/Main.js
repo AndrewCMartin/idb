@@ -14,12 +14,24 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/about' component={About}/>
+
       <Route path='/characters' component={Characters}/>
+      <Route path='/character/:charID' component={CharacterInstance}/>
+
       <Route path='/movies' component={Movies}/>
+      <Route path='/movie/:movieID' component={MovieInstance}/>
+
       <Route path='/tvshows' component={TVShows}/>
+      <Route path='/tvshow/:tvshowID' component={TVShowInstance}/>
+
       <Route path='/comicseries' component={ComicSeries}/>
+      <Route path='/comicserie/:comicID' component={ComicSeriesInstance}/>
+
       <Route path='/actors' component={Actors}/>
+      <Route path='/actor/:actorID' component={ActorInstance}/>
+      
       <Route path='/events' component={Events}/>
+      <Route path='/event/:eventID' component={EventInstance}/>
     </Switch>
   </main>
 )
