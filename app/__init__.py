@@ -3,9 +3,7 @@
 from flask import Flask
 import flask_restless
 
-from flask_bootstrap import Bootstrap
 
-from frontend.nav import nav
 from models import *
 
 def create_app():
@@ -17,6 +15,4 @@ def create_app():
     # default. Allowed HTTP methods can be specified as well.
     manager.create_api(models.Actor, methods=['GET'])
     manager.create_api(models.Character, methods=['GET'])
-    Bootstrap(app)
-    nav.init_app(app)
     return app

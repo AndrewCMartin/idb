@@ -1,6 +1,5 @@
-Flask==0.12.2
-flask_nav
-flask_bootstrap
-flask_restplus
+Flask
+flask_sqlalchemy
+flask_restless
 requests-toolbelt
 requests
