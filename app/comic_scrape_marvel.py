@@ -39,7 +39,7 @@ for offset in range(0, 2000, 20):
                             id_name = str(comic_attr)
                             print('ID: ' + id_name)
                         elif comic_attr_keys == 'title':
-                            title = str(comic_attr)
+                            title = comic_attr.encode('utf-8')
                             print('Title: ' + title)
                         elif comic_attr_keys == 'thumbnail':
                             path = str(comic_attr['path'])
@@ -50,13 +50,17 @@ for offset in range(0, 2000, 20):
                             if path != None:
                                 path = path + '.' + comic_attr['extension']
                         elif comic_attr_keys == 'description':
-                            descr = str(comic_attr)
+                            descr = comic_attr
+                            if descr == None:
+                                descr = "None"
+                            else:
+                                descr = comic_attr.encode('utf-8')
                             print('Description: ' + descr)
                         elif comic_attr_keys == 'characters':
                             char_list = []
                             items = comic_attr['items']
                             for chars in items:
-                                char_list.append(str(chars['name']))
+                                char_list.append(chars['name'].encode('utf-8'))
                             print('Characters: ')
                             print(char_list)
                         elif comic_attr_keys == 'startYear':
@@ -66,7 +70,7 @@ for offset in range(0, 2000, 20):
                             creator_list = []
                             items = comic_attr['items']
                             for create in items:
-                                creator_list.append(str(create['name']))
+                                creator_list.append(create['name'].encode('utf-8'))
                             print('Creators: ')
                             print(creator_list)
                         elif comic_attr_keys == 'events':
@@ -74,9 +78,8 @@ for offset in range(0, 2000, 20):
                             event_list = []
                             items = comic_attr['items']
                             for event in items:
-                                event_list.append(str(event['name']))
+                                event_list.append(event['name'].encode('utf-8'))
                             print('Events: ')
                             print(event_list)
                         print('\n')
     
-        
