@@ -22,10 +22,6 @@ def marvel_get(endpoint, params=None):
         data.update(params)
     return requests.get(base_url+endpoint, params=data)
 
-
-
-
-import pprint as pp
 for offset in range(0, 2000, 20):
 
     r = marvel_get('events', {'offset':str(offset)})
@@ -53,7 +49,15 @@ for offset in range(0, 2000, 20):
                                 path = path + '.' + event_attr['extension']
                         elif event_attr_keys == 'description':
                             descr = event_attr.encode('utf-8')
-                            print('Description: ' + descr)
+                            print('Description: ')
+                            print(descr)
+                        elif event_attr_keys == 'comics':
+                            comic_list = []
+                            items = event_attr['items']
+                            for comic in items:
+                                comic_list.append(comic['name'].encode('utf-8'))
+                            print('Creators: ')
+                            print(creator_list)
                         elif event_attr_keys == 'creators':
                             creator_list = []
                             items = event_attr['items']
