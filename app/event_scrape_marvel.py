@@ -22,59 +22,69 @@ def marvel_get(endpoint, params=None):
         data.update(params)
     return requests.get(base_url+endpoint, params=data)
 
+import pprint as pp
 for offset in range(0, 2000, 20):
 
-    r = marvel_get('events', {'offset':str(offset)})
+    r = marvel_get('series', {'offset':str(offset)})
 
     d = json.loads(r.text)
     
-    for event_keys, event_data in d['data'].items():
-        if event_keys == 'results':
-            for event in event_data:
-                if event['id'] != "":
-                    for event_attr_keys, event_attr in event.items():
-                        if event_attr_keys == 'id':
-                            id_name = str(event_attr)
-                            print('ID: ' + id_name)
-                        elif event_attr_keys == 'title':
-                            title = str(event_attr)
-                            print('Title: ' + title)
-                        elif event_attr_keys == 'thumbnail':
-                            path = str(event_attr['path'])
+    
+    for comic_keys, comic_data in d['data'].items():
+        if comic_keys == 'results':
+            #pp.pprint(comic_data)
+            for comic in comic_data:
+                
+                id_name = 0
+                title = ""
+                path = ""
+                descr = ""
+                characters = ""
+                year = ""
+                creators = ""
+                events = ""
+                
+                
+                if comic['id'] != "":
+                    for comic_attr_keys, comic_attr in comic.items():
+                        if comic_attr_keys == 'id':
+                            id_name = int(comic_attr)
+                            print('ID: ')
+                            print(id_name)
+                        elif comic_attr_keys == 'title':
+                            title = comic_attr.encode('utf-8')
+                        elif comic_attr_keys == 'thumbnail':
                             for v in path.split('/'):
                                 if v == 'image_not_available':
                                     path = None
-
                             if path != None:
-                                path = path + '.' + event_attr['extension']
-                        elif event_attr_keys == 'description':
-                            descr = event_attr.encode('utf-8')
-                            print('Description: ')
-                            print(descr)
-                        elif event_attr_keys == 'comics':
-                            comic_list = []
-                            items = event_attr['items']
-                            for comic in items:
-                                comic_list.append(comic['name'].encode('utf-8'))
-                            print('Creators: ')
-                            print(creator_list)
-                        elif event_attr_keys == 'creators':
-                            creator_list = []
-                            items = event_attr['items']
-                            for create in items:
-                                creator_list.append(create['name'].encode('utf-8'))
-                            print('Creators: ')
-                            print(creator_list)
-                        elif event_attr_keys == 'characters':
-                            char_list = []
-                            items = event_attr['items']
+                                path = path + '.' + comic_attr['extension']
+                        elif comic_attr_keys == 'description':
+                            descr = comic_attr
+                            if descr == None:
+                                descr = "None"
+                            else:
+                                descr = comic_attr.encode('utf-8')
+                        elif comic_attr_keys == 'characters':
+                            items = comic_attr['items']
                             for chars in items:
-                                char_list.append(chars['name'].encode('utf-8'))
+                                characters += (chars['name'].encode('utf-8')) + ", "
                             print('Characters: ')
-                            print(char_list)
-                        elif event_attr_keys == 'start':
-                            date = str(event_attr)
-                            #only get the date, remove the time
-                            print(date.split(" ")[0])
-                    print('\n')
-                        
+                            print(characters)
+                        elif comic_attr_keys == 'startYear':
+                            year = str(comic_attr)
+                        elif comic_attr_keys == 'creators':
+                            items = comic_attr['items']
+                            for create in items:
+                                creators += (create['name'].encode('utf-8')) + ", "
+                            print('Creators: ')
+                            print(creators)
+                        elif comic_attr_keys == 'events':
+                            # Events have their own dict to go through
+                            items = comic_attr['items']
+                            for event in items:
+                                events += (event['name'].encode('utf-8')) + ", "
+                            print('Events: ')
+                            print(events)
+                        print('\n')
+    

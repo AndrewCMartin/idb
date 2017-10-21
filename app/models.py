@@ -41,9 +41,20 @@ class Character(db.Model):
     name = db.Column(db.String(150))
     desc = db.Column(db.String(1500))
     thumbnail = db.Column(db.String(80))
+    stories = db.Column(db.String(1500))
 
     events = db.relationship('Event', secondary='character_event', backref=db.backref('characters'), lazy='dynamic')
     series = db.relationship('ComicSeries', secondary='character_comicseries', backref=db.backref('characters'), lazy='dynamic')
+
+    def __init__(self, id, name, desc, thumbnail, stories, events, series):
+        assert name != ""
+        self.id = id
+        self.name = name
+        self.desc = desc
+        self.thumbnail = thumbnail
+        self.stories = stories
+        self.events = events
+        self.series = series
 
 
 class Event(db.Model):
@@ -51,11 +62,21 @@ class Event(db.Model):
     title = db.Column(db.String(150))
     desc = db.Column(db.String(1500))
     start = db.Column(db.Date)
-    end = db.Column(db.Date)
     thumbnail = db.Column(db.String(80))
+    creators = db.Column(db.String(1500))
     
     characters = db.relationship('Character', secondary='character_event', backref=db.backref('events'), lazy='dynamic')
     series = db.relationship('ComicSeries', secondary='event_comicseries', backref=db.backref('events'), lazy='dynamic')
+
+    def __init__(self, id, title, desc, thumbnail, start, creators, characters, num_series):
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.thumbnail = thumbnail
+        self.start = start
+        self.creators = creators
+        self.characters = characters
+        self.series = num_series
 
 
 class Actor(db.Model):
@@ -69,6 +90,16 @@ class Actor(db.Model):
     movies = db.relationship('Movie', secondary='actor_movie', backref=db.backref('actors'), lazy='dynamic')
     tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
  
+    def __init__(self, id, name, birthday, bio, image, characters, movies, tvshows):
+        self.id = id
+        self.name = name
+        self.birthday = birthday
+        self.bio = bio
+        self.image = image
+        self.characters = characters
+        self.movies = movies
+        self.tvshows = tvshows
+
 
 class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -84,6 +115,19 @@ class Movie(db.Model):
 
     characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
     actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
+
+    def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating, characters, actors):
+        self.id = id
+        self.title = title
+        self.overview = overview
+        self.adult = adult
+        self.poster_path = poster_path
+        self.runtime = runtime
+        self.release_date = release_date
+        self.lang = lang
+        self.rating = rating
+        self.characters = characters
+        self.actors = actors
 
 
 class TvShow(db.Model):
@@ -102,6 +146,19 @@ class TvShow(db.Model):
     characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
     actors = db.relationship('Actor', secondary='actor_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
 
+    def __init__(self, id, name, overview, poster_path, runtime, last_air_date, langs, rating, num_seasons, num_episodes):
+        self.id = id
+        self.name = name
+        self.overview = overview
+        self.poster_path = poster_path
+        self.runtime = runtime
+        self.last_air_date = last_air_date
+        self.langs = langs
+        self.rating = rating
+        self.num_seasons = num_seasons
+        self.num_episodes = num_episodes
+        self.characters = characters
+        self.actors = actors
 
 class ComicSeries(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -119,11 +176,17 @@ class ComicSeries(db.Model):
     events = db.relationship('Event', secondary='event_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
     characters = db.relationship('Character', secondary='character_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
 
-
-
-
-
-
+    def __init__(self, id, title, desc, thumbnail, runtime, start_year, end_year, rating, events, characters):
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.thumbnail = thumbnail
+        self.runtime = runtime
+        self.start_year = start_year
+        self.end_year = end_year
+        self.rating = rating
+        self.events = events
+        self.characters = characters
 
 
 

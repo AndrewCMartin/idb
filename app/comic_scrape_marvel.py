@@ -33,20 +33,28 @@ for offset in range(0, 2000, 20):
         if comic_keys == 'results':
             #pp.pprint(comic_data)
             for comic in comic_data:
+
+                id_name = 0
+                title = ""
+                path = ""
+                descr = ""
+                characters = ""
+                year = ""
+                creators = ""
+                events = ""
+
                 if comic['id'] != "":
                     for comic_attr_keys, comic_attr in comic.items():
                         if comic_attr_keys == 'id':
-                            id_name = str(comic_attr)
-                            print('ID: ' + id_name)
+                            id_name = int(comic_attr)
+                            print('ID: ')
+                            print(id_name)
                         elif comic_attr_keys == 'title':
                             title = comic_attr.encode('utf-8')
-                            print('Title: ' + title)
                         elif comic_attr_keys == 'thumbnail':
-                            path = str(comic_attr['path'])
                             for v in path.split('/'):
                                 if v == 'image_not_available':
                                     path = None
-
                             if path != None:
                                 path = path + '.' + comic_attr['extension']
                         elif comic_attr_keys == 'description':
@@ -55,31 +63,26 @@ for offset in range(0, 2000, 20):
                                 descr = "None"
                             else:
                                 descr = comic_attr.encode('utf-8')
-                            print('Description: ' + descr)
                         elif comic_attr_keys == 'characters':
-                            char_list = []
                             items = comic_attr['items']
                             for chars in items:
-                                char_list.append(chars['name'].encode('utf-8'))
+                                characters += (chars['name'].encode('utf-8')) + ", "
                             print('Characters: ')
-                            print(char_list)
+                            print(characters)
                         elif comic_attr_keys == 'startYear':
                             year = str(comic_attr)
-                            print("Year: " + year)
                         elif comic_attr_keys == 'creators':
-                            creator_list = []
                             items = comic_attr['items']
                             for create in items:
-                                creator_list.append(create['name'].encode('utf-8'))
+                                creators += (create['name'].encode('utf-8')) + ", "
                             print('Creators: ')
-                            print(creator_list)
+                            print(creators)
                         elif comic_attr_keys == 'events':
                             # Events have their own dict to go through
-                            event_list = []
                             items = comic_attr['items']
                             for event in items:
-                                event_list.append(event['name'].encode('utf-8'))
+                                events += (event['name'].encode('utf-8')) + ", "
                             print('Events: ')
-                            print(event_list)
+                            print(events)
                         print('\n')
     

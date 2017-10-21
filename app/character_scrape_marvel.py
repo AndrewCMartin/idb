@@ -31,47 +31,50 @@ for offset in range(0, 2000, 20):
 
     d = json.loads(r.text)
 
-    id_num = 0
-    name = ""
-    path = ""
-    desc = ""
-    series_name = ""
-    story_name = ""
-    event_name = ""
 
     for char_keys, char_data in d['data'].items():
         if char_keys == 'results':
             for char in char_data:
-                for char_attr_keys, char_attr in char.items():
-                    if char_attr_keys == 'name':
-                        name = char_attr.encode('utf-8')
-                    elif char_attr_keys == 'id':
-                        id_num = str(char_attr)
-                    elif char_attr_keys == 'thumbnail':
-                        path = str(char_attr['path'])
-                        for v in path.split('/'):
-                            if v == 'image_not_available':
-                                path = None
-                                
-                        if path != None:
-                            path = path + '.' + char_attr['extension']
-                    elif char_attr_keys == 'description':
-                        desc = char_attr.encode('utf-8')
-                    elif char_attr_keys == 'stories':
-                        # Stories have their own dict to go through
-                        for story in char_attr['items']:
-                            story_name += story['name'].encode('utf-8') + ', \n'
-                    elif char_attr_keys == 'events':
-                        # Events have their own dict to go through
-                        for event in char_attr['items']:
-                            event_name = event['name'].encode('utf-8') + ', \n'
-                    elif char_attr_keys == 'series':
-                        # Series have their own dict to go through
-                        for series in char_attr['items']:
-                            series_name = series['name'].encode('utf-8') + ', \n'
-                #Create the character with the schema from models.py
-                newEntry = Character(id_name, name, desc, path, event_name, series_name)
-                db.session.merge(newEntry)
-                db.session.commit()
+
+                id_num = 0
+                name = ""
+                path = ""
+                desc = ""
+                series_name = ""
+                story_name = ""
+                event_name = ""
+                            
+                if char['id'] != "":
+                    for char_attr_keys, char_attr in char.items():
+                        if char_attr_keys == 'name':
+                            name = char_attr.encode('utf-8')
+                        elif char_attr_keys == 'id':
+                            id_num = int(char_attr)
+                        elif char_attr_keys == 'thumbnail':
+                            path = str(char_attr['path'])
+                            for v in path.split('/'):
+                                if v == 'image_not_available':
+                                    path = None
+                                    
+                            if path != None:
+                                path = path + '.' + char_attr['extension']
+                        elif char_attr_keys == 'description':
+                            desc = char_attr.encode('utf-8')
+                        elif char_attr_keys == 'stories':
+                            # Stories have their own dict to go through
+                            for story in char_attr['items']:
+                                story_name += story['name'].encode('utf-8') + ', \n'
+                        elif char_attr_keys == 'events':
+                            # Events have their own dict to go through
+                            for event in char_attr['items']:
+                                event_name += event['name'].encode('utf-8') + ', \n'
+                        elif char_attr_keys == 'series':
+                            # Series have their own dict to go through
+                            for series in char_attr['items']:
+                                series_name += series['name'].encode('utf-8') + ', \n'
+                    #Create the character with the schema from models.py
+                    newEntry = Character(id_num, name, desc, path, story_name, event_name, series_name)
+                    db.session.merge(newEntry)
+                    db.session.commit()
 
 print('Done')
