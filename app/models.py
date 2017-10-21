@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@127.0.0.1:3306/marvelus-db-v1'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@127.0.0.1:3306/marvelus-db-v1'
 db = SQLAlchemy(app)
 
 character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character_id')),

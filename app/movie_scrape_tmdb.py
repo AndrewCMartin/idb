@@ -5,10 +5,7 @@ from models import db, Movie
 import tmdbsimple as tmdb
 tmdb.API_KEY = 'ad40b463da9a53ce7faffa8cc87d4d6a'
 
-api_key = 'ad40b463da9a53ce7faffa8cc87d4d6a'
-
-
-def get_movie_info(movie_id):
+def movie_info(movie_id):
     movie = tmdb.Movies(movie_id)
     response = movie.info()
 
@@ -32,6 +29,6 @@ marvel = tmdb.Companies(420)
 movies = marvel.movies()
 
 for movie in movies["results"]:
-	get_movie_info(movie["id"])
+	movie_info(movie["id"])
 
 print('Done')
