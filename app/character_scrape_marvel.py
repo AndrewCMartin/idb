@@ -75,9 +75,8 @@ for offset in range(0, 2000, 20):
                     #Create the character with the schema from models.py
                     print('we are here')
                     newEntry = Character(id_num, name, desc, path, story_name, event_name, series_name)
-                    
-                    db.session.merge(newEntry)
-                    print('now we are here')
+                    db.session.add(newEntry)
+                    print('merged')
                     db.session.commit()
                     print("DONE WITH THIS")
 
