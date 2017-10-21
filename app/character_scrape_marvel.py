@@ -73,8 +73,12 @@ for offset in range(0, 2000, 20):
                             for series in char_attr['items']:
                                 series_name += series['name'].encode('utf-8') + ', \n'
                     #Create the character with the schema from models.py
+                    print('we are here')
                     newEntry = Character(id_num, name, desc, path, story_name, event_name, series_name)
+                    
                     db.session.merge(newEntry)
+                    print('now we are here')
                     db.session.commit()
+                    print("DONE WITH THIS")
 
 print('Done')
