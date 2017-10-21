@@ -15,4 +15,9 @@ def create_app():
     # default. Allowed HTTP methods can be specified as well.
     manager.create_api(models.Actor, methods=['GET', 'POST'])
     manager.create_api(models.Character, methods=['GET'])
+    manager.create_api(models.ComicSeries, methods=['GET'])
+    manager.create_api(models.Event, methods=['GET'])
+    manager.create_api(models.Movie, methods=['GET'])
+    manager.create_api(models.TvShow, methods=['GET'])
+
     return app
