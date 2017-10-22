@@ -5,7 +5,7 @@ threadsafe: true
 env_variables:
     CLOUDSQL_CONNECTION_NAME: marvelus-180722:us-central1:marvelus-db-v1
     CLOUDSQL_USER: root
-    CLOUDSQL_PASSWORD: m-db-pass
+    CLOUDSQL_PASSWORD: password
 
 libraries:
 - name: MySQLdb
