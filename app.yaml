@@ -18,9 +18,16 @@ handlers:
   application_readable: true
 - url: /vendor
   static_dir: vendor
-- url: /css
-  static_dir: static/css
+#- url: /css
+#  static_dir: static/css
+- url: /index
+  static_files: build/index.html
+  upload: build/index.html
 - url: /.*
   script: main.app
 
+
+- url: /static
+  static_dir: build/static
+  application_readable: true
 # [END handlers]

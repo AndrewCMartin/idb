@@ -1,7 +1,6 @@
 # From https://github.com/mbr/flask-bootstrap/blob/master/sample_app/__init__.py
 
 from flask import Flask
-import flask_restless
 from flask_restless_swagger import SwagAPIManager as APIManager
 
 

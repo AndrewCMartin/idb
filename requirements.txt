@@ -1,5 +1,7 @@
 Flask
 flask_sqlalchemy
 flask_restless
+flask_restless_swagger_2
 requests-toolbelt
 requests
+pymysql
