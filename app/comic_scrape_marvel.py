@@ -1,6 +1,8 @@
 import hashlib, requests
 import time, json
 
+from models import db, ComicSeries
+
 base_url = 'https://gateway.marvel.com/v1/public/'
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
 k_pub = '7f39855a0661b5fe55f842d7afa8cd9f'
@@ -47,8 +49,6 @@ for offset in range(0, 2000, 20):
                     for comic_attr_keys, comic_attr in comic.items():
                         if comic_attr_keys == 'id':
                             id_name = int(comic_attr)
-                            print('ID: ')
-                            print(id_name)
                         elif comic_attr_keys == 'title':
                             title = comic_attr.encode('utf-8')
                         elif comic_attr_keys == 'thumbnail':
@@ -67,22 +67,18 @@ for offset in range(0, 2000, 20):
                             items = comic_attr['items']
                             for chars in items:
                                 characters += (chars['name'].encode('utf-8')) + ", "
-                            print('Characters: ')
-                            print(characters)
                         elif comic_attr_keys == 'startYear':
                             year = str(comic_attr)
                         elif comic_attr_keys == 'creators':
                             items = comic_attr['items']
                             for create in items:
                                 creators += (create['name'].encode('utf-8')) + ", "
-                            print('Creators: ')
-                            print(creators)
                         elif comic_attr_keys == 'events':
                             # Events have their own dict to go through
                             items = comic_attr['items']
                             for event in items:
                                 events += (event['name'].encode('utf-8')) + ", "
-                            print('Events: ')
-                            print(events)
-                        print('\n')
-    
+                    #Create the event with the schema from models.py
+                    newEntry = ComicSeries(id_name, title, descr, path, year, creators, events, characters)
+                    db.session.merge(newEntry)
+                    db.session.commit()

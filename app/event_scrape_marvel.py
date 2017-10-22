@@ -1,6 +1,8 @@
 import hashlib, requests
 import time, json
 
+from models import db, Event
+
 base_url = 'https://gateway.marvel.com/v1/public/'
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
 k_pub = '7f39855a0661b5fe55f842d7afa8cd9f'
@@ -42,7 +44,7 @@ for offset in range(0, 2000, 20):
                 characters = ""
                 year = ""
                 creators = ""
-                events = ""
+                comics = ""
                 
                 
                 if comic['id'] != "":
@@ -79,12 +81,15 @@ for offset in range(0, 2000, 20):
                                 creators += (create['name'].encode('utf-8')) + ", "
                             print('Creators: ')
                             print(creators)
-                        elif comic_attr_keys == 'events':
+                        elif comic_attr_keys == 'comics':
                             # Events have their own dict to go through
                             items = comic_attr['items']
-                            for event in items:
-                                events += (event['name'].encode('utf-8')) + ", "
-                            print('Events: ')
+                            for comic in items:
+                                comics += (comic['name'].encode('utf-8')) + ", "
+                            print('Comics: ')
                             print(events)
-                        print('\n')
+                    #Create the event with the schema from models.py
+                    newEntry = Event(id_name, title, descr, path, year, creators, characters, comics)
+                    db.session.merge(newEntry)
+                    db.session.commit()
     

@@ -1,12 +1,12 @@
-from flask import Flask
+#from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
 #import flask.ext.restless
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@35.184.2.216/marvelusdb'
-db = SQLAlchemy(app)
-#db = SQLAlchemy()
+#app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+#db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 # character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character.id')),
 #                                               db.Column('event_id', db.Integer, ForeignKey('event.id')))
@@ -90,15 +90,15 @@ class Actor(db.Model):
     # movies = db.relationship('Movie', secondary='actor_movie', backref=db.backref('actors'), lazy='dynamic')
     # tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
  
-    def __init__(self, id, name, birthday, bio, image):
+    def __init__(self, id, name, birthday, bio, image, characters, movies, tvshows):
         self.id = id
         self.name = name
         self.birthday = birthday
         self.bio = bio
         self.image = image
-        # self.characters = characters
-        # self.movies = movies
-        # self.tvshows = tvshows
+        self.characters = characters
+        self.movies = movies
+        self.tvshows = tvshows
 
 
 class Movie(db.Model):
@@ -113,8 +113,8 @@ class Movie(db.Model):
     lang = db.Column(db.String(80))
     rating = db.Column(db.Float)
 
-    # characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
-    # actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
+    actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
 
     def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating, characters, actors):
         self.id = id
@@ -143,8 +143,8 @@ class TvShow(db.Model):
     num_seasons = db.Column(db.Integer)
     num_episodes = db.Column(db.Integer)
 
-    # characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
-    # actors = db.relationship('Actor', secondary='actor_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
+    actors = db.relationship('Actor', secondary='actor_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
 
     def __init__(self, id, name, overview, poster_path, runtime, last_air_date, langs, rating, num_seasons, num_episodes):
         self.id = id
@@ -173,8 +173,8 @@ class ComicSeries(db.Model):
 
     rating = db.Column(db.Float)
 
-    # events = db.relationship('Event', secondary='event_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
-    # characters = db.relationship('Character', secondary='character_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
+    events = db.relationship('Event', secondary='event_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
 
     def __init__(self, id, title, desc, thumbnail, runtime, start_year, end_year, rating, events, characters):
         self.id = id
