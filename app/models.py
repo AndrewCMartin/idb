@@ -1,12 +1,11 @@
 #from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
-#import flask.ext.restless
 
-#app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-#db = SQLAlchemy(app)
-db = SQLAlchemy()
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@35.184.2.216/marvelusdb'
+db = SQLAlchemy(app)
+#db = SQLAlchemy()
 
 # character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character.id')),
 #                                               db.Column('event_id', db.Integer, ForeignKey('event.id')))
