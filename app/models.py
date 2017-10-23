@@ -7,8 +7,8 @@ app = Flask(__name__,static_url_path='/api/static', static_path='/api/static')
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@35.184.2.216/marvelusdb'
 
 CLOUDSQL_CONNECTION_NAME = str(os.environ.get('CLOUDSQL_CONNECTION_NAME'))
-CLOUDSQL_USER = str(os.environ.get('CLOUDSQL_USER'))
-CLOUDSQL_PASSWORD = str(os.environ.get('CLOUDSQL_PASSWORD'))
+CLOUDSQL_USER = 'root'
+CLOUDSQL_PASSWORD = 'password'
 if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
     cloudsql_unix_socket = os.path.join('/cloudsql', CLOUDSQL_CONNECTION_NAME)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost/marvelusdb' \
@@ -147,9 +147,7 @@ class TvShow(db.Model):
     overview = db.Column(db.String(1300))
     # genres
     poster_path = db.Column(db.String(200))
-    runtime = db.Column(db.Integer)
     last_air_date = db.Column(db.Date)
-    langs = db.Column(db.String(80))
     rating = db.Column(db.Float)
     num_seasons = db.Column(db.Integer)
     num_episodes = db.Column(db.Integer)
@@ -157,14 +155,12 @@ class TvShow(db.Model):
     # characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
     # actors = db.relationship('Actor', secondary='actor_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
 
-    def __init__(self, id, name, overview, poster_path, runtime, last_air_date, langs, rating, num_seasons, num_episodes):
+    def __init__(self, id, name, overview, poster_path, last_air_date, rating, num_seasons, num_episodes):
         self.id = id
         self.name = name
         self.overview = overview
         self.poster_path = poster_path
-        self.runtime = runtime
         self.last_air_date = last_air_date
-        self.langs = langs
         self.rating = rating
         self.num_seasons = num_seasons
         self.num_episodes = num_episodes

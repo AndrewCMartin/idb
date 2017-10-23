@@ -18,10 +18,10 @@ def tvshow_info(tvshow_id):
         characters.append(person["character"])
         actors.append(person["name"])
 
-    # print (tvshow_id, tvshow.name)
+    print (tvshow_id, tvshow.name)
 
     #Create the character with the schema from models.py
-    newEntry = TvShow(tvshow_id, tvshow.name, tvshow.overview, tvshow.poster_path, tvshow.last_air_date, tvshow.languages, tvshow.vote_average, tvshow.number_of_seasons, tvshow.number_of_episodes)
+    newEntry = TvShow(tvshow_id, tvshow.name, tvshow.overview, tvshow.poster_path, tvshow.last_air_date, tvshow.vote_average, tvshow.number_of_seasons, tvshow.number_of_episodes)
     db.session.merge(newEntry)
     db.session.commit()
 
