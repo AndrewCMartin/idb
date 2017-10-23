@@ -18,7 +18,7 @@ def tvshow_info(tvshow_id):
         characters.append(person["character"])
         actors.append(person["name"])
 
-    # print (tvshow_id, tvshow.name)
+    print (tvshow_id, tvshow.name)
 
     #Create the character with the schema from models.py
     newEntry = TvShow(tvshow_id, tvshow.name, tvshow.overview, tvshow.poster_path, tvshow.last_air_date, tvshow.languages, tvshow.vote_average, tvshow.number_of_seasons, tvshow.number_of_episodes)
@@ -39,7 +39,7 @@ def marvel_shows(page_num):
 base_url = 'https://api.themoviedb.org/3/search/tv'
 params = { 'api_key' : 'ad40b463da9a53ce7faffa8cc87d4d6a', 
             'language' : 'en-US',
-            'query' : 'marvel',
+            'query' : 'marvel\'s',
             'page' : 0
          }
 
