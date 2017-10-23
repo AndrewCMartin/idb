@@ -39,7 +39,7 @@ def marvel_shows(page_num):
 base_url = 'https://api.themoviedb.org/3/search/tv'
 params = { 'api_key' : 'ad40b463da9a53ce7faffa8cc87d4d6a', 
             'language' : 'en-US',
-            'query' : 'marvel',
+            'query' : 'marvel\'s',
             'page' : 0
          }
 

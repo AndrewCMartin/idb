@@ -1,26 +1,63 @@
+PHASE 1 USER STORIES:
+1. Deploy onto GCP and make sure everything works
+	-Estimate: 5 hours
+	-Actual: 2 hours
+2. Write technical report
+	-Estimate: 5 hours
+	-Actual: 3 hours
+3. identify the common attributes of data and ensure each data has a value for attribute
+	-Estimate: 3 hours
+	-Actual: 8 hours
+4. Collect data of 3 instances of each model from at least 2 sources via RESTful API
+	-Estimate: 3 hours
+	-Actual: 1 hour
+5. Create About page and fill it with static information
+	-Estimate: 2 hours
+	-Actual: 2 hour
+6. Select template with Bootstrap
+	-Estimate: 1 hour
+	-Actual: 0.5 hours
+7. Edit template by adding separate pages per model
+	-Estimate: 1 hour
+	-Actual: 0.5 hours
+8. Get domain name from nameCheap.com
+	-Estimate: 1 hour
+	-Actual: 0.5 hours
+9. Set up accounts like GitHub, Stack, Trello, Apiary, and GCP
+	-Estimate: 2 hours
+	-Actual: 1 hour
+10. Plan models and attributes for everything
+	-Estimate: 1 hour
+	-Actual: 3 hours
 
-1. From the homepage, users can be able to easily go through the carousel and achieve a better understanding of what our website is about
-2. From every page, users can easily navigate to and from different models
-3. User can see a mocked out API on Apiary
-4. Users can see all attributes of a particular instance on that instance's page
-5. On an instance's page, users can also see how that particular instance links to another instance of a different model, just by clicking on a link 
-6. Users can see how we got the website's data by clicking on the links that direct to the used RESTful APIs
-7. All instances are clearly labeled for users
-8. All instances have a picture for all users to easily recognize
-9. User can expect a clearly organized and aesthetically pleasing website will all Marvel information
-10. Users can read about each author of the website 
-11. Users can see what each authoer all contribute to
-12. From the homepage, users can instantly and easily understand what our entire website is about
-13. User can see all instances of comics if they go to the comics page
-14. User can see all instances of movies if they go to the movies page
-15. User can see all instances of actors if they go to the actors page
-16. User can see all instances of characters if they go to the characters page
-17. User can see all instances of events if they go to the events page
-18. User can see all instances of tv shows if they go to the tv shows page
-19. Us
-20.
-
-
-1. Users can see which characters are in which movies and which comic series
-2. Users can easily see which actors play which characters and which movies and tv shows they star in
-3. Users can see what comic series each event of the MCU took place in
+PHASE 2 USER STORIES:
+1. From every page, users can easily navigate to and from different models
+	-Estimate: 3 hours
+	-Actual:
+2. User can see a mocked out API on Apiary
+	-Estimate: 1 hour
+	-Actual:
+3. Users can see all attributes of a particular instance on that instance's page
+	-Estimate: 2 hours
+	-Actual:
+4. Upon clicking on a model, Users can expect a grid formation of all documented instances
+	-Estimate: 5 hours
+	-Actual:
+5. Users can see how we got the website's data by clicking on the links that direct to the used RESTful APIs
+	-Estimate: 2 hours
+	-Actual:
+6. User can expect a clearly organized and aesthetically pleasing website with all Marvel information
+	-Estimate: 8 hours
+	-Actual:
+7. Users can read about each author of the website as well as what the author contributed to
+	-Estimate: 1 hour
+	-Actual:
+8. From the homepage, users can instantly and easily understand what our entire website is about
+	-Estimate: 3 hours
+	-Actual:
+9. Users can easily see which actors play which characters and which movies and tv shows they star in
+	-Estimate: 2 hours
+	-Actual:
+10. Users can easily see which comics influenced each TV Show or Movie as well as the relevant characters and actors associated with them
+	-Estimate: 2 hours
+	-Actual:
