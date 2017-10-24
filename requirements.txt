@@ -1,7 +1,8 @@
 Flask
-flask_sqlalchemy
+Flask-SQLAlchemy==2.1
 flask_restless
 flask_restless_swagger_2
 requests-toolbelt
 requests
 pymysql
+tmdbsimple

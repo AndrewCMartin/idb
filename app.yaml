@@ -2,11 +2,17 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+# [START env_variables]
 env_variables:
     CLOUDSQL_CONNECTION_NAME: marvelus-180722:us-central1:marvelus-db-v1
     CLOUDSQL_USER: root
     CLOUDSQL_PASSWORD: password
+# [END env_variables]
 
+# [START beta_settings]
+beta_settings:
+    cloud_sql_instances: marvelus-180722:us-central1:marvelus-db-v1
+# [END beta_settings]
 libraries:
 - name: MySQLdb
   version: "latest"
@@ -20,14 +26,26 @@ handlers:
   static_dir: vendor
 #- url: /css
 #  static_dir: static/css
-- url: /index
+
+- url: /api/.*
+  script: main.app
+- url: /.*
   static_files: build/index.html
   upload: build/index.html
-- url: /.*
-  script: main.app
+
 
 
 - url: /static
   static_dir: build/static
   application_readable: true
 # [END handlers]
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- env
+- node_modules
+- .git

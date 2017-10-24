@@ -6,12 +6,14 @@ import os
 app = Flask(__name__,static_url_path='/api/static', static_path='/api/static')
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@35.184.2.216/marvelusdb'
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 CLOUDSQL_CONNECTION_NAME = str(os.environ.get('CLOUDSQL_CONNECTION_NAME'))
-CLOUDSQL_USER = 'root'
-CLOUDSQL_PASSWORD = 'password'
+CLOUDSQL_USER = str(os.environ.get('CLOUDSQL_USER'))
+CLOUDSQL_PASSWORD = str(os.environ.get('CLOUDSQL_PASSWORD'))
 if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
     cloudsql_unix_socket = os.path.join('/cloudsql', CLOUDSQL_CONNECTION_NAME)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost/marvelusdb' \
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost/marvelusdb' \
         + '?unix_socket=' + cloudsql_unix_socket
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost:3306/marvelusdb'
@@ -127,7 +129,7 @@ class Movie(db.Model):
     # characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
     # actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
 
-    def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating, characters, actors):
+    def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating):
         self.id = id
         self.title = title
         self.overview = overview
