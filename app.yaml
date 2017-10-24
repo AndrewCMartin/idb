@@ -27,11 +27,12 @@ handlers:
 #- url: /css
 #  static_dir: static/css
 
-- url: /api/.*
-  script: main.app
 - url: /.*
-  static_files: build/index.html
-  upload: build/index.html
+  script: main.app
+
+#- url: /.*
+#  static_files: build/index.html
+#  upload: build/index.html
 
 
 

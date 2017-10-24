@@ -1,25 +1,6 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from app import db
 from sqlalchemy.schema import ForeignKey
-import os
 
-app = Flask(__name__,static_url_path='/api/static', static_path='/api/static')
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@35.184.2.216/marvelusdb'
-
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-CLOUDSQL_CONNECTION_NAME = str(os.environ.get('CLOUDSQL_CONNECTION_NAME'))
-CLOUDSQL_USER = str(os.environ.get('CLOUDSQL_USER'))
-CLOUDSQL_PASSWORD = str(os.environ.get('CLOUDSQL_PASSWORD'))
-if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
-    cloudsql_unix_socket = os.path.join('/cloudsql', CLOUDSQL_CONNECTION_NAME)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost/marvelusdb' \
-        + '?unix_socket=' + cloudsql_unix_socket
-else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+CLOUDSQL_USER+':'+CLOUDSQL_PASSWORD+'@'+'localhost:3306/marvelusdb'
-
-db = SQLAlchemy(app)
-#db = SQLAlchemy()
 
 # character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character.id')),
 #                                               db.Column('event_id', db.Integer, ForeignKey('event.id')))
@@ -77,7 +58,7 @@ class Event(db.Model):
     start = db.Column(db.Date)
     thumbnail = db.Column(db.String(80))
     creators = db.Column(db.String(1500))
-    
+
     # characters = db.relationship('Character', secondary='character_event', backref=db.backref('events'), lazy='dynamic')
     # series = db.relationship('ComicSeries', secondary='event_comicseries', backref=db.backref('events'), lazy='dynamic')
 
@@ -102,7 +83,7 @@ class Actor(db.Model):
     # characters = db.relationship('Character', secondary='character_actor', backref=db.backref('actors'), lazy='dynamic')
     # movies = db.relationship('Movie', secondary='actor_movie', backref=db.backref('actors'), lazy='dynamic')
     # tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
- 
+
     def __init__(self, id, name, birthday, bio, image, characters, movies, tvshows):
         self.id = id
         self.name = name
@@ -169,6 +150,7 @@ class TvShow(db.Model):
         # self.characters = characters
         # self.actors = actors
 
+
 class ComicSeries(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
@@ -196,21 +178,3 @@ class ComicSeries(db.Model):
         self.rating = rating
         # self.events = events
         # self.characters = characters
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
