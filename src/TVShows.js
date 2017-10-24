@@ -1,81 +1,46 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// Just trying this out
-function TVGrid(props) {
-  return(
-    <ul className="data-list">
-      {props.tvshows.map(function (tvshow) {
-        return (
-          <li key={tvshow.tvshowID} className='data-item'>
-            <ul className='data-list-items'>
-                <Link to={'/TVShowInstance/' + tvshow.tvshowID}>
-                  <li>
-                    <img
-                      className='img'
-                      src={tvshow.Image}
-                      alt={'Image for ' + tvshow.Title}/>
-                  </li>
-                  <li>{tvshow.Title}</li>
-                </Link>
-            </ul>
-          </li>
-        )
-      })}
-    </ul>
-  )
-}
-TVGrid.propTypes = {
-  tvshows : PropTypes.array.isRequired,
-};
-
-class TVShows extends React.Component {
-
-  constructor(props) {
+export default class TVShows extends React.Component{
+  constructor(props){
     super(props);
-    this.state = {
-      currentFilter: "Show All",
-      tvshows: null,
-    };
+    this.state = {tvshows: []}
+  }
 
-    this.updateFilter = this.updateFilter.bind(this);
-  }
-  componentDidMount() {
-    this.updateFilter(this.state.currentFilter)
-  }
-  updateFilter(filter) {
-    this.setState(function() {
-      return {
-        currentFilter: filter,
-        tvshows: null,
-      }
-    });
-    api.getTVShows("Show All")
-      .then(function(tvshows) {
-        this.setState(function() {
-          return {
-            tvshows: tvshows
-          }
-        })
-      }.bind(this))
+  componentDidMount(){
+    $.getJSON(document.location.origin + '/api/tvshows/' + this.id)
+        .then((data) => {
+          this.setState({loaded: true, tvshow: data});
+        });
   }
 
   render() {
-    const {tvshow} = this.state;
+    const tvshows = this.state.tvshows.map((item,i) => {
+      return (
+        <div key = {item.id} className="item col-xs-6 col-lg-4">
+          <div className="card thumbnail">
+            <div className="card-img center-cropped"
+                 style={{backgroundImage: 'url(' + item.image_url + ')'}}/>
+            <div className="caption">
+                 <h4 className="group inner list-group-item-heading">{item.name}</h4>
+            </div>
+          </div>
+        </div>
+
+        );
+    });
     return (
       <div>
-        {!this.state.tvshows
-          ? <p>LOADING</p>
-          : <AlbumGrid albums={this.state.tvshows} />}
-
+        <div> className="container">
+            <div id="tvshows" className="row list-group">
+                { tvshows }
+            </div>
+        </div>
       </div>
-    )
+      );
+    
   }
 }
-
-export default TVShows
-
-
 // const TVShows = () => (
 //     <div class="container" style="margin-top:100px;">
 //           <div class="row">
