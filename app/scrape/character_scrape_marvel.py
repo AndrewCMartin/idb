@@ -1,7 +1,9 @@
-import hashlib, requests
-import time, json
+import hashlib
+import json
+import requests
+import time
 
-from models import db, Character
+from app.models import db, Character
 
 base_url = 'https://gateway.marvel.com/v1/public/'
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'

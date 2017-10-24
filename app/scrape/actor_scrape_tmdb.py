@@ -1,8 +1,7 @@
-import hashlib, requests
-import time, json
-from models import db, Actor
-
 import tmdbsimple as tmdb
+
+from app.models import db, Actor
+
 tmdb.API_KEY = 'ad40b463da9a53ce7faffa8cc87d4d6a'
 
 def actor_info(actor_id):

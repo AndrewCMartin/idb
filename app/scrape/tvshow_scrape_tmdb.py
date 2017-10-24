@@ -1,13 +1,15 @@
-import hashlib, requests
-import time, json
-from models import db, TvShow
+import json
+import requests
 
 import tmdbsimple as tmdb
-tmdb.API_KEY = 'ad40b463da9a53ce7faffa8cc87d4d6a'
+
+from app.models import db, TvShow
+from app.scrape import tmdb
+
 
 def tvshow_info(tvshow_id):
     tvshow = tmdb.TV(tvshow_id)
-    response = tvshow.info()
+    tvshow.info()
 
     credits = tvshow.credits()
 

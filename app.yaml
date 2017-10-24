@@ -19,11 +19,11 @@ libraries:
 
 # [START handlers]
 handlers:
-- url: /app/static
-  static_dir: static
-  application_readable: true
-- url: /vendor
-  static_dir: vendor
+#- url: /app/static
+#  static_dir: static
+#  application_readable: true
+#- url: /vendor
+#  static_dir: vendor
 #- url: /css
 #  static_dir: static/css
 
@@ -36,9 +36,9 @@ handlers:
 
 
 
-- url: /static
-  static_dir: build/static
-  application_readable: true
+#- url: /static
+#  static_dir: build/static
+#  application_readable: true
 # [END handlers]
 
 skip_files:

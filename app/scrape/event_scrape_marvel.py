@@ -1,7 +1,9 @@
-import hashlib, requests
-import time, json
+import hashlib
+import json
+import requests
+import time
 
-from models import db, Event
+from app.models import db, Event
 
 base_url = 'https://gateway.marvel.com/v1/public/'
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
@@ -24,7 +26,7 @@ def marvel_get(endpoint, params=None):
         data.update(params)
     return requests.get(base_url+endpoint, params=data)
 
-import pprint as pp
+
 for offset in range(0, 2000, 20):
 
     r = marvel_get('series', {'offset':str(offset)})
