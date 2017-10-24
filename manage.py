@@ -6,6 +6,7 @@ from app.scrape.movie_scrape_tmdb import main as get_movies
 
 manager = Manager(app)
 
+
 @manager.command
 def hello():
     "Just say hello"
@@ -22,6 +23,7 @@ def scrape_movies():
 def clear_db():
     "Query TMDB for Marvel movies and populate database"
     clear_database()
+
 
 if __name__ == "__main__":
     manager.run()
