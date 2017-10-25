@@ -77,7 +77,7 @@ class Actor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     birthday = db.Column(db.Date)
-    bio = db.Column(db.String(1500))
+    bio = db.Column(db.String(2000))
     image = db.Column(db.String(80))
 
     # characters = db.relationship('Character', secondary='character_actor', backref=db.backref('actors'), lazy='dynamic')

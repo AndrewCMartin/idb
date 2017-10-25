@@ -76,7 +76,7 @@ for offset in range(0, 2000, 20):
                                 series_name += series['name'].encode('utf-8') + ', \n'
                     #Create the character with the schema from models.py
                     print('we are here')
-                    newEntry = Character(id_num, name, desc, path, story_name, event_name, series_name)
+                    newEntry = Character(id_num, name, desc, path, story_name)
                     db.session.add(newEntry)
                     print('merged')
                     db.session.commit()

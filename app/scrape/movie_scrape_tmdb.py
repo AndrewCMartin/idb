@@ -1,7 +1,7 @@
 from app.models import db, Movie
 from app.scrape import tmdb
 
-def movie_info(movie_id):
+def add_movie_info(movie_id):
     movie = tmdb.Movies(movie_id)
     response = movie.info()
 
@@ -28,7 +28,7 @@ def main():
     movies = marvel.movies()
 
     for movie in movies["results"]:
-        movie_info(movie["id"])
+        add_movie_info(movie["id"])
 
     print('Done')
 

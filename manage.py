@@ -21,7 +21,7 @@ def scrape(to_scrape):
     "Query TMDB for Marvel movies and populate database"
     scrape_scripts = {'movies': get_movies,
                       'tv': get_tv,
-                      'actor': get_actors}
+                      'actors': get_actors}
     if to_scrape == 'all':
         for name in scrape_scripts:
             scrape_scripts[name]()
