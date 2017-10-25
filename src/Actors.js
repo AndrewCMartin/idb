@@ -23,7 +23,7 @@ class Actors extends React.Component{
                 <div className="col-sm-4">
                   <div className="panel panel-info">
                     <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
-                    <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                    <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image} className="img-responsive" styles="width:100% height:100%" alt="Image" /></div>
                   </div>
                 </div>
               )}
