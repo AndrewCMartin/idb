@@ -45,7 +45,7 @@ params = { 'api_key' : 'ad40b463da9a53ce7faffa8cc87d4d6a',
             'page' : 0
          }
 
-for i in range(1, 4):
-    marvel_shows(i)
-
-print('Done')
+def main():
+    for i in range(1, 4):
+        marvel_shows(i)
+    print('Done')

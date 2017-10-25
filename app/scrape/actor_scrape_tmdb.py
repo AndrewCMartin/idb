@@ -9,6 +9,7 @@ def actor_info(actor_id):
     response = person.info()
     m_credits = person.movie_credits()
     tv_credits = person.tv_credits()
+    print(response)
 
     movies = []
     tv_shows = []
@@ -22,31 +23,31 @@ def actor_info(actor_id):
         characters.append(credit["character"])
         tv_shows.append(credit["name"])
 
-    images = person.images()
-
-    image_URL = "https://image.tmdb.org/t/p/w500/" + images["profiles"][0]["file_path"]
 
     #Create the character with the schema from models.py
-    newEntry = Actor(actor_id, person.name, person.birthday, person.biography, image_URL, str(characters), str(movies), str(tv_shows))
+    newEntry = Actor(actor_id, person.name, person.birthday, person.biography, person.profile_path, str(characters), str(movies), str(tv_shows))
     db.session.merge(newEntry)
     db.session.commit()
 
 
+def main():
+    marvel = tmdb.Companies(420)
+    movies = marvel.movies()
+    actor_ids = set()
 
-marvel = tmdb.Companies(420)
-movies = marvel.movies()
-actor_ids = set()
+    for movie_result in movies["results"]:
 
-for movie_result in movies["results"]:
+        movie = tmdb.Movies(movie_result["id"])
+        credits = movie.credits()
 
-    movie = tmdb.Movies(movie_result["id"])
-    credits = movie.credits()
+        for person in credits["cast"]:
+            actor_ids.add(person["id"])
 
-    for person in credits["cast"]:
-        actor_ids.add(person["id"])
+    for actor_id in actor_ids:
+        actor_info(actor_id)
 
-for actor_id in actor_ids: 
-	actor_info(actor_id)
+    print('Done')
 
-print('Done')
+if __name__ == '__main__':
+    main()
 
