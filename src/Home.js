@@ -3,18 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, NavItem, Button, Container, Carousel, Slide, CarouselItem } from 'react-bootstrap'
 
 const Home = () => (
-    // <style>
-    //     .item {
-    //         height: 65vh;
-    //         min-height: 300px;
-    //         background-color: black;
-    //         background: no-repeat center center scroll;
-    //         -webkit-background-size: cover;
-    //         -moz-background-size: cover;
-    //         -o-background-size: cover;
-    //         background-size: cover;
-    //     }
-    // </style>
+
   
     <div>
 
@@ -29,7 +18,7 @@ const Home = () => (
         </ol>
         <div className="carousel-inner" role="listbox">
             {/* <!-- Slide One - Set the background image for this slide in the line below --> */}
-            <div className="item active" >
+            <div className="item active"styles=" height: 65vh; min-height: 300px; background-color: black; background: no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
                 <img src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/2017/06/spider-man_homecoming_reboot_box_office.jpg" alt="Homecoming" />
                 <div className="carousel-caption">
                     <h3><Link to="google.com">Spider-Man: Homecoming</Link></h3>
@@ -37,7 +26,7 @@ const Home = () => (
                 </div>
             </div>
             {/* Slide Two */}
-            <div className="item" >
+            <div className="item"styles=" height: 65vh; min-height: 300px; background-color: black; background: no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
                 <img src="http://static.comicvine.com/uploads/original/9/99801/2244678-23308595.png" alt="The Avengers" />
                 <div className="carousel-caption">
                     <h3><Link to="google.com">The Avengers</Link></h3>
@@ -45,7 +34,7 @@ const Home = () => (
                 </div>
             </div>
             {/* Slide Three */}
-            <div className="item" >
+            <div className="item"  styles=" height: 65vh; min-height: 300px; background-color: black; background: no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
                 <img src="https://s3.amazonaws.com/libapps/accounts/36130/images/marvel.jpeg" alt="MARVEL Comics" />
                 <div className="carousel-caption">
                     <h3><Link to="google.com">MARVEL Comics</Link></h3>

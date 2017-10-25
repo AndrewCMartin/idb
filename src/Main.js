@@ -24,7 +24,7 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
-      {/* <Route path='/about' component={About}/> */}
+      <Route path='/about' component={About}/>
 
       <Route path='/characters' component={Characters}/>
       <Route path='/character/:charID' component={CharacterInstance}/>
@@ -35,8 +35,8 @@ const Main = () => (
       <Route path='/tvshows' component={TVShows}/>
       <Route path='/tvshow/:tvshowID' component={TVShowInstance}/>
 
-      {/* <Route path='/comicseries' component={ComicSeries}/>
-      <Route path='/comicserie/:comicID' component={ComicSeriesInstance}/> */}
+      <Route path='/comicseries' component={ComicSeries}/>
+      <Route path='/comicserie/:comicID' component={ComicSeriesInstance}/>
 
       <Route path='/actors' component={Actors}/>
       <Route path='/actor/:actorID' component={ActorInstance}/>
