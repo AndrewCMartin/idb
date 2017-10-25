@@ -7,12 +7,12 @@ export default class TVShows extends React.Component{
     this.state = {tvshows: []}
   }
 
-  componentDidMount(){
-    $.getJSON(document.location.origin + '/api/tvshows/' + this.id)
-        .then((data) => {
-          this.setState({loaded: true, tvshow: data});
-        });
-  }
+  // componentDidMount(){
+  //   $.getJSON(document.location.origin + '/api/tvshows/' + this.id)
+  //       .then((data) => {
+  //         this.setState({loaded: true, tvshow: data});
+  //       });
+  // }
 
   render() {
     const tvshows = this.state.tvshows.map((item,i) => {

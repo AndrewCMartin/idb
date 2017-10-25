@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 const TVShowInstance = () => (
-
+    <div></div>
 )
 
 export default TVShowInstance

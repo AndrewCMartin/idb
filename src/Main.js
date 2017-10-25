@@ -1,8 +1,19 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
-import Roster from './Roster'
-import Schedule from './Schedule'
+import About from './About'
+import Characters from './Characters'
+import CharacterInstance from './CharacterInstance'
+import Movies from './Movies'
+import MovieInstance from './MovieInstance'
+import TVShows from './TVShows'
+import TVShowInstance from './TVShowInstance'
+import ComicSeries from './ComicSeries'
+import ComicSeriesInstance from './ComicSeriesInstance'
+import Actors from './Actors'
+import ActorInstance from './ActorInstance'
+import Events from './Events'
+import EventInstance from './EventInstance'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -13,7 +24,7 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/about' component={About}/>
+      {/* <Route path='/about' component={About}/> */}
 
       <Route path='/characters' component={Characters}/>
       <Route path='/character/:charID' component={CharacterInstance}/>
@@ -24,8 +35,8 @@ const Main = () => (
       <Route path='/tvshows' component={TVShows}/>
       <Route path='/tvshow/:tvshowID' component={TVShowInstance}/>
 
-      <Route path='/comicseries' component={ComicSeries}/>
-      <Route path='/comicserie/:comicID' component={ComicSeriesInstance}/>
+      {/* <Route path='/comicseries' component={ComicSeries}/>
+      <Route path='/comicserie/:comicID' component={ComicSeriesInstance}/> */}
 
       <Route path='/actors' component={Actors}/>
       <Route path='/actor/:actorID' component={ActorInstance}/>
