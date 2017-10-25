@@ -1,27 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+var axios = require('axios');
 
-var charsInGrid = [];
-for (var i = 0; i < numChars; i++) {
-    charsInGrid.push(
-        <div class="col-sm-4">
-            <div class="panel panel-info">
-                <div class="panel-heading"><Link to="{characters[i].getLink()}">{characters[i].getName()}</Link></div>
-                <div class="panel-body"><img src="{characters[i].getImageLink()}" class="img-responsive" style="width:100%" alt="Image" /></div>
-                <div class="panel-footer">{characters[i].getName()}</div>
+class Characters extends React.Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          characters: []
+        };
+    }
+    
+    componentDidMount() {
+        return axios.get('http://marvelus.me/api/character?q=%7B%22limit%22:9%7D').then(res=> {
+            const characters = res.data.objects.map(character => character)
+            this.setState({characters});
+        });
+    }
+
+    render() {
+        return (
+            <div className="container" styles="margin-top:100px;">
+            <div className="row">
+              {this.state.characters.map(character =>
+                <div className="col-sm-4">
+                  <div className="panel panel-info">
+                    <div className="panel-heading"><Link to={"/character/" + character.id}>{character.name}</Link></div>
+                    <div className="panel-body"><img src={character.thumbnail} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                    <div className="panel-footer">{character.name}'s stories: {character.stories}</div>
+                  </div>
+                </div>
+              )}
             </div>
-        </div>
-    );
+          </div>
+        );
+    }
 }
-
-
-const Characters = () => (
-    <div class="container" style="margin-top:100px;">
-        <div class="row">
-            {charsInGrid}    
-        </div>
-    </div>
-    <br />
-)
 
 export default Characters

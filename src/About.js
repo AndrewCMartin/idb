@@ -1,8 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
-import Roster from './Roster'
-import Schedule from './Schedule'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -14,7 +12,7 @@ const About = () => (
         <h1 align="center" style= "font-size: 45px"><b>Marvelus - Canvas Group 15</b></h1>
 
         <div class="panel-body">
-            <!-- Description superheros, movies, tv shows, comics, creators, events-->
+            {/* <!-- Description superheros, movies, tv shows, comics, creators, events--> */}
             <p align="center" style="font-size: 25px ; color: darkgray">Marvelus is for users who want to browse superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </p>
 
             <h3 align="center" style="color:black">Group Members</h3>
@@ -24,7 +22,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-info">
                     <div class="panel-heading"> Andrew Martin</div>
-                    <div class="panel-body"><img src="{{url_for('static', filename='andrew.jpg')}}" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="{{url_for('static', filename='andrew.jpg')}}" class="img-responsive" style="width:100%" alt="Image" /></div>
                     <div class="panel-footer">
                         Andrew Martin
 
@@ -39,7 +37,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-danger">
                     <div class="panel-heading">Bhavish Yalamanchi</div>
-                    <div class="panel-body"><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j65v8kewrx56xk/ijpb8t3798u7b/j7ppgtaf2ybt/cs373.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="https://d1b10bmlvqabco.cloudfront.net/attach/j65v8kewrx56xk/ijpb8t3798u7b/j7ppgtaf2ybt/cs373.jpeg" class="img-responsive" style="width:100%" alt="Image" /></div>
                     <div class="panel-footer">
                         Bhavish Yalamanchi
 
@@ -56,7 +54,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-success">
                     <div class="panel-heading">Hannah Anees</div>
-                    <div class="panel-body"><img src="https://hannahanees.files.wordpress.com/2017/09/blog-headshot.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="https://hannahanees.files.wordpress.com/2017/09/blog-headshot.jpg" class="img-responsive" style="width:100%" alt="Image" /></div>
                     <div class="panel-footer">
                         Hannah Anees
 
@@ -75,7 +73,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-info">
                     <div class="panel-heading"> Helen Salgi</div>
-                    <div class="panel-body"><img src="https://github.com/hsalgi100/hsalgi100.github.io/blob/master/profpic.jpg?raw=true" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="https://github.com/hsalgi100/hsalgi100.github.io/blob/master/profpic.jpg?raw=true" class="img-responsive" style="width:100%" alt="Image" /></div>
                     <div class="panel-footer">
                         Helen Salgi
 
@@ -87,7 +85,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-danger">
                     <div class="panel-heading">Sunaina Krishnamoorthy</div>
-                    <div class="panel-body"><img src="/static/sunaina.jpg"></div>
+                    <div class="panel-body"><img src="/static/sunaina.jpg" /></div>
                     <div class="panel-footer">
                         Sunaina Krishnamoorthy
 
@@ -102,7 +100,7 @@ const About = () => (
                 <div class="col-sm-4">
                   <div class="panel panel-success">
                     <div class="panel-heading">Tesia Wu</div>
-                    <div class="panel-body"><img src="https://tesiawusite.files.wordpress.com/2017/09/10989147_1088983151127213_5678027862076400869_n.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="https://tesiawusite.files.wordpress.com/2017/09/10989147_1088983151127213_5678027862076400869_n.jpg" class="img-responsive" style="width:100%" alt="Image" /></div>
                     <div class="panel-footer">
                         Tesia Wu
 
@@ -115,28 +113,30 @@ const About = () => (
                   </div>
                 </div>
               </div>
-            </div><br>
+            </div><br />
 
             <h3 align="center" style="font-size: 30px"><b>Statistics</b></h3>
+            <ul>
                 <li align="center" style= "color: gray"><b>Total No. of Commits: </b> </li>
                 <li align="center" style= "color: gray"><b>Total No. of Issues: </b> </li>
                 <li align="center" style= "color: gray"><b>Total No. of Unit Tests: </b> 0</li>
                 <li align="center" style= "color: gray"><b><a href="http://docs.marvelus.apiary.io/#">Apiary API</a></b> </li>
                 <li align="center" style= "color: gray"><b><a href="https://github.com/AndrewCMartin/marvelus">GITHUB REPO</a></b> </li>
                 <li align="center" style= "color: gray"><b><a href="https://trello.com/b/qLTaMYvu/marvelus">TRELLO</a></b> </li>
-
+            </ul>
             <h3 align="center"><b>Data</b></h3>
-                <!-- <li align="center" style= "color: gray"><b>Data Sources: </b> -->
+                {/* <!-- <li align="center" style= "color: gray"><b>Data Sources: </b> --> */}
 
-                        <li align="center"><Link to='https://developer.marvel.com/docs'>https://developer.marvel.com/docs</Link></li>
-                        <li align="center"><Link to='https://comicvine.gamespot.com/api/documentation'>https://comicvine.gamespot.com/api/documentation</Link></li>
-                        <li align="center"><Link to='https://www.themoviedb.org/documentation/api'>The Movie Database</Link>
+                        <li align="center"><a href="https://developer.marvel.com/docs">https://developer.marvel.com/docs</a></li>
+                        <li align="center"><a href="https://comicvine.gamespot.com/api/documentation">https://comicvine.gamespot.com/api/documentation</a></li>
+                        <li align="center"><a href="https://www.themoviedb.org/documentation/api">The Movie Database</a>
 
             <h3 align="center"><b>Tools used</b></h3>
 
             <a align="center" href="https://utexas.box.com/s/zimf1bvhu2r2dhw598shugcm4b7jr2do">Technical report</a>
         </div>
     </div>
+
 
 )
 

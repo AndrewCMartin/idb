@@ -1,38 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { axios } from 'axios'
+var axios = require('axios');
 
-function getMovies(){
-  return axios.get('http://marvelus.me/api/movie?q=%7B%7D');
-}
+class Movies extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      movies: []
+    };
+  }
 
-var movies = getMovies();
-movies.then(function(data) {
-
-});
-
-var moviesInGrid = [];
-
-for (var i = 0; i < movies.objects.length; i++) {
-    moviesInGrid.push(
-        <div class="col-sm-4">
-            <div class="panel panel-info">
-                <div class="panel-heading"><Link to="{movies[i].getLink()}">{movies.objects[i].getName()}</Link></div>
-                <div class="panel-body"><img src="{movies.objects[i].getImageLink()}" class="img-responsive" style="width:100%" alt="Image" /></div>
-                <div class="panel-footer">{movies.objects[i].getName()}</div>
+  componentDidMount() {
+    return axios.get('http://marvelus.me/api/movie?q=%7B"limit":9%7D').then(res=> {
+      const movies = res.data.objects.map(movie => movie)
+      this.setState({movies});
+    });
+  }
+  
+  render() {
+    return (
+      <div className="container" styles="margin-top:100px;">
+        <div className="row">
+          {this.state.movies.map(movie =>
+            <div className="col-sm-4">
+              <div className="panel panel-info">
+                <div className="panel-heading"><Link to={"/movie/" + movie.id}>{movie.title}</Link></div>
+                <div className="panel-body"><img src={"http://image.tmdb.org/t/p/w185/" + movie.poster_path} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                <div className="panel-footer">{movie.overview}</div>
+              </div>
             </div>
+          )}
         </div>
+      </div>
     );
-}
+  }
 
-const Movies = () => (
-  <div class="container" style="margin-top:100px;">
-    <div class="row">
-      {charsInGrid}    
-    </div>
-  </div>
-  <br />
-)
+}
 
 export default Movies
