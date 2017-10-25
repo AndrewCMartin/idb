@@ -1,22 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default class TVShows extends React.Component{
+export default class Actors extends React.Component{
   constructor(props){
     super(props);
-    this.state = {tvshows: []}
+    this.state = {actors: []}
   }
 
   componentDidMount(){
-    $.getJSON(document.location.origin + '/api/tvshows/' + this.id)
+    $.getJSON(document.location.origin + '/api/actor/' + this.id)
         .then((data) => {
-          this.setState({loaded: true, tvshow: data});
-        });
+          this.setState({loaded: true, actor:data}):
+        }):
   }
 
   render() {
-    const tvshows = this.state.tvshows.map((item,i) => {
-      return (
+    const actors = this.state.actors.map((item,i) => {
+      return(
         <div key = {item.id} className="item col-xs-6 col-lg-4">
           <div className="card thumbnail">
             <div className="card-img center-cropped"
@@ -29,13 +29,14 @@ export default class TVShows extends React.Component{
 
         );
     });
-    return (
+    return(
       <div>
         <div className="container">
-            <div id="tvshows" className="row list-group">
-                { tvshows }
+            <div id="actors" className="row list-group">
+              { actors }
             </div>
         </div>
+
       </div>
       );
     
