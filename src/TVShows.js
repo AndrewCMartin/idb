@@ -24,6 +24,8 @@ class TVShows extends React.Component{
                   <div className="panel panel-info">
                     <div className="panel-heading"><Link to={"/tvshow/" + tv_show.id}>{tv_show.title}</Link></div>
                     <div className="panel-body"><img src={"http://image.tmdb.org/t/p/w600/" + tv_show.poster_path} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                    <div className="panel-heading"><Link to={"/tv_show/" + tv_show.id}>{tv_show.name}</Link></div>
+                    <div className="panel-body"><img src={"http://image.tmdb.org/t/p/w185/" + tv_show.poster_path} className="img-responsive" styles="width:100%" alt="Image" /></div>
                   </div>
                 </div>
               )}
