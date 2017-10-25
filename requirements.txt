@@ -3,6 +3,7 @@ Flask-SQLAlchemy==2.1
 flask_restless
 flask_restless_swagger_2
 flask_script
+flask_cors
 requests-toolbelt
 requests
 pymysql
