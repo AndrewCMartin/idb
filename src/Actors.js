@@ -1,38 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+var axios = require('axios');
 
-const Actors = () => (
-    <div class="container" style="margin-top:100px;">
-    <div class="row">
-    <div class="col-sm-4">
-        <div class="panel panel-info">
-        <div class="panel-heading"><a href="{{url_for('frontend.character', name='spiderman')}}">Spider-Man</a></div>
-        {/* <div class="panel-body"><img src="http://cdn3-www.superherohype.com/assets/uploads/gallery/spider-man-homecoming/c7thfxlwsaapuf.jpg" class="img-responsive" style="width:100%" alt="Image"></div> */}
-        <div class="panel-footer">
-            Spider-Man
-        </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="panel panel-danger">
-        <div class="panel-heading"><a href="{{url_for('frontend.character', name='ironman')}}">Iron Man</a></div>
-        {/* <div class="panel-body"><img src="https://i.pinimg.com/736x/2c/bb/04/2cbb04e7ef9266e1e57a9b0e75bc555f--iron-man-avengers-marvel-iron-man.jpg" class="img-responsive" style="width:100%" alt="Image"></div> */}
-        <div class="panel-footer">
-            Iron Man
+class Actors extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {actors: []}
+  }
+
+  componentDidMount(){
+    return axios.get('http://marvelus.me/api/actor?q=%7B%22limit%22:9%7D').then(res=> {
+      const actors = res.data.objects.map(actor => actor)
+      this.setState({actors});
+    });
+  }
+
+  render() {
+    return(
+      <div className="container" styles="margin-top:100px;">
+          <div className="row">
+              {this.state.actors.map(actor =>
+                <div className="col-sm-4">
+                  <div className="panel panel-info">
+                    <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
+                    <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                  </div>
+                </div>
+              )}
             </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="panel panel-success">
-        <div class="panel-heading"><a href="{{url_for('frontend.character', name='captainamerica')}}">Captain America</a></div>
-        {/* <div class="panel-body"><img src="http://cdn.playbuzz.com/cdn/8ace370e-0453-4890-8fea-995f32ac9530/5efa0fd9-4850-47d4-814b-af367ab3f973.jpg" class="img-responsive" style="width:100%" alt="Image"></div> */}
-        <div class="panel-footer">
-            Captain America
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-)
+          </div>
+        );
+  }
+}
 
 export default Actors

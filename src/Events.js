@@ -1,38 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+var axios = require('axios');
 
-const Events = () => (
-    <div class="container" style="margin-top:100px;">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-info">
-                <div class="panel-heading"><a href="{{url_for('frontend.event', name='actsOfVengeance')}}">Acts of Vengeance!</a></div>
-                {/* <div class="panel-body"><img src="https://i.annihil.us/u/prod/marvel/i/mg/3/b0/588b583ed0523/detail.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div> */}
-                <div class="panel-footer">
-                  Acts of Vengeance!
+class Events extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {events: []}
+  }
+
+  componentDidMount(){
+    return axios.get('http://marvelus.me/api/event?q=%7B%22limit%22:9%7D').then(res=> {
+      const events = res.data.objects.map(event => event)
+      this.setState({events});
+    });
+  }
+
+  render() {
+    return(
+      <div className="container" styles="margin-top:100px;">
+          <div className="row">
+              {this.state.events.map(event =>
+                <div className="col-sm-4">
+                  <div className="panel panel-info">
+                    <div className="panel-heading"><Link to={"/event/" + event.id}>{event.title}</Link></div>
+                    <div className="panel-body"><img src={event.thumbnail} className="img-responsive" styles="width:100%" alt="Image" /></div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-danger">
-                <div class="panel-heading"><a href="{{url_for('frontend.event', name='ageOfUltron')}}">Age of Ultron!</a></div>
-                {/* <div class="panel-body"><img src="https://i.annihil.us/u/prod/marvel/i/mg/c/d0/51ed8cf71fd82/detail.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div> */}
-                <div class="panel-footer">
-                    Age of Ultron!
-                  </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-success">
-                <div class="panel-heading"><a href="{{url_for('frontend.event', name='ageOfApocolypse')}}">Age of Apocolypse</a></div>
-                {/* <div class="panel-body"><img src="https://i.annihil.us/u/prod/marvel/i/mg/7/00/599b1cf83439a/detail.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div> */}
-                <div class="panel-footer">
-                    Age of Apocolypse
-                  </div>
-              </div>
+              )}
             </div>
           </div>
-        </div>
-)
+        );
+  }
+}
 
 export default Events

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Roster from './Roster'
 import Schedule from './Schedule'
 import Home from './Home'
@@ -18,9 +18,9 @@ import ActorInstance from './ActorInstance'
 import Events from './Events'
 import EventInstance from './EventInstance'
 
-const wrap = (name, component) => (
-  <App pageName={name}>{component}</App>
-);
+// const wrap = (name, component) => (
+//   <App pageName={name}>{component}</App>
+// );
 
 const route = (path, name, component, id=false) => {
     const renderFN = ({match}) => {
