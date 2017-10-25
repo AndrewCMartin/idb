@@ -1,12 +1,12 @@
 import os
 
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_restless_swagger import SwagAPIManager as APIManager
 from flask_sqlalchemy import SQLAlchemy
 
 from config import ProdConfig, LocalDevConfig
 
-app = Flask(__name__, static_url_path="/build", static_folder="../build")
+app = Flask(__name__, static_url_path="", static_folder="../build")
 
 
 def add_cors_header(response):
@@ -15,11 +15,11 @@ def add_cors_header(response):
     response.headers['Access-Control-Allow-Methods'] = 'HEAD, GET, POST, PATCH, PUT, OPTIONS, DELETE'
     response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
     response.headers['Access-Control-Allow-Credentials'] = 'true'
-    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    # response.headers['Content-Type'] = 'application/json; charset=utf-8'
     return response
 
-app.after_request(add_cors_header)
 
+app.after_request(add_cors_header)
 
 if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
     app.config.from_object(ProdConfig)
@@ -29,7 +29,6 @@ else:
 db = SQLAlchemy(app)
 
 from models import Actor, Character, ComicSeries, Event, Movie, TvShow
-
 
 # Create the Flask-Restless API manager.
 manager = APIManager(app, flask_sqlalchemy_db=db)
@@ -50,9 +49,14 @@ manager.create_api(TvShow, **kargs)
 db.create_all()
 
 
-
-
+# Serve React App
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
-def index(path):
-    return app.send_static_file('index.html')
+def serve(path):
+    if path == "":
+        return send_from_directory('../build', 'index.html')
+    else:
+        if os.path.exists(os.path.join('../build/', path)):
+            return send_from_directory('../build', path)
+        else:
+            return send_from_directory('../build', 'index.html')
