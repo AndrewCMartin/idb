@@ -31,7 +31,7 @@ export default class TVShows extends React.Component{
     });
     return (
       <div>
-        <div> className="container">
+        <div className="container">
             <div id="tvshows" className="row list-group">
                 { tvshows }
             </div>
