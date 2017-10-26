@@ -109,8 +109,9 @@ const About = () => (
             <h3 align="center"><b>Data</b></h3>
                 {/* <!-- <li align="center" styles= "color: gray"><b>Data Sources: </b> --> */}
 
-                        <li align="center">https://developer.marvel.com/docs</li>
-                        <li align="center">https://comicvine.gamespot.com/api/documentation</li>
+                        <li align="center"> <a href="https://developer.marvel.com/docs"><b>Marvel API</b></a><br> We did not use any specific libraries to scrape the Marvel API, just the python requests module.
+</li>
+                        <li align="center"><a href="https://developers.themoviedb.org/3/"><b>The Movie Database</b></a><br>We used the tmdbsimple library to scrape data from the tmdb API</li>
                         <li align="center">The Movie Database</li>
 
             <h3 align="center"><b>Tools used</b></h3>
