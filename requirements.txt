@@ -8,3 +8,6 @@ requests-toolbelt
 requests
 pymysql
 tmdbsimple
+pytest
+flask_testing
+pytest-flask

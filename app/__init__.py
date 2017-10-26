@@ -25,7 +25,8 @@ manager = APIManager(app, flask_sqlalchemy_db=db)
 
 # Flask-Restless config
 kargs = {'methods': frozenset(['GET', 'POST', 'PATCH']),
-         'allow_functions': True}
+         'allow_functions': True,
+         'results_per_page': 50}
 
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
