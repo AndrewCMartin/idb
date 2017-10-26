@@ -27,15 +27,14 @@ class MovieInstance extends React.Component {
                         <div class="panel-body">
                             <div class="panel-body"><img src={"http://image.tmdb.org/t/p/w500/" + this.state.movie.poster_path} class="img-responsive" class="img-responsive" styles="width:100%" alt="Image" />
                                 <h3>Information</h3>
-                                <ul>
+                <ul>
+		                    <li><b>Title:</b> {this.state.movie.title}</li>
                                     <li><b>Release Date:</b> {this.state.movie.release_date}</li>
                                     <li><b>Overview: </b>{this.state.movie.overview}</li>
-                                    <li><b>Director:</b> {this.state.movie.title}</li>
-                                    <li><b>Writers:</b> 
-                                        <ul>
-                                            <li>{this.state.movie.title}</li>
-                                        </ul>
-                                    </li>
+		<li><b>Adult Movie</b>{this.state.movie.adult}</li>
+		<li><b>Original Language</b>{this.state.movie.lang}</li>
+                                    <li><b>Runtime:</b> {this.state.movie.runtime} minutes</li>
+                                    <li><b>Rating:</b> {this.state.movie.rating}/10</li>
                                     <li><b>Main Characters:</b>
                                         <ul>
                                             <li>{this.state.movie.title}</li>
@@ -46,8 +45,6 @@ class MovieInstance extends React.Component {
                                             <li>{this.state.movie.title}</li>
                                         </ul>
                                     </li>
-                                    <li><b>Runtime:</b> {this.state.movie.runtime} minutes</li>
-                                    <li><b>Rating:</b> {this.state.movie.title}/10</li>
                                 </ul>  
                             </div>
                         </div>
