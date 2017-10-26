@@ -5,7 +5,7 @@ import { Navbar, NavItem, Button, Container } from 'react-bootstrap'
 // The Header creates links that can be used to navigate
 // between routes.
 const Header = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top=true">
       <div className="container">
         <a className="navbar-brand" href="#">MarvelUs</a>
         {/*figure out this button stuff*/}
