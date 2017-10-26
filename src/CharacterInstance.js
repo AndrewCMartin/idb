@@ -7,7 +7,8 @@ class CharacterInstance extends React.Component {
         super(props);
     
         this.state = {
-          character: {}
+            character: {},
+	    actors: {}
         };
     }
 

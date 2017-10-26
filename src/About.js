@@ -33,7 +33,7 @@ const About = () => (
                         <li><b>Responsibilities: </b>Database and back end</li>
                         <li><b>No. of Commits: 48</b></li>
                         <li><b>No. of Issues: </b>10 </li>
-                        <li><b>No. of Unit Tests: </b> 0</li>
+                        <li><b>No. of Unit Tests: </b> 2</li>
 
                     </div>
 
@@ -52,7 +52,7 @@ const About = () => (
                         <li><b>No. of Commits: 37</b></li>
                         <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Issues: </b></li>
-                        <li><b>No. of Unit Tests: </b> 0</li>
+                        <li><b>No. of Unit Tests: </b> 2</li>
 
                     </div>
 
@@ -71,7 +71,7 @@ const About = () => (
                         <li><b>Responsibilities: </b><a>Front end</a></li>
                         <li><b>No. of Commits: 39</b></li>
                         <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Unit Tests: </b>5</li>
+                        <li><b>No. of Unit Tests: </b>2</li>
 
                     </div>
 
@@ -107,7 +107,7 @@ const About = () => (
                         <li><b>Responsibilities: </b>Database and back end</li>
                         <li><b>No. of Commits: 30</b></li>
                         <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Unit Tests: </b> 0</li>
+                        <li><b>No. of Unit Tests: </b> 2</li>
 
                     </div>
                     <div className="col-sm-4">
@@ -124,7 +124,7 @@ const About = () => (
                         <li><b>Responsibilities: </b>Database and back end</li>
                         <li><b>No. of Commits: 41</b></li>
                         <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Unit Tests: </b>5</li>
+                        <li><b>No. of Unit Tests: </b>2</li>
                     </div>
                 </div>
             </div>
