@@ -18,8 +18,9 @@ class MovieInstance extends React.Component {
             this.setState({movie});
         });
     }
-
+    
     render() {
+	const actors = this.state.movie.actors || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
@@ -30,19 +31,23 @@ class MovieInstance extends React.Component {
                 <ul>
 		                    <li><b>Title:</b> {this.state.movie.title}</li>
                                     <li><b>Release Date:</b> {this.state.movie.release_date}</li>
-                                    <li><b>Overview: </b>{this.state.movie.overview}</li>
-		<li><b>Adult Movie</b>{this.state.movie.adult}</li>
-		<li><b>Original Language</b>{this.state.movie.lang}</li>
+                                    <li><b>Overview: </b> {this.state.movie.overview}</li>
+		<li><b>Certificate: </b> {this.state.movie.adult}</li>
+		<li><b>Original Language: </b> {this.state.movie.lang}</li>
                                     <li><b>Runtime:</b> {this.state.movie.runtime} minutes</li>
                                     <li><b>Rating:</b> {this.state.movie.rating}/10</li>
                                     <li><b>Main Characters:</b>
                                         <ul>
-                                            <li>{this.state.movie.title}</li>
+                <li>{this.state.movie.title}</li>
                                         </ul>
                                     </li>
                                     <li><b>Cast:</b> 
-                                        <ul>
-                                            <li>{this.state.movie.title}</li>
+                <ul>
+                {actors.map(function(actor) {
+
+
+		    return (<li key={actor.name}>{actor.name}</li>)
+		})}
                                         </ul>
                                     </li>
                                 </ul>  
