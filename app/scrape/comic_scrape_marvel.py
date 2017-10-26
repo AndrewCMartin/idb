@@ -1,9 +1,11 @@
 import hashlib
 import json
-import requests
 import time
 
-from app.models import db, ComicSeries
+import requests
+from sqlalchemy.exc import IntegrityError
+
+from app.models import db, ComicSeries, Character, Event
 
 base_url = 'https://gateway.marvel.com/v1/public/'
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
@@ -37,7 +39,8 @@ for offset in range(0, 2000, 20):
         if comic_keys == 'results':
             #pp.pprint(comic_data)
             for comic in comic_data:
-
+                character_entries = []
+                event_entries = []
                 id_name = 0
                 title = ""
                 path = ""
@@ -46,7 +49,7 @@ for offset in range(0, 2000, 20):
                 year = ""
                 creators = ""
                 events = ""
-
+                end_year = ""
                 if comic['id'] != "":
                     for comic_attr_keys, comic_attr in comic.items():
                         if comic_attr_keys == 'id':
@@ -68,9 +71,15 @@ for offset in range(0, 2000, 20):
                         elif comic_attr_keys == 'characters':
                             items = comic_attr['items']
                             for chars in items:
+                                char_id = int(chars['resourceURI'].split('/')[-1])
+                                c = Character.query.filter_by(id=char_id).first()
+                                if c:
+                                    character_entries.append(c)
                                 characters += (chars['name'].encode('utf-8')) + ", "
                         elif comic_attr_keys == 'startYear':
                             year = str(comic_attr)
+                        elif comic_attr_keys == 'endYear':
+                            end_year = str(comic_attr)
                         elif comic_attr_keys == 'creators':
                             items = comic_attr['items']
                             for create in items:
@@ -79,8 +88,21 @@ for offset in range(0, 2000, 20):
                             # Events have their own dict to go through
                             items = comic_attr['items']
                             for event in items:
+                                event_id = int(event['resourceURI'].split('/')[-1])
+                                c = Event.query.filter_by(id=event_id).first()
+                                if c:
+                                    event_entries.append(c)
                                 events += (event['name'].encode('utf-8')) + ", "
                     #Create the event with the schema from models.py
-                    newEntry = ComicSeries(id_name, title, descr, path, year, creators, events, characters)
-                    db.session.merge(newEntry)
-                    db.session.commit()
+                    newEntry = ComicSeries(id_name, title, descr, path, year, end_year)
+                    for c in character_entries:
+                        newEntry.characters.append(c)
+                    for e in event_entries:
+                        newEntry.events.append(e)
+                    try:
+                        db.session.merge(newEntry)
+                    except IntegrityError:
+                        print("FAIL")
+                        db.session.rollback()
+                    finally:
+                        db.session.commit()

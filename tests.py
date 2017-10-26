@@ -2,7 +2,7 @@ import os
 import shutil
 import sys
 
-import
+import pytest
 
 from config import BASE_DIR
 
