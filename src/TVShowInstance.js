@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 var axios = require('axios');
 
+var imageStyles = {
+    width: '500px',
+    height: '500px'
+}
+
 class TVShowInstance extends React.Component {
     constructor(props) {
         super(props);
@@ -25,7 +30,7 @@ class TVShowInstance extends React.Component {
                     <div class="panel panel-default" >
                         <div class="panel-heading"> <h1>{this.state.tv_show.name}</h1> </div>
                         <div class="panel-body">
-                            <div class="panel-body"><img src={"https://image.tmdb.org/t/p/w600/" + this.state.tv_show.poster_path} class="img-responsive" class="img-responsive" styles="width:100%" alt="Image" />
+                <div class="panel-body"><img src={"https://image.tmdb.org/t/p/w500/" + this.state.tv_show.poster_path} class="img-responsive" class="img-responsive img-center" styles='width:100%' alt="Image" />
                                 <h3>Information</h3>
                                 <ul>
                                     <li><b>Name:</b> {this.state.tv_show.name}</li>
