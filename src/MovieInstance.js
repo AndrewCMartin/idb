@@ -29,6 +29,7 @@ class MovieInstance extends React.Component {
                                 <h3>Information</h3>
                                 <ul>
                                     <li><b>Release Date:</b> {this.state.movie.release_date}</li>
+                                    <li><b>Overview: </b>{this.state.movie.overview}</li>
                                     <li><b>Director:</b> {this.state.movie.title}</li>
                                     <li><b>Writers:</b> 
                                         <ul>
