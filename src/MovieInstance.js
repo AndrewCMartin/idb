@@ -21,6 +21,7 @@ class MovieInstance extends React.Component {
     
     render() {
 	const actors = this.state.movie.actors || [];
+	const characters = this.state.movie.characters || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
@@ -37,7 +38,12 @@ class MovieInstance extends React.Component {
                                     <li><b>Runtime:</b> {this.state.movie.runtime} minutes</li>
                                     <li><b>Rating:</b> {this.state.movie.rating}/10</li>
                                     <li><b>Main Characters:</b>
-                                        <ul>
+                <ul>
+
+	        
+
+
+	    
                 <li>{this.state.movie.title}</li>
                                         </ul>
                                     </li>
@@ -45,10 +51,7 @@ class MovieInstance extends React.Component {
                 <ul>
                 {actors.map(function(actor) {
 
-                    const actor_id = actor["id"];
-		    JSON.stringify(actor_id);
-		    const actor_url = "http://marvelus.me/actor/" + actor_id;
-		    return (<li key={actor.name}><a href={actor_url}>{actor.name}</a></li>)
+		    return (<li key={actor.name}><Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>)
 		})}
                                         </ul>
                                     </li>
