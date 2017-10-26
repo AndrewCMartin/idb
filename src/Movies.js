@@ -18,7 +18,7 @@ class Movies extends React.Component {
   }
 
   componentDidMount() {
-    return axios.get('http://marvelus.me/api/movie?q=%7B"limit":9%7D').then(res=> {
+    return axios.get('http://marvelus.me/api/movie?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
       const movies = res.data.objects.map(movie => movie)
       this.setState({movies});
     });

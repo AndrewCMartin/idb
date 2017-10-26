@@ -31,7 +31,7 @@ class ActorInstance extends React.Component {
                                     <li><b>Name:</b> {this.state.actor.name}</li>
                                     <li><b>Bio:</b> {this.state.actor.bio}</li>
                                     <li><b>Birthday:</b> {this.state.actor.birthday}</li>
-                                    <li><b>Character: </b> {this.state.actor.name}</li>
+                                    <li><b>Character(s): </b> {this.state.actor.name}</li>
                                     <li>
                                         <b>Relevant Movies/TV Shows:</b>
                                         <ul> 

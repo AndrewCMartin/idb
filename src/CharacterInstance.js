@@ -29,21 +29,16 @@ class CharacterInstance extends React.Component {
                                 <h3>Information</h3>
                                 <ul>
                                     <li><b>Name:</b> {this.state.character.name}</li>
-                                    <li><b>Power:</b> {this.state.character.desc}</li>
-                                    <li><b>Origin:</b> {this.state.character.desc}</li>
-                                    <li><b>Real Name:</b> {this.state.character.desc}</li>
-                                    <li>
-                                        <b>Relevant Movies/TV Shows:</b>
-                                        <ul> 
-                                            <li>{this.state.character.desc}</li>
-                                        </ul>
-                                    </li>
+                                    <li><b>Description:</b> {this.state.character.desc}</li>
+                                    <li><b>Stories:</b> {this.state.character.stories}</li>
+                                    <li><b>Events:</b> {this.state.character.events}</li>
                                     <li>
                                         <b>Comic Series:</b>
                                         <ul> 
-                                            <li>{this.state.character.stories}</li>
+                                            <li>{this.state.character.series}</li>
                                         </ul>
-                                    </li>
+                </li>
+		<li><b>Actors:</b> {this.state.character.actors.map(actor => actor.id)}</li>
                                 </ul>
                             </div>
                         </div>

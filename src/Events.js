@@ -9,7 +9,7 @@ class Events extends React.Component{
   }
 
   componentDidMount(){
-    return axios.get('http://marvelus.me/api/event?q=%7B%22limit%22:9%7D').then(res=> {
+    return axios.get('http://marvelus.me/api/event?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
       const events = res.data.objects.map(event => event)
       this.setState({events});
     });

@@ -9,7 +9,7 @@ class Actors extends React.Component{
   }
 
   componentDidMount(){
-    return axios.get('http://marvelus.me/api/actor?q=%7B%22limit%22:9%7D').then(res=> {
+    return axios.get('http://marvelus.me/api/actor?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
       const actors = res.data.objects.map(actor => actor)
       this.setState({actors});
     });

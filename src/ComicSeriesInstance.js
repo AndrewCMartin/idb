@@ -28,7 +28,7 @@ class ComicSeriesInstance extends React.Component {
                             <div class="panel-body"><img src={this.state.comic_series.thumbnail} class="img-responsive" class="img-responsive" styles="width:100%" alt="Image" />
                                 <h3>Information</h3>
                                 <ul>
-                                    <li><b>Name:</b> {this.state.tv_show.name}</li>
+                                    <li><b>Title:</b> {this.state.comic_series.name}</li>
                                     <li><b>Description:</b> {this.state.comic_series.desc}</li>
                                     <li><b>Start Year:</b> {this.state.comic_series.start_year}</li>
                                     <li><b>End Year: </b> {this.state.comic_series.end_year}</li>
