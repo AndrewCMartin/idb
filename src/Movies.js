@@ -27,7 +27,6 @@ class Movies extends React.Component {
               <div className="panel panel-info">
                 <div className="panel-heading"><Link to={"/movie/" + movie.id}>{movie.title}</Link></div>
                 <div className="panel-body"><img src={"http://image.tmdb.org/t/p/w185/" + movie.poster_path} className="img-responsive" styles="width:100%" alt="Image" /></div>
-                <div className="panel-footer">{movie.overview}</div>
               </div>
             </div>
           )}
