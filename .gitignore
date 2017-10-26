@@ -31,3 +31,7 @@ lib
 *.pyc
 tmp
 build
+/cloud_sql_proxy
+.idea/
+app/static/css/
+app/static/js/
