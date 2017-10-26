@@ -1,15 +1,17 @@
 from app import db
-from sqlalchemy.schema import ForeignKey
 
+# from sqlalchemy.schema import ForeignKey
 
 # character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character.id')),
 #                                               db.Column('event_id', db.Integer, ForeignKey('event.id')))
-#
-# character_actor = db.Table('character_actor', db.Column('character_id', db.Integer, ForeignKey('character.id')),
-#                                               db.Column('actor_id', db.Integer, ForeignKey('actor.id')))
-#
-# character_movie = db.Table('character_movie', db.Column('character_id', db.Integer, ForeignKey('character.id')),
-#                                               db.Column('movie_id', db.Integer, ForeignKey('movie.id')))
+
+character_actor = db.Table('character_actor', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+                           db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')))
+
+character_movie = db.Table('character_movie', db.Model.metadata,
+                           db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+                           db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
+
 #
 # character_tvshow = db.Table('character_tvshow', db.Column('character_id', db.Integer, ForeignKey('character.id')),
 #                                               db.Column('tvshow_id', db.Integer, ForeignKey('tvshow.id')))
@@ -20,8 +22,10 @@ from sqlalchemy.schema import ForeignKey
 # event_comicseries = db.Table('event_comicseries', db.Column('event_id', db.Integer, ForeignKey('event.id')),
 #                                               db.Column('comicseries_id', db.Integer, ForeignKey('comicseries.id')))
 #
-# actor_movie = db.Table('actor_movie', db.Column('actor_id', db.Integer, ForeignKey('actor.id')),
-#                                               db.Column('movie_id', db.Integer, ForeignKey('movie.id')))
+actor_movie = db.Table('actor_movie', db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
+                       db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
+
+
 #
 # actor_tvshow = db.Table('actor_tvshow', db.Column('actor_id', db.Integer, ForeignKey('actor.id')),
 #                                               db.Column('tvshow_id', db.Integer, ForeignKey('tvshow.id')))
@@ -77,22 +81,20 @@ class Actor(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     birthday = db.Column(db.Date)
-    bio = db.Column(db.String(2000))
+    bio = db.Column(db.String(3000))
     image = db.Column(db.String(80))
 
-    # characters = db.relationship('Character', secondary='character_actor', backref=db.backref('actors'), lazy='dynamic')
-    # movies = db.relationship('Movie', secondary='actor_movie', backref=db.backref('actors'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_actor', backref=db.backref('actors'), lazy='dynamic')
+
     # tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
 
-    def __init__(self, id, name, birthday, bio, image, characters, movies, tvshows):
+    def __init__(self, id, name, birthday, bio, image):
         self.id = id
         self.name = name
         self.birthday = birthday
         self.bio = bio
         self.image = image
-        self.characters = characters
-        self.movies = movies
-        self.tvshows = tvshows
+
 
 
 class Movie(db.Model):
@@ -107,8 +109,9 @@ class Movie(db.Model):
     lang = db.Column(db.String(80))
     rating = db.Column(db.Float)
 
-    # characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
-    # actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_movie', backref='movies', lazy='dynamic')
+
+    actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
 
     def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating):
         self.id = id

@@ -33,31 +33,31 @@ PHASE 1 USER STORIES:
 PHASE 2 USER STORIES:
 1. From every page, users can easily navigate to and from different models
 	-Estimate: 3 hours
-	-Actual:
+	-Actual: 4 hours
 2. User can see a mocked out API on Apiary
 	-Estimate: 1 hour
-	-Actual:
+	-Actual: 5 hours
 3. Users can see all attributes of a particular instance on that instance's page
 	-Estimate: 2 hours
-	-Actual:
+	-Actual: 5 hours
 4. Upon clicking on a model, Users can expect a grid formation of all documented instances
 	-Estimate: 5 hours
-	-Actual:
+	-Actual: 6 hours
 5. Users can see how we got the website's data by clicking on the links that direct to the used RESTful APIs
 	-Estimate: 2 hours
-	-Actual:
+	-Actual: 2 hours
 6. User can expect a clearly organized and aesthetically pleasing website with all Marvel information
 	-Estimate: 8 hours
-	-Actual:
+	-Actual: 10 hours
 7. Users can read about each author of the website as well as what the author contributed to
 	-Estimate: 1 hour
-	-Actual:
+	-Actual: 3 hours
 8. From the homepage, users can instantly and easily understand what our entire website is about
 	-Estimate: 3 hours
-	-Actual:
+	-Actual: 5 hours
 9. Users can easily see which actors play which characters and which movies and tv shows they star in
 	-Estimate: 2 hours
-	-Actual:
+	-Actual: 8 hours
 10. Users can easily see which comics influenced each TV Show or Movie as well as the relevant characters and actors associated with them
 	-Estimate: 2 hours
-	-Actual:
+	-Actual: 8 hours
