@@ -45,8 +45,10 @@ class MovieInstance extends React.Component {
                 <ul>
                 {actors.map(function(actor) {
 
-
-		    return (<li key={actor.name}>{actor.name}</li>)
+                    const actor_id = actor["id"];
+		    JSON.stringify(actor_id);
+		    const actor_url = "http://marvelus.me/actor/" + actor_id;
+		    return (<li key={actor.name}><a href={actor_url}>{actor.name}</a></li>)
 		})}
                                         </ul>
                                     </li>
