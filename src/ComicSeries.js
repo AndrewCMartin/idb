@@ -9,7 +9,7 @@ class ComicSeries extends React.Component{
   }
 
   componentDidMount(){
-    return axios.get('http://marvelus.me/api/comic_series?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
+    return axios.get('http://marvelus.me/api/comic_series?results_per_page=50').then(res=> {
       const comicseries = res.data.objects.map(comic_series => comic_series)
       this.setState({comicseries});
     });

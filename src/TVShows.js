@@ -13,7 +13,7 @@ class TVShows extends React.Component{
   }
 
   componentDidMount(){
-    return axios.get('http://marvelus.me/api/tv_show?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
+    return axios.get('http://marvelus.me/api/tv_show?results_per_page=50').then(res=> {
       const tvshows = res.data.objects.map(tv_show => tv_show)
       this.setState({tvshows});
     });
