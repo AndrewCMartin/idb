@@ -1,9 +1,7 @@
 from app import db
 
-# from sqlalchemy.schema import ForeignKey
-
-# character_event = db.Table('character_event', db.Column('character_id', db.Integer, ForeignKey('character.id')),
-#                                               db.Column('event_id', db.Integer, ForeignKey('event.id')))
+character_event = db.Table('character_event', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+                           db.Column('event_id', db.Integer, db.ForeignKey('event.id')))
 
 character_actor = db.Table('character_actor', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')))
@@ -12,24 +10,22 @@ character_movie = db.Table('character_movie', db.Model.metadata,
                            db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
 
-#
-# character_tvshow = db.Table('character_tvshow', db.Column('character_id', db.Integer, ForeignKey('character.id')),
-#                                               db.Column('tvshow_id', db.Integer, ForeignKey('tvshow.id')))
-#
-# character_comicseries = db.Table('character_comicseries', db.Column('character_id', db.Integer, ForeignKey('character.id')),
-#                                               db.Column('comicseries_id', db.Integer, ForeignKey('comicseries.id')))
-#
-# event_comicseries = db.Table('event_comicseries', db.Column('event_id', db.Integer, ForeignKey('event.id')),
-#                                               db.Column('comicseries_id', db.Integer, ForeignKey('comicseries.id')))
-#
+character_tvshow = db.Table('character_tvshow', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+                            db.Column('tvshow_id', db.Integer, db.ForeignKey('tv_show.id')))
+
+character_comicseries = db.Table('character_comicseries',
+                                 db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+                                 db.Column('comicseries_id', db.Integer, db.ForeignKey('comic_series.id')))
+
+event_comicseries = db.Table('event_comicseries', db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
+                             db.Column('comicseries_id', db.Integer, db.ForeignKey('comic_series.id')))
+
 actor_movie = db.Table('actor_movie', db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
                        db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
 
+actor_tvshow = db.Table('actor_tvshow', db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
+                        db.Column('tvshow_id', db.Integer, db.ForeignKey('tv_show.id')))
 
-#
-# actor_tvshow = db.Table('actor_tvshow', db.Column('actor_id', db.Integer, ForeignKey('actor.id')),
-#                                               db.Column('tvshow_id', db.Integer, ForeignKey('tvshow.id')))
-#
 
 
 

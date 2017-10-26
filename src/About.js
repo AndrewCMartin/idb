@@ -1,6 +1,4 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Home from './Home'
 
 var imageStyles = {
     width: '450px',
@@ -109,10 +107,14 @@ const About = () => (
             <h3 align="center"><b>Data</b></h3>
                 {/* <!-- <li align="center" styles= "color: gray"><b>Data Sources: </b> --> */}
 
-                        <li align="center"> <a href="https://developer.marvel.com/docs"><b>Marvel API</b></a><br> We did not use any specific libraries to scrape the Marvel API, just the python requests module.
+            <li align="center"><a href="https://developer.marvel.com/docs"><b>Marvel API</b></a>: We did not use any
+                specific libraries to scrape the Marvel API, just the python requests module.
 </li>
-                        <li align="center"><a href="https://developers.themoviedb.org/3/"><b>The Movie Database</b></a><br>We used the tmdbsimple library to scrape data from the tmdb API</li>
-                        <li align="center">The Movie Database</li>
+            <li align="center"><a href="https://developers.themoviedb.org/3/"><b>The Movie Database</b></a>: We used the
+                <a href="https://pypi.python.org/pypi/tmdbsimple">tmdbsimple</a> library to scrape data from the tmdb
+                API
+            </li>
+
 
             <h3 align="center"><b>Tools used</b></h3>
 
