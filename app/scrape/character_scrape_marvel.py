@@ -1,7 +1,8 @@
 import hashlib
 import json
-import requests
 import time
+
+import requests
 
 from app.models import db, Character
 
@@ -79,7 +80,7 @@ for offset in range(0, 2000, 20):
                     newEntry = Character(id_num, name, desc, path, story_name)
                     db.session.add(newEntry)
                     print('merged')
-                    db.session.commit()
-                    print("DONE WITH THIS")
 
+    db.session.commit()
+    print("DONE WITH THIS")
 print('Done')
