@@ -6,9 +6,6 @@ var imageStyles = {
     height:"700px",
 }
 
-var fontStyle ={
-    size :"900px",
-}
 
 
 class Home extends React.Component{
