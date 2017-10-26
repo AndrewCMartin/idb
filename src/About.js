@@ -7,7 +7,7 @@ var imageStyles = {
 
 const About = () => (
     <div className="panel panel-default">
-        <h1 align="center" styles="font-size: 45px"><b>Marvelus - Canvas Group 15</b></h1>
+        <h1 align="center" styles="font-size: 45px"><b>MARVELUS - Canvas Group 15</b></h1>
 
         <div className="panel-body">
             {/* <!-- Description superheros, movies, tv shows, comics, creators, events--> */}
@@ -30,10 +30,9 @@ const About = () => (
                             at the end of this year. I am also interested in music and linguistics, and I love to
                             travel.
                         </li>
-                        <li><b>Responsibilities: </b> <a href="{{url_for('frontend.show', page='tvshows.html')}}">TV
-                            Shows</a></li>
-                        <li><b>No. of Commits: 31</b></li>
-                        <li><b>No. of Issues: </b> 6</li>
+                        <li><b>Responsibilities: </b>Database and back end</li>
+                        <li><b>No. of Commits: 48</b></li>
+                        <li><b>No. of Issues: </b>10 </li>
                         <li><b>No. of Unit Tests: </b> 0</li>
 
                     </div>
@@ -49,11 +48,9 @@ const About = () => (
                             to use TensorFlow in my freetime. I also love making music and photography. Whether it be
                             photos, videos, or music, I think art is an important outlet that everyone should try.
                         </li>
-                        <li><b>Responsibilities: </b><a
-                            href="{{url_for('frontend.show', page='events.html')}}">Events</a></li>
-                        <li><b>No. of Commits: 8</b></li>
-                        <li><b>No. of Issues: </b> 4</li>
-                        <li><b>No. of Commits: </b> 4</li>
+                        <li><b>Responsibilities: </b>Front end</li>
+                        <li><b>No. of Commits: 37</b></li>
+                        <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Issues: </b></li>
                         <li><b>No. of Unit Tests: </b> 0</li>
 
@@ -71,11 +68,10 @@ const About = () => (
                             seem more interesting. She also is interested in music and TV Shows and only tolerates some
                             of the Marvel creations, most notably Spider-Man.
                         </li>
-                        <li><b>Responsibilities: </b><a
-                            href="{{url_for('frontend.show', page='actors.html')}}">Actors</a></li>
-                        <li><b>No. of Commits: 21</b></li>
-                        <li><b>No. of Issues: </b> 4</li>
-                        <li><b>No. of Unit Tests: </b> 0</li>
+                        <li><b>Responsibilities: </b><a>Front end</a></li>
+                        <li><b>No. of Commits: 39</b></li>
+                        <li><b>No. of Issues: </b> 8</li>
+                        <li><b>No. of Unit Tests: </b>5</li>
 
                     </div>
 
@@ -108,9 +104,9 @@ const About = () => (
                             University of Texas. She loves travel, photography and music. She will be graduating in May
                             of 2019 with a Bachelor's degree in Computer Science.
                         </li>
-                        <li><b>Responsibilities: </b>Movies</li>
-                        <li><b>No. of Commits: 13</b></li>
-                        <li><b>No. of Issues: </b> 4</li>
+                        <li><b>Responsibilities: </b>Database and back end</li>
+                        <li><b>No. of Commits: 30</b></li>
+                        <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Unit Tests: </b> 0</li>
 
                     </div>
@@ -125,23 +121,23 @@ const About = () => (
                             Marvel Cinematic Universe. She will be graduating in May of 2019 with a Bachelor's degree in
                             Computer Science.
                         </li>
-                        <li><b>Responsibilities: </b>Characters and Comics</li>
-                        <li><b>No. of Commits: 24</b></li>
-                        <li><b>No. of Issues: </b> 4</li>
-                        <li><b>No. of Unit Tests: </b> 0</li>
+                        <li><b>Responsibilities: </b>Database and back end</li>
+                        <li><b>No. of Commits: 41</b></li>
+                        <li><b>No. of Issues: </b> 8</li>
+                        <li><b>No. of Unit Tests: </b>5</li>
                     </div>
                 </div>
             </div>
             <br/>
 
-            <h3 align="center" styles="font-size: 30px"><b>Statistics</b></h3>
+            <h3 align="center"><b>Statistics</b></h3>
 
-            <li align="center" styles="color: darkgray"><b>Total No. of Commits: </b></li>
-            <li align="center" styles="color: gray"><b>Total No. of Issues: </b></li>
-            <li align="center" styles="color: gray"><b>Total No. of Unit Tests: </b> 0</li>
-            <li align="center" styles="color: gray"><b>Apiary API</b></li>
-            <li align="center" styles="color: gray"><b>GITHUB REPO</b></li>
-            <li align="center" styles="color: gray"><b>TRELLO</b></li>
+            <li align="center"><b>Total No. of Commits:197 </b></li>
+            <li align="center"><b>Total No. of Issues:42</b></li>
+            <li align="center"><b>Total No. of Unit Tests: </b>10</li>
+            <li align="center"><a href="http://docs.andrewcmartin.apiary.io/#"><b>Apiary API</b></a></li>
+            <li align="center"><a href="https://github.com/AndrewCMartin/idb"><b>GITHUB REPO</b></a></li>
+            <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
 
             <h3 align="center"><b>Data</b></h3>
             {/* <!-- <li align="center" styles= "color: gray"><b>Data Sources: </b> --> */}
@@ -150,14 +146,14 @@ const About = () => (
                 specific libraries to scrape the Marvel API, just the python requests module.
             </li>
             <li align="center"><a href="https://developers.themoviedb.org/3/"><b>The Movie Database</b></a>: We used the
-                <a href="https://pypi.python.org/pypi/tmdbsimple">tmdbsimple</a> library to scrape data from the tmdb
+                <a href="https://pypi.python.org/pypi/tmdbsimple"> tmdbsimple</a> library to scrape data from the tmdb
                 API
             </li>
 
 
             <h3 align="center"><b>Tools used</b></h3>
 
-            <a align="center" href="https://utexas.box.com/s/zimf1bvhu2r2dhw598shugcm4b7jr2do">Technical report</a>
+            <li align="center"><a  href="https://utexas.box.com/s/zimf1bvhu2r2dhw598shugcm4b7jr2do">Technical report</a></li>
         </div>
     </div>
 
