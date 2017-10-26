@@ -27,7 +27,7 @@ def add_actor_info(actor_id):
         return
 
     #Create the character with the schema from models.py
-    newEntry = Actor(actor_id, person.name, person.birthday, person.biography, person.profile_path, str(characters), str(movies), str(tv_shows))
+    newEntry = Actor(actor_id, person.name, person.birthday, person.biography[:3000], person.profile_path)
     db.session.merge(newEntry)
     db.session.commit()
 
@@ -43,7 +43,8 @@ def main():
         credits = movie.credits()
 
         for person in credits["cast"]:
-            actor_ids.add(person["id"])
+            if person["order"] <= 20:
+                actor_ids.add(person["id"])
 
     for actor_id in actor_ids:
         add_actor_info(actor_id)

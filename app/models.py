@@ -1,33 +1,34 @@
 from app import db
 
-character_event = db.Table('character_event', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+character_event = db.Table('character_event', db.Model.metadata,
+                           db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('event_id', db.Integer, db.ForeignKey('event.id')))
 
-character_actor = db.Table('character_actor', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+character_actor = db.Table('character_actor', db.Model.metadata,
+                           db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')))
 
 character_movie = db.Table('character_movie', db.Model.metadata,
                            db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
 
-character_tvshow = db.Table('character_tvshow', db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
+character_tvshow = db.Table('character_tvshow', db.Model.metadata,
+                            db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                             db.Column('tvshow_id', db.Integer, db.ForeignKey('tv_show.id')))
 
 character_comicseries = db.Table('character_comicseries',
                                  db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                                  db.Column('comicseries_id', db.Integer, db.ForeignKey('comic_series.id')))
 
-event_comicseries = db.Table('event_comicseries', db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
+event_comicseries = db.Table('event_comicseries', db.Model.metadata,
+                             db.Column('event_id', db.Integer, db.ForeignKey('event.id')),
                              db.Column('comicseries_id', db.Integer, db.ForeignKey('comic_series.id')))
 
-actor_movie = db.Table('actor_movie', db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
+actor_movie = db.Table('actor_movie', db.Model.metadata, db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
                        db.Column('movie_id', db.Integer, db.ForeignKey('movie.id')))
 
-actor_tvshow = db.Table('actor_tvshow', db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
+actor_tvshow = db.Table('actor_tvshow', db.Model.metadata, db.Column('actor_id', db.Integer, db.ForeignKey('actor.id')),
                         db.Column('tvshow_id', db.Integer, db.ForeignKey('tv_show.id')))
-
-
-
 
 
 class Character(db.Model):
@@ -37,8 +38,9 @@ class Character(db.Model):
     thumbnail = db.Column(db.String(80))
     stories = db.Column(db.String(1500))
 
-    # events = db.relationship('Event', secondary='character_event', backref=db.backref('characters'), lazy='dynamic')
-    # series = db.relationship('ComicSeries', secondary='character_comicseries', backref=db.backref('characters'), lazy='dynamic')
+    events = db.relationship('Event', secondary='character_event', backref=db.backref('characters'), lazy='dynamic')
+    series = db.relationship('ComicSeries', secondary='character_comicseries', backref=db.backref('characters'),
+                             lazy='dynamic')
 
     def __init__(self, id, name, desc, thumbnail, stories):
         assert name != ""
@@ -59,10 +61,9 @@ class Event(db.Model):
     thumbnail = db.Column(db.String(80))
     creators = db.Column(db.String(1500))
 
-    # characters = db.relationship('Character', secondary='character_event', backref=db.backref('events'), lazy='dynamic')
-    # series = db.relationship('ComicSeries', secondary='event_comicseries', backref=db.backref('events'), lazy='dynamic')
+    series = db.relationship('ComicSeries', secondary='event_comicseries', backref=db.backref('events'), lazy='dynamic')
 
-    def __init__(self, id, title, desc, thumbnail, start, creators, characters, num_series):
+    def __init__(self, id, title, desc, thumbnail, start, creators):
         self.id = id
         self.title = title
         self.desc = desc
@@ -81,8 +82,7 @@ class Actor(db.Model):
     image = db.Column(db.String(80))
 
     characters = db.relationship('Character', secondary='character_actor', backref=db.backref('actors'), lazy='dynamic')
-
-    # tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
+    tvshows = db.relationship('TvShow', secondary='actor_tvshow', backref=db.backref('actors'), lazy='dynamic')
 
     def __init__(self, id, name, birthday, bio, image):
         self.id = id
@@ -90,7 +90,6 @@ class Actor(db.Model):
         self.birthday = birthday
         self.bio = bio
         self.image = image
-
 
 
 class Movie(db.Model):
@@ -105,8 +104,7 @@ class Movie(db.Model):
     lang = db.Column(db.String(80))
     rating = db.Column(db.Float)
 
-    characters = db.relationship('Character', secondary='character_movie', backref='movies', lazy='dynamic')
-
+    characters = db.relationship('Character', secondary='character_movie', backref=db.backref('movies'), lazy='dynamic')
     actors = db.relationship('Actor', secondary='actor_movie', backref=db.backref('movies'), lazy='dynamic')
 
     def __init__(self, id, title, overview, adult, poster_path, runtime, release_date, lang, rating):
@@ -119,8 +117,7 @@ class Movie(db.Model):
         self.release_date = release_date
         self.lang = lang
         self.rating = rating
-        # self.characters = characters
-        # self.actors = actors
+
 
 
 class TvShow(db.Model):
@@ -134,8 +131,9 @@ class TvShow(db.Model):
     num_seasons = db.Column(db.Integer)
     num_episodes = db.Column(db.Integer)
 
-    # characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
-    # actors = db.relationship('Actor', secondary='actor_tvshow', backref=db.backref('tvshows'), lazy='dynamic')
+    characters = db.relationship('Character', secondary='character_tvshow', backref=db.backref('tvshows'),
+                                 lazy='dynamic')
+
 
     def __init__(self, id, name, overview, poster_path, last_air_date, rating, num_seasons, num_episodes):
         self.id = id
@@ -146,8 +144,6 @@ class TvShow(db.Model):
         self.rating = rating
         self.num_seasons = num_seasons
         self.num_episodes = num_episodes
-        # self.characters = characters
-        # self.actors = actors
 
 
 class ComicSeries(db.Model):
@@ -163,10 +159,7 @@ class ComicSeries(db.Model):
 
     rating = db.Column(db.Float)
 
-    # events = db.relationship('Event', secondary='event_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
-    # characters = db.relationship('Character', secondary='character_comicseries', backref=db.backref('comicseries'), lazy='dynamic')
-
-    def __init__(self, id, title, desc, thumbnail, runtime, start_year, end_year, rating, events, characters):
+    def __init__(self, id, title, desc, thumbnail, runtime, start_year, end_year, rating):
         self.id = id
         self.title = title
         self.desc = desc
@@ -175,5 +168,3 @@ class ComicSeries(db.Model):
         self.start_year = start_year
         self.end_year = end_year
         self.rating = rating
-        # self.events = events
-        # self.characters = characters

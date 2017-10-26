@@ -1,10 +1,10 @@
 import json
+
 import requests
 
-import tmdbsimple as tmdb
-
-from app.models import db, TvShow
+from app.models import db, TvShow, Actor
 from app.scrape import tmdb
+from app.scrape.movie_scrape_tmdb import get_character
 
 
 def tvshow_info(tvshow_id):
@@ -15,16 +15,25 @@ def tvshow_info(tvshow_id):
 
     characters = []
     actors = []
+    newTvShow = TvShow(tvshow_id, tvshow.name, tvshow.overview, tvshow.poster_path, tvshow.last_air_date,
+                       tvshow.vote_average, tvshow.number_of_seasons, tvshow.number_of_episodes)
 
     for person in credits["cast"]:
         characters.append(person["character"])
+        c = get_character(person["character"])
+        if c:
+            newTvShow.characters.append(c)
+        a = Actor.query.filter_by(id=person["id"]).first()
+        if a:
+            newTvShow.actors.append(a)
+        if c and a:
+            c.actors.append(a)
         actors.append(person["name"])
 
     print (tvshow_id, tvshow.name)
 
     #Create the character with the schema from models.py
-    newEntry = TvShow(tvshow_id, tvshow.name, tvshow.overview, tvshow.poster_path, tvshow.last_air_date, tvshow.vote_average, tvshow.number_of_seasons, tvshow.number_of_episodes)
-    db.session.merge(newEntry)
+    db.session.merge(newTvShow)
     db.session.commit()
 
 def marvel_shows(page_num):
@@ -49,3 +58,7 @@ def main():
     for i in range(1, 4):
         marvel_shows(i)
     print('Done')
+
+
+if __name__ == '__main__':
+    main()

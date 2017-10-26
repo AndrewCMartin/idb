@@ -6,17 +6,22 @@ character_set = set()
 
 def get_actor(actor_id):
     a = Actor.query.filter_by(id=actor_id).first()
+    print(a)
     if a:
         return a
+    print ("NOT FOUND, ADDING")
     p = tmdb.People(actor_id)
     d = p.info()
     print(d)
     if len(d['biography']) > 3000:
         d['biography'] = d['biography'][:3000]
-    if len(d['biography']) == 0 or 'birthday' not in d:
+    if len(d['biography']) == 0 or 'birthday' not in d or not d['birthday']:
+        return
+    if len(d['birthday']) < 6:
         return
     a = Actor(actor_id, d['name'], d['birthday'], d['biography'], d['profile_path'])
     db.session.merge(a)
+    db.session.commit()
     return a
 
 
@@ -56,28 +61,31 @@ def add_movie_info(movie_id):
     print(response)
 
     # Create the character with the schema from models.py
-    newEntry = Movie(movie_id, movie.title, movie.overview, movie.adult, movie.poster_path, movie.runtime,
-                     movie.release_date, movie.original_language, movie.vote_average)
+    newMovieEntry = Movie(movie_id, movie.title, movie.overview, movie.adult, movie.poster_path, movie.runtime,
+                          movie.release_date, movie.original_language, movie.vote_average)
 
     found_count = 0
     not_found_count = 0
     for credit in response["credits"]["cast"]:
+
         character_name = credit["character"]
         if credit["order"] > 20:
             continue
+        print("Character: " + str(character_name))
         character = get_character(character_name)
         if (character):
-            newEntry.characters.append(character)
+            newMovieEntry.characters.append(character)
 
         actor_id = credit["id"]
-        actor = get_actor(actor_id)
+        actor = Actor.query.filter_by(id=actor_id).first()
         if (actor):
-            newEntry.actors.append(actor)
-
+            print(actor.name)
+            newMovieEntry.actors.append(actor)
+        if actor and character:
+            actor.characters.append(character)
     print (movie_id, movie.title)
 
-
-    db.session.merge(newEntry)
+    db.session.merge(newMovieEntry)
     db.session.commit()
 
 
@@ -93,4 +101,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    print(len(character_set))
