@@ -39,7 +39,8 @@ class CharacterInstance extends React.Component {
                                             <li>{this.state.character.series}</li>
                                         </ul>
                 </li>
-		<li><b>Actors:</b> {this.state.character.actors.map(actor => actor.id)}</li>
+		{/*	<li><b>Actors:</b> {this.state.character.actors.map(actor => actor.id)}</li>
+			<li><b>Movies:</b> {this.state.character.movies.map(movie=>movie.id)}</li>*/}
                                 </ul>
                             </div>
                         </div>

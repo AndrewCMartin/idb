@@ -32,7 +32,8 @@ class ComicSeriesInstance extends React.Component {
                                     <li><b>Description:</b> {this.state.comic_series.desc}</li>
                                     <li><b>Start Year:</b> {this.state.comic_series.start_year}</li>
                                     <li><b>End Year: </b> {this.state.comic_series.end_year}</li>
-                                    <li><b>Rating: </b>{this.state.comic_series.rating}</li>
+                <li><b>Rating: </b>{this.state.comic_series.rating}</li>
+		<li><b>Runtime: </b>{this.state.comic_series.runtime}</li>}
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
