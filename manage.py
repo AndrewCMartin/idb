@@ -4,8 +4,6 @@ from app import app
 from app.scrape.clear_database import main as clear_database
 from app.scrape.movie_scrape_tmdb import main as get_movies
 from app.scrape.tvshow_scrape_tmdb import main as get_tv
-from app.scrape.actor_scrape_tmdb import main as get_actors
-
 
 manager = Manager(app)
 
@@ -20,8 +18,7 @@ def hello():
 def scrape(to_scrape):
     "Query TMDB for Marvel movies and populate database"
     scrape_scripts = {'movies': get_movies,
-                      'tv': get_tv,
-                      'actors': get_actors}
+                      'tv': get_tv}
     if to_scrape == 'all':
         for name in scrape_scripts:
             scrape_scripts[name]()
