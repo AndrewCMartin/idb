@@ -33,7 +33,7 @@ const About = () => (
                         <li><b>Responsibilities: </b>Database and back end</li>
                         <li><b>No. of Commits: 48</b></li>
                         <li><b>No. of Issues: </b>10 </li>
-                        <li><b>No. of Unit Tests: </b> 2</li>
+                        <li><b>No. of Unit Tests: </b> 4</li>
 
                     </div>
 
@@ -134,7 +134,7 @@ const About = () => (
 
             <li align="center"><b>Total No. of Commits:197 </b></li>
             <li align="center"><b>Total No. of Issues:42</b></li>
-            <li align="center"><b>Total No. of Unit Tests: </b>10</li>
+            <li align="center"><b>Total No. of Unit Tests: </b>12</li>
             <li align="center"><a href="http://docs.andrewcmartin.apiary.io/#"><b>Apiary API</b></a></li>
             <li align="center"><a href="https://github.com/AndrewCMartin/idb"><b>GITHUB REPO</b></a></li>
             <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
