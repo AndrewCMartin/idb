@@ -31,9 +31,9 @@ const About = () => (
                             travel.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 48</b></li>
+                        <li><b>No. of Commits: 53</b></li>
                         <li><b>No. of Issues: </b>10 </li>
-                        <li><b>No. of Unit Tests: </b> 4</li>
+                        <li><b>No. of Unit Tests: </b> 6</li>
 
                     </div>
 
@@ -49,7 +49,7 @@ const About = () => (
                             photos, videos, or music, I think art is an important outlet that everyone should try.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: 37</b></li>
+                        <li><b>No. of Commits: 14</b></li>
                         <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Issues: </b></li>
                         <li><b>No. of Unit Tests: </b> 2</li>
@@ -69,7 +69,7 @@ const About = () => (
                             of the Marvel creations, most notably Spider-Man.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: 39</b></li>
+                        <li><b>No. of Commits: 70</b></li>
                         <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Unit Tests: </b>2</li>
 
@@ -105,7 +105,7 @@ const About = () => (
                             of 2019 with a Bachelor's degree in Computer Science.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 30</b></li>
+                        <li><b>No. of Commits: 38</b></li>
                         <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Unit Tests: </b> 2</li>
 
@@ -122,7 +122,7 @@ const About = () => (
                             Computer Science.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 41</b></li>
+                        <li><b>No. of Commits: 66</b></li>
                         <li><b>No. of Issues: </b> 8</li>
                         <li><b>No. of Unit Tests: </b>2</li>
                     </div>
@@ -132,9 +132,9 @@ const About = () => (
 
             <h3 align="center"><b>Statistics</b></h3>
 
-            <li align="center"><b>Total No. of Commits:197 </b></li>
+            <li align="center"><b>Total No. of Commits:241 </b></li>
             <li align="center"><b>Total No. of Issues:42</b></li>
-            <li align="center"><b>Total No. of Unit Tests: </b>12</li>
+            <li align="center"><b>Total No. of Unit Tests: </b>13</li>
             <li align="center"><a href="http://docs.andrewcmartin.apiary.io/#"><b>Apiary API</b></a></li>
             <li align="center"><a href="https://github.com/AndrewCMartin/idb"><b>GITHUB REPO</b></a></li>
             <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
