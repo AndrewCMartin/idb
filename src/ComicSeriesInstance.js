@@ -20,6 +20,8 @@ class ComicSeriesInstance extends React.Component {
     }
 
     render() {
+	const characters = this.state.comic_series.characters || [];
+	const events = this.state.comic_series.events || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
