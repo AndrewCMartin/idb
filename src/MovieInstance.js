@@ -40,11 +40,9 @@ class MovieInstance extends React.Component {
                                     <li><b>Main Characters:</b>
                 <ul>
 
-	        
-
-
-	    
-                <li>{this.state.movie.title}</li>
+	    {characters.map(function(character) {
+		return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
+	    })}
                                         </ul>
                                     </li>
                                     <li><b>Cast:</b> 
