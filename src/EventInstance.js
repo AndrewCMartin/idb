@@ -34,7 +34,7 @@ class EventInstance extends React.Component {
                                     <li><b>Name:</b> {this.state.event.title}</li>
                                     <li><b>Description:</b> {this.state.event.desc}</li>
                                     <li><b>Start:</b> {this.state.event.start}</li>
-                                    <li><b>Creators: </b> {this.state.event.creators}</li>
+                <li><b>Creators: </b> {this.state.event.creators}</li>
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
