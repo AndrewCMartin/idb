@@ -7,8 +7,7 @@ class CharacterInstance extends React.Component {
         super(props);
     
         this.state = {
-            character: {},
-	    actors: {}
+            character: {}
         };
     }
 
@@ -22,6 +21,12 @@ class CharacterInstance extends React.Component {
 
     render() {
 	
+	const actors = this.state.character.actors || [];
+	const events = this.state.character.events || [];
+	const series = this.state.character.comicseries || [];
+	const tvshows = this.state.character.tvshows || [];
+	const movies = this.state.character.movies || [];
+
         return (
 
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
@@ -34,15 +39,58 @@ class CharacterInstance extends React.Component {
                                     <li><b>Name:</b> {this.state.character.name}</li>
                                     <li><b>Description:</b> {this.state.character.desc}</li>
                                     <li><b>Stories:</b> {this.state.character.stories}</li>
-                                    <li><b>Events:</b> {this.state.character.events}</li>
+                                    <li>
+	                         	<b>Events:</b>
+		<ul>
+ 	        {events.map(function(event) {
+		    return (<li key={event.title}><Link to={`/event/${event.id}`}>{event.title}</Link></li>)
+		})}
+	    </ul>
+		</li>
+		
                                     <li>
                                         <b>Comic Series:</b>
                                         <ul> 
-                                            <li>{this.state.character.series}</li>
+                                            {series.map(function(series_instance) {
+        return (<li key={series_instance.title}><Link to={`/comic_series/${series_instance.id}`}>{series_instance.title}</Link></li>)
+        })}
                                         </ul>
-                </li>
-			<li><b>Actors:</b> {this.state.character.actors.name}</li>
-		{/*	<li><b>Movies:</b> {this.state.character.movies.map(movie=>movie.id)}</li>*/}
+                                    </li>
+	                            <li>
+		                        <b>Actors:</b>
+                <ul>
+		{actors.length > 0 ? actors.map(function(actor) {
+		    
+
+		    return (<li key={actor.name}><Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>)
+		}):"None"}
+		
+	
+	    </ul>
+		</li>
+
+		<li><b>Movies/TV Shows: </b>
+		<ul>
+ {movies.map(function(movie){
+		    return(<li key={movie.title}><Link to={`/movie/${movie.id}`}>{movie.title}</Link></li>)
+		})}
+
+	    
+		{tvshows.map(function(tv_show){
+		return(<li key={tv_show.title}><Link to={`/tvshow/${tv_show.id}`}>{tv_show.title}</Link></li>)
+		})}
+
+	    
+	        </ul>
+	        </li>
+		
+
+
+
+
+
+
+	    
                                 </ul>
                             </div>
                         </div>

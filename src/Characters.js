@@ -16,7 +16,7 @@ class Characters extends React.Component {
     }
     
     componentDidMount() {
-        return axios.get('http://marvelus.me/api/character?results_per_page=50&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
+        return axios.get('http://marvelus.me/api/character?results_per_page=500&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
             const characters = res.data.objects.map(character => character)
             this.setState({characters});
         });
