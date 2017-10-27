@@ -36,7 +36,7 @@ const Main = () => (
       <Route path='/tvshow/:tvshowID' component={TVShowInstance}/>
 
       <Route path='/comicseries' component={ComicSeries}/>
-      <Route path='/comicseries/:comicID' component={ComicSeriesInstance}/>
+      <Route path='/comic_series/:comicID' component={ComicSeriesInstance}/>
 
       <Route path='/actors' component={Actors}/>
       <Route path='/actor/:actorID' component={ActorInstance}/>
