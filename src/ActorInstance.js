@@ -45,10 +45,10 @@ class ActorInstance extends React.Component {
                                         <b>Relevant Movies/TV Shows:</b>
                                         <ul> 
                 {movies.map(function(movie){
-		    return(<li key={movie.title}><Link to={'/movie/${movie.id}'}>{movie.title}</Link></li>)
+		    return(<li key={movie.title}><Link to={`/movie/${movie.id}`}>{movie.title}</Link></li>)
 		})}
 	    {tvshows.map(function(tv_show){
-		return(<li key={tv_show.title}><Link to={'/tvshow/${tv_show.id}'}>{tv_show.title}</Link></li>)
+		return(<li key={tv_show.title}><Link to={`/tvshow/${tv_show.id}`}>{tv_show.title}</Link></li>)
 	    })}
                                         </ul>
                                     </li>
