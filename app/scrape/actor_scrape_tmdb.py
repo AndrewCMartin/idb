@@ -1,8 +1,10 @@
 import tmdbsimple as tmdb
+from sqlalchemy.exc import IntegrityError
 
 from app.models import db, Actor
 
 tmdb.API_KEY = '3b1223f4067b19c69b5a3e35f5b0f938'
+
 
 def add_actor_info(actor_id):
     person = tmdb.People(actor_id)
@@ -26,10 +28,19 @@ def add_actor_info(actor_id):
     if 'birthday' not in response or response['birthday'] is None or len(response['birthday']) < 8:
         return
 
-    #Create the character with the schema from models.py
+    # Create the character with the schema from models.py
     newEntry = Actor(actor_id, person.name, person.birthday, person.biography[:3000], person.profile_path)
-    db.session.merge(newEntry)
-    db.session.commit()
+    try:
+        db.session.merge(newEntry)
+    except IntegrityError:
+        db.session.rollback()
+    finally:
+        db.session.commit()
+    return newEntry
+
+
+tv_ids = [68716, 61889, 72705, 62127, 1403, 62285, 61550, 34391, 62126, 38472, 59427, 67178, 67466, 66190, 40044, 63181,
+          69088, 70784, 65215, 71106, 65247]
 
 
 def main():
@@ -45,12 +56,17 @@ def main():
         for person in credits["cast"]:
             if person["order"] <= 20:
                 actor_ids.add(person["id"])
-
+    for tv_id in tv_ids:
+        show = tmdb.TV(tv_id)
+        credits = show.credits()
+        for person in credits["cast"]:
+            if person["order"] <= 20:
+                actor_ids.add(person["id"])
     for actor_id in actor_ids:
         add_actor_info(actor_id)
 
     print('Done')
 
+
 if __name__ == '__main__':
     main()
-

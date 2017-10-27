@@ -1,6 +1,7 @@
 import json
 
 import requests
+from sqlalchemy.exc import IntegrityError
 
 from app.models import db, TvShow, Actor
 from app.scrape import tmdb
@@ -31,20 +32,24 @@ def tvshow_info(tvshow_id):
         actors.append(person["name"])
 
     print (tvshow_id, tvshow.name)
-
-    #Create the character with the schema from models.py
-    db.session.merge(newTvShow)
-    db.session.commit()
+    try:
+        db.session.merge(newTvShow)
+        print("SUCCESS")
+    except IntegrityError:
+        print("FAIL")
+        db.session.rollback()
+    finally:
+        db.session.commit()
 
 def marvel_shows(page_num):
     params['page'] = page_num
 
     r = requests.get(base_url, params)
     tvshows = json.loads(r.text)
-
+    tvlist = []
     for tvshow in tvshows["results"]:
+        # tvlist.append( tvshow["id"])
         tvshow_info(tvshow["id"])
-
 
 # There are only 44 results total, the results are in 3 pages
 base_url = 'https://api.themoviedb.org/3/search/tv'
@@ -62,3 +67,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

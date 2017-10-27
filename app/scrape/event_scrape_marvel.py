@@ -59,6 +59,9 @@ def main():
                             elif comic_attr_keys == 'title':
                                 title = comic_attr.encode('utf-8')
                             elif comic_attr_keys == 'thumbnail':
+                                path = comic_attr['path']
+                                print(comic['id'])
+                                print(path)
                                 for v in path.split('/'):
                                     if v == 'image_not_available':
                                         path = None
