@@ -20,7 +20,7 @@ class EventInstance extends React.Component {
     }
 
     render() {
-        const series = this.state.event.comicseries || [];
+        const series = this.state.event.series || [];
         const characters = this.state.event.characters || [];
 
         return (
