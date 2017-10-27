@@ -20,6 +20,9 @@ class EventInstance extends React.Component {
     }
 
     render() {
+        const series = this.state.event.comicseries || [];
+        const characters = this.state.event.characters || [];
+
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
@@ -35,13 +38,17 @@ class EventInstance extends React.Component {
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
-                                            <li>{this.state.event.title}</li>
+                                            {characters.map(function(character) {
+        return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
+        })}
                                         </ul>
                                     </li>
                                     <li>
-                                        <b>Comics:</b>
+                                        <b>Comics Series:</b>
                                         <ul> 
-                                            <li>{this.state.event.title}</li>
+                                            {series.map(function(series_instance) {
+        return (<li key={series_instance.title}><Link to={`/comic_series/${series_instance.id}`}>{series_instance.title}</Link></li>)
+        })}
                                         </ul>
                                     </li>
                                 </ul>
