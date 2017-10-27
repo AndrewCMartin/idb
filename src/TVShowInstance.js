@@ -25,6 +25,8 @@ class TVShowInstance extends React.Component {
     }
 
     render() {
+        const characters = this.state.tvshows.characters || [];
+        const actors = this.state.tvshows.actors || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
@@ -42,13 +44,17 @@ class TVShowInstance extends React.Component {
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
-                                            <li>{this.state.tv_show.name}</li>
+                                            {characters.map(function(character) {
+        return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
+        })}
                                         </ul>
                                     </li>
                                     <li>
                                         <b>Actors:</b>
                                         <ul> 
-                                            <li>{this.state.tv_show.name}</li>
+                                            {actors.map(function(actor) {
+            return (<li key={actor.name}><Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>)
+        })}
                                         </ul>
                                     </li>
                                 </ul>
