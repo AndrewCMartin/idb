@@ -38,17 +38,17 @@ class EventInstance extends React.Component {
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
-                                            {characters.map(function(character) {
+                                            {characters.length > 0 ? characters.map(function(character) {
         return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
-        })}
+					    }) : "None"}
                                         </ul>
                                     </li>
                                     <li>
                                         <b>Comics Series:</b>
                                         <ul> 
-                                            {series.map(function(series_instance) {
+                                            {series.length > 0 ? series.map(function(series_instance) {
         return (<li key={series_instance.title}><Link to={`/comic_series/${series_instance.id}`}>{series_instance.title}</Link></li>)
-        })}
+					    }) : "None"}
                                         </ul>
                                     </li>
                                 </ul>

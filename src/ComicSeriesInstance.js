@@ -38,17 +38,17 @@ class ComicSeriesInstance extends React.Component {
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
-            {characters.map(function(character){
+            {characters.length > 0 ? characters.map(function(character){
 		return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
-	    })}
+	    }) : "None"}
                                         </ul>
                                     </li>
                                     <li>
                                         <b>Events:</b>
                                         <ul> 
-            {events.map(function(event){
+            {events.length > 0 ? events.map(function(event){
 		return(<li key={event.title}><Link to={`/event/${event.id}`}>{event.title}</Link></li>)
-	    })}
+	    }) : "None"}
                                         </ul>
                                     </li>
                                 </ul>
