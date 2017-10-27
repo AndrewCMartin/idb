@@ -30,22 +30,25 @@ class ComicSeriesInstance extends React.Component {
                             <div class="panel-body"><img src={this.state.comic_series.thumbnail} class="img-responsive" class="img-responsive" styles="width:100%" alt="Image" />
                                 <h3>Information</h3>
                                 <ul>
-                                    <li><b>Title:</b> {this.state.comic_series.name}</li>
+                                    <li><b>Title:</b> {this.state.comic_series.title}</li>
                                     <li><b>Description:</b> {this.state.comic_series.desc}</li>
                                     <li><b>Start Year:</b> {this.state.comic_series.start_year}</li>
                                     <li><b>End Year: </b> {this.state.comic_series.end_year}</li>
                 <li><b>Rating: </b>{this.state.comic_series.rating}</li>
-		<li><b>Runtime: </b>{this.state.comic_series.runtime}</li>}
                                     <li>
                                         <b>Characters:</b>
                                         <ul> 
-                                            <li>{this.state.comic_series.name}</li>
+            {characters.map(function(character){
+		return (<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
+	    })}
                                         </ul>
                                     </li>
                                     <li>
                                         <b>Events:</b>
                                         <ul> 
-                                            <li>{this.state.comic_series.name}</li>
+            {events.map(function(event){
+		return(<li key={event.title}><Link to={`/event/${event.id}`}>{event.title}</Link></li>)
+	    })}
                                         </ul>
                                     </li>
                                 </ul>
