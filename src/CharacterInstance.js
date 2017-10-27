@@ -21,6 +21,7 @@ class CharacterInstance extends React.Component {
     }
 
     render() {
+	
         return (
 
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">

@@ -57,7 +57,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
     desc = db.Column(db.String(1500))
-    start = db.Column(db.Date)
+    start = db.Column(db.Integer)
     thumbnail = db.Column(db.String(80))
     creators = db.Column(db.String(1500))
 
@@ -152,19 +152,16 @@ class ComicSeries(db.Model):
     desc = db.Column(db.String(1300))
     # genres
     thumbnail = db.Column(db.String(200))
-    runtime = db.Column(db.Integer)
 
     start_year = db.Column(db.Integer)
     end_year = db.Column(db.Integer)
 
     rating = db.Column(db.Float)
 
-    def __init__(self, id, title, desc, thumbnail, runtime, start_year, end_year, rating):
+    def __init__(self, id, title, desc, thumbnail, start_year, end_year):
         self.id = id
         self.title = title
         self.desc = desc
         self.thumbnail = thumbnail
-        self.runtime = runtime
-        self.start_year = start_year
         self.end_year = end_year
-        self.rating = rating
+        self.start_year = start_year
