@@ -20,6 +20,9 @@ class ActorInstance extends React.Component {
     }
 
     render() {
+	const characters = this.state.actor.characters || [];
+	const movies = this.state.actor.movies || [];
+	const tvshows = this.state.actor.tvshows || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
@@ -31,11 +34,22 @@ class ActorInstance extends React.Component {
                                     <li><b>Name:</b> {this.state.actor.name}</li>
                                     <li><b>Bio:</b> {this.state.actor.bio}</li>
                                     <li><b>Birthday:</b> {this.state.actor.birthday}</li>
-                                    <li><b>Character(s): </b> {this.state.actor.name}</li>
+                <li><b>Character(s): </b>
+		<ul>
+		{characters.map(function(character){
+		    return(<li key={character.name}><Link to={`/character/${character.id}`}>{character.name}</Link></li>)
+		})}
+	    </ul>
+	    </li>
                                     <li>
                                         <b>Relevant Movies/TV Shows:</b>
                                         <ul> 
-                                            <li>{this.state.actor.name}</li>
+                {movies.map(function(movie){
+		    return(<li key={movie.title}><Link to={'/movie/${movie.id}'}>{movie.title}</Link></li>)
+		})}
+	    {tvshows.map(function(tv_show){
+		return(<li key={tv_show.title}><Link to={'/tvshow/${tv_show.id}'}>{tv_show.title}</Link></li>)
+	    })}
                                         </ul>
                                     </li>
                                 </ul>
