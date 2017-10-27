@@ -1,0 +1,26 @@
+Phase 2,,,,,,,
+,,,,,,,
+Story Title,Estimate,Vote Started,Voting Duration,Avg Voting Time,Fastest,Slowest,Actual
+Users can easily see which comics influenced each TV Show or Movie as well as the relevant characters and actors associated with them,100,27/10/2017 02:02:45,00:00:03,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,5
+Users can easily see which actors play which characters and which movies and tv shows they star in,13,27/10/2017 02:02:40,00:00:03,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,10
+"From the homepage, users can instantly and easily understand what our entire website is about",40,27/10/2017 02:02:36,00:00:02,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,5
+Users can read about each author of the website as well as what the author contributed to,8,27/10/2017 02:02:29,00:00:06,00:00:04,Tesia Wu,Sunaina Krishnamoorthy,6
+User can expect a clearly organized and aesthetically pleasing website with all Marvel information,40,27/10/2017 02:02:21,00:00:05,00:00:04,Tesia Wu,Sunaina Krishnamoorthy,8
+Users can see how we got the website's data by clicking on the links that direct to the used RESTful APIs,20,27/10/2017 02:02:17,00:00:03,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,12
+"Upon clicking on a model, users can expect a grid formation of all documented instances",8,27/10/2017 02:02:12,00:00:03,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,2
+Users can see all attributes of a particular instance on that instance's page,13,27/10/2017 02:02:08,00:00:02,00:00:01,Tesia Wu,Sunaina Krishnamoorthy,3
+User can see a mocked out API on Apiary,20,27/10/2017 02:01:58,00:00:07,00:00:05,Tesia Wu,Sunaina Krishnamoorthy,2
+,,,,,,,
+Phase 1,,,,,,,
+,,,,,,,
+"From every page,  users can easily navigate to and from different models",13,27/10/2017 01:59:37,00:02:15,00:00:06,Tesia Wu,Sunaina Krishnamoorthy,2
+Deploy onto GCP and make sure everything works,5,23/09/2017 21:47:46,00:00:24,00:00:14,Tesia Wu,Sunaina Krishnamoorthy,3
+Write technical report,40,23/09/2017 21:47:26,00:00:16,00:00:06,Tesia Wu,Sunaina Krishnamoorthy,8
+Identify the common attributes of data &  ensure each data has a value for attribute,8,23/09/2017 21:46:39,00:00:44,00:00:17,Tesia Wu,Sunaina Krishnamoorthy,1
+Collect data of 3 instances of each model from at least 2 sources via RESTful API,13,23/09/2017 21:46:16,00:00:18,00:00:08,Tesia Wu,Sunaina Krishnamoorthy,2
+Create about page & fill it with static info,40,23/09/2017 21:45:02,00:01:11,00:00:28,Tesia Wu,Sunaina Krishnamoorthy,1
+Edit template by adding separate pages per model,3,23/09/2017 21:44:29,00:00:28,00:00:16,Tesia Wu,Sunaina Krishnamoorthy,2
+Select template with Bootstrap,13,23/09/2017 21:43:17,00:01:09,00:00:17,Tesia Wu,Sunaina Krishnamoorthy,3
+Get domain name from nameCheap.com,0,23/09/2017 21:43:00,00:00:15,00:00:05,Tesia Wu,Sunaina Krishnamoorthy,1
+"Set up accounts like GitHub, Slack, Trello, Apiary and GCP",2,23/09/2017 21:42:30,00:00:25,00:00:14,Tesia Wu,Sunaina Krishnamoorthy,3
+Plan models & attributes for everything,1,23/09/2017 21:34:41,00:07:35,00:05:34,Tesia Wu,Sunaina Krishnamoorthy,1
