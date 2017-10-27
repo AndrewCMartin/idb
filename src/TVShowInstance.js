@@ -25,8 +25,8 @@ class TVShowInstance extends React.Component {
     }
 
     render() {
-        const characters = this.state.tvshows.characters || [];
-        const actors = this.state.tvshows.actors || [];
+        const characters = this.state.tv_show.characters || [];
+        const actors = this.state.tv_show.actors || [];
         return (
             <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
                     <div class="panel panel-default" >
