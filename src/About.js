@@ -153,7 +153,7 @@ const About = () => (
 
             <h3 align="center"><b>Tools used</b></h3>
 
-            <li align="center"><a  href="https://utexas.box.com/s/zimf1bvhu2r2dhw598shugcm4b7jr2do">Technical report</a></li>
+            <li align="center"><a  href="https://utexas.box.com/s/sgm9y2l4h3qpbhustpfs9zgp7jydapzm">Technical report</a></li>
         </div>
     </div>
 
