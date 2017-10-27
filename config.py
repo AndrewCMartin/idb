@@ -31,10 +31,10 @@ class TestingConfig(object):
     """Configuration for unit tests, database is initially empty and in memory"""
     TESTING = True
     DEBUG = True
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-    SQL_CONN = os.environ['CLOUDSQL_CONNECTION_NAME']
-    SQL_USER = os.environ['CLOUDSQL_USER']
-    SQL_PASS = os.environ['CLOUDSQL_PASSWORD']
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + SQL_USER + ':' + SQL_PASS + '@' + 'localhost:3306/marvelusdb'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    # SQL_CONN = os.environ['CLOUDSQL_CONNECTION_NAME']
+    # SQL_USER = os.environ['CLOUDSQL_USER']
+    # SQL_PASS = os.environ['CLOUDSQL_PASSWORD']
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + SQL_USER + ':' + SQL_PASS + '@' + 'localhost:3306/marvelusdb'
     DEBUG_TB_ENABLED = True
     PRESERVE_CONTEXT_ON_EXCEPTION = False
