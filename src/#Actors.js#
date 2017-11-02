@@ -16,17 +16,15 @@ class Actors extends React.Component{
           numPages: 1,
           activePage:1,
 	  orderBy: 'name',
-	  orderDirection: 'asc',
       }
       this.handleSelectSort = this.handleSelectSort.bind(this);
       this.handleSelect = this.handleSelect.bind(this);
-      this.handleSortDirection = this.handleSortDirection(this);
 
   }
 
 
   componentDidMount(){
-      return axios.get('http://marvelus.me/api/actor',{params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":this.state.orderDirection}]}}}).then(res=>{
+      return axios.get('http://marvelus.me/api/actor',{params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":"asc"}]}}}).then(res=>{
 	  this.state.numPages = res.data.total_pages;
 	  const actors = res.data.objects.map(actor => actor)
 	  this.setState({actors});
@@ -39,7 +37,7 @@ handleSelect(eventKey) {
 	activePage: eventKey,
     });
 
-    axios.get('http://marvelus.me/api/actor', {params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":this.state.orderDirection}]}}}).then(res=>{
+    axios.get('http://marvelus.me/api/actor', {params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":"asc"}]}}}).then(res=>{
 	const actors = res.data.objects.map(actor => actor);
 	this.setState({actors});
 
@@ -48,39 +46,22 @@ handleSelect(eventKey) {
 
     handleSelectSort(eventKey) {
 	this.state.orderBy = eventKey;
-	axios.get('http://marvelus.me/api/actor', {params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":this.state.orderDirection}]}}}).then(res=>{
+	axios.get('http://marvelus.me/api/actor', {params:{results_per_page:6, page:this.state.activePage, order_by:this.state.orderBy}}).then(res=>{
 	const actors = res.data.objects.map(actor => actor);
 	this.setState({actors});
     });
 
     }
 
-    handleSortDirection(eventKey) {
-	this.state.orderDirection = eventKey;
-	axios.get('http://marvelus.me/api/actor', {params:{results_per_page:6, page:this.state.activePage, q:{"order_by":[{"field":this.state.orderBy,"direction":this.state.orderDirection}]}}}).then(res=>{
-	const actors = res.data.objects.map(actor => actor);
-	    this.setState({actors});
-	})
-	
-    }
-
-    renderDropdownButtonSortby(title, i) {
+    renderDropdownButton(title, i) {
   return (
-	  <DropdownButton bsStyle="primary" title={title} key={"name"} id={`dropdown-basic-${i}`} onSelect={this.handleSelectSort}>
+	  <DropdownButton bsStyle={title.toLowerCase()} title={title} key={"name"} id={`dropdown-basic-${i}`} onSelect={this.handleSelectSort}>
       <MenuItem eventKey="name">Name</MenuItem>
       <MenuItem eventKey="birthday">Age</MenuItem>
    
     </DropdownButton>
   );
-    }
-    renderDropdownButtonSortDirection(title, i) {
-	return (
-		<DropdownButton bsStyle="primary" title={title} onSelect={this.handleSortDirection}>
-		<MenuItem eventKey="asc">Ascending</MenuItem>
-		<MenuItem eventKey="desc">Descending</MenuItem>
-		</DropdownButton>
-	);
-    }
+}
 
     
    
@@ -107,8 +88,7 @@ handleSelect(eventKey) {
 	      onSelect={this.handleSelect}/>
           }
 
-	  {this.renderDropdownButtonSortby("Sort By: ", "name")}
-	  {this.renderDropdownButtonSortDirection("Order","")}
+	  {this.renderDropdownButton("Sort By: ", "name")}
 	  
 	  </div>
           <div className="row">
