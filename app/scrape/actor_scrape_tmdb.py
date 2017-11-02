@@ -1,3 +1,5 @@
+import time
+
 import tmdbsimple as tmdb
 from sqlalchemy.exc import IntegrityError
 
@@ -7,6 +9,7 @@ tmdb.API_KEY = '3b1223f4067b19c69b5a3e35f5b0f938'
 
 
 def add_actor_info(actor_id):
+    time.sleep(0.1)
     person = tmdb.People(actor_id)
     response = person.info()
     m_credits = ''
@@ -49,7 +52,7 @@ def main():
     actor_ids = set()
     print(movies)
     for movie_result in movies["results"]:
-
+        time.sleep(0.1)
         movie = tmdb.Movies(movie_result["id"])
         credits = movie.credits()
 
@@ -57,11 +60,14 @@ def main():
             if person["order"] <= 20:
                 actor_ids.add(person["id"])
     for tv_id in tv_ids:
+        time.sleep(0.1)
         show = tmdb.TV(tv_id)
         credits = show.credits()
         for person in credits["cast"]:
             if person["order"] <= 20:
                 actor_ids.add(person["id"])
+
+    print(len(actor_ids))
     for actor_id in actor_ids:
         add_actor_info(actor_id)
 

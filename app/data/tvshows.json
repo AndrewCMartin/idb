@@ -1,0 +1,3829 @@
+[
+  {
+    "poster_path": "/jq2Uw8o8ROqyQLOMu8oBNxRCOat.jpg",
+    "overview": "Marvel\u2019s Agents of S.H.I.E.L.D.: Slingshot is set in the world of the hit television series Marvel\u2019s Agents of S.H.I.E.L.D. Taking place shortly before the beginning of Season 4, this digital series features the character of Elena \u201cYo-Yo\u201d Rodriguez (Natalia Cordova-Buckley), an Inhuman with the ability to move with super-speed. As a person with powers, she must sign the recently instituted Sokovia Accords, the worldwide agreement that regulates and tracks those with super powers. However, the restrictions of the Accords are in direct conflict with a personal mission she\u2019s desperate to fulfill, a mission that will test her abilities, her allegiances, and will include some tense encounters with our most popular S.H.I.E.L.D. team members.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Agents of S.H.I.E.L.D.: Slingshot",
+    "created_by": [],
+    "id": 69088,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 10,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      5
+    ],
+    "number_of_episodes": 6,
+    "original_language": "en",
+    "status": "Ended",
+    "last_air_date": "2016-12-13",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Yancey Arias",
+          "gender": 2,
+          "character": "Colonel Victor Ramon",
+          "id": 21049,
+          "credit_id": "585306889251416f6302925e",
+          "profile_path": "/a1DPnYXTeRyVoQDneUwYEgfdI92.jpg",
+          "order": 8
+        },
+        {
+          "name": "Chloe Bennet",
+          "gender": 1,
+          "character": "Daisy Johnson / Quake",
+          "id": 1181303,
+          "credit_id": "5859196d9251411a4606c0c4",
+          "profile_path": "/oHSuFDnO1w8bc65f5eyforuI6GS.jpg",
+          "order": 1
+        },
+        {
+          "name": "Ming-Na Wen",
+          "gender": 1,
+          "character": "Melinda May",
+          "id": 21702,
+          "credit_id": "585919a392514122d2005132",
+          "profile_path": "/916sVknhRRxUkr70sxqa5AQvyJP.jpg",
+          "order": 2
+        },
+        {
+          "name": "Clark Gregg",
+          "gender": 2,
+          "character": "Phil Coulson",
+          "id": 9048,
+          "credit_id": "585919b5c3a3682f5806716b",
+          "profile_path": "/t8CLS2Zcy7IjcZkE1vtxl40h9rh.jpg",
+          "order": 0
+        },
+        {
+          "name": "Iain De Caestecker",
+          "gender": 0,
+          "character": "Leo Fitz",
+          "id": 956764,
+          "credit_id": "585919c79251416fad068480",
+          "profile_path": "/poZ6RXNoKYiB5U0mBQjo1QK6IZV.jpg",
+          "order": 3
+        },
+        {
+          "name": "Elizabeth Henstridge",
+          "gender": 1,
+          "character": "Jemma Simmons",
+          "id": 1223886,
+          "credit_id": "585919e19251416fad06848c",
+          "profile_path": "/rH2c5GZJSElWLZ0xNLbSLejcejr.jpg",
+          "order": 4
+        },
+        {
+          "name": "Jason O'Mara",
+          "gender": 2,
+          "character": "Jeffrey Mace",
+          "id": 183812,
+          "credit_id": "585919f1925141594101802f",
+          "profile_path": "/7OTkkGVB0A6b3RlXvtiuo5YHWBJ.jpg",
+          "order": 6
+        },
+        {
+          "name": "Deren Tadlock",
+          "gender": 0,
+          "character": "Agent Cecilio",
+          "id": 1668277,
+          "credit_id": "58591a19925141724d03e863",
+          "profile_path": null,
+          "order": 12
+        },
+        {
+          "name": "Henry Simmons",
+          "gender": 2,
+          "character": "Alphonso \"Mack\" Mackenzie",
+          "id": 67913,
+          "credit_id": "58591a3ec3a368258c062af3",
+          "profile_path": "/ajSaqDbQfi6eAFULhpCSezYplUF.jpg",
+          "order": 5
+        },
+        {
+          "name": "Hiroo Minami",
+          "gender": 0,
+          "character": "Henchman #2",
+          "id": 1725181,
+          "credit_id": "58591a7b92514122d20051b7",
+          "profile_path": null,
+          "order": 11
+        },
+        {
+          "name": "Dale Pavinski",
+          "gender": 0,
+          "character": "Alpha Dog",
+          "id": 1493902,
+          "credit_id": "58591a8fc3a36806a705c707",
+          "profile_path": "/krNvoKK0lPlL2Kp77FdSdItEvoM.jpg",
+          "order": 9
+        },
+        {
+          "name": "Matt Berberi",
+          "gender": 0,
+          "character": "Henchman #1",
+          "id": 1346337,
+          "credit_id": "58591aa59251411a4606c1a6",
+          "profile_path": null,
+          "order": 10
+        },
+        {
+          "name": "Marcus Jordan",
+          "gender": 0,
+          "character": "Quinjet Pilot",
+          "id": 1725182,
+          "credit_id": "58591abf92514175ad05dd5e",
+          "profile_path": null,
+          "order": 13
+        },
+        {
+          "name": "Craig Baxley Jr",
+          "gender": 0,
+          "character": "Watchdog #1",
+          "id": 1585029,
+          "credit_id": "58591ad992514159410180d9",
+          "profile_path": "/3PUjTAjR7n6JJ9SEcCIkFRYTWnb.jpg",
+          "order": 14
+        },
+        {
+          "name": "Natalia C\u00f3rdova-Buckley",
+          "gender": 1,
+          "character": "Elena \"Yo-Yo\" Rodriguez / Slingshot",
+          "id": 1693947,
+          "credit_id": "585304279251416f6302912d",
+          "profile_path": "/hm3qzlcxmJavLYzEfjtKoxSWfI5.jpg",
+          "order": 7
+        }
+      ],
+      "crew": [
+        {
+          "name": "Joe Quesada",
+          "gender": null,
+          "department": "Directing",
+          "job": "Director",
+          "credit_id": "585305919251416f10027a52",
+          "profile_path": null,
+          "id": 1187909
+        },
+        {
+          "name": "Chris Cheramie",
+          "gender": null,
+          "department": "Directing",
+          "job": "Director",
+          "credit_id": "585923e9c3a3682fb807c7c8",
+          "profile_path": null,
+          "id": 1397858
+        },
+        {
+          "name": "Jack Kirby",
+          "gender": null,
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "5859240ac3a36827a506373c",
+          "profile_path": "/xLVSa7mX1BCyVoKD2wyRGEQXj8M.jpg",
+          "id": 18866
+        },
+        {
+          "name": "Stan Lee",
+          "gender": null,
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "58592428c3a36806a705ce23",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        }
+      ]
+    },
+    "in_production": false,
+    "first_air_date": "2016-12-13",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/jq2Uw8o8ROqyQLOMu8oBNxRCOat.jpg",
+        "id": 82822,
+        "episode_count": 6,
+        "air_date": "2016-12-13"
+      }
+    ],
+    "backdrop_path": "/nCYcjoDpRoOUQW7DUUp4v0HGWN3.jpg",
+    "production_companies": [
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      }
+    ],
+    "name": "Marvel's Agents of S.H.I.E.L.D.: Slingshot",
+    "homepage": "http://abc.go.com/shows/marvels-agents-of-shield-slingshot",
+    "popularity": 2.987754,
+    "vote_average": 6.0
+  },
+  {
+    "poster_path": "/ty4elPPA9zifK9yCVMlDq1dS1Y.jpg",
+    "overview": "An insecure but courageous and intelligent teen named Peter Parker, a new student of Midtown High, is bitten by a radioactive spider and given powers. He becomes a hero named Spider-Man after the death of his uncle and he must adapt to this new way of life.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 44,
+        "name": "Disney XD"
+      }
+    ],
+    "genres": [
+      {
+        "id": 16,
+        "name": "Animation"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Spider-Man",
+    "created_by": [
+      {
+        "gender": 0,
+        "profile_path": "/zV1WlFhGQx6yizgkyDOj6TCvrmn.jpg",
+        "id": 1219677,
+        "name": "Kevin Shinick"
+      }
+    ],
+    "id": 72705,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 8,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      21
+    ],
+    "number_of_episodes": 20,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-10-28",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Robbie Daymond ",
+          "gender": 0,
+          "character": "Peter Parker / Spider-Man (voice)",
+          "id": 229434,
+          "credit_id": "5964f820c3a3680d590ea1ce",
+          "profile_path": "/jce80kCYaTbiZdt6LLXNGASw6sz.jpg",
+          "order": 0
+        },
+        {
+          "name": "Max Mittleman",
+          "gender": 0,
+          "character": "Harry Osborn (voice)",
+          "id": 1663713,
+          "credit_id": "59995bf192514153c801b639",
+          "profile_path": null,
+          "order": 1
+        },
+        {
+          "name": "Nadji Jeter",
+          "gender": 2,
+          "character": "Miles Morales (voice)",
+          "id": 587035,
+          "credit_id": "59995b32c3a3680f4e019d94",
+          "profile_path": "/yRSNk2EYupa3Mu5KJXM3VIlkeTG.jpg",
+          "order": 2
+        },
+        {
+          "name": "Melanie Minichino",
+          "gender": 1,
+          "character": "Anya Corazon (voice)",
+          "id": 1544176,
+          "credit_id": "59995b4ac3a3680eed01e332",
+          "profile_path": "/ru05YPqXLG5QZjKFwbTZrbeNuE.jpg",
+          "order": 3
+        },
+        {
+          "name": "Fred Tatasciore",
+          "gender": 2,
+          "character": "Max Modell (voice)",
+          "id": 60279,
+          "credit_id": "5964f88d9251410a5910f2a2",
+          "profile_path": "/lNe4zn9fJ302GehQVaFk5BNcGGM.jpg",
+          "order": 4
+        },
+        {
+          "name": "Laura Bailey",
+          "gender": 1,
+          "character": "Gwen Stacy (voice)",
+          "id": 75037,
+          "credit_id": "59995b72925141639600e767",
+          "profile_path": "/213MerOuZFAVdMFoGaO6r3SwgZV.jpg",
+          "order": 5
+        },
+        {
+          "name": "Nancy Linari",
+          "gender": 0,
+          "character": "Aunt May (voice)",
+          "id": 156523,
+          "credit_id": "59995b85c3a3686dce00df56",
+          "profile_path": "/9cBIOvX8s3m7pdl6wGY2REERjZB.jpg",
+          "order": 6
+        },
+        {
+          "name": "Patton Oswalt",
+          "gender": 2,
+          "character": "Uncle Ben (voice)",
+          "id": 10872,
+          "credit_id": "59995b989251413ff600f929",
+          "profile_path": "/dq3uNmTB7r8XTtadV3OD3N7LqV6.jpg",
+          "order": 7
+        },
+        {
+          "name": "Scott Menville",
+          "gender": 2,
+          "character": "Doc Ock (voice)",
+          "id": 113916,
+          "credit_id": "59995baa925141639600e7b3",
+          "profile_path": "/otVTyLzkIRp8ovXL0pciJ1MnFtl.jpg",
+          "order": 8
+        }
+      ],
+      "crew": [
+        {
+          "name": "Brian Tyler",
+          "gender": 2,
+          "department": "Sound",
+          "job": "Music",
+          "credit_id": "5964f8ddc3a368253c0f539f",
+          "profile_path": "/22QWiNJj03amY6GT1QPUs7dbdcB.jpg",
+          "id": 6041
+        },
+        {
+          "name": "Alan Fine",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "5964f8edc3a36828fc0f8826",
+          "profile_path": "/7Ntt3WWg25ivLT8Os3LeZW1WxIC.jpg",
+          "id": 113672
+        },
+        {
+          "name": "Dan Buckley",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "5964f90bc3a368265d10a6bb",
+          "profile_path": null,
+          "id": 1011028
+        },
+        {
+          "name": "Joe Quesada",
+          "gender": 0,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "5964f919c3a3680dec0ec058",
+          "profile_path": null,
+          "id": 1187909
+        },
+        {
+          "name": "Jeph Loeb",
+          "gender": 0,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "5964f9249251410bfa1180fe",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        },
+        {
+          "name": "Stan Lee",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "5964f932c3a3680d590ea310",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        },
+        {
+          "name": "Stan Lee",
+          "gender": 2,
+          "department": "Writing",
+          "job": "Characters",
+          "credit_id": "5964f94ec3a368293b11aed2",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-08-19",
+    "seasons": [
+      {
+        "season_number": 0,
+        "poster_path": null,
+        "id": 90224,
+        "episode_count": 6,
+        "air_date": "2017-07-24"
+      },
+      {
+        "season_number": 1,
+        "poster_path": "/gZGGu8WK0hU6R8LAJyAqxoZj4KL.jpg",
+        "id": 90209,
+        "episode_count": 14,
+        "air_date": "2017-08-19"
+      }
+    ],
+    "backdrop_path": "/6xoAxqDAmsl8xuuDivSb2eAUzKT.jpg",
+    "production_companies": [],
+    "name": "Marvel's Spider-Man",
+    "homepage": "http://watchdisneyxd.go.com/marvels-spiderman-collection",
+    "popularity": 19.961466,
+    "vote_average": 7.5
+  },
+  {
+    "poster_path": "/g4LKIwDc0uWa0xdDgvuCBKrU4iE.jpg",
+    "overview": "Peter Quill is Star-Lord, the brash adventurer who, to save the universe from its greatest threats, joins forces with a quartet of disparate misfits \u2014 fan-favorite Rocket Raccoon, a tree-like humanoid named Groot, the enigmatic, expert fighter Gamora and the rough edged warrior Drax the Destroyer.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 44,
+        "name": "Disney XD"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      }
+    ],
+    "original_name": "Marvel's Guardians of the Galaxy",
+    "created_by": [],
+    "id": 63181,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 14,
+    "number_of_seasons": 2,
+    "episode_run_time": [
+      22
+    ],
+    "number_of_episodes": 57,
+    "original_language": "en",
+    "status": "In Production",
+    "last_air_date": "2017-10-29",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Will Friedle",
+          "gender": null,
+          "character": "Peter Quill / Star-Lord (voice)",
+          "id": 76621,
+          "credit_id": "559d6acec3a36865a70001fa",
+          "profile_path": "/4WPJx7kWKpuOQPgyEdzWyrX8cQv.jpg",
+          "order": 0
+        },
+        {
+          "name": "Trevor Devall",
+          "gender": null,
+          "character": "Rocket Raccoon (voice)",
+          "id": 82816,
+          "credit_id": "559d6ae2925141250f00021f",
+          "profile_path": "/69SnAHSHWgWZkbgmgWKPGQACiEP.jpg",
+          "order": 1
+        },
+        {
+          "name": "Vanessa Marshall",
+          "gender": null,
+          "character": "Gamora (voice)",
+          "id": 81663,
+          "credit_id": "559d6af5c3a3686591000214",
+          "profile_path": "/wOXilt4TVOd0LuTw6RbWhe5DUy4.jpg",
+          "order": 2
+        },
+        {
+          "name": "David Sobolov",
+          "gender": null,
+          "character": "Drax the Destroyer (voice)",
+          "id": 164614,
+          "credit_id": "559d6c099251412512000258",
+          "profile_path": "/lUXbnlyQPsfAGg0oinCtj6KlOkt.jpg",
+          "order": 3
+        },
+        {
+          "name": "Kevin Michael Richardson",
+          "gender": null,
+          "character": "Groot (voice)",
+          "id": 24362,
+          "credit_id": "559d6c2fc3a368659e0001ef",
+          "profile_path": "/9dMOW2CFRrlDkNzeXVGMJfASupM.jpg",
+          "order": 500
+        },
+        {
+          "name": "Jonathan Adams",
+          "gender": null,
+          "character": "Ronan the Accuser (voice)",
+          "id": 13477,
+          "credit_id": "559d6c44925141250900028a",
+          "profile_path": "/iz0BqE9y5NAgMxjOjwrB1BuLHFl.jpg",
+          "order": 500
+        },
+        {
+          "name": "Jeff Bennett",
+          "gender": null,
+          "character": "Rhomann Dey (voice)",
+          "id": 34982,
+          "credit_id": "559d6c52925141251b000231",
+          "profile_path": "/bms3A7TA0QItjtUlB28qv4MFFAH.jpg",
+          "order": 500
+        }
+      ],
+      "crew": [
+        {
+          "name": "Jeph Loeb",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "57e81807925141395b01369f",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2015-09-05",
+    "seasons": [
+      {
+        "season_number": 0,
+        "poster_path": null,
+        "id": 69170,
+        "episode_count": 10,
+        "air_date": "2015-08-01"
+      },
+      {
+        "season_number": 1,
+        "poster_path": "/bGktl9BtbNfx3S0NmbGvb2abP8Q.jpg",
+        "id": 68429,
+        "episode_count": 26,
+        "air_date": "2015-09-05"
+      },
+      {
+        "season_number": 2,
+        "poster_path": null,
+        "id": 86086,
+        "episode_count": 21,
+        "air_date": "2017-04-17"
+      }
+    ],
+    "backdrop_path": "/vb0e74baBF2iAtvsKhUFjJ4fOt8.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Animation",
+        "id": 13252
+      },
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      }
+    ],
+    "name": "Marvel's Guardians of the Galaxy",
+    "homepage": "http://watchdisneyxd.go.com/marvels-guardians-of-the-galaxy",
+    "popularity": 7.434477,
+    "vote_average": 6.9
+  },
+  {
+    "poster_path": "/gW2wTB5yBDEy2wKWy0hkkZP0nXf.jpg",
+    "overview": "Marvel's Avengers Assemble is an animated series, based on the fictional Marvel Comics superhero team the Avengers, which has been designed to capitalize on the success of the 2012 film adaptation. Avengers Assemble premiered on May 26, 2013, on Disney XD. The series is a replacement for The Avengers: Earth's Mightiest Heroes. It airs alongside Ultimate Spider-Man, while Hulk and the Agents of S.M.A.S.H. will be added to the \"Marvel Universe\" television block in August 2013. Additionally, it features a near-identical cast and crew with both shows, and shares continuity with them as part of the block. Joe Casey, Joe Kelly, Duncan Rouleau and Steven T. Seagle, a group known as Man of Action, have been confirmed to be the executive producers of the series. On the Mighty Marvel Podcast #122 it was revealed the series would debut with an hour long slot featuring episodes 101 and 102 titled \"The Avengers Protocol Part 1\" and \"The Avengers Protocol Part 2\", respectively.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 44,
+        "name": "Disney XD"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      }
+    ],
+    "original_name": "Marvel's Avengers Assemble",
+    "created_by": [
+      {
+        "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+        "id": 7624,
+        "name": "Stan Lee"
+      },
+      {
+        "profile_path": "/xLVSa7mX1BCyVoKD2wyRGEQXj8M.jpg",
+        "id": 18866,
+        "name": "Jack Kirby"
+      }
+    ],
+    "id": 59427,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 40,
+    "number_of_seasons": 4,
+    "episode_run_time": [
+      22
+    ],
+    "number_of_episodes": 81,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-06-24",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [],
+      "crew": []
+    },
+    "in_production": true,
+    "first_air_date": "2013-11-09",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/tZnSqkOG9i8g4g7IZFYyqZaqi23.jpg",
+        "id": 64183,
+        "episode_count": 26,
+        "air_date": "2013-11-09"
+      },
+      {
+        "season_number": 2,
+        "poster_path": "/60xWVdAKu6wD0IJ7Myzr44pICrZ.jpg",
+        "id": 64184,
+        "episode_count": 26,
+        "air_date": "2014-09-28"
+      },
+      {
+        "season_number": 3,
+        "poster_path": "/nAIdF59uA7Vs7ZpQDqkW6YAk1J.jpg",
+        "id": 75230,
+        "episode_count": 26,
+        "air_date": "2016-03-13"
+      },
+      {
+        "season_number": 4,
+        "poster_path": null,
+        "id": 89597,
+        "episode_count": 3,
+        "air_date": "2017-06-17"
+      }
+    ],
+    "backdrop_path": "/jh12MzXiUTaC6AE3DXqjvDOFK46.jpg",
+    "production_companies": [],
+    "name": "Marvel's Avengers Assemble",
+    "homepage": "http://disneyxd.disney.com/marvels-avengers-assemble",
+    "popularity": 8.874289,
+    "vote_average": 6.3
+  },
+  {
+    "poster_path": "/cidOqJL8tayqvv3TpfTQCsgeITu.jpg",
+    "overview": "Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell\u2019s Kitchen as Daredevil.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      }
+    ],
+    "original_name": "Marvel's Daredevil",
+    "created_by": [
+      {
+        "gender": 2,
+        "profile_path": "/j5Le3QQljdGJ3kPAcjAZr9V4QUC.jpg",
+        "id": 47506,
+        "name": "Drew Goddard"
+      },
+      {
+        "gender": 0,
+        "profile_path": null,
+        "id": 1213074,
+        "name": "Steven S. DeKnight"
+      }
+    ],
+    "id": 61889,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 804,
+    "number_of_seasons": 3,
+    "episode_run_time": [
+      52
+    ],
+    "number_of_episodes": 26,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2016-03-18",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Charlie Cox",
+          "gender": 2,
+          "character": "Matt Murdock / Daredevil",
+          "id": 23458,
+          "credit_id": "54b783fc9251411d70001951",
+          "profile_path": "/y4GtcvR3VfpSWRiRfuIzRdRQCuU.jpg",
+          "order": 0
+        },
+        {
+          "name": "Deborah Ann Woll",
+          "gender": 1,
+          "character": "Karen Page",
+          "id": 212154,
+          "credit_id": "54b7840a9251411d73001926",
+          "profile_path": "/8CKosfPXV0Pyx5woFooR5NES4AF.jpg",
+          "order": 1
+        },
+        {
+          "name": "Elden Henson",
+          "gender": 2,
+          "character": "Foggy Nelson",
+          "id": 20220,
+          "credit_id": "54b784189251411d7900199e",
+          "profile_path": "/nX2c32A2ppiw5IC86zUM4JTLpoz.jpg",
+          "order": 2
+        },
+        {
+          "name": "Rosario Dawson",
+          "gender": 1,
+          "character": "Claire Temple",
+          "id": 5916,
+          "credit_id": "54b7842dc3a3686c6b001f43",
+          "profile_path": "/dEK1rMmSJAPGdc2t1XWdbqBmvEq.jpg",
+          "order": 6
+        }
+      ],
+      "crew": []
+    },
+    "in_production": true,
+    "first_air_date": "2015-04-10",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/zFmJQzl6bFrdpHhDkxXmboyykqD.jpg",
+        "id": 64558,
+        "episode_count": 13,
+        "air_date": "2015-04-10"
+      },
+      {
+        "season_number": 2,
+        "poster_path": "/opHoslNCxkgoCaGhfO66fvCSH83.jpg",
+        "id": 74182,
+        "episode_count": 13,
+        "air_date": "2016-03-18"
+      },
+      {
+        "season_number": 3,
+        "poster_path": null,
+        "id": 85277,
+        "episode_count": 0,
+        "air_date": null
+      }
+    ],
+    "backdrop_path": "/dpNeXLEnuKzAvbNwveJhNEiQvXZ.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Entertainment",
+        "id": 7505
+      },
+      {
+        "name": "The Walt Disney Company",
+        "id": 10079
+      },
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "DeKnight Productions",
+        "id": 51963
+      },
+      {
+        "name": "Goddard Textiles",
+        "id": 51964
+      }
+    ],
+    "name": "Marvel's Daredevil",
+    "homepage": "http://www.netflix.com/WiMovie/80018294",
+    "popularity": 32.005125,
+    "vote_average": 7.6
+  },
+  {
+    "poster_path": "/8a7e2GNpMnjI2hgRZH3jq2c7ffv.jpg",
+    "overview": "After a tragic ending to her short-lived super hero stint, Jessica Jones is rebuilding her personal life and career as a detective who gets pulled into cases involving people with extraordinary abilities in New York City.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ],
+    "original_name": "Marvel's Jessica Jones",
+    "created_by": [
+      {
+        "profile_path": "/m9CQrt8k8RXox97E1sHcDWhRTId.jpg",
+        "id": 56855,
+        "name": "Melissa Rosenberg"
+      }
+    ],
+    "id": 38472,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 450,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      52
+    ],
+    "number_of_episodes": 13,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2015-11-20",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Krysten Ritter",
+          "gender": 1,
+          "character": "Jessica Jones",
+          "id": 78080,
+          "credit_id": "54d0f95d9251417c1d003488",
+          "profile_path": "/ju41exVV9D5PEk6jQ5rDJ1kvYSq.jpg",
+          "order": 0
+        },
+        {
+          "name": "Mike Colter",
+          "gender": 2,
+          "character": "Luke Cage",
+          "id": 450,
+          "credit_id": "54d0f9a49251417c16003253",
+          "profile_path": "/gAqaj4qmyhR4cCw22cmOAcvEFk6.jpg",
+          "order": 1
+        },
+        {
+          "name": "Rachael Taylor",
+          "gender": 1,
+          "character": "Trish Walker",
+          "id": 19538,
+          "credit_id": "54d0f9bb9251417c16003260",
+          "profile_path": "/t0LJ5CIjwzUdHNkXQb0VhXIEVDA.jpg",
+          "order": 2
+        },
+        {
+          "name": "David Tennant",
+          "gender": 2,
+          "character": "Kilgrave",
+          "id": 20049,
+          "credit_id": "54d0f9d5c3a3684318003af8",
+          "profile_path": "/dvhgfeZtK0aSHU1H8rkGwFTq28b.jpg",
+          "order": 3
+        },
+        {
+          "name": "Carrie-Anne Moss",
+          "gender": 1,
+          "character": "Jeri Hogarth",
+          "id": 530,
+          "credit_id": "54d12d58c3a368430a0043e2",
+          "profile_path": "/pgyBbrapYBoGvg5M3OIvVQ5Ne7m.jpg",
+          "order": 4
+        },
+        {
+          "name": "Eka Darville",
+          "gender": 2,
+          "character": "Malcolm Ducasse",
+          "id": 966554,
+          "credit_id": "5585cb1cc3a3682746001130",
+          "profile_path": "/nIkPGUYUkhOPl4ljwTfn37PjVHF.jpg",
+          "order": 5
+        },
+        {
+          "name": "Wil Traval",
+          "gender": 0,
+          "character": "Will Simpson",
+          "id": 1228906,
+          "credit_id": "57ee3cf6925141175b004799",
+          "profile_path": "/om8ZPv2J7wWNiyqPohy2nKNYaKM.jpg",
+          "order": 6
+        },
+        {
+          "name": "Erin Moriarty",
+          "gender": 1,
+          "character": "Hope Shlottman",
+          "id": 990393,
+          "credit_id": "57ee3d59c3a3682aa1002e08",
+          "profile_path": "/6jzskeTQb9eVYpUJyahQajo9sZA.jpg",
+          "order": 7
+        }
+      ],
+      "crew": [
+        {
+          "name": "Loren Weeks",
+          "gender": null,
+          "department": "Art",
+          "job": "Production Design",
+          "credit_id": "564d0764c3a3686031007e96",
+          "profile_path": null,
+          "id": 54899
+        },
+        {
+          "name": "Manuel Billeter",
+          "gender": null,
+          "department": "Camera",
+          "job": "Director of Photography",
+          "credit_id": "564d077ec3a3682a1a0032a3",
+          "profile_path": null,
+          "id": 1537444
+        },
+        {
+          "name": "Sean Callery",
+          "gender": null,
+          "department": "Sound",
+          "job": "Original Music Composer",
+          "credit_id": "564d0722c3a368602b0081fb",
+          "profile_path": null,
+          "id": 1090864
+        },
+        {
+          "name": "Paul Schnee",
+          "gender": null,
+          "department": "Production",
+          "job": "Casting",
+          "credit_id": "564d073f9251414dd1008328",
+          "profile_path": null,
+          "id": 19689
+        },
+        {
+          "name": "Kerry Barden",
+          "gender": null,
+          "department": "Production",
+          "job": "Casting",
+          "credit_id": "564d07339251414dcb008235",
+          "profile_path": "/zb3khdNgVHerkFz4esvjSZHnbDW.jpg",
+          "id": 5328
+        },
+        {
+          "name": "Stephanie Maslansky",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Costume Design",
+          "credit_id": "564d07c1c3a3686028008346",
+          "profile_path": null,
+          "id": 1536105
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "gender": null,
+          "department": "Production",
+          "job": "Consulting Producer",
+          "credit_id": "56ec876b9251415e62003872",
+          "profile_path": null,
+          "id": 1382000
+        },
+        {
+          "name": "Dana Baratta",
+          "gender": null,
+          "department": "Production",
+          "job": "Co-Executive Producer",
+          "credit_id": "574cfe9f92514101620002d6",
+          "profile_path": null,
+          "id": 1628739
+        },
+        {
+          "name": "Dan Buckley",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cfec2c3a36873dc000305",
+          "profile_path": null,
+          "id": 1011028
+        },
+        {
+          "name": "Jim Chory",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cfee59251410152000296",
+          "profile_path": null,
+          "id": 25939
+        },
+        {
+          "name": "Alan Fine",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cfef1925141015e00031c",
+          "profile_path": "/7Ntt3WWg25ivLT8Os3LeZW1WxIC.jpg",
+          "id": 113672
+        },
+        {
+          "name": "Liz Friedman",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cff02925141016a0002ef",
+          "profile_path": "/bTCpQcfW5uQzYJxPVhRJBhsJBzX.jpg",
+          "id": 1218783
+        },
+        {
+          "name": "Allie Goss",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cff6b925141015e000335",
+          "profile_path": null,
+          "id": 1458685
+        },
+        {
+          "name": "Kris Henigman",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cff7ac3a36873dc00032e",
+          "profile_path": null,
+          "id": 1458686
+        },
+        {
+          "name": "Cindy Holland",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cff8a925141016a000301",
+          "profile_path": null,
+          "id": 1458687
+        },
+        {
+          "name": "Stan Lee",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cff9fc3a36873d7000328",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        },
+        {
+          "name": "Howard Klein",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cffad92514101560002d0",
+          "profile_path": null,
+          "id": 58274
+        },
+        {
+          "name": "Jeph Loeb",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cffcfc3a36873dc000343",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        },
+        {
+          "name": "Joe Quesada",
+          "gender": null,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "574cffdd92514101650002c5",
+          "profile_path": null,
+          "id": 1187909
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "gender": null,
+          "department": "Writing",
+          "job": "Characters",
+          "credit_id": "587a91bec3a3684a270070ac",
+          "profile_path": null,
+          "id": 1382000
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2015-11-20",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/yNjRNpFAKskzbOHrwAsJQMM8Udl.jpg",
+        "id": 64822,
+        "episode_count": 13,
+        "air_date": "2015-11-20"
+      }
+    ],
+    "backdrop_path": "/ihzq7HgeInN7iz8Y9K5yb71LVDJ.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Studios",
+        "id": 420
+      },
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "Tall Girls Productions",
+        "id": 45722
+      }
+    ],
+    "name": "Marvel's Jessica Jones",
+    "homepage": "https://www.netflix.com/title/80002311",
+    "popularity": 14.244101,
+    "vote_average": 7.5
+  },
+  {
+    "poster_path": "/c0guvI3IAjHITRbhqZ5jmWrrMV6.jpg",
+    "overview": "Hulk and the Agents of S.M.A.S.H. is an American cartoon series based on the superhero character by Marvel Comics. The series aired on August 11, 2013 on Disney XD. The series aired alongside Avengers Assemble and Ultimate Spider-Man as part of Disney XD's \"Marvel Universe\" television block.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 44,
+        "name": "Disney XD"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      }
+    ],
+    "original_name": "Marvel\u2019s Hulk and the Agents of S.M.A.S.H",
+    "created_by": [],
+    "id": 40044,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 11,
+    "number_of_seasons": 2,
+    "episode_run_time": [
+      25
+    ],
+    "number_of_episodes": 52,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2015-06-28",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [],
+      "crew": [
+        {
+          "name": "Tim Brock",
+          "gender": null,
+          "department": "Visual Effects",
+          "job": "Color Designer",
+          "credit_id": "5551609fc3a368436d001b8e",
+          "profile_path": null,
+          "id": 1447457
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2013-08-11",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 51144,
+        "episode_count": 26,
+        "air_date": "2013-08-11"
+      },
+      {
+        "season_number": 2,
+        "poster_path": null,
+        "id": 63175,
+        "episode_count": 26,
+        "air_date": "2014-10-12"
+      }
+    ],
+    "backdrop_path": "/iTrWsHtTLCjPb1XWfjDmLTpv88X.jpg",
+    "production_companies": [],
+    "name": "Marvel\u2019s Hulk and the Agents of S.M.A.S.H",
+    "homepage": "",
+    "popularity": 1.661138,
+    "vote_average": 5.6
+  },
+  {
+    "poster_path": "/nqfKM6ojcZw7Ti9QN5CsaDgz5Cf.jpg",
+    "overview": "Six teenagers discover that their parents are secretly members of a supervillain cabal called The Pride. After deciding they\u2019re no longer safe in their own homes, the kids go on the run. In the midst of hiding from their elders, the teens learn about themselves and become a family of their own.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 105,
+        "name": "Showcase"
+      },
+      {
+        "id": 453,
+        "name": "Hulu"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Runaways",
+    "created_by": [],
+    "id": 67466,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      60
+    ],
+    "number_of_episodes": 2,
+    "original_language": "en",
+    "status": "In Production",
+    "last_air_date": "2017-11-28",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Gregg Sulkin",
+          "gender": null,
+          "character": "Chase Stein",
+          "id": 212686,
+          "credit_id": "58aa8315c3a36868af006c6b",
+          "profile_path": "/ohkO2eNsxgXCmTvW6eEEjoiQZGo.jpg",
+          "order": 0
+        },
+        {
+          "name": "Lyrica Okano",
+          "gender": null,
+          "character": "Nico Minoru",
+          "id": 1684139,
+          "credit_id": "58aa83389251416f92006b15",
+          "profile_path": "/9Xb2yRTy2vEjypqShZITTtYx2sz.jpg",
+          "order": 1
+        },
+        {
+          "name": "Virginia Gardner",
+          "gender": null,
+          "character": "Karolina Dean",
+          "id": 1279279,
+          "credit_id": "58aa8351c3a368684f006f56",
+          "profile_path": "/1B8r47IyK3Zy8T74TO1YmNDf4mn.jpg",
+          "order": 2
+        },
+        {
+          "name": "Rhenzy Feliz",
+          "gender": null,
+          "character": "Alex Wilder",
+          "id": 1761634,
+          "credit_id": "58aa83719251416f7d007458",
+          "profile_path": "/r5zVYIVuyMVDFqaL3s0YvuvQjxO.jpg",
+          "order": 3
+        },
+        {
+          "name": "Ariela Barer",
+          "gender": null,
+          "character": "Gert Yorkes",
+          "id": 82764,
+          "credit_id": "58aa83909251416f92006c2f",
+          "profile_path": "/oLLbFHfNNRoruNTFUXjKFl7WtEc.jpg",
+          "order": 4
+        },
+        {
+          "name": "Allegra Acosta",
+          "gender": null,
+          "character": "Molly Hernandez",
+          "id": 1761635,
+          "credit_id": "58aa83b6c3a36868af006e18",
+          "profile_path": "/6JlrffM4dOp07jw9pJqL9faOQPm.jpg",
+          "order": 5
+        },
+        {
+          "name": "Ryan Sands",
+          "gender": null,
+          "character": "Geoffrey Wilder",
+          "id": 1194209,
+          "credit_id": "58b11b059251415b480062d8",
+          "profile_path": "/mdKEA4XdyGplgbGo9lCLqjE88A8.jpg",
+          "order": 6
+        },
+        {
+          "name": "Angel Parker",
+          "gender": null,
+          "character": "Catherine Wilder",
+          "id": 1254399,
+          "credit_id": "58b11b259251415b630060d7",
+          "profile_path": "/w8SX3vb4fSxfIYDzpwUmtYAaXCx.jpg",
+          "order": 7
+        },
+        {
+          "name": "Brigid Brannagh",
+          "gender": null,
+          "character": "Stacey Yorkes",
+          "id": 135409,
+          "credit_id": "58b11ba2c3a3680778005ff4",
+          "profile_path": "/v61Ge2ZmrN7Dy2xCz9GfPJ4RM9Q.jpg",
+          "order": 8
+        },
+        {
+          "name": "Annie Wersching",
+          "gender": null,
+          "character": "Leslie Dean",
+          "id": 159431,
+          "credit_id": "58b11bc99251415b2d006809",
+          "profile_path": "/no4y7IjvnGNNoLidkQ8VVsgBc8M.jpg",
+          "order": 9
+        },
+        {
+          "name": "James Marsters",
+          "gender": null,
+          "character": "Victor Stein",
+          "id": 47297,
+          "credit_id": "58b11c809251415b1d006b59",
+          "profile_path": "/asmCNHg9nUC2Yv1d7LMQrQ5Adul.jpg",
+          "order": 10
+        },
+        {
+          "name": "Ever Carradine",
+          "gender": null,
+          "character": "Janet Stein",
+          "id": 41557,
+          "credit_id": "58b11caf9251415b29006e35",
+          "profile_path": "/qixl5K4LVmpmqjnoNoIRhJcNmBb.jpg",
+          "order": 11
+        },
+        {
+          "name": "Kip Pardue",
+          "gender": null,
+          "character": "Frank Dean",
+          "id": 65561,
+          "credit_id": "58b11ae69251415b2900665e",
+          "profile_path": "/yXUF14C6aob2GA8sNtfMgEHWi3Y.jpg",
+          "order": 12
+        }
+      ],
+      "crew": [
+        {
+          "name": "Josh Schwartz",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "57b4c35dc3a3686a110014dd",
+          "profile_path": "/lIe4rE89dzhYbc3dZJcdXpjwoSR.jpg",
+          "id": 168798
+        },
+        {
+          "name": "Stephanie Savage",
+          "gender": 1,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "57b4c38c925141712f001b05",
+          "profile_path": null,
+          "id": 168812
+        },
+        {
+          "name": "Lis Rowinski",
+          "gender": 0,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "57b4c3cc9251410aa800149c",
+          "profile_path": null,
+          "id": 1667360
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-11-21",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/gN0vjCNbDKTOvVF5KdovPOShAsY.jpg",
+        "id": 79336,
+        "episode_count": 2,
+        "air_date": "2017-11-21"
+      }
+    ],
+    "backdrop_path": "/3IQuUfYYwWndQ2YV4CvsG0HKgos.jpg",
+    "production_companies": [
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      },
+      {
+        "name": "Hulu",
+        "id": 58423
+      }
+    ],
+    "name": "Marvel's Runaways",
+    "homepage": "",
+    "popularity": 5.736719,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/6BCa0ehCpbtwP1WJi54W4v79gfI.jpg",
+    "overview": "After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Inhumans",
+    "created_by": [
+      {
+        "gender": 2,
+        "profile_path": "/zpAysh0L0edhm00PGKbF0MUEw1.jpg",
+        "id": 67352,
+        "name": "Scott Buck"
+      }
+    ],
+    "id": 68716,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 32,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      45,
+      43
+    ],
+    "number_of_episodes": 8,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-11-10",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Anson Mount",
+          "gender": 2,
+          "character": "Blackagar Boltagon",
+          "id": 56675,
+          "credit_id": "58b611c4c3a368130b001677",
+          "profile_path": "/x7wZITQ3UZihjm7BVDbN63kUv6Q.jpg",
+          "order": 0
+        },
+        {
+          "name": "Serinda Swan",
+          "gender": 1,
+          "character": "Medusalith Amaquelin",
+          "id": 86268,
+          "credit_id": "58b73c1bc3a3681e3900003d",
+          "profile_path": "/sZvN7oG3bwNvpPMOWGXxNErd6y6.jpg",
+          "order": 1
+        },
+        {
+          "name": "Iwan Rheon",
+          "gender": 2,
+          "character": "Maximus Boltagon",
+          "id": 221978,
+          "credit_id": "58aca9749251416f4b000729",
+          "profile_path": "/tWpRmRgldINgCYJAACTdHGTLt4A.jpg",
+          "order": 2
+        },
+        {
+          "name": "Isabelle Cornish",
+          "gender": 1,
+          "character": "Crystalia Amaquelin",
+          "id": 1769524,
+          "credit_id": "58b9faf9925141607300f211",
+          "profile_path": "/mkT0LT5CDOIyAc72jYwQjN88Acx.jpg",
+          "order": 3
+        },
+        {
+          "name": "Ken Leung",
+          "gender": 2,
+          "character": "Karnak Mander-Azur",
+          "id": 2131,
+          "credit_id": "58b8ac579251415fdf003519",
+          "profile_path": "/kftJqCNab1x5W29b46rLUeXkwZi.jpg",
+          "order": 4
+        },
+        {
+          "name": "Eme Ikwuakor",
+          "gender": 2,
+          "character": "Gorgon Petragon",
+          "id": 92748,
+          "credit_id": "58b9fadd925141609b00ee62",
+          "profile_path": "/pVMO8GZkwf2H3yCGkqJWTBvoymT.jpg",
+          "order": 5
+        },
+        {
+          "name": "Sonya Balmores",
+          "gender": 0,
+          "character": "Auran",
+          "id": 1226852,
+          "credit_id": "58b9fb36925141608400f824",
+          "profile_path": "/mDUZqlM1oQm1XQWLxNpabNBmsog.jpg",
+          "order": 6
+        },
+        {
+          "name": "Ellen Woglom",
+          "gender": 1,
+          "character": "Louise",
+          "id": 202946,
+          "credit_id": "58b9fb51925141607b00f4f0",
+          "profile_path": "/cjo0jKjkPehl7TDLGeZULJxv3kb.jpg",
+          "order": 7
+        },
+        {
+          "name": "Mike Moh",
+          "gender": 0,
+          "character": "Triton Mander-Azur",
+          "id": 1324443,
+          "credit_id": "58b9fb17925141606b00fd96",
+          "profile_path": "/y1M6rhRA5H455iYzALMZCMawDsv.jpg",
+          "order": 8
+        }
+      ],
+      "crew": [
+        {
+          "name": "Scott Buck",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58b6126dc3a3680678001a62",
+          "profile_path": "/zpAysh0L0edhm00PGKbF0MUEw1.jpg",
+          "id": 67352
+        },
+        {
+          "name": "Kevin Feige",
+          "gender": 2,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b8f794c3a368664d004984",
+          "profile_path": "/AewbqQQT0FbcE358rcbopZ3zgDV.jpg",
+          "id": 10850
+        },
+        {
+          "name": "Stan Lee",
+          "gender": 2,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "590ce3939251414e850030be",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        },
+        {
+          "name": "Jack Kirby",
+          "gender": 2,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "590ce3a79251414e850030cd",
+          "profile_path": "/xLVSa7mX1BCyVoKD2wyRGEQXj8M.jpg",
+          "id": 18866
+        },
+        {
+          "name": "Geoffrey Colo",
+          "gender": 0,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "59230f9892514149f306cdd0",
+          "profile_path": null,
+          "id": 1821636
+        },
+        {
+          "name": "Jeff Jur",
+          "gender": 2,
+          "department": "Camera",
+          "job": "Director of Photography",
+          "credit_id": "59230fbb925141499006dd49",
+          "profile_path": null,
+          "id": 720
+        },
+        {
+          "name": "Tim Beach",
+          "gender": 0,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "59230fcfc3a3687a8e06a90e",
+          "profile_path": null,
+          "id": 25832
+        },
+        {
+          "name": "Adam Davis",
+          "gender": 0,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "59230feb9251411f6a00d384",
+          "profile_path": null,
+          "id": 1455993
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-09-29",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/8MzGrJ5Y7xvdwiHG8oW1LQZDZR3.jpg",
+        "id": 82048,
+        "episode_count": 8,
+        "air_date": "2017-09-28"
+      }
+    ],
+    "backdrop_path": "/9GNdPoCSzWYeo2eYKFVLvzcG6Wg.jpg",
+    "production_companies": [
+      {
+        "name": "Imax Film Entertainment",
+        "id": 7410
+      },
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      }
+    ],
+    "name": "Marvel's Inhumans",
+    "homepage": "http://abc.go.com/shows/marvels-inhumans",
+    "popularity": 39.007905,
+    "vote_average": 6.4
+  },
+  {
+    "poster_path": "/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg",
+    "overview": "Daredevil, Jessica Jones, Luke Cage and Iron Fist join forces to take on common enemies as a sinister conspiracy threatens New York City.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's The Defenders",
+    "created_by": [
+      {
+        "gender": 2,
+        "profile_path": "/yX3kfhOksjWl6bY9TonfMso8fZG.jpg",
+        "id": 1213071,
+        "name": "Douglas Petrie"
+      },
+      {
+        "gender": 2,
+        "profile_path": "/4BUR6d8744yqhnqY53UmW5iEpFJ.jpg",
+        "id": 1458689,
+        "name": "Marco Ramirez"
+      }
+    ],
+    "id": 62285,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 117,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      55,
+      50
+    ],
+    "number_of_episodes": 8,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-08-18",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Charlie Cox",
+          "gender": 2,
+          "character": "Matt Murdock",
+          "id": 23458,
+          "credit_id": "5521347fc3a368333a001384",
+          "profile_path": "/y4GtcvR3VfpSWRiRfuIzRdRQCuU.jpg",
+          "order": 0
+        },
+        {
+          "name": "Krysten Ritter",
+          "gender": 1,
+          "character": "Jessica Jones",
+          "id": 78080,
+          "credit_id": "552134619251415c7c0037e7",
+          "profile_path": "/ju41exVV9D5PEk6jQ5rDJ1kvYSq.jpg",
+          "order": 1
+        },
+        {
+          "name": "Mike Colter",
+          "gender": 2,
+          "character": "Luke Cage",
+          "id": 450,
+          "credit_id": "552134a7c3a36812ee002c73",
+          "profile_path": "/gAqaj4qmyhR4cCw22cmOAcvEFk6.jpg",
+          "order": 2
+        },
+        {
+          "name": "Finn Jones",
+          "gender": 2,
+          "character": "Danny Rand",
+          "id": 1223787,
+          "credit_id": "56ef08fa9251412b33004bc9",
+          "profile_path": "/h7Jnojn7r5tTirDWZ1j0roDrFua.jpg",
+          "order": 3
+        },
+        {
+          "name": "Sigourney Weaver",
+          "gender": 1,
+          "character": "Alexandra",
+          "id": 10205,
+          "credit_id": "5881d0549251413028009f8b",
+          "profile_path": "/gxBIAr3CnBjkNRoPovVJCvEGqP0.jpg",
+          "order": 4
+        },
+        {
+          "name": "\u00c9lodie Yung",
+          "gender": 1,
+          "character": "Elektra Natchios",
+          "id": 78147,
+          "credit_id": "5881cfe3c3a368147000a60c",
+          "profile_path": "/4EIdAaVwAdSWcs2IfKBq5ysUdc7.jpg",
+          "order": 5
+        },
+        {
+          "name": "Rosario Dawson",
+          "gender": 1,
+          "character": "Claire Temple",
+          "id": 5916,
+          "credit_id": "5881d064c3a368145b00a093",
+          "profile_path": "/dEK1rMmSJAPGdc2t1XWdbqBmvEq.jpg",
+          "order": 6
+        },
+        {
+          "name": "Jessica Henwick",
+          "gender": 1,
+          "character": "Colleen Wing",
+          "id": 1202689,
+          "credit_id": "5881d03ac3a368144900a67c",
+          "profile_path": "/8WxU7ttow0231Oyw1KPXb1BdKo4.jpg",
+          "order": 7
+        },
+        {
+          "name": "Rachael Taylor",
+          "gender": 1,
+          "character": "Trish Walker",
+          "id": 19538,
+          "credit_id": "5881d0abc3a368144900a6c6",
+          "profile_path": "/t0LJ5CIjwzUdHNkXQb0VhXIEVDA.jpg",
+          "order": 8
+        },
+        {
+          "name": "Deborah Ann Woll",
+          "gender": 1,
+          "character": "Karen Page",
+          "id": 212154,
+          "credit_id": "58b524a29251410ada00665a",
+          "profile_path": "/8CKosfPXV0Pyx5woFooR5NES4AF.jpg",
+          "order": 9
+        },
+        {
+          "name": "Elden Henson",
+          "gender": 2,
+          "character": "Foggy Nelson",
+          "id": 20220,
+          "credit_id": "5881d072c3a3681467009726",
+          "profile_path": "/nX2c32A2ppiw5IC86zUM4JTLpoz.jpg",
+          "order": 10
+        },
+        {
+          "name": "Simone Cook",
+          "gender": 1,
+          "character": "Misty Knight",
+          "id": 1034765,
+          "credit_id": "5881d08b925141302b00a3ac",
+          "profile_path": "/jABU6gXQ1HEG3DeLGziLS7vk7Ez.jpg",
+          "order": 11
+        },
+        {
+          "name": "Carrie-Anne Moss",
+          "gender": 1,
+          "character": "Jeri Hogarth",
+          "id": 530,
+          "credit_id": "58b524cf9251410ab5006476",
+          "profile_path": "/pgyBbrapYBoGvg5M3OIvVQ5Ne7m.jpg",
+          "order": 12
+        }
+      ],
+      "crew": [
+        {
+          "name": "Michael N. Knue",
+          "gender": 2,
+          "department": "Editing",
+          "job": "Editor",
+          "credit_id": "58bb1690925141609e026a3e",
+          "profile_path": null,
+          "id": 16651
+        },
+        {
+          "name": "Dan Buckley",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58bb15519251416084028b1d",
+          "profile_path": null,
+          "id": 1011028
+        },
+        {
+          "name": "Jeph Loeb",
+          "gender": 0,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58bb162c9251416077028a2d",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        },
+        {
+          "name": "Laray Mayfield",
+          "gender": 1,
+          "department": "Production",
+          "job": "Casting",
+          "credit_id": "58bb16a9925141609b027842",
+          "profile_path": null,
+          "id": 7481
+        },
+        {
+          "name": "Loren Weeks",
+          "gender": 0,
+          "department": "Art",
+          "job": "Production Design",
+          "credit_id": "58bb16d4925141607b027dc5",
+          "profile_path": null,
+          "id": 54899
+        },
+        {
+          "name": "John Paesano",
+          "gender": 0,
+          "department": "Sound",
+          "job": "Music",
+          "credit_id": "58b523a0c3a3685f0b006c82",
+          "profile_path": null,
+          "id": 77949
+        },
+        {
+          "name": "Cindy Holland",
+          "gender": 0,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b526c49251410a8800690f",
+          "profile_path": null,
+          "id": 1458687
+        },
+        {
+          "name": "Drew Goddard",
+          "gender": 2,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b526d9c3a3685edf006275",
+          "profile_path": "/j5Le3QQljdGJ3kPAcjAZr9V4QUC.jpg",
+          "id": 47506
+        },
+        {
+          "name": "Jim Chory",
+          "gender": 2,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b526edc3a3685f1e006727",
+          "profile_path": null,
+          "id": 25939
+        },
+        {
+          "name": "Douglas Petrie",
+          "gender": 2,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b526ffc3a3685edf006299",
+          "profile_path": "/yX3kfhOksjWl6bY9TonfMso8fZG.jpg",
+          "id": 1213071
+        },
+        {
+          "name": "Marco Ramirez",
+          "gender": 2,
+          "department": "Production",
+          "job": "Producer",
+          "credit_id": "58b5270fc3a3685f02006526",
+          "profile_path": "/4BUR6d8744yqhnqY53UmW5iEpFJ.jpg",
+          "id": 1458689
+        },
+        {
+          "name": "Matthew J. Lloyd",
+          "gender": 0,
+          "department": "Crew",
+          "job": "Cinematography",
+          "credit_id": "58b52734c3a3685f0b006f46",
+          "profile_path": null,
+          "id": 1094152
+        },
+        {
+          "name": "Alan Fine",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58bb1577925141609e026998",
+          "profile_path": "/7Ntt3WWg25ivLT8Os3LeZW1WxIC.jpg",
+          "id": 113672
+        },
+        {
+          "name": "Stan Lee",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58bb1605925141607b027d33",
+          "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+          "id": 7624
+        },
+        {
+          "name": "Miklos Wright",
+          "gender": 2,
+          "department": "Editing",
+          "job": "Editor",
+          "credit_id": "58bb1676c3a368664d0275c1",
+          "profile_path": null,
+          "id": 21120
+        },
+        {
+          "name": "Toni Barton",
+          "gender": 0,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "58bb16ffc3a36851cd00acd0",
+          "profile_path": null,
+          "id": 1458691
+        },
+        {
+          "name": "Malchus Janocko",
+          "gender": 0,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "58bb171b925141609b027893",
+          "profile_path": null,
+          "id": 1399448
+        },
+        {
+          "name": "Stephanie Q. Bowen",
+          "gender": 0,
+          "department": "Art",
+          "job": "Set Decoration",
+          "credit_id": "58bb1731925141126a00a8a9",
+          "profile_path": null,
+          "id": 1094563
+        },
+        {
+          "name": "Lauren Schmidt",
+          "gender": 0,
+          "department": "Production",
+          "job": "Co-Executive Producer",
+          "credit_id": "59974dd2c3a3682a15000558",
+          "profile_path": null,
+          "id": 1219517
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-08-18",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/21GnBvfV4wkUMf13ArQGXgK2Xls.jpg",
+        "id": 65691,
+        "episode_count": 8,
+        "air_date": "2017-08-18"
+      }
+    ],
+    "backdrop_path": "/7eV2vDrj1AwlTffUud66v9o0Ytq.jpg",
+    "production_companies": [
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      },
+      {
+        "name": "Goddard Textiles",
+        "id": 51964
+      }
+    ],
+    "name": "Marvel's The Defenders",
+    "homepage": "https://www.netflix.com/title/80002566",
+    "popularity": 16.328718,
+    "vote_average": 7.1
+  },
+  {
+    "poster_path": "/mQWBExOnHrGVsjkpWczJjo6bhZy.jpg",
+    "overview": "It's 1946, and peace has dealt Peggy Carter a serious blow as she finds herself marginalized when the men return home from fighting abroad. Working for the covert SSR (Strategic Scientific Reserve), Peggy must balance doing administrative work and going on secret missions for Howard Stark all while trying to navigate life as a single woman in America, in the wake of losing the love of her life - Steve Rogers.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      }
+    ],
+    "original_name": "Marvel's Agent Carter",
+    "created_by": [
+      {
+        "profile_path": "/fa8DAGpANcBTTXO4bbNMrCFufmV.jpg",
+        "id": 5552,
+        "name": "Stephen McFeely"
+      },
+      {
+        "profile_path": "/tyeKi52yruPdxOkEMKhBKCnkp5V.jpg",
+        "id": 5551,
+        "name": "Christopher Markus"
+      }
+    ],
+    "id": 61550,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 227,
+    "number_of_seasons": 2,
+    "episode_run_time": [
+      43
+    ],
+    "number_of_episodes": 18,
+    "original_language": "en",
+    "status": "Canceled",
+    "last_air_date": "2016-03-01",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Hayley Atwell",
+          "gender": 1,
+          "character": "Peggy Carter",
+          "id": 39459,
+          "credit_id": "544d23820e0a2608cd002700",
+          "profile_path": "/mUp8PkCiIvtiFb4tOzMVtowEJBt.jpg",
+          "order": 0
+        },
+        {
+          "name": "James D'Arcy",
+          "gender": 2,
+          "character": "Edwin Jarvis",
+          "id": 19655,
+          "credit_id": "54975dedc3a3686ae9006f69",
+          "profile_path": "/geQAp8kKkMDXE5iCcC3rf7z4Fx3.jpg",
+          "order": 1
+        },
+        {
+          "name": "Chad Michael Murray",
+          "gender": 2,
+          "character": "Jack Thompson",
+          "id": 62747,
+          "credit_id": "54975e1092514130fc0056ba",
+          "profile_path": "/8lYQrBuk54E5zaEmaBZFtZHY4UA.jpg",
+          "order": 2
+        },
+        {
+          "name": "Enver Gjokaj",
+          "gender": 0,
+          "character": "Daniel Sousa",
+          "id": 1224022,
+          "credit_id": "550649c392514153ba0021b3",
+          "profile_path": "/xatmqOREk6e051ZgaO4VSv4HCnr.jpg",
+          "order": 3
+        },
+        {
+          "name": "Bridget Regan",
+          "gender": 1,
+          "character": "Dottie Underwood",
+          "id": 1222298,
+          "credit_id": "5497432892514132ed004f82",
+          "profile_path": "/uzVNdcPD2drMUKmT73xuKKYXBzB.jpg",
+          "order": 4
+        },
+        {
+          "name": "Reggie Austin",
+          "gender": 0,
+          "character": "Jason Wilkes",
+          "id": 1215799,
+          "credit_id": "56980510c3a3687605000747",
+          "profile_path": "/u0mzrN4TkOKhbjfl9175tRCb8ww.jpg",
+          "order": 5
+        },
+        {
+          "name": "Wynn Everett",
+          "gender": 1,
+          "character": "Whitney Frost",
+          "id": 203734,
+          "credit_id": "56980500925141254600078c",
+          "profile_path": "/hU2Xy5sT3jkKJFtnB00vjel7ENS.jpg",
+          "order": 6
+        }
+      ],
+      "crew": []
+    },
+    "in_production": false,
+    "first_air_date": "2015-01-06",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/gqyjmfFOrKY8iouNTXWj9KW7cC5.jpg",
+        "id": 63213,
+        "episode_count": 8,
+        "air_date": "2015-01-06"
+      },
+      {
+        "season_number": 2,
+        "poster_path": "/h3yPRRiWZk6HrFD2oo3xqpLt6bc.jpg",
+        "id": 71006,
+        "episode_count": 10,
+        "air_date": "2016-01-19"
+      }
+    ],
+    "backdrop_path": "/5yZJ62afDczR8M0qNDNSPSFnF0w.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Studios",
+        "id": 420
+      },
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      }
+    ],
+    "name": "Marvel's Agent Carter",
+    "homepage": "http://abc.go.com/shows/marvels-agent-carter",
+    "popularity": 14.999182,
+    "vote_average": 7.2
+  },
+  {
+    "poster_path": "/nv4nLXbDhcISPP8C1mgaxKU50KO.jpg",
+    "overview": "Danny Rand resurfaces 15 years after being presumed dead. Now, with the power of the Iron Fist, he seeks to reclaim his past and fulfill his destiny.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Iron Fist",
+    "created_by": [
+      {
+        "profile_path": "/zpAysh0L0edhm00PGKbF0MUEw1.jpg",
+        "id": 67352,
+        "name": "Scott Buck"
+      }
+    ],
+    "id": 62127,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 330,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      55
+    ],
+    "number_of_episodes": 13,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-03-17",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Finn Jones",
+          "gender": 2,
+          "character": "Danny Rand",
+          "id": 1223787,
+          "credit_id": "56ef08e99251415d06001e66",
+          "profile_path": "/h7Jnojn7r5tTirDWZ1j0roDrFua.jpg",
+          "order": 0
+        },
+        {
+          "name": "Jessica Henwick",
+          "gender": 1,
+          "character": "Colleen Wing",
+          "id": 1202689,
+          "credit_id": "5886ff7b9251411972004cce",
+          "profile_path": "/8WxU7ttow0231Oyw1KPXb1BdKo4.jpg",
+          "order": 1
+        },
+        {
+          "name": "David Wenham",
+          "gender": 2,
+          "character": "Harold Meachum",
+          "id": 1371,
+          "credit_id": "5886ff88c3a368372b004875",
+          "profile_path": "/xDUXLTF5i2fYx7eSEAR3IdaUb9y.jpg",
+          "order": 2
+        },
+        {
+          "name": "Jessica Stroup",
+          "gender": 1,
+          "character": "Joy Meachum",
+          "id": 55463,
+          "credit_id": "5886ff95c3a368372e004ee1",
+          "profile_path": "/5e9hgbjKIYuhPM1HlNRPw0rE0dM.jpg",
+          "order": 3
+        },
+        {
+          "name": "Tom Pelphrey",
+          "gender": 2,
+          "character": "Ward Meachum",
+          "id": 207442,
+          "credit_id": "5886ffa3c3a3683722005722",
+          "profile_path": "/mzBzJcdu91D2lEPD4jJa7TzLSQV.jpg",
+          "order": 4
+        },
+        {
+          "name": "Rosario Dawson",
+          "gender": 1,
+          "character": "Claire Temple",
+          "id": 5916,
+          "credit_id": "58dd2d5ec3a368227300d56a",
+          "profile_path": "/dEK1rMmSJAPGdc2t1XWdbqBmvEq.jpg",
+          "order": 5
+        }
+      ],
+      "crew": [
+        {
+          "name": "Trevor Morris",
+          "gender": null,
+          "department": "Sound",
+          "job": "Music",
+          "credit_id": "58bcc0cdc3a368664d044708",
+          "profile_path": null,
+          "id": 64156
+        },
+        {
+          "name": "Michael N. Knue",
+          "gender": null,
+          "department": "Editing",
+          "job": "Editor",
+          "credit_id": "58bcc129925141609b044e54",
+          "profile_path": null,
+          "id": 16651
+        },
+        {
+          "name": "Manuel Billeter",
+          "gender": null,
+          "department": "Crew",
+          "job": "Cinematography",
+          "credit_id": "58bcc0e3c3a36866a5041bf3",
+          "profile_path": null,
+          "id": 1537444
+        },
+        {
+          "name": "Christopher LaVasseur",
+          "gender": null,
+          "department": "Crew",
+          "job": "Cinematography",
+          "credit_id": "58bcc10ec3a368666b03f271",
+          "profile_path": null,
+          "id": 1385925
+        },
+        {
+          "name": "Jonathan Chibnall",
+          "gender": null,
+          "department": "Editing",
+          "job": "Editor",
+          "credit_id": "58bcc13fc3a368668603dc0e",
+          "profile_path": null,
+          "id": 66740
+        },
+        {
+          "name": "Miklos Wright",
+          "gender": null,
+          "department": "Editing",
+          "job": "Editor",
+          "credit_id": "58bcc16492514160770468ec",
+          "profile_path": null,
+          "id": 21120
+        },
+        {
+          "name": "Laray Mayfield",
+          "gender": null,
+          "department": "Production",
+          "job": "Casting",
+          "credit_id": "58bcc17f925141609e043474",
+          "profile_path": null,
+          "id": 7481
+        },
+        {
+          "name": "Julie Schubert",
+          "gender": null,
+          "department": "Production",
+          "job": "Casting",
+          "credit_id": "58bcc192925141609b044e93",
+          "profile_path": null,
+          "id": 1411796
+        },
+        {
+          "name": "Loren Weeks",
+          "gender": null,
+          "department": "Art",
+          "job": "Production Design",
+          "credit_id": "58bcc1aac3a368666b03f2e0",
+          "profile_path": null,
+          "id": 54899
+        },
+        {
+          "name": "Toni Barton",
+          "gender": null,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "58bcc1bd925141607704690f",
+          "profile_path": null,
+          "id": 1458691
+        },
+        {
+          "name": "James C. Feng",
+          "gender": null,
+          "department": "Art",
+          "job": "Art Direction",
+          "credit_id": "58bcc1d2925141606b04741b",
+          "profile_path": null,
+          "id": 1389555
+        },
+        {
+          "name": "Stephanie Q. Bowen",
+          "gender": null,
+          "department": "Art",
+          "job": "Set Decoration",
+          "credit_id": "58bcc1f5925141606b04742d",
+          "profile_path": null,
+          "id": 1094563
+        },
+        {
+          "name": "Kaela Dobson",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Makeup Artist",
+          "credit_id": "58bcc230c3a368515d02917c",
+          "profile_path": null,
+          "id": 1770742
+        },
+        {
+          "name": "Sarit Klein",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Makeup Department Head",
+          "credit_id": "58bcc246c3a36866300402e7",
+          "profile_path": null,
+          "id": 1458694
+        },
+        {
+          "name": "Emma Strachman",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Makeup Artist",
+          "credit_id": "58bcc264925141606b04747d",
+          "profile_path": null,
+          "id": 1441605
+        },
+        {
+          "name": "Josh Turi",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Prosthetic Supervisor",
+          "credit_id": "58bcc2889251416073045b84",
+          "profile_path": null,
+          "id": 1770743
+        },
+        {
+          "name": "Christine Hooghuis",
+          "gender": null,
+          "department": "Costume & Make-Up",
+          "job": "Makeup Artist",
+          "credit_id": "58bcc29cc3a36851cd028e34",
+          "profile_path": null,
+          "id": 1528019
+        },
+        {
+          "name": "Tyson Bidner",
+          "gender": null,
+          "department": "Production",
+          "job": "Unit Production Manager",
+          "credit_id": "58bcc2cc925141607b045384",
+          "profile_path": null,
+          "id": 1347758
+        },
+        {
+          "name": "John Byrne",
+          "gender": null,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "58bcf4b4c3a368668603fe6a",
+          "profile_path": "/rWIjsIUHmJeuyd88mmRDByTw86l.jpg",
+          "id": 1194953
+        },
+        {
+          "name": "Chris Claremont",
+          "gender": null,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "58bcf4d7925141607304813c",
+          "profile_path": "/oZ1EqKxnw16o4XIGnLhcTfRnyge.jpg",
+          "id": 934847
+        },
+        {
+          "name": "Bill Everett",
+          "gender": null,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "58bcf50f925141606b049b79",
+          "profile_path": null,
+          "id": 1770815
+        },
+        {
+          "name": "Gil Kane",
+          "gender": null,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "58bcf53c925141126a02ab38",
+          "profile_path": null,
+          "id": 1726490
+        },
+        {
+          "name": "Roy Thomas",
+          "gender": null,
+          "department": "Writing",
+          "job": "Comic Book",
+          "credit_id": "58bcf55ec3a368663004273d",
+          "profile_path": null,
+          "id": 141359
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-03-17",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/usGfoL4RfX15f1sQcX3Sgw4YRf4.jpg",
+        "id": 65211,
+        "episode_count": 13,
+        "air_date": "2017-03-17"
+      }
+    ],
+    "backdrop_path": "/xHCfWGlxwbtMeeOnTvxUCZRGnkk.jpg",
+    "production_companies": [],
+    "name": "Marvel's Iron Fist",
+    "homepage": "https://www.netflix.com/title/80002612",
+    "popularity": 64.209886,
+    "vote_average": 6.3
+  },
+  {
+    "poster_path": null,
+    "overview": "TV show Based on the Marvel comic book of the same name",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 1267,
+        "name": "Freeform"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      },
+      {
+        "id": 9648,
+        "name": "Mystery"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's New Warriors",
+    "created_by": [],
+    "id": 71106,
+    "languages": [],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [],
+    "number_of_episodes": 1,
+    "original_language": "en",
+    "status": "Planned",
+    "last_air_date": "2018-01-01",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Milana Vayntrub",
+          "gender": 1,
+          "character": "Doreen Green / Squirrel Girl",
+          "id": 1454946,
+          "credit_id": "596411489251415a400ceb21",
+          "profile_path": "/qxkkdSzPKGEdCeVecc31pn4aBHQ.jpg",
+          "order": 500
+        },
+        {
+          "name": "Derek Theler",
+          "gender": 2,
+          "character": "Craig Hollis / Mister Immortal",
+          "id": 1057442,
+          "credit_id": "59641172c3a3680d590d652e",
+          "profile_path": "/qMJWaezGr68GWOSciUXjVtU1sC4.jpg",
+          "order": 500
+        },
+        {
+          "name": "Jeremy Tardy",
+          "gender": 0,
+          "character": "Dwayne Taylor / Night Thrasher",
+          "id": 1720565,
+          "credit_id": "596411a49251410bfa1042c3",
+          "profile_path": "/5Qsc8EH1rm4xwoAiCsOMXhmdrLy.jpg",
+          "order": 500
+        },
+        {
+          "name": "Calum Worthy",
+          "gender": 2,
+          "character": "Robbie Baldwin / Speedball",
+          "id": 82626,
+          "credit_id": "596411b992514122510dd99c",
+          "profile_path": "/6evKNNeSDzdno2d1BfwH7vMG9hy.jpg",
+          "order": 500
+        },
+        {
+          "name": "Matthew Moy",
+          "gender": 0,
+          "character": "Zach Smith / Microbe",
+          "id": 1254625,
+          "credit_id": "596411cdc3a368253c0e3c7a",
+          "profile_path": "/b6I500CFqDZmMgWbfaUwKvQBGL.jpg",
+          "order": 500
+        },
+        {
+          "name": "Kate Comer",
+          "gender": 0,
+          "character": "Deborah Fields / Debrii",
+          "id": 1402320,
+          "credit_id": "596411e29251410b86100430",
+          "profile_path": "/d1aE6fetLWJehurMTgwLxvBEH3E.jpg",
+          "order": 500
+        }
+      ],
+      "crew": [
+        {
+          "name": "Kevin Biegel",
+          "gender": 2,
+          "department": "Writing",
+          "job": "Writer",
+          "credit_id": "58e4ffc1c3a36872f602d423",
+          "profile_path": "/n0ll1kvPRJpxhlwsMDV27rMlxfP.jpg",
+          "id": 1237157
+        },
+        {
+          "name": "Jeph Loeb",
+          "gender": 0,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58e67044c3a3687326040a2d",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        },
+        {
+          "name": "Jim Chory",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "58e6705bc3a3684aa4032c4e",
+          "profile_path": null,
+          "id": 25939
+        },
+        {
+          "name": "Kevin Biegel",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "596412f4c3a36828a1117633",
+          "profile_path": "/n0ll1kvPRJpxhlwsMDV27rMlxfP.jpg",
+          "id": 1237157
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2018-01-01",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 87117,
+        "episode_count": 1,
+        "air_date": "2018-01-01"
+      }
+    ],
+    "backdrop_path": null,
+    "production_companies": [
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      }
+    ],
+    "name": "Marvel's New Warriors",
+    "homepage": "",
+    "popularity": 1.32418,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/9nWZZ1ghE0LuXEWJi7QjCymHygi.jpg",
+    "overview": "Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Luke Cage",
+    "created_by": [
+      {
+        "profile_path": "/bkMPz2Qof0UL8ye33on0BiYR6Mr.jpg",
+        "id": 82153,
+        "name": "Cheo Hodari Coker"
+      }
+    ],
+    "id": 62126,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 286,
+    "number_of_seasons": 2,
+    "episode_run_time": [
+      46,
+      52,
+      54,
+      60
+    ],
+    "number_of_episodes": 13,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2016-09-30",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Mike Colter",
+          "gender": 2,
+          "character": "Luke Cage",
+          "id": 450,
+          "credit_id": "54f74a3bc3a36833bb002073",
+          "profile_path": "/gAqaj4qmyhR4cCw22cmOAcvEFk6.jpg",
+          "order": 0
+        },
+        {
+          "name": "Simone Cook",
+          "gender": 1,
+          "character": "Misty Knight",
+          "id": 1034765,
+          "credit_id": "57ceb0f1c3a3683ccc00302f",
+          "profile_path": "/jABU6gXQ1HEG3DeLGziLS7vk7Ez.jpg",
+          "order": 1
+        },
+        {
+          "name": "Alfre Woodard",
+          "gender": 1,
+          "character": "Mariah Dillard",
+          "id": 1981,
+          "credit_id": "57ddb8b2c3a368141f002a48",
+          "profile_path": "/aCAjUOrV2WG3OaLUvQHVkyk8S2P.jpg",
+          "order": 3
+        },
+        {
+          "name": "Rosario Dawson",
+          "gender": 1,
+          "character": "Claire Temple",
+          "id": 5916,
+          "credit_id": "57ddb89b925141784c002be5",
+          "profile_path": "/dEK1rMmSJAPGdc2t1XWdbqBmvEq.jpg",
+          "order": 5
+        }
+      ],
+      "crew": []
+    },
+    "in_production": true,
+    "first_air_date": "2016-09-30",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/rz8tUJMaAA3i7pBAhUvuuDgwXgw.jpg",
+        "id": 65210,
+        "episode_count": 13,
+        "air_date": "2016-09-30"
+      },
+      {
+        "season_number": 2,
+        "poster_path": null,
+        "id": 85275,
+        "episode_count": 0,
+        "air_date": null
+      }
+    ],
+    "backdrop_path": "/jM31AtkE5QEfateaLXjc0gkY8Ih.jpg",
+    "production_companies": [
+      {
+        "name": "NetFlix",
+        "id": 8858
+      },
+      {
+        "name": "Marvel Television",
+        "id": 38679
+      }
+    ],
+    "name": "Marvel's Luke Cage",
+    "homepage": "https://www.netflix.com/title/80002537",
+    "popularity": 14.232021,
+    "vote_average": 7.1
+  },
+  {
+    "poster_path": null,
+    "overview": "",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 35,
+        "name": "Comedy"
+      }
+    ],
+    "original_name": "Marvel's Damage Control",
+    "created_by": [],
+    "id": 65247,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      30
+    ],
+    "number_of_episodes": 0,
+    "original_language": "en",
+    "status": "Planned",
+    "last_air_date": "2016-12-31",
+    "origin_country": [],
+    "credits": {
+      "cast": [],
+      "crew": []
+    },
+    "in_production": true,
+    "first_air_date": "2016-12-31",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 73785,
+        "episode_count": 0,
+        "air_date": "2016-12-31"
+      }
+    ],
+    "backdrop_path": null,
+    "production_companies": [],
+    "name": "Marvel's Damage Control",
+    "homepage": "",
+    "popularity": 0.002997,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/tTrImtQ8h6kDTajfnByOLmUQjEQ.jpg",
+    "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 44,
+        "name": "Disney XD"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      },
+      {
+        "id": 35,
+        "name": "Comedy"
+      }
+    ],
+    "original_name": "Marvel's Ultimate Spider-Man",
+    "created_by": [
+      {
+        "profile_path": "/dTr2gJPL7jELKVkcjtoNx80uVKR.jpg",
+        "id": 7624,
+        "name": "Stan Lee"
+      },
+      {
+        "profile_path": "/pdKXvMPcHgSC2947apMa4gQwahT.jpg",
+        "id": 7625,
+        "name": "Steve Ditko"
+      }
+    ],
+    "id": 34391,
+    "languages": [
+      "da",
+      "en",
+      "de"
+    ],
+    "vote_count": 38,
+    "number_of_seasons": 4,
+    "episode_run_time": [
+      21
+    ],
+    "number_of_episodes": 104,
+    "original_language": "en",
+    "status": "Ended",
+    "last_air_date": "2017-01-01",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Drake Bell",
+          "gender": null,
+          "character": "Peter Parker / Spider-Man",
+          "id": 3272,
+          "credit_id": "56e2124ec3a3686ffd00073a",
+          "profile_path": "/7qt9F9nnQA1Iho5Ams0Dc3DWLHy.jpg",
+          "order": 500
+        }
+      ],
+      "crew": []
+    },
+    "in_production": false,
+    "first_air_date": "2012-04-01",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/zjdl6LzeTOwDcnHt4NwGObFX4M8.jpg",
+        "id": 45191,
+        "episode_count": 26,
+        "air_date": "2012-04-01"
+      },
+      {
+        "season_number": 2,
+        "poster_path": "/uorCPt4duSEW3qhQorocU4wDxzM.jpg",
+        "id": 45192,
+        "episode_count": 26,
+        "air_date": "2013-01-21"
+      },
+      {
+        "season_number": 3,
+        "poster_path": "/6TzRMuFbw6rWq1a5WcmtagZMhv3.jpg",
+        "id": 62572,
+        "episode_count": 26,
+        "air_date": "2014-08-31"
+      },
+      {
+        "season_number": 4,
+        "poster_path": "/4BDpwLd5nFTu4Y0PJ5RjuR7joxy.jpg",
+        "id": 74755,
+        "episode_count": 26,
+        "air_date": "2016-02-21"
+      }
+    ],
+    "backdrop_path": "/sER4CeV1AWUAee18O4wOVqRMqg.jpg",
+    "production_companies": [
+      {
+        "name": "Destiny",
+        "id": 963
+      }
+    ],
+    "name": "Marvel's Ultimate Spider-Man",
+    "homepage": "http://disneyxd.disney.com/ultimate-spider-man",
+    "popularity": 7.78391,
+    "vote_average": 6.0
+  },
+  {
+    "poster_path": "/7FHJr40MPFwtHrOyOD9buQDoVcs.jpg",
+    "overview": "Before becoming Guardians of the Galaxy, Rocket and Groot were bounty hunters trying to get a ship.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 247,
+        "name": "YouTube"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10762,
+        "name": "Kids"
+      },
+      {
+        "id": 16,
+        "name": "Animation"
+      }
+    ],
+    "original_name": "Marvel's Rocket & Groot",
+    "created_by": [],
+    "id": 70784,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      2
+    ],
+    "number_of_episodes": 12,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-04-10",
+    "origin_country": [],
+    "credits": {
+      "cast": [
+        {
+          "name": "Trevor Devall",
+          "gender": null,
+          "character": "Rocket Raccoon (voice)",
+          "id": 82816,
+          "credit_id": "58e759ef925141281904ef5b",
+          "profile_path": "/69SnAHSHWgWZkbgmgWKPGQACiEP.jpg",
+          "order": 0
+        },
+        {
+          "name": "Kevin Michael Richardson",
+          "gender": null,
+          "character": "Groot (voice)",
+          "id": 24362,
+          "credit_id": "58e759fdc3a36872f604e90f",
+          "profile_path": "/9dMOW2CFRrlDkNzeXVGMJfASupM.jpg",
+          "order": 1
+        }
+      ],
+      "crew": []
+    },
+    "in_production": true,
+    "first_air_date": "2017-03-14",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 86318,
+        "episode_count": 12,
+        "air_date": "2017-03-14"
+      }
+    ],
+    "backdrop_path": "/x1FKNrbePCKPIQhvW6PywcT1uw0.jpg",
+    "production_companies": [
+      {
+        "name": "Passion Pictures",
+        "id": 11594
+      }
+    ],
+    "name": "Marvel's Rocket & Groot",
+    "homepage": "https://www.youtube.com/playlist?list=PLg6R6yXKSLYBUf6lW9SLlp_Qy_1soxXUI",
+    "popularity": 0.708988,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/8faSWCAW6Zd4zJ7Hp11WdlOkKJE.jpg",
+    "overview": "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 28,
+        "name": "Action"
+      },
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ],
+    "original_name": "Marvel's Agents of S.H.I.E.L.D.",
+    "created_by": [
+      {
+        "profile_path": "/dTiVsuaTVTeGmvkhcyJvKp2A5kr.jpg",
+        "id": 12891,
+        "name": "Joss Whedon"
+      },
+      {
+        "profile_path": "/bfAKVMn1sCTYXy97vr55Vyl2X8a.jpg",
+        "id": 76532,
+        "name": "Jed Whedon"
+      },
+      {
+        "profile_path": "/1Lv38CXO2Q4d8Dq0HVmwBaCZhcJ.jpg",
+        "id": 1223883,
+        "name": "Maurissa Tancharoen"
+      }
+    ],
+    "id": 1403,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 756,
+    "number_of_seasons": 5,
+    "episode_run_time": [
+      43
+    ],
+    "number_of_episodes": 103,
+    "original_language": "en",
+    "status": "Returning Series",
+    "last_air_date": "2017-12-01",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Iain De Caestecker",
+          "gender": 0,
+          "character": "Leo Fitz",
+          "id": 956764,
+          "credit_id": "52e61e3a19c295719d1a379e",
+          "profile_path": "/poZ6RXNoKYiB5U0mBQjo1QK6IZV.jpg",
+          "order": 2
+        },
+        {
+          "name": "Ming-Na Wen",
+          "gender": 1,
+          "character": "Melinda May / The Cavalry",
+          "id": 21702,
+          "credit_id": "5256cb4619c2956ff605e9af",
+          "profile_path": "/916sVknhRRxUkr70sxqa5AQvyJP.jpg",
+          "order": 4
+        },
+        {
+          "name": "Clark Gregg",
+          "gender": 2,
+          "character": "Phil Coulson",
+          "id": 9048,
+          "credit_id": "5256cb4619c2956ff605e981",
+          "profile_path": "/t8CLS2Zcy7IjcZkE1vtxl40h9rh.jpg",
+          "order": 0
+        },
+        {
+          "name": "Chloe Bennet",
+          "gender": 1,
+          "character": "Daisy \"Skye\"Johnson / Quake",
+          "id": 1181303,
+          "credit_id": "5256cb4719c2956ff605e9df",
+          "profile_path": "/oHSuFDnO1w8bc65f5eyforuI6GS.jpg",
+          "order": 1
+        },
+        {
+          "name": "Elizabeth Henstridge",
+          "gender": 1,
+          "character": "Jemma Simmons",
+          "id": 1223886,
+          "credit_id": "5256cb4a19c2956ff605ea0f",
+          "profile_path": "/rH2c5GZJSElWLZ0xNLbSLejcejr.jpg",
+          "order": 5
+        }
+      ],
+      "crew": [
+        {
+          "name": "Jeph Loeb",
+          "gender": 0,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "57e81859c3a368352101306e",
+          "profile_path": "/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg",
+          "id": 17310
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2013-09-24",
+    "seasons": [
+      {
+        "season_number": 0,
+        "poster_path": "/3F0XJAWuQxnhgmb2uE1xtyszoj9.jpg",
+        "id": 3649,
+        "episode_count": 13,
+        "air_date": "2013-08-25"
+      },
+      {
+        "season_number": 1,
+        "poster_path": "/iVNu8dvnbbdIEgcZgOKqWMEC7NQ.jpg",
+        "id": 3648,
+        "episode_count": 22,
+        "air_date": "2013-09-24"
+      },
+      {
+        "season_number": 2,
+        "poster_path": "/y5i3wObP0DmJnOgjGSrZyJNT1bj.jpg",
+        "id": 62022,
+        "episode_count": 22,
+        "air_date": "2014-09-23"
+      },
+      {
+        "season_number": 3,
+        "poster_path": "/y0cxxcvCk9lEG4DEorTz5GxC9sj.jpg",
+        "id": 68416,
+        "episode_count": 22,
+        "air_date": "2015-09-29"
+      },
+      {
+        "season_number": 4,
+        "poster_path": "/ujdm36omWhSwDxuLlpfFbiFZk93.jpg",
+        "id": 78514,
+        "episode_count": 22,
+        "air_date": "2016-09-20"
+      },
+      {
+        "season_number": 5,
+        "poster_path": "/8wA4Cwli2qpsDgJdzCHVAJXA3Hz.jpg",
+        "id": 93742,
+        "episode_count": 2,
+        "air_date": "2017-12-01"
+      }
+    ],
+    "backdrop_path": "/jOrfoGipT8QoDi54Qd9f5yhJCgw.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Studios",
+        "id": 420
+      },
+      {
+        "name": "Walt Disney Television",
+        "id": 670
+      },
+      {
+        "name": "ABC Studios",
+        "id": 19366
+      },
+      {
+        "name": "Disney-ABC Domestic Television",
+        "id": 84417
+      },
+      {
+        "name": "Mutant Enemy",
+        "id": 84418
+      }
+    ],
+    "name": "Marvel's Agents of S.H.I.E.L.D.",
+    "homepage": "http://www.agentsofshield.com/",
+    "popularity": 39.829246,
+    "vote_average": 6.6
+  },
+  {
+    "poster_path": "/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg",
+    "overview": "After the murder of his family, Frank Castle is both haunted and hunted. In the criminal underworld, he\u2019ll become known as The Punisher.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 213,
+        "name": "Netflix"
+      }
+    ],
+    "genres": [
+      {
+        "id": 80,
+        "name": "Crime"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ],
+    "original_name": "Marvel's The Punisher",
+    "created_by": [
+      {
+        "profile_path": null,
+        "id": 1240816,
+        "name": "Steve Lightfoot"
+      }
+    ],
+    "id": 67178,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      45
+    ],
+    "number_of_episodes": 13,
+    "original_language": "en",
+    "status": "In Production",
+    "last_air_date": "2017-11-17",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Jon Bernthal",
+          "gender": 2,
+          "character": "Frank Castle / Punisher",
+          "id": 19498,
+          "credit_id": "5791d666925141532a0010a9",
+          "profile_path": "/w3epqN0BlV4TiUV9255d5tSCIRV.jpg",
+          "order": 0
+        },
+        {
+          "name": "Deborah Ann Woll",
+          "gender": 1,
+          "character": "Karen Page",
+          "id": 212154,
+          "credit_id": "580d49a5925141701a014a65",
+          "profile_path": "/8CKosfPXV0Pyx5woFooR5NES4AF.jpg",
+          "order": 1
+        },
+        {
+          "name": "Amber Rose Revah",
+          "gender": 1,
+          "character": "Dinah Madani",
+          "id": 574378,
+          "credit_id": "580d49f392514171a3013fd1",
+          "profile_path": "/cThPovs1j59Vs5iejgLqUZRBchv.jpg",
+          "order": 2
+        },
+        {
+          "name": "Daniel Webber",
+          "gender": 0,
+          "character": "Lewis Walcott",
+          "id": 234548,
+          "credit_id": "5810601292514156800055b3",
+          "profile_path": "/rIJcFAVt2LJ2Qp5N2znTVEavLxJ.jpg",
+          "order": 3
+        },
+        {
+          "name": "Jason R. Moore",
+          "gender": 2,
+          "character": "Curtis Hoyle",
+          "id": 555252,
+          "credit_id": "5810603a9251414f9b0053c4",
+          "profile_path": "/xDFEO0MdZEO9A8MM1OETazXCfEh.jpg",
+          "order": 500
+        },
+        {
+          "name": "Paul Schulze",
+          "gender": 2,
+          "character": "Rawlins",
+          "id": 36189,
+          "credit_id": "58106054c3a3687a9d005533",
+          "profile_path": "/tcGHCA2seYFju3RBKItpyLHAPHc.jpg",
+          "order": 500
+        },
+        {
+          "name": "Jaime Ray Newman",
+          "gender": 1,
+          "character": "Sarah Lieberman",
+          "id": 109151,
+          "credit_id": "58106070925141543e00582e",
+          "profile_path": "/4jh45lXQPqvuiYy1Fzbk5fJGVr.jpg",
+          "order": 500
+        },
+        {
+          "name": "Michael Nathanson",
+          "gender": 2,
+          "character": "Sam Stein",
+          "id": 995514,
+          "credit_id": "5810608c925141579e005323",
+          "profile_path": "/aBy1ttvUl7Az00oEuo1qhI9UGet.jpg",
+          "order": 500
+        }
+      ],
+      "crew": [
+        {
+          "name": "Steve Lightfoot",
+          "gender": 2,
+          "department": "Production",
+          "job": "Executive Producer",
+          "credit_id": "579e26b992514177f500171a",
+          "profile_path": null,
+          "id": 1240816
+        },
+        {
+          "name": "Cindy Holland",
+          "gender": 0,
+          "department": "Crew",
+          "job": "Executive in Charge of Finance",
+          "credit_id": "580d4a92925141712c013a03",
+          "profile_path": null,
+          "id": 1458687
+        },
+        {
+          "name": "Jim Chory",
+          "gender": 2,
+          "department": "Art",
+          "job": "Production Design",
+          "credit_id": "580d4aa49251416efe012c00",
+          "profile_path": null,
+          "id": 25939
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2017-11-17",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 78693,
+        "episode_count": 13,
+        "air_date": "2017-11-17"
+      }
+    ],
+    "backdrop_path": "/nWe9puh0F0VJthKHz9AUmqeGnoV.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Studios",
+        "id": 420
+      }
+    ],
+    "name": "Marvel's The Punisher",
+    "homepage": "https://www.netflix.com/title/80117498",
+    "popularity": 9.842943,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/nE3ykcoKMyM002cHBRaCsfQ87Fe.jpg",
+    "overview": "Two teenagers from very different backgrounds awaken to newly acquired superpowers which mysteriously link them to one another.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 1267,
+        "name": "Freeform"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10765,
+        "name": "Sci-Fi & Fantasy"
+      }
+    ],
+    "original_name": "Marvel's Cloak & Dagger",
+    "created_by": [],
+    "id": 66190,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 0,
+    "number_of_seasons": 1,
+    "episode_run_time": [],
+    "number_of_episodes": 0,
+    "original_language": "en",
+    "status": "In Production",
+    "last_air_date": "2018-12-31",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Aubrey Joseph",
+          "gender": 0,
+          "character": "Tyrone Johnson / Cloak",
+          "id": 1472862,
+          "credit_id": "588fbdad925141019d00cd13",
+          "profile_path": "/5mV0sNqFAygIrmudT1Ycp6LqvBJ.jpg",
+          "order": 0
+        },
+        {
+          "name": "Olivia Holt",
+          "gender": 1,
+          "character": "Tandy Bowen / Dagger",
+          "id": 542870,
+          "credit_id": "588fbdfa92514101a900cc3e",
+          "profile_path": "/95Vwrknm5j0gs8hKlswqgiHHENU.jpg",
+          "order": 1
+        },
+        {
+          "name": "Deric Augustine",
+          "gender": 0,
+          "character": "Rockwell",
+          "id": 1411745,
+          "credit_id": "58b8fa1f925141607300455f",
+          "profile_path": "/sA33TLh6KHrTWzMZOL7dkgYUHWS.jpg",
+          "order": 3
+        },
+        {
+          "name": "No\u00eblle Ren\u00e9e Bercy",
+          "gender": 1,
+          "character": "Evita",
+          "id": 1768845,
+          "credit_id": "58b8fb26c3a368668600437d",
+          "profile_path": "/8CvfyQyUxb6k22o28HTtfVeWo9K.jpg",
+          "order": 2
+        },
+        {
+          "name": "Andrea Roth",
+          "gender": 1,
+          "character": "Melissa Bowen",
+          "id": 44151,
+          "credit_id": "58b8fed3925141606b0053e2",
+          "profile_path": "/7iTt4N1bT7UmNdFyADLKMi1TwDk.jpg",
+          "order": 500
+        },
+        {
+          "name": "Gloria Reuben",
+          "gender": 1,
+          "character": "Adina Johnson",
+          "id": 21369,
+          "credit_id": "58b8ff08c3a36866b700526d",
+          "profile_path": "/z0FzEdJo8XnPGTS8pQcl10lpsNZ.jpg",
+          "order": 500
+        },
+        {
+          "name": "Miles Mussenden",
+          "gender": 0,
+          "character": "Michael Johnson",
+          "id": 1380492,
+          "credit_id": "58b8ff2bc3a36866b70052bf",
+          "profile_path": "/ascu5WKXGdpwzSJXtL7ePECE5vI.jpg",
+          "order": 500
+        },
+        {
+          "name": "James Saito",
+          "gender": 2,
+          "character": "Dr Bernard Sanjo",
+          "id": 77155,
+          "credit_id": "58b8ff77c3a368664d00548b",
+          "profile_path": "/vrZz8dPmYLK25F910luCvYMwEnW.jpg",
+          "order": 500
+        },
+        {
+          "name": "Carl Lundstedt",
+          "gender": 0,
+          "character": "Liam",
+          "id": 1546229,
+          "credit_id": "58b8ffb6c3a368668f004806",
+          "profile_path": null,
+          "order": 500
+        },
+        {
+          "name": "J.D. Evermore",
+          "gender": 2,
+          "character": "Detective Connors",
+          "id": 129868,
+          "credit_id": "58b8ffd5925141606b0056c2",
+          "profile_path": "/iNn9JV3Kk7VJ9ICYKdjgwFq8EpF.jpg",
+          "order": 500
+        },
+        {
+          "name": "Marqus Clae",
+          "gender": 0,
+          "character": "Billy",
+          "id": 1682805,
+          "credit_id": "58fafbf79251416428009440",
+          "profile_path": null,
+          "order": 500
+        },
+        {
+          "name": "Mitch Craft",
+          "gender": 0,
+          "character": "Club Bouncer",
+          "id": 1801004,
+          "credit_id": "58fafc12c3a36879db00972b",
+          "profile_path": null,
+          "order": 12
+        },
+        {
+          "name": "Ainsley Reagan Dobbs",
+          "gender": 0,
+          "character": "Dancer",
+          "id": 1801007,
+          "credit_id": "58fafc2992514163df0098e6",
+          "profile_path": null,
+          "order": 13
+        },
+        {
+          "name": "Mike Donovan",
+          "gender": 0,
+          "character": "Rick",
+          "id": 1422173,
+          "credit_id": "58fafc41925141642800946d",
+          "profile_path": null,
+          "order": 500
+        }
+      ],
+      "crew": [
+        {
+          "name": "Ed Hannigan",
+          "gender": null,
+          "department": "Crew",
+          "job": "Creator",
+          "credit_id": "58b8fd81c3a3686630004910",
+          "profile_path": null,
+          "id": 1768856
+        },
+        {
+          "name": "Bill Mantlo",
+          "gender": null,
+          "department": "Crew",
+          "job": "Creator",
+          "credit_id": "58b8fd95925141606b00508f",
+          "profile_path": null,
+          "id": 1768857
+        }
+      ]
+    },
+    "in_production": true,
+    "first_air_date": "2018-12-31",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": "/8kJCD61NDQhi0LPA0Jf0tR6CWg0.jpg",
+        "id": 84431,
+        "episode_count": 0,
+        "air_date": "2018-12-31"
+      }
+    ],
+    "backdrop_path": "/iEXdA9n9R7Cne2ZY8PQfAjiGyFP.jpg",
+    "production_companies": [
+      {
+        "name": "Marvel Studios",
+        "id": 420
+      }
+    ],
+    "name": "Marvel's Cloak & Dagger",
+    "homepage": "http://freeform.go.com/shows/marvels-cloak-and-dagger",
+    "popularity": 4.766537,
+    "vote_average": 0.0
+  },
+  {
+    "poster_path": "/3onCgmljXIUgHxCJyF9OpUjYf67.jpg",
+    "overview": "A spin-off of Marvel's agents of shield, featuring Bobbi Morse and Hunter centering on Bobbi Morse (a.k.a. Mockingbird) and Lance Hunter of \"Marvel's Agents of S.H.I.E.L.D., two ex-spies and ex-spouses who are on the run with no friends, no S.H.I.E.L.D. and a long list of enemies looking to claim a bounty on their heads. Able to trust no one but each other, Bobbi and Hunter form an uneasy alliance with Dominic Fortune, a rogue adventurer with a wealth of resources and even more adversaries, who agrees to protect them so long as they help him with his own agenda. These two heroes will help anyone in need, all while trying to uncover the conspiracy that put their own lives in jeopardy.",
+    "type": "Scripted",
+    "networks": [
+      {
+        "id": 2,
+        "name": "American Broadcasting Company"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10759,
+        "name": "Action & Adventure"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      }
+    ],
+    "original_name": "Marvel's Most Wanted",
+    "created_by": [
+      {
+        "profile_path": "/tJbshHxB0dv4tTApc9f9lIqBZ8O.jpg",
+        "id": 103331,
+        "name": "Chris R. Notarile"
+      }
+    ],
+    "id": 65215,
+    "languages": [
+      "en"
+    ],
+    "vote_count": 2,
+    "number_of_seasons": 1,
+    "episode_run_time": [
+      60
+    ],
+    "number_of_episodes": 0,
+    "original_language": "en",
+    "status": "Canceled",
+    "last_air_date": "2016-12-31",
+    "origin_country": [
+      "US"
+    ],
+    "credits": {
+      "cast": [
+        {
+          "name": "Adrianne Palicki",
+          "gender": 1,
+          "character": "Bobbi Morse / Mockinbird",
+          "id": 88995,
+          "credit_id": "56919d9092514179b3000e47",
+          "profile_path": "/g9yOTKR1qsRrxKnR77hMz4dCka7.jpg",
+          "order": 500
+        },
+        {
+          "name": "Delroy Lindo",
+          "gender": 2,
+          "character": "Dominic Fortune",
+          "id": 18792,
+          "credit_id": "5712d93392514118f600141a",
+          "profile_path": "/uhjdTemc2kYbQj47bVqRb7OdVjH.jpg",
+          "order": 500
+        },
+        {
+          "name": "Oded Fehr",
+          "gender": 2,
+          "character": "",
+          "id": 18041,
+          "credit_id": "5712d9c0c3a368667800580b",
+          "profile_path": "/kiNGbfGzjbCKIAsdy0UcuzgGHRc.jpg",
+          "order": 500
+        },
+        {
+          "name": "Nick Blood",
+          "gender": 0,
+          "character": "Lance Hunter",
+          "id": 222052,
+          "credit_id": "56919da192514179a3000d24",
+          "profile_path": "/4GtqNGllGHMR5VUVqFU19ccTr1j.jpg",
+          "order": 500
+        },
+        {
+          "name": "Fernanda Andrade",
+          "gender": 1,
+          "character": "Christina Santos",
+          "id": 134365,
+          "credit_id": "5712d9b492514118f600143c",
+          "profile_path": "/99zL11BezWcnqOYkiD9w9jhy05M.jpg",
+          "order": 500
+        }
+      ],
+      "crew": []
+    },
+    "in_production": false,
+    "first_air_date": "2016-12-31",
+    "seasons": [
+      {
+        "season_number": 1,
+        "poster_path": null,
+        "id": 73705,
+        "episode_count": 0,
+        "air_date": "2016-12-31"
+      }
+    ],
+    "backdrop_path": null,
+    "production_companies": [],
+    "name": "Marvel's Most Wanted",
+    "homepage": null,
+    "popularity": 0.915286,
+    "vote_average": 5.5
+  }
+]
