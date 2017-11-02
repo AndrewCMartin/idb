@@ -2,12 +2,12 @@ import os
 
 from flask import Flask, send_from_directory
 from flask_cors import CORS
-from flask_restless_swagger import SwagAPIManager as APIManager
+from flask_restless import APIManager
 from flask_sqlalchemy import SQLAlchemy
 
 from config import ProdConfig, LocalDevConfig, REACT_DIR
 
-app = Flask(__name__, static_url_path="", static_folder="../build")
+app = Flask(__name__, static_url_path="/static", static_folder="../build/static")
 
 CORS(app)
 
@@ -24,9 +24,12 @@ from models import Actor, Character, ComicSeries, Event, Movie, TvShow
 manager = APIManager(app, flask_sqlalchemy_db=db)
 
 # Flask-Restless config
-kargs = {'methods': frozenset(['GET', 'POST', 'PATCH']),
-         'allow_functions': True,
-         'results_per_page': 50}
+kargs = {
+    'methods': frozenset(['GET', 'POST', 'PATCH']),
+    'allow_functions': True,
+    'results_per_page': 50}
+
+db.create_all()
 
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
@@ -37,13 +40,12 @@ manager.create_api(Event, **kargs)
 manager.create_api(Movie, **kargs)
 manager.create_api(TvShow, **kargs)
 
-db.create_all()
-
 
 # Serve React App
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
+    # return send_from_directory(REACT_DIR, 'index.html')
     if path == "":
         return send_from_directory(REACT_DIR, 'index.html')
     else:
