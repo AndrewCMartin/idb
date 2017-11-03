@@ -7,6 +7,10 @@ var axios = require('axios');
 var imageStyles = {
     //height: '500px',
 }
+var changeColor={
+    backgroundColor: 'black',
+    borderColor: '#720d0d',
+}
 
 function splitarray(input, spacing) {
     var output = [];
@@ -155,7 +159,7 @@ class Actors extends React.Component {
                         !actorList ? null :
                             <div className="row">{actorList.map(actor =>
                                 <div className="col-sm-4">
-                                    <div className="panel panel-info">
+                                    <div className="panel" style={changeColor}>
                                         <div className="panel-heading"><Link
                                             to={"/actor/" + actor.id}>{actor.name}</Link>
                                         </div>
