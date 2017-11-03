@@ -2,10 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, NavItem, Button, Container, Nav, MenuItem, NavDropdown } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import body from './Header.css'
 
 // The Header creates links that can be used to navigate
 // between routes.
 //Got the basic outline for the navbar from https://react-bootstrap.github.io/components.html#navigation
+        
+const navbar = {backgroundColor: 'red !important'};
+
 class Header extends React.Component {
     render(){
 	return(
@@ -17,7 +21,7 @@ class Header extends React.Component {
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-		<Nav>
+		<Nav style={navbar}>
 		<LinkContainer to="/about">
 		<NavItem eventKey={1}>About</NavItem>
 		</LinkContainer>
