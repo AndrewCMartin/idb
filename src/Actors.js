@@ -5,7 +5,7 @@ import {DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
 var axios = require('axios');
 
 var imageStyles = {
-    height: '500px',
+    //height: '500px',
 }
 
 function splitarray(input, spacing) {
@@ -36,10 +36,13 @@ class Actors extends React.Component {
             actorsGrouped: [],
             numPages: 1,
             activePage: 1,
-            resultsPerPage: 12,
+            resultsPerPage: 6,
             orderBy: 'name',
             orderDirection: 'asc',
-            q: {'order_by': [{"field": "name", "direction": "asc"}]}
+            q: {
+                'order_by': [{"field": "name", "direction": "asc"}],
+                'filters': [{"name": "image", "op": "is_not_null"}]
+            }
         };
     }
 
