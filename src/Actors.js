@@ -16,33 +16,34 @@ class Actors extends React.Component {
             actors: [],
             numPages: 1,
             activePage: 1,
+            resultsPerPage: 6,
             orderBy: 'name',
             orderDirection: 'asc',
+            q: {'order_by': [{"field": "name", "direction": "asc"}]}
         }
         this.handleSelectSort = this.handleSelectSort.bind(this);
+        this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
-        this.handleSortDirection = this.handleSortDirection(this);
-
+        this.updateItems = this.updateItems.bind(this);
     }
 
 
     componentDidMount() {
-        var queryParams = encodeURI({
-            "order_by": [{
-                "field": this.state.orderBy,
-                "direction": this.state.orderDirection
-            }]
-        })
-        return axios.get('http://marvelus.me/api/actor', {
+        this.updateItems();
+    }
+
+    updateItems() {
+        axios.get('http://marvelus.me/api/actor', {
             params: {
-                results_per_page: 6,
+                results_per_page: this.state.resultsPerPage,
                 page: this.state.activePage,
-                q: queryParams
+                q: JSON.stringify(this.state.q),
             }
         }).then(res => {
             this.state.numPages = res.data.total_pages;
-            const actors = res.data.objects.map(actor => actor)
+            const actors = res.data.objects.map(actor => actor);
             this.setState({actors});
+
         });
     }
 
@@ -51,48 +52,21 @@ class Actors extends React.Component {
         this.setState({
             activePage: eventKey,
         });
+        this.updateItems();
 
-        axios.get('http://marvelus.me/api/actor', {
-            params: {
-                results_per_page: 6,
-                page: this.state.activePage,
-                q: {"order_by": [{"field": this.state.orderBy, "direction": this.state.orderDirection}]}
-            }
-        }).then(res => {
-            const actors = res.data.objects.map(actor => actor);
-            this.setState({actors});
-
-        });
     }
 
     handleSelectSort(eventKey) {
-        this.state.orderBy = eventKey;
-        axios.get('http://marvelus.me/api/actor', {
-            params: {
-                results_per_page: 6,
-                page: this.state.activePage,
-                q: {"order_by": [{"field": this.state.orderBy, "direction": this.state.orderDirection}]}
-            }
-        }).then(res => {
-            const actors = res.data.objects.map(actor => actor);
-            this.setState({actors});
-        });
+        // this.state.orderBy = eventKey;
+        this.state.q.order_by[0].field = eventKey;
+        this.updateItems()
 
     }
 
-    handleSortDirection(eventKey) {
-        this.state.orderDirection = eventKey;
-        axios.get('http://marvelus.me/api/actor', {
-            params: {
-                results_per_page: 6,
-                page: this.state.activePage,
-                q: {"order_by": [{"field": this.state.orderBy, "direction": this.state.orderDirection}]}
-            }
-        }).then(res => {
-            const actors = res.data.objects.map(actor => actor);
-            this.setState({actors});
-        })
-
+    handleSelectDirection(eventKey) {
+        // this.state.orderDirection = eventKey;
+        this.state.q.order_by[0].direction = eventKey;
+        this.updateItems();
     }
 
     renderDropdownButtonSortby(title, i) {
@@ -100,7 +74,7 @@ class Actors extends React.Component {
             <DropdownButton bsStyle="primary" title={title} key={"name"} id={`dropdown-basic-${i}`}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
-                <MenuItem eventKey="birthday">Age</MenuItem>
+                <MenuItem eventKey="birthday">Birthday</MenuItem>
 
             </DropdownButton>
         );
@@ -108,7 +82,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSortDirection}>
+            <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -121,27 +95,28 @@ class Actors extends React.Component {
         return (
 
             <div className="container" styles="margin-top:100px;">
+                <div className="row">
+                    <div className='text-center'>
 
-                <div className='text-center'>
-                    {!this.state.numPages
-                        ? null
-                        : <Pagination
-                            bsSize='large'
-                            prev
-                            next
-                            first
-                            last
-                            ellipsis
-                            boundaryLinks
-                            items={this.state.numPages}
-                            maxButtons={10}
-                            activePage={this.state.activePage}
-                            onSelect={this.handleSelect}/>
-                    }
+                        {!this.state.numPages
+                            ? null
+                            : <Pagination
+                                bsSize='large'
+                                prev
+                                next
+                                first
+                                last
+                                ellipsis
+                                boundaryLinks
+                                items={this.state.numPages}
+                                maxButtons={10}
+                                activePage={this.state.activePage}
+                                onSelect={this.handleSelect}/>
+                        }
 
-                    {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                    {this.renderDropdownButtonSortDirection("Order", "")}
-
+                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                        {this.renderDropdownButtonSortDirection("Order", "")}
+                    </div>
                 </div>
                 <div className="row">
                     {this.state.actors.map(actor =>
