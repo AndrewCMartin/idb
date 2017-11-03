@@ -3,11 +3,12 @@ import os
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 from flask_restless import APIManager
+# from flask_whooshalchemyplus import index_all
 from flask_sqlalchemy import SQLAlchemy
 
 from config import ProdConfig, LocalDevConfig, REACT_DIR
 
-app = Flask(__name__, static_url_path="/static", static_folder="../build/static")
+app = Flask(__name__, static_folder="../build/static")
 
 CORS(app)
 
@@ -17,9 +18,7 @@ else:
     app.config.from_object(LocalDevConfig)
 
 db = SQLAlchemy(app)
-
 from models import Actor, Character, ComicSeries, Event, Movie, TvShow
-
 # Create the Flask-Restless API manager.
 manager = APIManager(app, flask_sqlalchemy_db=db)
 
@@ -29,7 +28,7 @@ kargs = {
     'allow_functions': True,
     'results_per_page': 50}
 
-db.create_all()
+# index_all(app)
 
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.

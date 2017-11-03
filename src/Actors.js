@@ -8,12 +8,10 @@ var imageStyles = {
     height: '500px',
 }
 
-function splitarray(input, spacing)
-{
+function splitarray(input, spacing) {
     var output = [];
 
-    for (var i = 0; i < input.length; i += spacing)
-    {
+    for (var i = 0; i < input.length; i += spacing) {
         output[output.length] = input.slice(i, i + spacing);
     }
 
@@ -27,7 +25,7 @@ class Actors extends React.Component {
         this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.updateItems = this.updateItems.bind(this);
-        
+
         this.state = this.getInitialState();
         this.updateItems();
     }
@@ -38,16 +36,16 @@ class Actors extends React.Component {
             actorsGrouped: [],
             numPages: 1,
             activePage: 1,
-            resultsPerPage: 6,
+            resultsPerPage: 12,
             orderBy: 'name',
             orderDirection: 'asc',
             q: {'order_by': [{"field": "name", "direction": "asc"}]}
         };
     }
 
-   // componentDidMount() {
-   //     this.updateItems();
-   // }
+    // componentDidMount() {
+    //     this.updateItems();
+    // }
 
     updateItems() {
         axios.get('http://marvelus.me/api/actor', {
@@ -70,7 +68,7 @@ class Actors extends React.Component {
 
         this.state.activePage = eventKey;
         this.updateItems();
-        
+
     }
 
     handleSelectSort(eventKey) {
@@ -112,77 +110,62 @@ class Actors extends React.Component {
 
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                  
-            <div className='text-center'>
-            {this.renderDropdownButtonSortby("Sort By: ", "name")}
+
+                    <div className='text-center'>
+                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
-                </div>
-                </div>
-                
-                    {this.state.actorsGrouped.length > 0 ?
-                       <div className="row">
-                        {this.state.actorsGrouped.map(actor => 
-                     <div className="col-sm-4">
-                            <div className="panel panel-info">
-                                <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
-                                <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                                 className="img-responsive" style={imageStyles}
-                                                                 alt="Image"/></div>
-                            </div>
-                       
-                    )} 
                     </div>
-                    :null}
-                    {this.state.actorsGrouped[0]?
-                     this.state.actorsGrouped[0].map(actor =>
-                     
-                        <div className="col-sm-4">
-                            <div className="panel panel-info">
-                                <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
-                                <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                                 className="img-responsive" style={imageStyles}
-                                                                 alt="Image"/></div>
-                            </div>
-                        </div>
-                    ):null}
+                </div>
+
+                {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     <div className="row">
-                    {this.state.actorsGrouped[1]?
-                     this.state.actorsGrouped[1].map(actor =>
-                     
-                        <div className="col-sm-4">
-                            <div className="panel panel-info">
-                                <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
-                                <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                                 className="img-responsive" style={imageStyles}
-                                                                 alt="Image"/></div>
-                            </div>
-                        </div>
-                    ):null}
-                      <div className='text-center'>
+                        {this.state.actorsGrouped.map(actorList =>
+                            !actorList ? null :
+                                actorList.map(actor =>
 
-                        {!this.state.numPages
-                            ? null
-                            : <Pagination
-                                bsSize='large'
-                                prev
-                                next
-                                first
-                                last
-                                ellipsis
-                                boundaryLinks
-                                items={this.state.numPages}
-                                maxButtons={10}
-                                activePage={this.state.activePage}
-                                onSelect={this.handleSelect}/>
-                        }
-                    </div>
-                        
-                    </div>
+                                    <div className="col-sm-4">
+                                        <div className="panel panel-info">
+                                            <div className="panel-heading"><Link
+                                                to={"/actor/" + actor.id}>{actor.name}</Link>
+                                            </div>
+                                            <div className="panel-body">
+                                                <Link to={"/actor/" + actor.id}>
+                                                    <img
+                                                        src={"https://image.tmdb.org/t/p/w640/" + actor.image}
+                                                        className="img-responsive" style={imageStyles}
+                                                        alt="Image"/>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                    </div>}
 
 
+                <div className='text-center'>
+
+                    {!this.state.numPages
+                        ? null
+                        : <Pagination
+                            bsSize='large'
+                            prev
+                            next
+                            first
+                            last
+                            ellipsis
+                            boundaryLinks
+                            items={this.state.numPages}
+                            maxButtons={10}
+                            activePage={this.state.activePage}
+                            onSelect={this.handleSelect}/>
+                    }
                 </div>
 
             </div>
+
+
+
         );
     }
 }

@@ -1,10 +1,12 @@
 import hashlib
 import json
 import os
-import requests
 import time
 
-from app.models import db, TvShow, Movie, Actor, ComicSeries, Character, Event
+import requests
+
+from app import db
+from app.models import TvShow, Movie, Actor, ComicSeries, Character, Event
 from app.scrape import tmdb
 from config import BASE_DIR
 
@@ -288,12 +290,12 @@ def add_series(series):
 
 if __name__ == '__main__':
     r = load_results()
-    # add_characters(r["characters"])
-    # add_actors(r["actors"])
-    # add_movies(r["movies"])
-    # add_tvshows(r["tvshows"])
-    # add_events(r["events"])
-    # add_series(r["series"])
+    add_characters(r["characters"])
+    add_actors(r["actors"])
+    add_movies(r["movies"])
+    add_tvshows(r["tvshows"])
+    add_events(r["events"])
+    add_series(r["series"])
 
 
 

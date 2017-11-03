@@ -11,4 +11,4 @@ tmdbsimple
 pytest
 flask_testing
 pytest-flask
-flask_whooshalchemy
+flask_whooshalchemyplus
