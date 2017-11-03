@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router-dom'
-import {DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
+import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -24,6 +24,8 @@ class Actors extends React.Component {
         this.handleSelectSort = this.handleSelectSort.bind(this);
         this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
+        this.handleSelectFilter = this.handleSelectFilter.bind(this);
+        this.handleResetFilter = this.handleResetFilter.bind(this);
         this.updateItems = this.updateItems.bind(this);
 
         this.state = this.getInitialState();
@@ -51,6 +53,7 @@ class Actors extends React.Component {
     // }
 
     updateItems() {
+        console.log("update");
         axios.get('http://marvelus.me/api/actor', {
             params: {
                 results_per_page: this.state.resultsPerPage,
@@ -68,10 +71,8 @@ class Actors extends React.Component {
     }
 
     handleSelect(eventKey) {
-
         this.state.activePage = eventKey;
         this.updateItems();
-
     }
 
     handleSelectSort(eventKey) {
@@ -87,12 +88,33 @@ class Actors extends React.Component {
         this.updateItems();
     }
 
+    handleSelectFilter(eventKey) {
+        this.state.q.filters.push({"name":"id","op":"gt", "val": 9860});
+        this.updateItems();        
+    }
+
+    handleResetFilter() {
+        this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+        this.updateItems();
+    }
+
     renderDropdownButtonSortby(title, i) {
         return (
             <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
+
+            </DropdownButton>
+        );
+    }
+
+    renderDropdownButtonFilter(title, i) {
+        return (
+            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+                            onSelect={this.handleSelectFilter}>
+                <MenuItem eventKey="name">ID greater than 9860</MenuItem>
+                <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
 
             </DropdownButton>
         );
@@ -107,6 +129,12 @@ class Actors extends React.Component {
         );
     }
 
+    renderResetFilterButton(title) {
+        return (
+            <Button bsStyle="primary" title={title} onClick={this.handleResetFilter}>Reset Filter
+            </Button>
+        );
+    }
 
     render() {
         return (
@@ -117,6 +145,8 @@ class Actors extends React.Component {
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
+                        {this.renderDropdownButtonFilter("Filter", "")}
+                        {this.renderResetFilterButton("Filter")}
                     </div>
                 </div>
 
