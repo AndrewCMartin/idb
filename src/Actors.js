@@ -23,7 +23,17 @@ function splitarray(input, spacing)
 class Actors extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.handleSelectSort = this.handleSelectSort.bind(this);
+        this.handleSelectDirection = this.handleSelectDirection.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
+        this.updateItems = this.updateItems.bind(this);
+        
+        this.state = this.getInitialState();
+        this.updateItems();
+    }
+
+    getInitialState() {
+        return {
             actors: [],
             actorsGrouped: [],
             numPages: 1,
@@ -32,17 +42,12 @@ class Actors extends React.Component {
             orderBy: 'name',
             orderDirection: 'asc',
             q: {'order_by': [{"field": "name", "direction": "asc"}]}
-        }
-        this.handleSelectSort = this.handleSelectSort.bind(this);
-        this.handleSelectDirection = this.handleSelectDirection.bind(this);
-        this.handleSelect = this.handleSelect.bind(this);
-        this.updateItems = this.updateItems.bind(this);
+        };
     }
 
-
-    componentDidMount() {
-        this.updateItems();
-    }
+   // componentDidMount() {
+   //     this.updateItems();
+   // }
 
     updateItems() {
         axios.get('http://marvelus.me/api/actor', {
@@ -54,20 +59,18 @@ class Actors extends React.Component {
         }).then(res => {
             this.state.numPages = res.data.total_pages;
             const actors = res.data.objects.map(actor => actor);
-            this.setState({actors});
+            //this.setState({actors});
             const actorsGrouped = splitarray(actors, 3)
-            this.state.actorsGrouped = actorsGrouped;
+            this.setState({actorsGrouped});
             console.log(this.state.actorsGrouped);
         });
     }
 
     handleSelect(eventKey) {
 
-        this.setState({
-            activePage: eventKey,
-        });
+        this.state.activePage = eventKey;
         this.updateItems();
-
+        
     }
 
     handleSelectSort(eventKey) {
@@ -105,7 +108,6 @@ class Actors extends React.Component {
 
 
     render() {
-
         return (
 
             <div className="container" styles="margin-top:100px;">
@@ -116,7 +118,21 @@ class Actors extends React.Component {
                         {this.renderDropdownButtonSortDirection("Order", "")}
                 </div>
                 </div>
-                <div className="row">
+                
+                    {this.state.actorsGrouped.length > 0 ?
+                       <div className="row">
+                        {this.state.actorsGrouped.map(actor => 
+                     <div className="col-sm-4">
+                            <div className="panel panel-info">
+                                <div className="panel-heading"><Link to={"/actor/" + actor.id}>{actor.name}</Link></div>
+                                <div className="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + actor.image}
+                                                                 className="img-responsive" style={imageStyles}
+                                                                 alt="Image"/></div>
+                            </div>
+                       
+                    )} 
+                    </div>
+                    :null}
                     {this.state.actorsGrouped[0]?
                      this.state.actorsGrouped[0].map(actor =>
                      
