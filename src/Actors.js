@@ -121,29 +121,28 @@ class Actors extends React.Component {
                 </div>
 
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
-                    <div className="row">
-                        {this.state.actorsGrouped.map(actorList =>
-                            !actorList ? null :
-                                actorList.map(actor =>
-
-                                    <div className="col-sm-4">
-                                        <div className="panel panel-info">
-                                            <div className="panel-heading"><Link
-                                                to={"/actor/" + actor.id}>{actor.name}</Link>
-                                            </div>
-                                            <div className="panel-body">
-                                                <Link to={"/actor/" + actor.id}>
-                                                    <img
-                                                        src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                        className="img-responsive" style={imageStyles}
-                                                        alt="Image"/>
-                                                </Link>
-                                            </div>
+                    this.state.actorsGrouped.map(actorList =>
+                        !actorList ? null :
+                            <div className="row">{actorList.map(actor =>
+                                <div className="col-sm-4">
+                                    <div className="panel panel-info">
+                                        <div className="panel-heading"><Link
+                                            to={"/actor/" + actor.id}>{actor.name}</Link>
+                                        </div>
+                                        <div className="panel-body">
+                                            <Link to={"/actor/" + actor.id}>
+                                                <img
+                                                    src={"https://image.tmdb.org/t/p/w640/" + actor.image}
+                                                    className="img-responsive" style={imageStyles}
+                                                    alt="Image"/>
+                                            </Link>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                            )}
+                            </div>)
 
-                    </div>}
+                }
 
 
                 <div className='text-center'>
