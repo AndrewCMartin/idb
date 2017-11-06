@@ -56,7 +56,7 @@ class Character(db.Model):
 
 
 class Event(db.Model):
-    __searchable__ = ['name', 'desc']
+    __searchable__ = ['title', 'desc']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
     desc = db.Column(db.String(1500))
@@ -78,7 +78,7 @@ class Event(db.Model):
 
 
 class Actor(db.Model):
-    __searchable__ = ['name', 'desc']
+    __searchable__ = ['name', 'bio']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     birthday = db.Column(db.Date)
@@ -97,7 +97,7 @@ class Actor(db.Model):
 
 
 class Movie(db.Model):
-    __searchable__ = ['name', 'desc']
+    __searchable__ = ['title', 'overview']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
     overview = db.Column(db.String(1300))
@@ -126,7 +126,7 @@ class Movie(db.Model):
 
 
 class TvShow(db.Model):
-    __searchable__ = ['name', 'desc']
+    __searchable__ = ['name', 'overview']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     overview = db.Column(db.String(1300))
@@ -153,7 +153,7 @@ class TvShow(db.Model):
 
 
 class ComicSeries(db.Model):
-    __searchable__ = ['name', 'desc']
+    __searchable__ = ['title', 'desc']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
     desc = db.Column(db.String(1300))

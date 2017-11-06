@@ -6,14 +6,14 @@ var axios = require('axios');
 
 var imageStyles = {
     //height: '500px',
-} 
-var changeColor={
+}
+var changeColor = {
     backgroundColor: 'black',
     borderColor: 'white',
 }
 
-var linkColor={
-    color:'white',
+var linkColor = {
+    color: 'white',
 }
 
 function splitarray(input, spacing) {
@@ -97,8 +97,8 @@ class Actors extends React.Component {
     }
 
     handleSelectFilter(eventKey) {
-        this.state.q.filters.push({"name":"id","op":"gt", "val": 9860});
-        this.updateItems();        
+        this.state.q.filters.push({"name": "id", "op": "gt", "val": 9860});
+        this.updateItems();
     }
 
     handleResetFilter() {
@@ -163,19 +163,21 @@ class Actors extends React.Component {
                         !actorList ? null :
                             <div className="row">{actorList.map(actor =>
                                 <div className="col-sm-4">
-                                    <div className="panel" style={changeColor}>
-                                        <div className="panel-heading"><Link
-                                            to={"/actor/" + actor.id} style={linkColor}>{actor.name}</Link>
-                                        </div>
-                                        <div className="panel-body">
-                                            <Link to={"/actor/" + actor.id}>
+                                    <Link to={"/actor/" + actor.id}>
+                                        <div className="panel" style={changeColor}>
+                                            <div className="panel-heading">
+                                                <div style={linkColor}>{actor.name}</div>
+                                            </div>
+                                            <div className="panel-body">
+
                                                 <img
                                                     src={"https://image.tmdb.org/t/p/w640/" + actor.image}
                                                     className="img-responsive" style={imageStyles}
                                                     alt="Image"/>
-                                            </Link>
+
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             )}
                             </div>)

@@ -3,13 +3,15 @@ import json
 import os
 import time
 
+import flask_whooshalchemyplus as whooshalchemy
 import requests
 
-from app import db
+from app import db, app
 from app.models import TvShow, Movie, Actor, ComicSeries, Character, Event
 from app.scrape import tmdb
 from config import BASE_DIR
 
+models_list = [Actor, Character, ComicSeries, Event, Movie, TvShow]
 DATA_DIR = os.path.join(BASE_DIR, "app", "data")
 
 k_priv = 'fdf9c8bc5c83cbe565fdd6ddc4df9d0fb1e38a83'
@@ -260,7 +262,7 @@ def add_events(events):
 
 def add_series(series):
     for s in series:
-        print (s)
+        # print (s)
         if ComicSeries.query.filter_by(id=s["id"]).first():
             continue
         path = s['thumbnail']['path']
@@ -288,7 +290,7 @@ def add_series(series):
         print("Added " + s["title"])
 
 
-if __name__ == '__main__':
+def load_all():
     r = load_results()
     add_characters(r["characters"])
     add_actors(r["actors"])
@@ -297,6 +299,12 @@ if __name__ == '__main__':
     add_events(r["events"])
     add_series(r["series"])
 
+
+if __name__ == '__main__':
+    with app.app_context():
+        for model in models_list:
+            whooshalchemy.whoosh_index(app, model)
+        load_all()
 
 
 # In[58]:

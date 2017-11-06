@@ -24,7 +24,7 @@ class LocalDevConfig(object):
     SQL_USER = os.environ['CLOUDSQL_USER']
     SQL_PASS = os.environ['CLOUDSQL_PASSWORD']
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + SQL_USER + ':' + SQL_PASS + '@' + 'localhost:3306/marvelusdb'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 class TestingConfig(object):
