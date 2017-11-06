@@ -97,7 +97,7 @@ def search_tvshow():
     return make_search_response(TvShow)
 
 
-@app.route('/api/search/series')
+@app.route('/api/search/comic_series')
 def search_series():
     return make_search_response(ComicSeries)
 
