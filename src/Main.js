@@ -14,6 +14,7 @@ import Actors from './Actors'
 import ActorInstance from './ActorInstance'
 import Events from './Events'
 import EventInstance from './EventInstance'
+import SearchResults from './SearchResults'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -43,6 +44,8 @@ const Main = () => (
       
       <Route path='/events' component={Events}/>
       <Route path='/event/:eventID' component={EventInstance}/>
+
+      <Route path='/search' component={SearchResults}/>
     </Switch>
   </main>
 )
