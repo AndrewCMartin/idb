@@ -109,7 +109,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton bsStyle="danger" title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -120,7 +120,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton bsStyle="danger" title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="name">ID greater than 9860</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -131,7 +131,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton bsStyle="danger" title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -140,7 +140,7 @@ class Actors extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button bsStyle="primary" title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button bsStyle="danger" title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
     }
@@ -192,6 +192,7 @@ class Actors extends React.Component {
                         ? null
                         : <Pagination
                             bsSize='large'
+                            bsStyle = 'danger'
                             prev
                             next
                             first
@@ -201,7 +202,8 @@ class Actors extends React.Component {
                             items={this.state.numPages}
                             maxButtons={10}
                             activePage={this.state.activePage}
-                            onSelect={this.handleSelect}/>
+                            onSelect={this.handleSelect}
+                            />
                     }
                 </div>
 
