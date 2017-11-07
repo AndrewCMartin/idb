@@ -3,7 +3,7 @@ body {
   background: black;
   color: #848484;
   font-family: TradeGothicLTStd, sans-serif;
-  font-style: normal;
+  font-style: bold;
   font-weight: 400;
 
 }
@@ -15,6 +15,6 @@ body {
 
 @font-face {
     font-family: "TradeGothicLTStd";
-    font-weight: bold;
+    font-weight: normal;
     src: local("/TradeGothicLTStd"), url(./TradeGothicLTStd.otf) format("opentype"); 
 }
