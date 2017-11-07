@@ -2,8 +2,9 @@ body {
  /*background: radial-gradient(#636262,black);*/
   background: black;
   color: #848484;
-  font-family: 'GraublaeWeb', sans-serif;
-  font-size: 16px;
+  font-family: TradeGothicLTStd, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 
 }
 .panel-default > .panel-heading {
@@ -13,7 +14,7 @@ body {
 }
 
 @font-face {
-    font-family: 'GraublauWeb';
+    font-family: "TradeGothicLTStd";
     font-weight: bold;
-    src: url("acumin-pro-regular-59fcf8caa8df3.otf") format("opentype");
+    src: local("/TradeGothicLTStd"), url(./TradeGothicLTStd.otf) format("opentype"); 
 }
