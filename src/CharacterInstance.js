@@ -88,8 +88,8 @@ class CharacterInstance extends React.Component {
                                     <b>Appears in TV Shows:</b>
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
-                                            return (<li key={tv_show.title}><Link
-                                                to={`/tvshow/${tv_show.id}`}>{tv_show.title}</Link></li>)
+                                            return (<li key={tv_show.name}><Link
+                                                to={`/tvshow/${tv_show.id}`}>{tv_show.name}</Link></li>)
                                         }) : "None"}
                                     </ul>
                                 </li>
