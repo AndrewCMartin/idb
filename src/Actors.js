@@ -8,18 +8,18 @@ var imageStyles = {
     //height: '500px',
 }
 var changeColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
+    backgroundColor: '#2b2b2b',
+    borderColor: 'black',
 }
-
-var fontStyle = {
-    backgroundColor: 'red',
-    borderColor: 'red',
-    color:'white'
-}
-
 
 var linkColor = {
+    color: 'white',
+}
+
+var pageStyle = {
+    margin: '10px',
+    backgroundColor: '#2b2b2b',
+    borderColor: '#2b2b2b',
     color: 'white',
 }
 
@@ -115,7 +115,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton style={fontStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -126,7 +126,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton style={fontStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="name">ID greater than 9860</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -137,7 +137,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton style={fontStyle} title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton style={pageStyle} title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -146,7 +146,7 @@ class Actors extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button style={fontStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button style={pageStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
     }
@@ -198,7 +198,7 @@ class Actors extends React.Component {
                         ? null
                         : <Pagination
                             bsSize='large'
-                            bsStyle = {fontStyle}
+                            bsStyle = 'pageStyle'
                             prev
                             next
                             first
@@ -208,8 +208,7 @@ class Actors extends React.Component {
                             items={this.state.numPages}
                             maxButtons={10}
                             activePage={this.state.activePage}
-                            onSelect={this.handleSelect}
-                            />
+                            onSelect={this.handleSelect}/>
                     }
                 </div>
 

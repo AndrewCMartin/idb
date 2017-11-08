@@ -1,8 +1,8 @@
 body {
  /*background: radial-gradient(#636262,black);*/
- /* background: black; */
-  background-image: url("./maxresdefault.jpg");
-  height: 100vh;
+  background: black;
+  background-image: url("./background.jpg");
+  height: 100% 100%;
   color: #848484;
   font-family: TradeGothicLTStd, sans-serif;
   font-style: bold;

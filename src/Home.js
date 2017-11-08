@@ -2,7 +2,7 @@ import React from 'react'
 import {Carousel, Container, Slide} from 'react-bootstrap'
 
 var imageStyles = {
-    height: "750px",
+    height: "850px",
 }
 
 
