@@ -4,6 +4,22 @@ import {Button, Panel, Pagination} from 'react-bootstrap'
 
 var axios = require('axios');
 
+var imageStyles = {
+    //height: '500px',
+    width: 'fit-content',
+    display: 'inline'
+};
+
+
+var changeColor = {
+    backgroundColor: 'black',
+    borderColor: 'white',
+};
+
+var linkColor = {
+    color: 'white',
+}
+
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
@@ -143,6 +159,17 @@ class SearchResults extends React.Component {
     }
 
     render() {
+        var ulStyles = {
+            minWidth: '696px',
+            listStyle: 'none',
+            paddingTop: '20px',
+        };
+        
+        var liStyles = {
+            display: 'inline'
+        };
+        
+
         const actors = this.state.actor_results.objects || [];        
         const characters = this.state.character_results.objects || [];        
         const comics = this.state.comic_results.objects || [];        
@@ -153,9 +180,25 @@ class SearchResults extends React.Component {
         return (
             <div>
                 <Panel header={"Actor Results"}>
+                    <ul style={ulStyles}>
+
                     {actors.length > 0 ? actors.map(function(actor) {
-                        return (<li key={actor.name}><Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>)
+                        return (
+                                <li key={actor.name} style={liStyles}>
+                                    <Link to={`/actor/${actor.id}`}>
+                                        <div className="panel-heading">
+                                            <div>{actor.name}</div>
+                                        </div>
+                                        <img
+                                            src={"https://image.tmdb.org/t/p/w150" + actor.image}
+                                            className="img-responsive" style={imageStyles}
+                                            alt="Image"/>
+
+                                    </Link>
+                                </li>
+                            )
                                         }) : "None"}
+                    </ul>
 
                     <div className='text-center'>
                         {!this.state.actor_results.total_pages
