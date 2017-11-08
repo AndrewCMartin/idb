@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -29,21 +30,25 @@ class ActorInstance extends React.Component {
                 <div class="panel panel-default">
                     <div class="panel-heading"><h1>{this.state.actor.name}</h1></div>
                     <div class="panel-body">
-                        <div class="panel-body"><img src={"https://image.tmdb.org/t/p/w640/" + this.state.actor.image}
-                                                     class="img-responsive" class="img-responsive" styles="width:100%"
-                                                     alt="Image"/>
-                            <h3>Information</h3>
-                            <ul>
-                                <li><b>Name:</b> {this.state.actor.name}</li>
-                                <li><b>Bio:</b> {this.state.actor.bio}</li>
-                                <li><b>Birthday:</b> {this.state.actor.birthday}</li>
-                                <li><b>Character(s): </b>
-                                    <ul>
+                     
+                            <Row>
+                            <Col xs={6} md={6}>
+                            <img src={"https://image.tmdb.org/t/p/w640/" + this.state.actor.image}
+                                      class="img-responsive" class="img-responsive" styles="width:100%" alt="Image"/>
+                             </Col>
+                            <Col xs={6} md={6}>
+                                <h3><b>Information</b></h3>
+                                  <ul>
+                                    <li><b>Name:</b> {this.state.actor.name}</li>
+                                    <li><b>Bio:</b> {this.state.actor.bio}</li>
+                                    <li><b>Birthday:</b> {this.state.actor.birthday}</li>
+                                    <li><b>Character(s): </b>
+                                  <ul>
                                         {characters.length > 0 ? characters.map(function (character) {
                                             return (<li key={character.name}><Link
                                                 to={`/character/${character.id}`}>{character.name}</Link></li>)
                                         }) : "None"}
-                                    </ul>
+                                  </ul>
                                 </li>
                                 <li>
                                     <b>Appears in Movies:</b>
@@ -63,8 +68,9 @@ class ActorInstance extends React.Component {
                                         }) : "None"}
                                     </ul>
                                 </li>
-                            </ul>
-                        </div>
+                                  </ul>
+                                </Col>
+                            </Row>
                     </div>
                 </div>
             </div>

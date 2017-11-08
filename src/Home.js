@@ -2,7 +2,7 @@ import React from 'react'
 import {Carousel, Container, Slide} from 'react-bootstrap'
 
 var imageStyles = {
-    height: "700px",
+    height: "750px",
 }
 
 
@@ -10,7 +10,6 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                {/*	<PageHeader className="text-center text-danger"><strong>MARVELUS</strong></PageHeader>*/}
                 <Carousel controls={false}>
                     <Carousel.Item>
                         <img className="center-block" alt="900x500"
