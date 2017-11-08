@@ -1,10 +1,14 @@
 body {
  /*background: radial-gradient(#636262,black);*/
-  background: black;
+ /* background: black; */
+  background-image: url("./maxresdefault.jpg");
+  height: 100vh;
   color: #848484;
   font-family: TradeGothicLTStd, sans-serif;
   font-style: bold;
   font-weight: 400;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 
 }
 .panel-default > .panel-heading {
