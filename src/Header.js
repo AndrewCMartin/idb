@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, NavItem, Button, Container, Nav, MenuItem, NavDropdown, FormGroup, FormControl } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
-import body from './Header.css'
+import './Header.css'
     
 import SearchBar from "./SearchBar.js"
 

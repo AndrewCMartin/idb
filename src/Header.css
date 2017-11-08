@@ -1,6 +1,6 @@
 body {
- /*background: radial-gradient(#636262,black);*/
-  background: black;
+  /* background: radial-gradient(red,black); */
+  background: black; 
   background-image: url("./background.jpg");
   height: 100% 100%;
   color: #848484;
@@ -21,4 +21,11 @@ body {
     font-family: "TradeGothicLTStd";
     font-weight: normal;
     src: local("/TradeGothicLTStd"), url(./TradeGothicLTStd.otf) format("opentype"); 
+}
+
+.pagination>li>a,
+.pagination>li.active>a,
+.pagination>li>span {
+    background: red;
+    color: white;
 }

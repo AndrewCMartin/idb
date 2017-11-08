@@ -1,7 +1,9 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router-dom'
 import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
-
+import './Header.css'
+    
+    
 var axios = require('axios');
 
 var imageStyles = {
@@ -193,12 +195,11 @@ class Actors extends React.Component {
 
 
                 <div className='text-center'>
-
+                  
                     {!this.state.numPages
                         ? null
                         : <Pagination
                             bsSize='large'
-                            bsStyle = 'pageStyle'
                             prev
                             next
                             first
