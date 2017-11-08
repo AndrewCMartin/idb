@@ -6,7 +6,7 @@ var axios = require('axios');
 class CharacterInstance extends React.Component {
     constructor(props) {
         super(props);
-
+        // To store the information of the characters we get from our query
         this.state = {
             character: {}
         };
@@ -21,7 +21,7 @@ class CharacterInstance extends React.Component {
     }
 
     render() {
-
+        
         const actors = this.state.character.actors || [];
         const events = this.state.character.events || [];
         const series = this.state.character.comicseries || [];
