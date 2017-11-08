@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -63,7 +63,7 @@ class ActorInstance extends React.Component {
                                     <b>Appears in TV Shows:</b>
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
-                                            return (<li key={tv_show.title}><Link
+                                            return (<li key={tv_show.name}><Link
                                                 to={`/tvshow/${tv_show.id}`}>{tv_show.title}</Link></li>)
                                         }) : "None"}
                                     </ul>

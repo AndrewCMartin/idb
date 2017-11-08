@@ -1,10 +1,10 @@
-import math
 import os
 
 import flask_whooshalchemyplus as whooshalchemy
 from flask import Flask, send_from_directory, request, jsonify
 from flask_cors import CORS
 from flask_restless import APIManager
+from flask_restless.views import API, get_relations
 from flask_sqlalchemy import SQLAlchemy
 
 from config import ProdConfig, LocalDevConfig, REACT_DIR
@@ -35,7 +35,7 @@ manager = APIManager(app, flask_sqlalchemy_db=db)
 kwargs = {
     'methods': frozenset(['GET', 'POST', 'PATCH']),
     'allow_functions': True,
-    'results_per_page': 50}
+    'results_per_page': 6}
 
 # index_all(app)
 
@@ -55,26 +55,11 @@ def search():
 
 
 def make_search_response(model):
-    results_per_page = int(request.args.get('results_per_page') or '6')
-    page = int(request.args.get('page') or '1')
     search_query = request.args.get('query')
-
-    num_results = 0
-    response = {'num_results': 0, 'objects': [], 'page': page, 'total_pages': 0}
-
-    results = model.query.whoosh_search(search_query).all()
-    response['total_pages'] = int(math.ceil(len(results) / float(results_per_page)))
-
-    start_index = (page - 1) * results_per_page
-    end_index = min(start_index + results_per_page, len(results))
-
-    for i in range(start_index, end_index):
-        a = results[i]
-        d = {k: a.__dict__[k] for k in a.__dict__ if not k.startswith("_") and k != "birthday"}
-        response['objects'].append(d)
-
-    response['num_results'] = len(results)
-    return jsonify(response)
+    q = model.query.whoosh_search(search_query)
+    api = API(db.session, model)
+    deep = dict((r, {}) for r in get_relations(model))
+    return jsonify(api._paginated(q, deep))
 
 
 @app.route('/api/search/actor')

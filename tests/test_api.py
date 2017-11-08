@@ -10,10 +10,6 @@ class TestAPI(BaseTestConfig):
         self.assertIn('<html', result.data.decode("utf-8"))
         self.assert200(result)
 
-    def test_404(self):
-        result = self.app.get("/asdfasdf")
-        self.assert404(result)
-
     def test_add_character(self):
         c = Character(123, "Example_name", "Description", "/.jpg", "")
         db.session.merge(c)

@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
+import {Button, DropdownButton, FormControl, FormGroup, MenuItem, Pagination} from 'react-bootstrap'
 import './Header.css'
-    
-    
+
+
 var axios = require('axios');
 
 var imageStyles = {
@@ -43,6 +43,7 @@ class Actors extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelectFilter = this.handleSelectFilter.bind(this);
         this.handleResetFilter = this.handleResetFilter.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
         this.updateItems = this.updateItems.bind(this);
 
         this.state = this.getInitialState();
@@ -51,6 +52,7 @@ class Actors extends React.Component {
 
     getInitialState() {
         return {
+            search_string: '',
             actors: [],
             actorsGrouped: [],
             numPages: 1,
@@ -71,12 +73,19 @@ class Actors extends React.Component {
 
     updateItems() {
         console.log("update");
-        axios.get('http://marvelus.me/api/actor', {
-            params: {
+        var url = 'http://marvelus.me/api/actor';
+        var params = {
                 results_per_page: this.state.resultsPerPage,
                 page: this.state.activePage,
                 q: JSON.stringify(this.state.q),
-            }
+        };
+        if (this.state.search_string.length > 0) {
+            url = 'http://marvelus.me/api/search/actor';
+            params['query'] = this.state.search_string;
+
+        }
+        axios.get(url, {
+            params: params
         }).then(res => {
             this.state.numPages = res.data.total_pages;
             const actors = res.data.objects.map(actor => actor);
@@ -112,7 +121,13 @@ class Actors extends React.Component {
 
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+        this.state.search_string = '';
         this.updateItems();
+    }
+
+    handleSearchChange(eventKey) {
+        this.state.search_string = eventKey.target.value;
+        this.updateItems()
     }
 
     renderDropdownButtonSortby(title, i) {
@@ -167,6 +182,16 @@ class Actors extends React.Component {
                     </div>
                 </div>
 
+                <form>
+                    <FormGroup controlId="formBasicText">
+                        <FormControl
+                            type="text"
+                            placeholder="Search..."
+                            onChange={this.handleSearchChange}/>
+                    </FormGroup>
+                </form>
+
+
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     this.state.actorsGrouped.map(actorList =>
                         !actorList ? null :
@@ -195,7 +220,7 @@ class Actors extends React.Component {
 
 
                 <div className='text-center'>
-                  
+
                     {!this.state.numPages
                         ? null
                         : <Pagination
