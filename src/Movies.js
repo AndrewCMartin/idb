@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -155,7 +155,7 @@ class Movies extends React.Component {
         return (    
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                    /* Display all sorting, filtering, searching options */
+                    {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
@@ -163,8 +163,8 @@ class Movies extends React.Component {
                         {this.renderResetFilterButton("Filter")}
                     </div>
                 </div>
-                    
-                /* Go through and display 6 movies per page */
+
+                {/* Go through and display 6 movies per page */}
                 {this.state.moviesGrouped.length == 0 || !this.state.moviesGrouped ? null :
                     this.state.moviesGrouped.map(moviesList =>
                         !moviesList ? null :
