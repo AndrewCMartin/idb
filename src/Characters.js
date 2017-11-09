@@ -164,7 +164,7 @@ class Characters extends React.Component {
         return (    
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                    /* Display all sorting, filtering, searching options */
+                    {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
@@ -173,7 +173,7 @@ class Characters extends React.Component {
                     </div>
                 </div>
                       
-                /* Go through and display 6 characters per page */
+                {/* Go through and display 6 characters per page */}
                 {this.state.charactersGrouped.length == 0 || !this.state.charactersGrouped ? null :
                     this.state.charactersGrouped.map(charactersList =>
                         !charactersList ? null :
@@ -187,7 +187,7 @@ class Characters extends React.Component {
                                         </div>
                                                      
                                                      
-                                        /* In charge of the popover when you hover over the character's picture */             
+                                        {/* In charge of the popover when you hover over the character's picture */}             
                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {character.name}<br /><br />
@@ -223,7 +223,7 @@ class Characters extends React.Component {
                 }
 
             
-            /* Display the pagination bar */
+            {/* Display the pagination bar */}
             <div className='text-center'>
                 {!this.state.numPages
                     ? null

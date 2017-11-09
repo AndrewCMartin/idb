@@ -27,7 +27,7 @@ var dropdownStyle = {
     color: 'white',
 }
 
-{/* Used to split the actor data so there is 3 per row */}
+{/* Used to split the series data so there is 3 per row */}
 function splitarray(input, spacing) {
   var output = [];
 
@@ -172,7 +172,7 @@ render() {
             </div>
                 
                 
-                {/* Go through and display 6 actors per page */}
+                {/* Go through and display 6 series per page */}
             {this.state.comicsGrouped.length == 0 || !this.state.comicsGrouped ? null :
                 this.state.comicsGrouped.map(comicsList =>
                     !comicsList ? null :
