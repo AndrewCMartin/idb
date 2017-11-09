@@ -77,7 +77,7 @@ class Actors extends React.Component {
         };
     }
 
-    {/* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */}
+    //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
         var url = 'http://marvelus.me/api/actor';
         var params = {
@@ -100,45 +100,45 @@ class Actors extends React.Component {
         });
     }
 
-    {/* When you select a page in the pagination bar */}
+    //* When you select a page in the pagination bar */
     handleSelect(eventKey) {
         this.state.activePage = eventKey;
         this.updateItems();
     }
     
-    {/* Select how to sort (what attributes) the actors */}
+    //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
 
     }
     
-    {/* Select which way to sort the attributes (asc/desc) */} 
+    /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
         this.state.q.order_by[0].direction = eventKey;
         this.updateItems();
     }
 
-    {/* Select which filter to use */} 
+    /* Select which filter to use */
     handleSelectFilter(eventKey) {
         this.state.q.filters.push({"name": "id", "op": "gt", "val": 9860});
         this.updateItems();
     }
 
-    {/* Resets all options to the way when user first came to site */}
+    /* Resets all options to the way when user first came to site */
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
         this.state.search_string = '';
         this.updateItems();
     }
 
-    {/* Live change as user types into search bar */}
+    /* Live change as user types into search bar */
     handleSearchChange(eventKey) {
         this.state.search_string = eventKey.target.value;
         this.updateItems()
     }
 
-    {/* Displays the "sort by" dropdown */}
+    /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"sort"} id={'dropdown-basic-${i}'}
@@ -150,7 +150,7 @@ class Actors extends React.Component {
         );
     }
 
-    {/* Displays the "filter" dropdown */}
+    /* Displays the "filter" dropdown */
     renderDropdownButtonFilter(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"filter"} id={'dropdown-basic-${i}'}
@@ -161,7 +161,7 @@ class Actors extends React.Component {
         );
     }
 
-    {/* Displays the "order" dropdown */}
+    /* Displays the "order" dropdown */
     renderDropdownButtonSortDirection(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
@@ -171,7 +171,7 @@ class Actors extends React.Component {
         );
     }
 
-    {/* Displays the "reset filter" button */}
+    /* Displays the "reset filter" button */
     renderResetFilterButton(title) {
         return (
             <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
@@ -183,7 +183,7 @@ class Actors extends React.Component {
         return (
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                    {/* Display all sorting, filtering, searching options */}
+                    /* Display all sorting, filtering, searching options */
                     <div className='text-center'>
                         <Form inline>
                             {this.renderDropdownButtonSortby("Sort By: ", "name")}
@@ -203,7 +203,7 @@ class Actors extends React.Component {
                 <form>
                 </form>
 
-                {/* Go through and display 6 actors per page */}
+                /* Go through and display 6 actors per page */
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     this.state.actorsGrouped.map(actorList =>
                         !actorList ? null :
@@ -213,7 +213,7 @@ class Actors extends React.Component {
                                           <div className="panel" style={panelColor}>
                                             <div className="panel-heading">
                                                 <div style={linkColor}>
-                                                    {/* For actor search -- highlights the word found */}
+                                                    /* For actor search -- highlights the word found */
                                                     <Highlighter
                                                         highlightClassName={styles.Highlight}
                                                         searchWords={this.state.search_string.split(" ")}
@@ -223,7 +223,7 @@ class Actors extends React.Component {
                                                 </div>
                                             </div>
                                             
-                                            {/* In charge of the popover when you hover over the actor's picture */}
+                                            /* In charge of the popover when you hover over the actor's picture */
                                             <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {actor.name}<br /><br />
@@ -261,7 +261,7 @@ class Actors extends React.Component {
 
                 }
 
-                {/* Display the pagination bar */}
+                /* Display the pagination bar */
                 <div className='text-center'>
                     {!this.state.numPages
                         ? null

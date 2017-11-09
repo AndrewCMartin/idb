@@ -93,9 +93,9 @@ class ActorInstance extends React.Component {
                                     }) :<li> "None"</li>}
                                 </ul>
                                 </Col>
-                                <Col xs={6} md={6}
+                                <Col xs={6} md={6}>
 
-                                    {/* Goes through the data in the character lists, and makes linkable */}
+                                {/* Goes through the data in the character lists, and makes linkable */}
                                     <h3 style={secColStyle}>Appears in TV Shows</h3>
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
