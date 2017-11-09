@@ -27,18 +27,14 @@ var imageStyle = {
     height: '400px',
 }
 
-var linkStyle = {
-    color: 'white',
-}
+
 
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
 }
 
-var addingStyle={
-    color: 'pink',
-}
+
 
 class CharacterInstance extends React.Component {
     constructor(props) {
@@ -80,10 +76,7 @@ class CharacterInstance extends React.Component {
                                                      class="img-responsive" style={imageStyle} alt="Image"/>
             </Col>
             <Col xs={7} md={7}>
-            {/*  <h3>Information</h3>
-                            <h3>Name</h3> 
-                            <ul>
-                                <li>{this.state.character.name}</li>*/}
+
                                 <h3 style={headingStyle}>Description</h3>
                                 <p>{this.state.character.desc}</p>
                                 <br></br>
