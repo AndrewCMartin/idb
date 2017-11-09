@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -58,7 +58,7 @@ getInitialState() {
         orderDirection: 'asc',
         q: {
             'order_by': [{"field": "name", "direction": "asc"}],
-            'filters': []
+            'filters': [{"name": "poster_path", "op": "is_not_null"}]
         }
     };
 }
@@ -107,7 +107,7 @@ handleSelectFilter(eventKey) {
 
 /* Resets all options to the way when user first came to site */
 handleResetFilter() {
-    this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+    this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
     this.updateItems();
 }
 
@@ -116,8 +116,8 @@ renderDropdownButtonSortby(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectSort}>
-            <MenuItem eventKey="name">Name</MenuItem>
-            <MenuItem eventKey="birthday">Birthday</MenuItem>
+            <MenuItem eventKey="name">Title</MenuItem>
+            <MenuItem eventKey="rating">Rating</MenuItem>
 
         </DropdownButton>
     );

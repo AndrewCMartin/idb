@@ -12,11 +12,13 @@ from config import ProdConfig, LocalDevConfig, REACT_DIR
 app = Flask(__name__, static_folder="../build/static")
 CORS(app)
 
+# Get configuration based on whether on local machine or production
 if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine/'):
     app.config.from_object(ProdConfig)
 else:
     app.config.from_object(LocalDevConfig)
 
+# Search index folder
 app.config['WHOOSH_BASE'] = './whoosh_index'
 
 db = SQLAlchemy(app)
@@ -24,6 +26,7 @@ from models import Actor, Character, ComicSeries, Event, Movie, TvShow
 
 models_list = [Actor, Character, ComicSeries, Event, Movie, TvShow]
 
+# Creates tables
 db.create_all()
 for model in models_list:
     whooshalchemy.whoosh_index(app, model)
@@ -37,26 +40,17 @@ kwargs = {
     'allow_functions': True,
     'results_per_page': 6}
 
-# index_all(app)
-
 # Create API endpoints, which will be available at /api/<tablename> by
 # default. Allowed HTTP methods can be specified as well.
 for model in models_list:
     manager.create_api(model, **kwargs)
 
 
-@app.route('/api/search')
-def search():
-    results_per_page = int(request.args.get('results_per_page') or '6')
-    page = int(request.args.get('page') or '1')
-    search_query = request.args.get('query')
-
-    response = {'num_results': 0, 'objects': [], 'page': 1, 'total_pages': 0}
-
-
+# Search endpoint template, fill in model to create response for that model
 def make_search_response(model):
     search_query = request.args.get('query')
     q = model.query.whoosh_search(search_query)
+    # Use Flask-restless' mechanism for generating responses from SQLAlchemy models
     api = API(db.session, model)
     deep = dict((r, {}) for r in get_relations(model))
     return jsonify(api._paginated(q, deep))
@@ -90,12 +84,6 @@ def search_series():
 @app.route('/api/search/event')
 def search_event():
     return make_search_response(Event)
-
-
-# @app.route('/api/search/multi')
-# def search_multi():
-
-
 
 
 # Serve React App
