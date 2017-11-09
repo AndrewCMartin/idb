@@ -223,7 +223,11 @@ class Actors extends React.Component {
                                                 </div>
                                             </div>
                                             
+
+                                            {/* In charge of the popover when you hover over the actor's picture */}
+
                                                     {/* In charge of the popover when you hover over the actor's picture */}
+
                                             <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {actor.name}<br /><br />
