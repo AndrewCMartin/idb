@@ -78,7 +78,7 @@ class Event(db.Model):
 
 
 class Actor(db.Model):
-    __searchable__ = ['name', 'bio']
+    __searchable__ = ['name', 'bio', 'movies', 'characters', 'tvshows']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     birthday = db.Column(db.Date)

@@ -1,13 +1,16 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router-dom'
-import {Button, DropdownButton, FormControl, FormGroup, MenuItem, Pagination} from 'react-bootstrap'
+import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, Pagination} from 'react-bootstrap'
 import './Header.css'
+import './Actors.css'
 
 
 var axios = require('axios');
 
 var imageStyles = {
     //height: '500px',
+    borderColor: 'black',
+    borderWidth: '20px'
 }
 var changeColor = {
     backgroundColor: '#2b2b2b',
@@ -75,9 +78,9 @@ class Actors extends React.Component {
         console.log("update");
         var url = 'http://marvelus.me/api/actor';
         var params = {
-                results_per_page: this.state.resultsPerPage,
-                page: this.state.activePage,
-                q: JSON.stringify(this.state.q),
+            results_per_page: this.state.resultsPerPage,
+            page: this.state.activePage,
+            q: JSON.stringify(this.state.q),
         };
         if (this.state.search_string.length > 0) {
             url = 'http://marvelus.me/api/search/actor';
@@ -175,20 +178,23 @@ class Actors extends React.Component {
                 <div className="row">
 
                     <div className='text-center'>
-                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                        {this.renderDropdownButtonSortDirection("Order", "")}
-                        {this.renderDropdownButtonFilter("Filter", "")}
-                        {this.renderResetFilterButton("Filter")}
+                        <Form inline>
+                            {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                            {this.renderDropdownButtonSortDirection("Order", "")}
+                            {this.renderDropdownButtonFilter("Filter", "")}
+                            {this.renderResetFilterButton("Filter")}
+                            <FormGroup controlId="formBasicText">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search..."
+                                    onChange={this.handleSearchChange}/>
+                            </FormGroup>
+                        </Form>
                     </div>
                 </div>
 
                 <form>
-                    <FormGroup controlId="formBasicText">
-                        <FormControl
-                            type="text"
-                            placeholder="Search..."
-                            onChange={this.handleSearchChange}/>
-                    </FormGroup>
+
                 </form>
 
 
@@ -198,7 +204,7 @@ class Actors extends React.Component {
                             <div className="row">{actorList.map(actor =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
-                                        <div className="panel" style={changeColor}>
+                                        <div className="panel" id="actor-panel" style={changeColor}>
                                             <div className="panel-heading">
                                                 <div style={linkColor}>{actor.name}</div>
                                             </div>
@@ -206,7 +212,7 @@ class Actors extends React.Component {
 
                                                 <img
                                                     src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                    className="img-responsive" style={imageStyles}
+                                                    className="img-hover-opacity img-responsive" style={imageStyles}
                                                     alt="Image"/>
 
                                             </div>
