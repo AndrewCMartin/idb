@@ -1,25 +1,40 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {
+    Button,
+    DropdownButton,
+    Form,
+    FormControl,
+    FormGroup,
+    MenuItem,
+    OverlayTrigger,
+    Pagination,
+    Popover
+} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
 import './Header.css'
+import styles from './Actors.css'
+
+
 import './ModelStyle.css'
-    
-    
+
+
 var axios = require('axios');
 
 var imageStyles = {
     //height: '500px',
 }
-var changeColor = {
-    backgroundColor: '#2b2b2b',
-    borderColor: 'black',
+
+var panelColor = {
+    backgroundColor: 'black',
+    borderColor: 'white',
 }
 
 var linkColor = {
     color: 'white',
 }
 
-var pageStyle = {
+var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
     borderColor: '#2b2b2b',
@@ -44,6 +59,7 @@ class Actors extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelectFilter = this.handleSelectFilter.bind(this);
         this.handleResetFilter = this.handleResetFilter.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
         this.updateItems = this.updateItems.bind(this);
 
         this.state = this.getInitialState();
@@ -52,6 +68,7 @@ class Actors extends React.Component {
 
     getInitialState() {
         return {
+            search_string: '',
             actors: [],
             actorsGrouped: [],
             numPages: 1,
@@ -72,12 +89,19 @@ class Actors extends React.Component {
 
     updateItems() {
         console.log("update");
-        axios.get('http://marvelus.me/api/actor', {
-            params: {
-                results_per_page: this.state.resultsPerPage,
-                page: this.state.activePage,
-                q: JSON.stringify(this.state.q),
-            }
+        var url = 'http://marvelus.me/api/actor';
+        var params = {
+            results_per_page: this.state.resultsPerPage,
+            page: this.state.activePage,
+            q: JSON.stringify(this.state.q),
+        };
+        if (this.state.search_string.length > 0) {
+            url = 'http://marvelus.me/api/search/actor';
+            params['query'] = this.state.search_string;
+
+        }
+        axios.get(url, {
+            params: params
         }).then(res => {
             this.state.numPages = res.data.total_pages;
             const actors = res.data.objects.map(actor => actor);
@@ -113,12 +137,18 @@ class Actors extends React.Component {
 
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+        this.state.search_string = '';
         this.updateItems();
+    }
+
+    handleSearchChange(eventKey) {
+        this.state.search_string = eventKey.target.value;
+        this.updateItems()
     }
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"sort"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -129,7 +159,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"filter"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="name">ID greater than 9860</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -140,7 +170,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -149,28 +179,37 @@ class Actors extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button style={pageStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
     }
 
     render() {
-        
-        
-        
-        
         return (
-            
+
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
 
                     <div className='text-center'>
-                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                        {this.renderDropdownButtonSortDirection("Order", "")}
-                        {this.renderDropdownButtonFilter("Filter", "")}
-                        {this.renderResetFilterButton("Filter")}
+                        <Form inline>
+                            {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                            {this.renderDropdownButtonSortDirection("Order", "")}
+                            {this.renderDropdownButtonFilter("Filter", "")}
+                            {this.renderResetFilterButton("Filter")}
+                            <FormGroup controlId="formBasicText">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search..."
+                                    onChange={this.handleSearchChange}/>
+                            </FormGroup>
+                        </Form>
                     </div>
                 </div>
+
+                <form>
+
+                </form>
+
 
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     this.state.actorsGrouped.map(actorList =>
@@ -178,11 +217,18 @@ class Actors extends React.Component {
                             <div className="row">{actorList.map(actor =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
-                                          <div className="panel" style={changeColor}>
+                                          <div className="panel" style={panelColor}>
                                             <div className="panel-heading">
-                                                <div style={linkColor}>{actor.name}</div>
+                                                <div style={linkColor}>
+                                                    <Highlighter
+                                                        highlightClassName={styles.Highlight}
+                                                        searchWords={this.state.search_string.split(" ")}
+                                                        autoEscape={true}
+                                                        textToHighlight={actor.name}
+                                                    />
+                                                </div>
                                             </div>
-                                            
+
                                             <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {actor.name}<br /><br />
@@ -200,19 +246,15 @@ class Actors extends React.Component {
                                                 {actor.tvshows.length > 0 ? actor.tvshows.map(function (show) {
                                                     return (show.title)
                                                 }) : "None"}
-                    
-                    
-                    
-                                              </Popover>}>
-                                                 
-                                            
-                                              
-                
-                                                 
-                                            <div className="panel-body">
-                                                 
 
-                                                <img
+
+                                            </Popover>}>
+
+
+                                                <div className="panel-body">
+
+
+                                                    <img
                                                     src={"https://image.tmdb.org/t/p/w640/" + actor.image}
                                                     className="img-responsive" style={imageStyles}
                                                     alt="Image"/>
@@ -227,8 +269,9 @@ class Actors extends React.Component {
 
                 }
 
+
                 <div className='text-center'>
-                  
+
                     {!this.state.numPages
                         ? null
                         : <Pagination
