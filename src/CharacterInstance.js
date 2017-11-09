@@ -36,6 +36,10 @@ var secColStyle = {
     textAlign: 'center',
 }
 
+var addingStyle={
+    color: 'pink',
+}
+
 class CharacterInstance extends React.Component {
     constructor(props) {
         super(props);
