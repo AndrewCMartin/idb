@@ -31,8 +31,9 @@ var linkStyle = {
     color: 'white',
 }
 
-var listStyle = {
-    color: 'blue',
+var secColStyle = {
+    textTransform: 'uppercase',
+    textAlign: 'center',
 }
 
 class CharacterInstance extends React.Component {
@@ -69,72 +70,92 @@ class CharacterInstance extends React.Component {
             <h1>{this.state.character.name}</h1></div>
                     <div class="panel-body">
                         <div class="panel-body">
-               <Row>
-            <Col xs={7} md ={5}>
+            <Row>
+            <Col xs={6} md ={6}>
             <img src={this.state.character.thumbnail} class="img-responsive"
                                                      class="img-responsive" style={imageStyle} alt="Image"/>
             </Col>
             <Col xs={6} md={6}>
-                            <h3>Information</h3>
+            {/*  <h3>Information</h3>
+                            <h3>Name</h3> 
                             <ul>
-                                <li><b>Name:</b> {this.state.character.name}</li>
-                                <li><b>Description:</b> {this.state.character.desc}</li>
-                                <li><b>Stories:</b> {this.state.character.stories}</li>
-                                <li>
-                                    <b>Events:</b>
-                                    <ul>
-                                        {events.length > 0 ? events.map(function (event) {
-                                            return (<li key={event.title}><Link
-                                                to={`/event/${event.id}`} style={{color:'red'}}>{event.title}</Link></li>)
-                                        }) : "None"}
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <b>Comic Series:</b>
-                                    <ul>
-                                        {series.length > 0 ? series.map(function (series_instance) {
-                                            return (<li key={series_instance.title}><Link
-                                                to={`/comic_series/${series_instance.id}`}>{series_instance.title}</Link>
-                                            </li>)
-                                        }) : "None"}
-                                    </ul>
-                                </li>
-                                <li>
-                                    <b>Portrayed by Actors:</b>
+                                <li>{this.state.character.name}</li>*/}
+                                <h3 style={headingStyle}>Description</h3>
+                                <p>{this.state.character.desc}</p>
+                                <h3 style={headingStyle}>Stories</h3>
+                                <p>{this.state.character.stories}</p>
+             <h3 style={headingStyle}>Portrayed by Actors</h3>
                                     <ul>
                                         {actors.length > 0 ? actors.map(function (actor) {
 
 
                                             return (
-                                                <li key={actor.name}><Link to={`/actor/${actor.id}`}>{actor.name}</Link>
+                                                <li key={actor.name}><Link to={'/actor/${actor.id}'} style={{color:'red', fontSize: '16px'}}>{actor.name}</Link>
                                                 </li>)
                                         }) : "None"}
 
 
                                     </ul>
-                                </li>
-                                <li>
-                                    <b>Appears in Movies:</b>
+            </Col>
+            </Row>
+            <Row>
+            <Col xs={3} md={3}>
+            <br></br>
+            <br></br>
+                               
+                                    <h4 style={secColStyle}>Events</h4>
+                                    <ul>
+                                        {events.length > 0 ? events.map(function (event) {
+                                            return (<li key={event.title}><Link
+                                                to={'/event/${event.id}'} style={{color:'red', fontSize: '16px'}}>{event.title}</Link></li>)
+                                        }) : "None"}
+                                    </ul>
+                                
+            </Col>
+            <Col xs={3} md={3}>
+            <br></br>
+            <br></br>
+
+                                
+                                    <h4 style={secColStyle}>Comic Series</h4>
+                                    <ul>
+                                        {series.length > 0 ? series.map(function (series_instance) {
+                                            return (<li key={series_instance.title}><Link
+                                                to={'/comic_series/${series_instance.id}'} style={{color:'red', fontSize: '16px'}}>{series_instance.title}</Link>
+                                            </li>)
+                                        }) : "None"}
+                                    </ul>
+                                
+             </Col>
+
+            <Col xs={3} md={3}>
+            <br></br>
+            <br></br>
+                                
+                                    <h4 style={secColStyle}>Appears in Movies</h4>
                                     <ul>
                                         {movies.length > 0 ? movies.map(function (movie) {
                                             return (<li key={movie.title}><Link
-                                                to={`/movie/${movie.id}`}>{movie.title}</Link></li>)
+                                                to={'/movie/${movie.id}'} style={{color:'red', fontSize: '16px'}}>{movie.title}</Link></li>)
                                         }) : "None"}
                                     </ul>
-                                </li>
-                                <li>
-                                    <b>Appears in TV Shows:</b>
+                                
+                   </Col>
+            <Col xs={3} md={3}>
+            <br></br>
+            <br></br>
+                                
+                                    <h4 style={secColStyle}>Appears in TV Shows</h4>
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
                                             return (<li key={tv_show.name}><Link
-                                                to={`/tvshow/${tv_show.id}`}>{tv_show.name}</Link></li>)
+                                                to={'/tvshow/${tv_show.id}'} style={{color:'red', fontSize: '16px'}}>{tv_show.name}</Link></li>)
                                         }) : "None"}
                                     </ul>
-                                </li>
+                               
 
 
-                            </ul>
+{/*</ul>*/}
 </Col>
 </Row>
                         </div>
