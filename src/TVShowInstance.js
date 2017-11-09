@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {Row, Col} from 'react-bootstrap'
 var axios = require('axios');
 
+{/* Responsible for styling the content in the body */}
 var imageStyles = {
     width: '500px',
     height: '500px'
@@ -34,21 +35,22 @@ var secColStyle = {
 class TVShowInstance extends React.Component {
     constructor(props) {
         super(props);
-    
+        {/* Store tv show info we get from query */}
         this.state = {
           tv_show: {}
         };
     }
 
     componentDidMount() {
+        {/* Query and store all data */}
         return axios.get("http://marvelus.me/api/tv_show/" + window.location.href.substring(window.location.href.lastIndexOf("/") + 1) ).then(res=> {
             const tv_show = res.data;
-            console.log(tv_show);
             this.setState({tv_show});
         });
     }
 
     render() {
+        {/* Make containers for characters, actors to store the relationship to this model */}
         const characters = this.state.tv_show.characters || [];
         const actors = this.state.tv_show.actors || [];
         return (
@@ -58,6 +60,8 @@ class TVShowInstance extends React.Component {
                         <div class="panel-body">
                 <div class="panel-body">
             <Row>
+            
+            {/* Information/attributes of the show */}
             <Col xs={5} md={5}>
             <img src={"https://image.tmdb.org/t/p/w500/" + this.state.tv_show.poster_path} class="img-responsive" class="img-responsive img-center" styles='width:100%' alt="Image" />
             </Col>
@@ -77,7 +81,7 @@ class TVShowInstance extends React.Component {
             <hr></hr>
             <Row>
             <Col xs={6} md={6}>
-                                    
+                                         {/* Goes through the data in the character lists, and makes linkable */}
                                         <h3 style={secColStyle}>Characters</h3>
                                         <ul> 
                                             {characters.length > 0 ? characters.map(function(character) {
@@ -92,7 +96,7 @@ class TVShowInstance extends React.Component {
                                         <ul> 
                                             {actors.length > 0 ? actors.map(function(actor) {
             return (<li key={actor.name}style={{color:'#d3d1d1'}}><Link to={'/actor/${actor.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
-					    }) : <li>None</li>}
+                    }) : <li>None</li>}
                                         </ul>
                                     
                                 

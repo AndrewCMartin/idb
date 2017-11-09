@@ -155,7 +155,7 @@ class Movies extends React.Component {
         return (    
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                    /* Display all sorting, filtering, searching options */
+                    {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
@@ -164,7 +164,7 @@ class Movies extends React.Component {
                     </div>
                 </div>
                     
-                /* Go through and display 6 movies per page */
+                {/* Go through and display 6 movies per page */}
                 {this.state.moviesGrouped.length == 0 || !this.state.moviesGrouped ? null :
                     this.state.moviesGrouped.map(moviesList =>
                         !moviesList ? null :
@@ -176,7 +176,7 @@ class Movies extends React.Component {
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
-                                         /* In charge of the popover when you hover over the movies's picture */
+                                        {/* In charge of the popover when you hover over the movies's picture */}
                                          <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {movie.name}<br /><br />
@@ -204,7 +204,7 @@ class Movies extends React.Component {
 
                 }
 
-            /* Display the pagination bar */
+            {/* Display the pagination bar */}
             <div className='text-center'>
                 {!this.state.numPages
                     ? null
