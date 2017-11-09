@@ -1,25 +1,60 @@
 import React from 'react'
+import {Row, Col} from 'react-bootstrap'
 
 {/* Style for pictures so all consistent sizes */}
 var imageStyles = {
     width: '450px',
     height: '350px'
 }
+var panelStyle={
+    height: '175vh',
+    width: '125vh',
+    textAlign:'center',
+    //backgroundColor: 'white',
+    backgroundColor: 'black',
+}
+var containerStyle={
+    marginTop: '10px',
+    //color:'black',
+    color:'white',
+
+}
+var container2Style={
+    marginTop: '10px',
+    //color:'black',
+    color:'white',
+
+}
+
+var firstHeader={
+    fontSize: '50px',
+    textAlign: 'center',
+    color: '#aa9898',
+    textShadow: '2px 1px #8e0909',
+}
+var secondHeader={
+    fontSize: '20px',
+    textAlign: 'center',
+    color: '#aa9898',
+    weight: 'bold',
+}
 
 const About = () => (
-    <div className="panel panel-default">
-        <h1 align="center" styles="font-size: 45px"><b>MARVELUS - Canvas Group 15</b></h1>
+    
+    <div className="container" style={panelStyle}>
+    <br/>
+        <h1 style={firstHeader}><b>MARVELUS</b></h1>
 
         <div className="panel-body">
 
             {/* Description superheros, movies, tv shows, comics, creators, events */}
-            <p align="center" styles="font-size: 25px ; color: darkgray">Marvelus is for users who want to browse
-                superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </p>
+            <h2 style={secondHeader}>Marvelus is for users who want to browse
+                superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </h2>
 
             {/* Group member descriptions with bios and personal statistics */}
-            <h3 align="center" styles="color:black">Group Members</h3>
+            <h3 align="center" style={{color:'white'}}>Group Members</h3>
 
-            <div className="container" styles="margin-top:100px;">
+            <div className="container" style={containerStyle}>
                 <div className="row">
                     <div className="col-sm-4">
 
@@ -81,7 +116,8 @@ const About = () => (
                 </div>
             </div>
             <br/>
-            <div className="container" styles="margin-top:100px;">
+            <hr></hr>
+            <div className="container" style={container2Style}>
                 <div className="row">
                     <div className="col-sm-4">
 
@@ -132,30 +168,37 @@ const About = () => (
                 </div>
             </div>
             <br/>
-
+            <hr/>
             {/* General group statistics */}
-            <h3 align="center"><b>Statistics</b></h3>
-
-            <li align="center"><b>Total No. of Commits:241 </b></li>
-            <li align="center"><b>Total No. of Issues:42</b></li>
-            <li align="center"><b>Total No. of Unit Tests: </b>13</li>
-            <li align="center"><a href="http://docs.andrewcmartin.apiary.io/#"><b>Apiary API</b></a></li>
-            <li align="center"><a href="https://github.com/AndrewCMartin/idb"><b>GITHUB REPO</b></a></li>
-            <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
-
-
+    <Row>
+    <Col xs={4} md={4}>
+            <h3 align="center" style={{color: 'white'}}><b>Statistics</b></h3>
+            
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Commits:241 </b></li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Issues:42</b></li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Unit Tests: </b>13</li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="http://docs.andrewcmartin.apiary.io/#" style={{color: '#c12c2c'}}><b>Apiary API</b></a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://github.com/AndrewCMartin/idb" style={{color: '#c12c2c'}}><b>GITHUB REPO</b></a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://trello.com/b/qLTaMYvu/marvelus" style={{color: '#c12c2c'}}><b>TRELLO</b></a></li>
+             
+</Col>
+<Col xs={4} md={4}>
             {/* Links to the required resources */}
-            <h3 align="center"><b>Data</b></h3>
-            <li align="center"><a href="https://developer.marvel.com/docs"><b>Marvel API</b></a>: We did not use any
+            <h3 align="center" style={{color: 'white'}}><b>Data</b></h3>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><a href="https://developer.marvel.com/docs" style={{color: '#c12c2c'}}><b>Marvel API</b></a>: We did not use any
                 specific libraries to scrape the Marvel API, just the python requests module.
             </li>
-            <li align="center"><a href="https://developers.themoviedb.org/3/"><b>The Movie Database</b></a>: We used the
-                <a href="https://pypi.python.org/pypi/tmdbsimple"> tmdbsimple</a> library to scrape data from the tmdb
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><a href="https://developers.themoviedb.org/3/" style={{color: '#c12c2c', fontSize:'17px'}}><b>The Movie Database</b></a>: We used the
+                <a href="https://pypi.python.org/pypi/tmdbsimple" style={{color: '#c12c2c'}}> tmdbsimple</a> library to scrape data from the tmdb
                 API
             </li>
-
-            <h3 align="center"><b>Tools used</b></h3>
-            <li align="center"><a  href="https://utexas.box.com/s/sgm9y2l4h3qpbhustpfs9zgp7jydapzm">Technical report</a></li>
+</Col>
+<Col xs={4} md={4}>
+            <h3 align="center" style={{color: 'white'}}><b>Tools used</b></h3>
+                <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://utexas.box.com/s/mtm6b1masafnlhjobbrifqgw1gehpp2f" style={{color: '#c12c2c'}}>Technical report</a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://utexas.box.com/s/8vxeogs7lsiceuwts8rgjz9vcfj8e034"style={{color: '#c12c2c'}}>UML Diagram</a></li>
+    </Col>
+    </Row>
         </div>
     </div>
 )

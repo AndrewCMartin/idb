@@ -177,7 +177,7 @@ render() {
                 this.state.comicsGrouped.map(comicsList =>
                     !comicsList ? null :
                     <div className="row">
-                    {comicsList.map(comic =>
+                    {comicsList.map((comic, i) =>
                         <div className="col-sm-4">
                             <Link to={"/comic_series/" + comic.id}>
                                 <div className="panel" style={panelColor}>
@@ -186,13 +186,23 @@ render() {
                                     </div>
                                     
                                              {/* In charge of the popover when you hover over the comic's picture */}
-                                    <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {comic.title}<br /><br />
+                                    <OverlayTrigger trigger={['hover', 'focus']} 
+                                                    placement={i === 0 ? "right" : "left"} 
+                                                    overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong><u>{comic.title}</u></strong>
+                                               <br /><br />
+                                               <strong>Rating: </strong>
+                                               {comic.rating}<br />
+                                               <strong>Start Year: </strong> 
+                                               {comic.start_year}<br />
+                                               <strong>End Year: </strong>   
+                                               {comic.end_year}<br />    
+                                               <strong># of Events: </strong>   
+                                               {comic.events}<br />     
                                                <strong>Character(s): </strong><br />
-                                               {comic.characters.length > 0 ? comic.characters.map(function (character) {
-                                                    return (character.name)
-                                                }) : "None"}<br /><br />
+                                               <ul>{comic.characters.length > 0 ? comic.characters.map(function (character) {
+                                                    return (<li>{character.name}</li>)
+                                                }) : "None"}</ul>
 
 
                                             </Popover>}>         
@@ -207,6 +217,9 @@ render() {
 
                                     </div>
                                     </OverlayTrigger>
+                                    <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
+                                        Marvel Characters: {comic.characters.length}
+                                    </div>
                                 </div>
                             </Link>
                         </div>

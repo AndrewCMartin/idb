@@ -175,7 +175,7 @@ renderResetFilterButton(title) {
             this.state.showsGrouped.map(showsList =>
                 !showsList ? null :
                 <div className="row">
-                {showsList.map(show =>
+                {showsList.map((show, i) =>
                     <div className="col-sm-4">
                         <Link to={"/tvshow/" + show.id}>
                             <div className="panel" style={panelColor}>
@@ -184,13 +184,25 @@ renderResetFilterButton(title) {
                                     {/* For tv show search -- highlights the word found */}
                                 </div>
                                  {/* In charge of the popover when you hover over the tv shows's picture */}       
-                                 <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {show.name}<br /><br />
+                                 <OverlayTrigger trigger={['hover', 'focus']} 
+                                                 placement={i === 0 ? "right" : "left"} 
+                                                 overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong><u>{show.name}</u></strong>
+                                               <br /><br />
+                                               <strong>Rating: </strong>
+                                               {show.rating}<br />
+                                               <strong># of Seasons: </strong>
+                                               {show.num_seasons}<br />
+                                               <strong># of Episodes: </strong>
+                                               {show.num_episodes}<br />
+                                               <strong>Last Air Date: </strong>
+                                               {show.last_air_date}<br />
                                                <strong>Character(s): </strong><br />
+                                               <ul>    
                                                {show.characters.length > 0 ? show.characters.map(function (character) {
-                                                    return (character.name)
-                                                }) : "None"}<br /><br />
+                                                    return (<li>{character.name}</li>)
+                                                }) : "None"}
+                                               </ul>
 
                                             </Popover>}>
                                         
@@ -203,6 +215,9 @@ renderResetFilterButton(title) {
 
                                 </div>
                                </OverlayTrigger>
+                               <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
+                                   Marvel Characters: {show.characters.length}
+                                </div>
                             </div>
                         </Link>
                     </div>

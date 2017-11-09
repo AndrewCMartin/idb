@@ -5,8 +5,7 @@ import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} f
 var axios = require('axios');
 
 
-{/* Responsible for all styling on the page */
-}
+{/* Responsible for all styling on the page */}
 var panelColor = {
     backgroundColor: 'black',
     borderColor: 'white',
@@ -111,8 +110,6 @@ class Movies extends React.Component {
     }
 
     /* Resets all options to the way when user first came to site */
-
-
     handleResetFilter() {
         this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
         this.updateItems();
@@ -194,6 +191,12 @@ class Movies extends React.Component {
                                                                     <br/><br/>
                                                                     <strong>Rating: </strong>
                                                                     {movie.rating}<br/>
+                                                                    <strong>Release Date: </strong>
+                                                                    {movie.release_date}<br/>
+                                                                    <strong>Runtime: </strong>
+                                                                    {movie.runtime}<br/>
+                                                                    <strong>Language: </strong>
+                                                                    {movie.lang}<br/>
                                                                     <strong>Character(s): </strong><br/>
                                                                     <ul>
                                                                         {movie.characters.length > 0 ? movie.characters.map(function (character) {
@@ -211,7 +214,7 @@ class Movies extends React.Component {
 
                                                     </div>
                                                 </OverlayTrigger>
-                                                <div className="panel-footer">
+                                                <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
                                                     Marvel Characters: {movie.characters.length}
                                                 </div>
                                             </div>

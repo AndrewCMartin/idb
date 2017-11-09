@@ -193,7 +193,7 @@ class Actors extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search..."
+                                    placeholder="Search in Actors..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
@@ -207,7 +207,7 @@ class Actors extends React.Component {
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     this.state.actorsGrouped.map(actorList =>
                         !actorList ? null :
-                            <div className="row">{actorList.map(actor =>
+                            <div className="row">{actorList.map((actor, i) =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
                                           <div className="panel" style={panelColor}>
@@ -225,24 +225,25 @@ class Actors extends React.Component {
 
                                             {/* In charge of the popover when you hover over the actor's picture */}
 
-                                            <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {actor.name}<br /><br />
-                                               <strong>Birthday: </strong><br />
-                                               {actor.birthday}<br /><br />
-                                               <strong>Character(s): </strong><br />
+                                            <OverlayTrigger trigger={['hover', 'focus']} 
+                                                            placement={i === 0 ? "right" : "left"}
+                                                            overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong><u>{actor.name}</u></strong>
+                                               <br /><br />
+                                               <strong>Bio: </strong>
+                                               {actor.bio}<br />
+                                               <strong>Birthday: </strong>
+                                               {actor.birthday}<br />
+                                               <strong># of TV Shows: </strong>
+                                               {actor.tvshows.length}<br />
+                                               <strong># of Movies: </strong>
+                                               {actor.movies.length}<br />
+                                               <strong>Character(s): </strong>
+                                               <ul>
                                                {actor.characters.length > 0 ? actor.characters.map(function (character) {
-                                                    return (character.name)
-                                                }) : "None"}<br /><br />
-                                                <strong>Movies: </strong><br />
-                                                {actor.movies.length > 0 ? actor.movies.map(function (movie) {
-                                                    return (movie.title)
-                                                }) : "None"}<br /><br />
-                                                <strong>TV Shows: </strong><br />
-                                                {actor.tvshows.length > 0 ? actor.tvshows.map(function (show) {
-                                                    return (show.title)
+                                                    return (<li>{character.name}</li>)
                                                 }) : "None"}
-
+                                               </ul>
 
                                             </Popover>}>
 
@@ -254,6 +255,9 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
+                                            <div className="panel-footer">
+                                               Marvel Characters: {actor.characters.length}
+                                            </div>
                                         </div>
                                     </Link>
                                 </div>
@@ -262,7 +266,7 @@ class Actors extends React.Component {
 
                 }
 
-                /* Display the pagination bar */
+                {/* Display the pagination bar */}
                 <div className='text-center'>
                     {!this.state.numPages
                         ? null
