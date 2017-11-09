@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -58,7 +58,7 @@ getInitialState() {
         orderDirection: 'asc',
         q: {
             'order_by': [{"field": "name", "direction": "asc"}],
-            'filters': []
+            'filters': [{"name": "poster_path", "op": "is_not_null"}]
         }
     };
 }
@@ -107,7 +107,7 @@ handleSelectFilter(eventKey) {
 
 /* Resets all options to the way when user first came to site */
 handleResetFilter() {
-    this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+    this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
     this.updateItems();
 }
 
@@ -116,8 +116,8 @@ renderDropdownButtonSortby(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectSort}>
-            <MenuItem eventKey="name">Name</MenuItem>
-            <MenuItem eventKey="birthday">Birthday</MenuItem>
+            <MenuItem eventKey="name">Title</MenuItem>
+            <MenuItem eventKey="rating">Rating</MenuItem>
 
         </DropdownButton>
     );
@@ -172,7 +172,7 @@ renderResetFilterButton(title) {
             this.state.showsGrouped.map(showsList =>
                 !showsList ? null :
                 <div className="row">
-                {showsList.map(show =>
+                {showsList.map((show, i) =>
                     <div className="col-sm-4">
                         <Link to={"/tvshow/" + show.id}>
                             <div className="panel" style={panelColor}>
@@ -181,13 +181,25 @@ renderResetFilterButton(title) {
                                     {/* For tv show search -- highlights the word found */}
                                 </div>
                                  {/* In charge of the popover when you hover over the tv shows's picture */}       
-                                 <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {show.name}<br /><br />
+                                 <OverlayTrigger trigger={['hover', 'focus']} 
+                                                 placement={i === 0 ? "right" : "left"} 
+                                                 overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong><u>{show.name}</u></strong>
+                                               <br /><br />
+                                               <strong>Rating: </strong>
+                                               {show.rating}<br />
+                                               <strong># of Seasons: </strong>
+                                               {show.num_seasons}<br />
+                                               <strong># of Episodes: </strong>
+                                               {show.num_episodes}<br />
+                                               <strong>Last Air Date: </strong>
+                                               {show.last_air_date}<br />
                                                <strong>Character(s): </strong><br />
+                                               <ul>    
                                                {show.characters.length > 0 ? show.characters.map(function (character) {
-                                                    return (character.name)
-                                                }) : "None"}<br /><br />
+                                                    return (<li>{character.name}</li>)
+                                                }) : "None"}
+                                               </ul>
 
                                             </Popover>}>
                                         
@@ -200,6 +212,9 @@ renderResetFilterButton(title) {
 
                                 </div>
                                </OverlayTrigger>
+                               <div className="panel-footer">
+                                   Marvel Characters: {show.characters.length}
+                                </div>
                             </div>
                         </Link>
                     </div>

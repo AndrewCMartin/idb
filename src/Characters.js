@@ -178,7 +178,7 @@ class Characters extends React.Component {
                     this.state.charactersGrouped.map(charactersList =>
                         !charactersList ? null :
                         <div className="row">
-                        {charactersList.map(character =>
+                        {charactersList.map((character, i) =>
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
@@ -188,21 +188,21 @@ class Characters extends React.Component {
                                                      
                                                      
                                         {/* In charge of the popover when you hover over the character's picture */}             
-                                        <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {character.name}<br /><br />
-                                               <strong>Stories: </strong><br />
-                                               {character.stories}<br /><br />
-                                                <strong>Movies: </strong><br />
-                                                {character.movies.length > 0 ? character.movies.map(function (movie) {
-                                                    return (movie.title)
-                                                }) : "None"}<br /><br />
-                                                <strong>TV Shows: </strong><br />
-                                                {character.tvshows.length > 0 ? character.tvshows.map(function (show) {
-                                                    return (show.title)
-                                                }) : "None"}
-
-
+                                        <OverlayTrigger trigger={['hover', 'focus']} 
+                                                        placement={i === 0 ? "right" : "left"} 
+                                                        overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong><u>{character.name}</u></strong>
+                                               <br /><br />
+                                               <strong># of Stories: </strong>
+                                               {character.stories.length}<br />
+                                               <strong># of TV Shows: </strong>
+                                               {character.tvshows.length}<br />
+                                               <strong># of Movies: </strong>
+                                               {character.movies.length}<br />
+                                               <strong># of Events: </strong>
+                                               {character.events.length}<br />
+                                               <strong># of Series: </strong>
+                                               {character.series.length}<br />
                                             </Popover>}>
 
                                         <div className="panel-body">

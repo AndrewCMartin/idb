@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -22,7 +22,9 @@ var dropdownStyle = {
     color: 'white',
 }
 
-{/* Used to split the movies data so there is 3 per row */}
+{/* Used to split the movies data so there is 3 per row */
+}
+
 function splitarray(input, spacing) {
     var output = [];
 
@@ -84,13 +86,13 @@ class Movies extends React.Component {
         this.state.activePage = eventKey;
         this.updateItems();
     }
-    
+
     //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
     }
-    
+
     /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
         this.state.q.order_by[0].direction = eventKey;
@@ -103,7 +105,7 @@ class Movies extends React.Component {
         this.updateItems();
     }
 
-    /* Resets all options to the way when user first came to site */v
+    /* Resets all options to the way when user first came to site */
     handleResetFilter() {
         this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
         this.updateItems();
@@ -112,10 +114,11 @@ class Movies extends React.Component {
     /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton style={dropdownStyle} title={title} key={"sort"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
-                <MenuItem eventKey="name">Name</MenuItem>
-                <MenuItem eventKey="birthday">Birthday</MenuItem>
+                <MenuItem eventKey="title">Title</MenuItem>
+                <MenuItem eventKey="rating">Rating</MenuItem>
+
 
             </DropdownButton>
         );
@@ -124,7 +127,7 @@ class Movies extends React.Component {
     /* Displays the "filter" dropdown */
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton style={dropdownStyle} title={title} key={"filter"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="desc">Has Description</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -152,7 +155,7 @@ class Movies extends React.Component {
     }
 
     render() {
-        return (    
+        return (
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
                     {/* Display all sorting, filtering, searching options */}
@@ -168,65 +171,74 @@ class Movies extends React.Component {
                 {this.state.moviesGrouped.length == 0 || !this.state.moviesGrouped ? null :
                     this.state.moviesGrouped.map(moviesList =>
                         !moviesList ? null :
-                        <div className="row">
-                        {moviesList.map(movie =>
-                            <div className="col-sm-4">
-                                <Link to={"/movie/" + movie.id}>
-                                    <div className="panel" style={panelColor}>
-                                        <div className="panel-heading">
-                                            <div style={linkColor}>{movie.title}</div>
-                                        </div>
-                                         /* In charge of the popover when you hover over the movies's picture */
-                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong>Name: </strong><br />
-                                               {movie.name}<br /><br />
-                                               <strong>Character(s): </strong><br />
-                                               {movie.characters.length > 0 ? movie.characters.map(function (character) {
-                                                    return (character.name)
-                                                }) : "None"}<br /><br />
+                            <div className="row">
+                                {moviesList.map((movie, i) =>
+                                    <div className="col-sm-4">
+                                        <Link to={"/movie/" + movie.id}>
+                                            <div className="panel" style={panelColor}>
+                                                <div className="panel-heading">
+                                                    <div style={linkColor}>{movie.title}</div>
+                                                </div>
+                                                {/* In charge of the popover when you hover over the movies's picture */}
+                                                <OverlayTrigger trigger={['hover', 'focus']}
+                                                                placement={i === 0 ? "right" : "left"}
+                                                                overlay={<Popover id="popover-trigger-hover-focus">
+                                                                    <strong><u>{movie.title}</u></strong>
+                                                                    <br/><br/>
+                                                                    <strong>Rating: </strong>
+                                                                    {movie.rating}<br/>
+                                                                    <strong>Release Date: </strong>
+                                                                    {movie.release_date}<br/>
+                                                                    <strong>Runtime: </strong>
+                                                                    {movie.runtime}<br/>
+                                                                    <strong>Language: </strong>
+                                                                    {movie.lang}<br/>
+                                                                    <strong>Character(s): </strong><br/>
+                                                                    <ul>
+                                                                        {movie.characters.length > 0 ? movie.characters.map(function (character) {
+                                                                            return (<li>{character.name}</li>)
+                                                                        }) : "None"}</ul>
 
 
-                                            </Popover>}>
-                                        <div className="panel-body">
+                                                                </Popover>}>
+                                                    <div className="panel-body">
 
-                                            <img
-                                                src={"http://image.tmdb.org/t/p/w500" + movie.poster_path}
-                                                className="img-responsive"
-                                                alt="Image"/>
+                                                        <img
+                                                            src={"http://image.tmdb.org/t/p/w500" + movie.poster_path}
+                                                            className="img-responsive"
+                                                            alt="Image"/>
 
-                                        </div>
-
-                                        </OverlayTrigger>
-                                        <div className="panel-footer">
-                                            Marvel Characters: {movie.characters.length}
-                                        </div>
+                                                    </div>
+                                                </OverlayTrigger>
+                                                <div className="panel-footer">
+                                                    Marvel Characters: {movie.characters.length}
+                                                </div>
+                                            </div>
+                                        </Link>
                                     </div>
-                                </Link>
-                            </div>
-                        )}
-                        </div>)
+                                )}
+                            </div>)
 
                 }
-
                 {/* Display the pagination bar */}
-            <div className='text-center'>
-                {!this.state.numPages
-                    ? null
-                    : <Pagination
-                        bsSize='large'
-                        prev
-                        next
-                        first
-                        last
-                        ellipsis
-                        boundaryLinks
-                        items={this.state.numPages}
-                        maxButtons={10}
-                        activePage={this.state.activePage}
-                        onSelect={this.handleSelect}/>
-                }
+                <div className='text-center'>
+                    {!this.state.numPages
+                        ? null
+                        : <Pagination
+                            bsSize='large'
+                            prev
+                            next
+                            first
+                            last
+                            ellipsis
+                            boundaryLinks
+                            items={this.state.numPages}
+                            maxButtons={10}
+                            activePage={this.state.activePage}
+                            onSelect={this.handleSelect}/>
+                    }
+                </div>
             </div>
-          </div>
         );
     }
 

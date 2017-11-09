@@ -1,0 +1,705 @@
+{
+	"info": {
+		"name": "Marvelus",
+		"_postman_id": "48575f4f-5294-d649-0a7e-54ea4a0547f2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actor",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Displays at least 5 Results\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.objects.length).to.gt(5);",
+									"});",
+									"",
+									"pm.test(\"Has at least 300 Results\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.gt(300);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var schema = {",
+									"  \"num_results\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  },",
+									"  \"objects\": {",
+									"      \"type\": \"array\",",
+									"      \"items\": {",
+									"          \"type\": \"object\"",
+									"      },",
+									"      \"required\": true",
+									"",
+									"  },",
+									"  \"total_pages\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  },",
+									"  \"page\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  }",
+									"};",
+									"",
+									"pm.test('Schema is valid', function() {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actor Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the actor details from id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.eql(51329);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"51329\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the correct character\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(1);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(1010744);",
+									"});",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"51329\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/characters",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"characters"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the only movie\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(1);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(1771);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"58502\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/movies",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"movies"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get TV Shows",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get the tv show from the actor id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(2);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(61889);",
+									"    pm.expect(jsonData.objects[1].id).to.eql(62285);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"23458\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/tvshows",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"tvshows"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Character",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Displays at least 5 Results\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.objects.length).to.gt(5);",
+									"});",
+									"",
+									"pm.test(\"Has at least 300 Results\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.gt(900);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var schema = {",
+									"  \"num_results\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  },",
+									"  \"objects\": {",
+									"      \"type\": \"array\",",
+									"      \"items\": {",
+									"          \"type\": \"object\"",
+									"      },",
+									"      \"required\": true",
+									"",
+									"  },",
+									"  \"total_pages\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  },",
+									"  \"page\": {",
+									"    \"type\": \"integer\",",
+									"    \"required\": true",
+									"  }",
+									"};",
+									"",
+									"pm.test('Schema is valid', function() {",
+									"  var jsonData = pm.response.json();",
+									"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/character",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"character"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Character Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the character details from id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.eql(1009282);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"1009282\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/character/{{id}}",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"character",
+								"{{id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the only movie\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(6);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"1009282\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/character/{{id}}/movies",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"character",
+								"{{id}}",
+								"movies"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the only movie\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(6);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"1009282\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/character/{{id}}/movies",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"character",
+								"{{id}}",
+								"movies"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get TV Shows",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get the tv show from the actor id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(2);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(61889);",
+									"    pm.expect(jsonData.objects[1].id).to.eql(62285);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"23458\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/tvshows",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"tvshows"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comic Series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get the tv show from the actor id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(2);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(61889);",
+									"    pm.expect(jsonData.objects[1].id).to.eql(62285);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"23458\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/tvshows",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"tvshows"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Get the tv show from the actor id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.num_results).to.eql(2);",
+									"    pm.expect(jsonData.objects[0].id).to.eql(61889);",
+									"    pm.expect(jsonData.objects[1].id).to.eql(62285);",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.set(\"id\", \"23458\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "marvelus.me/api/actor/{{id}}/tvshows",
+							"host": [
+								"marvelus",
+								"me"
+							],
+							"path": [
+								"api",
+								"actor",
+								"{{id}}",
+								"tvshows"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Tv Show",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Comic Series",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Event",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Search",
+			"description": "",
+			"item": []
+		}
+	]
+}
