@@ -136,3 +136,10 @@ class TestAPI(BaseTestConfig):
         result_data = json.loads(result.data.decode("utf-8"))
         for key in correct_data:
             self.assertEqual(correct_data[key], result_data[key])
+
+    def test_search_actor(self):
+        a = Actor.query.whoosh_search('tom').all()
+        tom_holland = Actor.query.filter_by(id=1136406).first()
+        tommy = Actor.query.filter_by(id=2176).first
+        self.assertIn(tom_holland, a)
+        self.assertIn(tommy, a)

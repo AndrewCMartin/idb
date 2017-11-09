@@ -1,6 +1,6 @@
-
 from app import db
 
+# These are the association tables needed for the many-many model relationships
 character_event = db.Table('character_event', db.Model.metadata,
                            db.Column('character_id', db.Integer, db.ForeignKey('character.id')),
                            db.Column('event_id', db.Integer, db.ForeignKey('event.id')))
@@ -73,12 +73,10 @@ class Event(db.Model):
         self.thumbnail = thumbnail
         self.start = start
         self.creators = creators
-        # self.characters = characters
-        # self.series = num_series
 
 
 class Actor(db.Model):
-    __searchable__ = ['name', 'bio', 'movies', 'characters', 'tvshows']
+    __searchable__ = ['name', 'bio']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     birthday = db.Column(db.Date)
