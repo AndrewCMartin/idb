@@ -183,7 +183,7 @@ class Actors extends React.Component {
         return (
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-                    /* Display all sorting, filtering, searching options */
+                    {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
                         <Form inline>
                             {this.renderDropdownButtonSortby("Sort By: ", "name")}
@@ -203,7 +203,7 @@ class Actors extends React.Component {
                 <form>
                 </form>
 
-                /* Go through and display 6 actors per page */
+                {/* Go through and display 6 actors per page */}
                 {this.state.actorsGrouped.length == 0 || !this.state.actorsGrouped ? null :
                     this.state.actorsGrouped.map(actorList =>
                         !actorList ? null :
@@ -213,7 +213,7 @@ class Actors extends React.Component {
                                           <div className="panel" style={panelColor}>
                                             <div className="panel-heading">
                                                 <div style={linkColor}>
-                                                    /* For actor search -- highlights the word found */
+                                                 {/* For actor search -- highlights the word found */}
                                                     <Highlighter
                                                         highlightClassName={styles.Highlight}
                                                         searchWords={this.state.search_string.split(" ")}
@@ -223,7 +223,7 @@ class Actors extends React.Component {
                                                 </div>
                                             </div>
                                             
-                                            /* In charge of the popover when you hover over the actor's picture */
+                                            {/* In charge of the popover when you hover over the actor's picture */}
                                             <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {actor.name}<br /><br />
@@ -261,7 +261,7 @@ class Actors extends React.Component {
 
                 }
 
-                /* Display the pagination bar */
+                {/* Display the pagination bar */}
                 <div className='text-center'>
                     {!this.state.numPages
                         ? null
