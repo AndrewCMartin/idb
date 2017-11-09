@@ -7,7 +7,7 @@ from flask_restless import APIManager
 from flask_restless.views import API, get_relations
 from flask_sqlalchemy import SQLAlchemy
 
-from config import ProdConfig, LocalDevConfig, REACT_DIR
+from config import ProdConfig, LocalDevConfig, REACT_DIR, BASE_DIR
 
 app = Flask(__name__, static_folder="../build/static")
 CORS(app)
@@ -19,7 +19,7 @@ else:
     app.config.from_object(LocalDevConfig)
 
 # Search index folder
-app.config['WHOOSH_BASE'] = './whoosh_index'
+app.config['WHOOSH_BASE'] = os.path.join(BASE_DIR, 'whoosh_index')
 
 db = SQLAlchemy(app)
 from models import Actor, Character, ComicSeries, Event, Movie, TvShow

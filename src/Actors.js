@@ -55,7 +55,7 @@ class Actors extends React.Component {
         this.handleResetFilter = this.handleResetFilter.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.updateItems = this.updateItems.bind(this);
-
+        this.renderSearchBar = this.renderSearchBar.bind(this);
         this.state = this.getInitialState();
         this.updateItems();
     }
@@ -179,6 +179,17 @@ class Actors extends React.Component {
         );
     }
 
+    renderSearchBar(placeholder) {
+        return (
+            <FormGroup controlId="formBasicText">
+                <FormControl
+                    type="text"
+                    placeholder={placeholder}
+                    onChange={this.handleSearchChange}/>
+            </FormGroup>
+        )
+    }
+
     render() {
         return (
             <div className="container" styles="margin-top:100px;">
@@ -190,12 +201,7 @@ class Actors extends React.Component {
                             {this.renderDropdownButtonSortDirection("Order", "")}
                             {this.renderDropdownButtonFilter("Filter", "")}
                             {this.renderResetFilterButton("Filter")}
-                            <FormGroup controlId="formBasicText">
-                                <FormControl
-                                    type="text"
-                                    placeholder="Search..."
-                                    onChange={this.handleSearchChange}/>
-                            </FormGroup>
+                            {this.renderSearchBar("Search Actors...")}
                         </Form>
                     </div>
                 </div>
