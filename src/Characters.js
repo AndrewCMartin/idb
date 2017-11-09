@@ -124,8 +124,6 @@ class Characters extends React.Component {
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
-                <MenuItem eventKey="birthday">Birthday</MenuItem>
-
             </DropdownButton>
         );
     }
@@ -135,8 +133,10 @@ class Characters extends React.Component {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
-                <MenuItem eventKey="desc">Has Description</MenuItem>
-                <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
+                <MenuItem eventKey="events">Has Event(s)</MenuItem>
+                <MenuItem eventKey="tvshows">Has TV Show(s)</MenuItem>
+                <MenuItem eventKey="series">Has Comic Serie(s)</MenuItem>
+                <MenuItem eventKey="movies">Has Movie(s)</MenuItem>
 
             </DropdownButton>
         );

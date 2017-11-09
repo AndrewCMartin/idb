@@ -60,7 +60,7 @@ getInitialState() {
         orderDirection: 'asc',
         q: {
             'order_by': [{"field": "title", "direction": "asc"}],
-            'filters': []
+            'filters': [{"name": "thumbnail", "op": "is_not_null"}]
         }
     };
 }
@@ -105,8 +105,12 @@ handleSelectDirection(eventKey) {
 }
 
 handleSelectFilter(eventKey) {
-    this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
-    this.updateItems();
+    if(eventKey == "start") {
+        this.state.q.filters.push({"name": eventKey, "op": "gt", "val":2000});        
+    } else {
+        this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
+    }
+    this.updateItems();    
 }
 
 handleResetFilter() {
@@ -119,7 +123,7 @@ renderDropdownButtonSortby(title, i) {
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectSort}>
             <MenuItem eventKey="name">Name</MenuItem>
-            <MenuItem eventKey="birthday">Birthday</MenuItem>
+            <MenuItem eventKey="start">Start Year</MenuItem>
 
         </DropdownButton>
     );
@@ -130,7 +134,7 @@ renderDropdownButtonFilter(title, i) {
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectFilter}>
             <MenuItem eventKey="desc">Has Description</MenuItem>
-            <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
+            <MenuItem eventKey="start">Started in this Century</MenuItem>
 
         </DropdownButton>
     );

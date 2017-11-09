@@ -56,7 +56,7 @@ class CharacterInstance extends React.Component {
         {/* Make containers for actors, movies, etc to store the relationship to this model */}
         const actors = this.state.character.actors || [];
         const events = this.state.character.events || [];
-        const series = this.state.character.comicseries || [];
+        const series = this.state.character.series || [];
         const tvshows = this.state.character.tvshows || [];
         const movies = this.state.character.movies || [];
 
