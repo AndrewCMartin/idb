@@ -143,3 +143,8 @@ class TestAPI(BaseTestConfig):
         tommy = Actor.query.filter_by(id=2176).first
         self.assertIn(tom_holland, a)
         self.assertIn(tommy, a)
+
+    def test_search_movie(self):
+        search_results = Movie.query.whoosh_search('hulk').all()
+        hulk_movie = Movie.query.filter_by(id=1724).first()
+        self.assertIn(hulk_movie, search_results)

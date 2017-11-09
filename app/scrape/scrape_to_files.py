@@ -3,10 +3,9 @@ import json
 import os
 import time
 
-import flask_whooshalchemyplus as whooshalchemy
 import requests
 
-from app import db, app
+from app import db
 from app.models import TvShow, Movie, Actor, ComicSeries, Character, Event
 from app.scrape import tmdb
 from config import BASE_DIR
@@ -234,8 +233,12 @@ def add_tvshows(tvshows):
                 tvshow.actors.append(actor)
             if actor and character:
                 actor.characters.append(character)
+
         db.session.merge(tvshow)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except Exception:
+            db.session.rollback()
         print ("Added " + t["name"])
 
 
@@ -296,15 +299,12 @@ def load_all():
     add_actors(r["actors"])
     add_movies(r["movies"])
     add_tvshows(r["tvshows"])
-    add_events(r["events"])
-    add_series(r["series"])
+    # add_events(r["events"])
+    # add_series(r["series"])
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        for model in models_list:
-            whooshalchemy.whoosh_index(app, model)
-        load_all()
+    load_all()
 
 
 # In[58]:
