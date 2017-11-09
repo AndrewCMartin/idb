@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -176,7 +176,7 @@ class Movies extends React.Component {
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
-                                         /* In charge of the popover when you hover over the movies's picture */
+                                        {/* In charge of the popover when you hover over the movies's picture */}
                                          <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {movie.name}<br /><br />
