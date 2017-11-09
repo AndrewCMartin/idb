@@ -4,6 +4,8 @@ import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} f
 
 var axios = require('axios');
 
+
+{/* Responsible for all styling on the page */}
 var imageStyles = {
     width:'450px',
     height: '450px',
@@ -25,13 +27,13 @@ var dropdownStyle = {
     color: 'white',
 }
 
+{/* Used to split the actor data so there is 3 per row */}
 function splitarray(input, spacing) {
   var output = [];
 
   for (var i = 0; i < input.length; i += spacing) {
       output[output.length] = input.slice(i, i + spacing);
   }
-
   return output;
 }
 
@@ -66,8 +68,8 @@ getInitialState() {
     };
 }
 
+//* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
 updateItems() {
-    console.log("update");
     axios.get('http://marvelus.me/api/comic_series', {
         params: {
             results_per_page: this.state.resultsPerPage,
@@ -79,38 +81,42 @@ updateItems() {
         const comics = res.data.objects.map(comic => comic);
         const comicsGrouped = splitarray(comics, 3)
         this.setState({comicsGrouped});
-        console.log(this.state.comicsGrouped);
     });
 }
 
+//* When you select a page in the pagination bar */
 handleSelect(eventKey) {
     this.state.activePage = eventKey;
     this.updateItems();
 }
 
+
+//* Select how to sort (what attributes) the actors */
 handleSelectSort(eventKey) {
-    // this.state.orderBy = eventKey;
     this.state.q.order_by[0].field = eventKey;
     this.updateItems()
 
 }
 
+/* Select which way to sort the attributes (asc/desc) */
 handleSelectDirection(eventKey) {
-    // this.state.orderDirection = eventKey;
     this.state.q.order_by[0].direction = eventKey;
     this.updateItems();
 }
 
+/* Select which filter to use */
 handleSelectFilter(eventKey) {
     this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
     this.updateItems();
 }
 
+/* Resets all options to the way when user first came to site */
 handleResetFilter() {
     this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
     this.updateItems();
 }
 
+/* Displays the "sort by" dropdown */
 renderDropdownButtonSortby(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -122,6 +128,7 @@ renderDropdownButtonSortby(title, i) {
     );
 }
 
+/* Displays the "filter" dropdown */
 renderDropdownButtonFilter(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -133,6 +140,7 @@ renderDropdownButtonFilter(title, i) {
     );
 }
 
+/* Displays the "order" dropdown */
 renderDropdownButtonSortDirection(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
@@ -142,6 +150,7 @@ renderDropdownButtonSortDirection(title, i) {
     );
 }
 
+/* Displays the "reset filter" button */
 renderResetFilterButton(title) {
     return (
         <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
@@ -153,7 +162,7 @@ render() {
     return (    
         <div className="container" styles="margin-top:100px;">
             <div className="row">
-
+        {/* Display all sorting, filtering, searching options */}
                 <div className='text-center'>
                     {this.renderDropdownButtonSortby("Sort By: ", "name")}
                     {this.renderDropdownButtonSortDirection("Order", "")}
@@ -161,6 +170,9 @@ render() {
                     {this.renderResetFilterButton("Filter")}
                 </div>
             </div>
+                
+                
+                {/* Go through and display 6 actors per page */}
             {this.state.comicsGrouped.length == 0 || !this.state.comicsGrouped ? null :
                 this.state.comicsGrouped.map(comicsList =>
                     !comicsList ? null :
@@ -172,7 +184,8 @@ render() {
                                     <div className="panel-heading">
                                         <div style={linkColor}>{comic.title}</div>
                                     </div>
-                                             
+                                    
+                                             {/* In charge of the popover when you hover over the comic's picture */}
                                     <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {comic.title}<br /><br />
@@ -201,9 +214,9 @@ render() {
                     </div>)
 
             }
-
+        
+            {/* Display the pagination bar */}
         <div className='text-center'>
-
             {!this.state.numPages
                 ? null
                 : <Pagination

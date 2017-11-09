@@ -4,10 +4,8 @@ import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} f
 
 var axios = require('axios');
 
-var imageStyles = {
-    //height: '500px',
-}
 
+{/* Responsible for all styling on the page */}
 var panelColor = {
     backgroundColor: 'black',
     borderColor: 'white',
@@ -24,13 +22,13 @@ var dropdownStyle = {
     color: 'white',
 }
 
+{/* Used to split the movies data so there is 3 per row */}
 function splitarray(input, spacing) {
     var output = [];
 
     for (var i = 0; i < input.length; i += spacing) {
         output[output.length] = input.slice(i, i + spacing);
     }
-
     return output;
 }
 
@@ -65,8 +63,8 @@ class Movies extends React.Component {
         };
     }
 
+    //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
-        console.log("update");
         axios.get('http://marvelus.me/api/movie', {
             params: {
                 results_per_page: this.state.resultsPerPage,
@@ -78,38 +76,40 @@ class Movies extends React.Component {
             const movies = res.data.objects.map(movie => movie);
             const moviesGrouped = splitarray(movies, 3)
             this.setState({moviesGrouped});
-            console.log(this.state.moviesGrouped);
         });
     }
 
+    //* When you select a page in the pagination bar */
     handleSelect(eventKey) {
         this.state.activePage = eventKey;
         this.updateItems();
     }
-
+    
+    //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
-        // this.state.orderBy = eventKey;
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
-
     }
-
+    
+    /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
-        // this.state.orderDirection = eventKey;
         this.state.q.order_by[0].direction = eventKey;
         this.updateItems();
     }
 
+    /* Select which filter to use */
     handleSelectFilter(eventKey) {
         this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
         this.updateItems();
     }
 
+    /* Resets all options to the way when user first came to site */v
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
         this.updateItems();
     }
 
+    /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -121,6 +121,7 @@ class Movies extends React.Component {
         );
     }
 
+    /* Displays the "filter" dropdown */
     renderDropdownButtonFilter(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -132,6 +133,7 @@ class Movies extends React.Component {
         );
     }
 
+    /* Displays the "order" dropdown */
     renderDropdownButtonSortDirection(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
@@ -141,6 +143,7 @@ class Movies extends React.Component {
         );
     }
 
+    /* Displays the "reset filter" button */
     renderResetFilterButton(title) {
         return (
             <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
@@ -152,7 +155,7 @@ class Movies extends React.Component {
         return (    
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-
+                    /* Display all sorting, filtering, searching options */
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
@@ -160,6 +163,8 @@ class Movies extends React.Component {
                         {this.renderResetFilterButton("Filter")}
                     </div>
                 </div>
+                    
+                /* Go through and display 6 movies per page */
                 {this.state.moviesGrouped.length == 0 || !this.state.moviesGrouped ? null :
                     this.state.moviesGrouped.map(moviesList =>
                         !moviesList ? null :
@@ -171,6 +176,7 @@ class Movies extends React.Component {
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
+                                         /* In charge of the popover when you hover over the movies's picture */
                                          <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {movie.name}<br /><br />
@@ -185,7 +191,7 @@ class Movies extends React.Component {
 
                                             <img
                                                 src={"http://image.tmdb.org/t/p/w500" + movie.poster_path}
-                                                className="img-responsive" style={imageStyles}
+                                                className="img-responsive"
                                                 alt="Image"/>
 
                                         </div>
@@ -198,8 +204,8 @@ class Movies extends React.Component {
 
                 }
 
+            /* Display the pagination bar */
             <div className='text-center'>
-
                 {!this.state.numPages
                     ? null
                     : <Pagination

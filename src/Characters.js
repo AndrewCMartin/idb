@@ -32,7 +32,7 @@ var linkColor = {
     color: 'white',
 }
 
-{/* Used to split the actor data so there is 3 per row */}
+{/* Used to split the character data so there is 3 per row */}
 function splitarray(input, spacing) {
     var output = [];
 
@@ -173,7 +173,7 @@ class Characters extends React.Component {
                     </div>
                 </div>
                       
-                /* Go through and display 6 actors per page */
+                /* Go through and display 6 characters per page */
                 {this.state.charactersGrouped.length == 0 || !this.state.charactersGrouped ? null :
                     this.state.charactersGrouped.map(charactersList =>
                         !charactersList ? null :
@@ -187,7 +187,7 @@ class Characters extends React.Component {
                                         </div>
                                                      
                                                      
-                                        /* In charge of the popover when you hover over the actor's picture */             
+                                        /* In charge of the popover when you hover over the character's picture */             
                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {character.name}<br /><br />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {Row, Col} from 'react-bootstrap'
 var axios = require('axios');
 
+{/* Responsible for styling the content in the body */}
 var containerStyle = {
     backgroundColor: 'black',
     margin:'auto',
@@ -26,8 +27,6 @@ var imageStyle = {
     height: '600px',
 }
 
-
-
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
@@ -37,23 +36,24 @@ var secColStyle = {
 class MovieInstance extends React.Component {
     constructor(props) {
         super(props);
-    
+        {/* Store actor info we get from query */}
         this.state = {
           movie: {}
         };
     }
 
     componentDidMount() {
+        {/* Query and store all data */}
         return axios.get("http://marvelus.me/api/movie/" + window.location.href.substring(window.location.href.lastIndexOf("/") + 1) ).then(res=> {
             const movie = res.data;
-            console.log(movie);
             this.setState({movie});
         });
     }
     
     render() {
-	const actors = this.state.movie.actors || [];
-	const characters = this.state.movie.characters || [];
+        {/* Make containers for characters, movies, tvshows to store the relationship to this model */}
+        const actors = this.state.movie.actors || [];
+        const characters = this.state.movie.characters || [];
         return (
             <div class="container" style={containerStyle}>
                     <div class="panel" style={panelStyle} >
@@ -64,10 +64,12 @@ class MovieInstance extends React.Component {
             <Col xs={5} md={5}>
             <img src={"http://image.tmdb.org/t/p/w500/" + this.state.movie.poster_path} class="img-responsive" class="img-responsive" style={imageStyle} alt="Image" />
             </Col>
+            
+            {/* Information/attributes of the actor */}
             <Col xs={7} md={7}>
                                 
                 
-		                    
+                    
                                     <h3 style={headingStyle}>Release Date:</h3>
                                     <p>{this.state.movie.release_date}</p>
                                     <h3 style={headingStyle}>Overview</h3>
@@ -90,9 +92,9 @@ class MovieInstance extends React.Component {
                                     <h3 style={secColStyle}>Main Characters</h3>
                 <ul>
 
-	    {characters.length > 0 ? characters.map(function(character) {
-		return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={'/character/${character.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
-	    }) :<li>None</li>}
+        {characters.length > 0 ? characters.map(function(character) {
+        return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={'/character/${character.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
+        }) :<li>None</li>}
                                         </ul>
                                     
                 </Col>
@@ -101,7 +103,7 @@ class MovieInstance extends React.Component {
                 <ul>
                 {actors.length > 0 ? actors.map(function(actor) {
 
-		    return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={'/actor/${actor.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
+            return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={'/actor/${actor.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
 		}) : <li>None</li>}
                                         </ul>
                                     

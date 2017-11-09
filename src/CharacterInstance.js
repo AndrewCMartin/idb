@@ -38,7 +38,7 @@ var secColStyle = {
 class CharacterInstance extends React.Component {
     constructor(props) {
         super(props);
-        {/* Store actor info we get from query */}
+        {/* Store character info we get from query */}
         this.state = {
             character: {}
         };
@@ -53,7 +53,7 @@ class CharacterInstance extends React.Component {
     }
 
     render() {
-        {/* Make containers for characters, movies, tvshows to store the relationship to this model */}
+        {/* Make containers for actors, movies, etc to store the relationship to this model */}
         const actors = this.state.character.actors || [];
         const events = this.state.character.events || [];
         const series = this.state.character.comicseries || [];
@@ -74,14 +74,14 @@ class CharacterInstance extends React.Component {
                                                      class="img-responsive" style={imageStyle} alt="Image"/>
             </Col>
             <Col xs={7} md={7}>
-                                {/* Information/attributes of the actor */}
+                                {/* Information/attributes of the character */}
                                 <h3 style={headingStyle}>Description</h3>
                                 <p>{this.state.character.desc}</p>
                                 <br></br>
                                 <h3 style={headingStyle}>Stories</h3>
                                 <p>{this.state.character.stories}</p>
                                 <br></br>
-            {/* Goes through the data in the actor lists, and makes linkable */}
+            {/* Goes through the data in the actors lists, and makes linkable */}
              <h3 style={headingStyle}>Portrayed by Actors</h3>
                                     <ul>
                                         {actors.length > 0 ? actors.map(function (actor) {
