@@ -1,10 +1,6 @@
 import React from 'react'
 
-
-// So all pictures are the same size
-
-// Style for pictures so all consistent sizes
-
+{/* Style for pictures so all consistent sizes */}
 var imageStyles = {
     width: '450px',
     height: '350px'
@@ -16,18 +12,11 @@ const About = () => (
 
         <div className="panel-body">
 
-            // Description superheros, movies, tv shows, comics, creators, events
+            {/* Description superheros, movies, tv shows, comics, creators, events */}
             <p align="center" styles="font-size: 25px ; color: darkgray">Marvelus is for users who want to browse
                 superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </p>
 
-            // Group member descriptions with bios and personal statistics
-
-            // General description for the site -- tells what this site is about
-            <p align="center" styles="font-size: 25px ; color: darkgray">Marvelus is for users who want to browse
-                superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </p>
-
-            // Start group member information/statistics
-
+            {/* Group member descriptions with bios and personal statistics */}
             <h3 align="center" styles="color:black">Group Members</h3>
 
             <div className="container" styles="margin-top:100px;">
@@ -144,12 +133,7 @@ const About = () => (
             </div>
             <br/>
 
-
-    
-            // Group's statistics
-
-            // General group statistics
-
+            {/* General group statistics */}
             <h3 align="center"><b>Statistics</b></h3>
 
             <li align="center"><b>Total No. of Commits:241 </b></li>
@@ -160,13 +144,8 @@ const About = () => (
             <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
 
 
-            // Links to the required resources
+            {/* Links to the required resources */}
             <h3 align="center"><b>Data</b></h3>
-
-            
-            // Links to sources
-
-
             <li align="center"><a href="https://developer.marvel.com/docs"><b>Marvel API</b></a>: We did not use any
                 specific libraries to scrape the Marvel API, just the python requests module.
             </li>
@@ -175,14 +154,10 @@ const About = () => (
                 API
             </li>
 
-
             <h3 align="center"><b>Tools used</b></h3>
-
             <li align="center"><a  href="https://utexas.box.com/s/sgm9y2l4h3qpbhustpfs9zgp7jydapzm">Technical report</a></li>
         </div>
     </div>
-
-
 )
 
 export default About
