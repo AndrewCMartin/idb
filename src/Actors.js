@@ -193,7 +193,7 @@ class Actors extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search in Actors..."
+                                    placeholder="Search..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
@@ -255,7 +255,7 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
-                                            <div className="panel-footer">
+                                            <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
                                                Marvel Characters: {actor.characters.length}
                                             </div>
                                         </div>
