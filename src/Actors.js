@@ -55,7 +55,7 @@ class Actors extends React.Component {
         this.handleResetFilter = this.handleResetFilter.bind(this);
         this.handleSearchChange = this.handleSearchChange.bind(this);
         this.updateItems = this.updateItems.bind(this);
-        this.renderSearchBar = this.renderSearchBar.bind(this);
+
         this.state = this.getInitialState();
         this.updateItems();
     }
@@ -179,17 +179,6 @@ class Actors extends React.Component {
         );
     }
 
-    renderSearchBar(placeholder) {
-        return (
-            <FormGroup controlId="formBasicText">
-                <FormControl
-                    type="text"
-                    placeholder={placeholder}
-                    onChange={this.handleSearchChange}/>
-            </FormGroup>
-        )
-    }
-
     render() {
         return (
             <div className="container" styles="margin-top:100px;">
@@ -201,7 +190,12 @@ class Actors extends React.Component {
                             {this.renderDropdownButtonSortDirection("Order", "")}
                             {this.renderDropdownButtonFilter("Filter", "")}
                             {this.renderResetFilterButton("Filter")}
-                            {this.renderSearchBar("Search Actors...")}
+                            <FormGroup controlId="formBasicText">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search..."
+                                    onChange={this.handleSearchChange}/>
+                            </FormGroup>
                         </Form>
                     </div>
                 </div>
@@ -236,6 +230,8 @@ class Actors extends React.Component {
                                                             overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong><u>{actor.name}</u></strong>
                                                <br /><br />
+                                               <strong>Bio: </strong>
+                                               {actor.bio}<br />
                                                <strong>Birthday: </strong>
                                                {actor.birthday}<br />
                                                <strong># of TV Shows: </strong>
