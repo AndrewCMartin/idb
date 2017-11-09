@@ -83,10 +83,6 @@ class Actors extends React.Component {
         };
     }
 
-    // componentDidMount() {
-    //     this.updateItems();
-    // }
-
     updateItems() {
         console.log("update");
         var url = 'http://marvelus.me/api/actor';

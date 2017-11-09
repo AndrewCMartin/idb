@@ -1,12 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
-
+import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import './Header.css'
+import './ModelStyle.css'
+    
 var axios = require('axios');
 
-var changeColor = {
+var panelColor = {
     backgroundColor: 'black',
     borderColor: 'white',
+}
+
+var linkColor = {
+    color: 'white',
+}
+
+var dropdownStyle = {
+    margin: '10px',
+    backgroundColor: '#2b2b2b',
+    borderColor: '#2b2b2b',
+    color: 'white',
 }
 
 
@@ -59,10 +72,6 @@ class Characters extends React.Component {
         };
     }
 
-    // componentDidMount() {
-    //     this.updateItems();
-    // }
-
     updateItems() {
         console.log("update");
         axios.get('http://marvelus.me/api/character', {
@@ -110,7 +119,7 @@ class Characters extends React.Component {
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -121,7 +130,7 @@ class Characters extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="desc">Has Description</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -132,7 +141,7 @@ class Characters extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -141,17 +150,9 @@ class Characters extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button bsStyle="primary" title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
-    }
-
-    
-    componentDidMount() {
-        // return axios.get('http://marvelus.me/api/character?results_per_page=150&q={"filters":[{"name":"thumbnail","op":"is_not_null"}]}').then(res=> {
-        //     const characters = res.data.objects.map(character => character)
-        //     this.setState({characters});
-        // });
     }
 
     render() {
@@ -173,10 +174,30 @@ class Characters extends React.Component {
                         {charactersList.map(character =>
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
-                                    <div className="panel" style={changeColor}>
+                                    <div className="panel" style={panelColor}>
                                         <div className="panel-heading">
                                             <div style={linkColor}>{character.name}</div>
                                         </div>
+                                                     
+                                                     
+                                                     
+                                        <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong>Name: </strong><br />
+                                               {character.name}<br /><br />
+                                               <strong>Stories: </strong><br />
+                                               {character.stories}<br /><br />
+                                                <strong>Movies: </strong><br />
+                                                {character.movies.length > 0 ? character.movies.map(function (movie) {
+                                                    return (movie.title)
+                                                }) : "None"}<br /><br />
+                                                <strong>TV Shows: </strong><br />
+                                                {character.tvshows.length > 0 ? character.tvshows.map(function (show) {
+                                                    return (show.title)
+                                                }) : "None"}
+
+
+                                            </Popover>}>
+
                                         <div className="panel-body">
 
                                             <img
@@ -185,6 +206,7 @@ class Characters extends React.Component {
                                                 alt="Image"/>
 
                                         </div>
+                                        </OverlayTrigger>
                                     </div>
                                 </Link>
                             </div>

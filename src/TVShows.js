@@ -1,23 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
+import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
-var changeColor = {
-  backgroundColor: 'black',
-  borderColor: 'white',
+var imageStyles = {
+    //height: '500px',
 }
 
+var panelColor = {
+    backgroundColor: 'black',
+    borderColor: 'white',
+}
 
 var linkColor = {
-  color: 'white',
+    color: 'white',
 }
 
-var imageStyles = {
-  width: '400px',
-  height: '450px'
+var dropdownStyle = {
+    margin: '10px',
+    backgroundColor: '#2b2b2b',
+    borderColor: '#2b2b2b',
+    color: 'white',
 }
+
 
 function splitarray(input, spacing) {
   var output = [];
@@ -110,7 +116,7 @@ handleResetFilter() {
 
 renderDropdownButtonSortby(title, i) {
     return (
-        <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+        <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectSort}>
             <MenuItem eventKey="name">Name</MenuItem>
             <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -121,7 +127,7 @@ renderDropdownButtonSortby(title, i) {
 
 renderDropdownButtonFilter(title, i) {
     return (
-        <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+        <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectFilter}>
             <MenuItem eventKey="desc">Has Description</MenuItem>
             <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -132,7 +138,7 @@ renderDropdownButtonFilter(title, i) {
 
 renderDropdownButtonSortDirection(title, i) {
     return (
-        <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSelectDirection}>
+        <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
             <MenuItem eventKey="asc">Ascending</MenuItem>
             <MenuItem eventKey="desc">Descending</MenuItem>
         </DropdownButton>
@@ -141,7 +147,7 @@ renderDropdownButtonSortDirection(title, i) {
 
 renderResetFilterButton(title) {
     return (
-        <Button bsStyle="primary" title={title} onClick={this.handleResetFilter}>Reset Filter
+        <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
         </Button>
     );
 }
@@ -166,10 +172,21 @@ renderResetFilterButton(title) {
                 {showsList.map(show =>
                     <div className="col-sm-4">
                         <Link to={"/tvshow/" + show.id}>
-                            <div className="panel" style={changeColor}>
+                            <div className="panel" style={panelColor}>
                                 <div className="panel-heading">
                                     <div style={linkColor}>{show.name}</div>
                                 </div>
+                                        
+                                 <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong>Name: </strong><br />
+                                               {show.name}<br /><br />
+                                               <strong>Character(s): </strong><br />
+                                               {show.characters.length > 0 ? show.characters.map(function (character) {
+                                                    return (character.name)
+                                                }) : "None"}<br /><br />
+
+                                            </Popover>}>
+                                        
                                 <div className="panel-body">
 
                                     <img
@@ -178,6 +195,7 @@ renderResetFilterButton(title) {
                                         alt="Image"/>
 
                                 </div>
+                               </OverlayTrigger>
                             </div>
                         </Link>
                     </div>

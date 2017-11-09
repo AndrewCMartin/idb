@@ -1,22 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination} from 'react-bootstrap'
+import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
-var changeColor = {
+var imageStyles = {
+    //height: '500px',
+}
+
+var panelColor = {
     backgroundColor: 'black',
     borderColor: 'white',
 }
-
 
 var linkColor = {
     color: 'white',
 }
 
-var imageStyles = {
-    width: '400px',
-    height: '450px'
+var dropdownStyle = {
+    margin: '10px',
+    backgroundColor: '#2b2b2b',
+    borderColor: '#2b2b2b',
+    color: 'white',
 }
 
 function splitarray(input, spacing) {
@@ -59,10 +64,6 @@ class Movies extends React.Component {
             }
         };
     }
-
-    // componentDidMount() {
-    //     this.updateItems();
-    // }
 
     updateItems() {
         console.log("update");
@@ -111,7 +112,7 @@ class Movies extends React.Component {
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -122,7 +123,7 @@ class Movies extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="desc">Has Description</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -133,7 +134,7 @@ class Movies extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton bsStyle="primary" title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -142,7 +143,7 @@ class Movies extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button bsStyle="primary" title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
     }
@@ -166,10 +167,20 @@ class Movies extends React.Component {
                         {moviesList.map(movie =>
                             <div className="col-sm-4">
                                 <Link to={"/movie/" + movie.id}>
-                                    <div className="panel" style={changeColor}>
+                                    <div className="panel" style={panelColor}>
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
+                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong>Name: </strong><br />
+                                               {movie.name}<br /><br />
+                                               <strong>Character(s): </strong><br />
+                                               {movie.characters.length > 0 ? movie.characters.map(function (character) {
+                                                    return (character.name)
+                                                }) : "None"}<br /><br />
+
+
+                                            </Popover>}>
                                         <div className="panel-body">
 
                                             <img
@@ -178,6 +189,7 @@ class Movies extends React.Component {
                                                 alt="Image"/>
 
                                         </div>
+                                        </OverlayTrigger>
                                     </div>
                                 </Link>
                             </div>
