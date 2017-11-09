@@ -1,7 +1,39 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {Col, Row} from 'react-bootstrap'
 
 var axios = require('axios');
+
+var containerStyle = {
+    backgroundColor: 'black',
+    margin:'auto',
+    height: '100vh',  
+}
+
+var panelStyle = {
+    backgroundColor: 'black',
+    color: 'white',
+
+}
+
+var headingStyle= {
+    color: 'white',
+    borderColor: 'white',
+    textTransform: 'uppercase',
+}
+
+var imageStyle = {
+    width: '400px',
+    height: '400px',
+}
+
+var linkStyle = {
+    color: 'white',
+}
+
+var listStyle = {
+    color: 'blue',
+}
 
 class CharacterInstance extends React.Component {
     constructor(props) {
@@ -30,12 +62,19 @@ class CharacterInstance extends React.Component {
 
         return (
 
-            <div class="container" styles="margin: auto; margin-top:100px; width: 500px">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h1>{this.state.character.name}</h1></div>
+            <div class="container" style={containerStyle}>
+                <div class="panel" style={panelStyle}>
+                    <div class="panel-heading" style={headingStyle}>
+           
+            <h1>{this.state.character.name}</h1></div>
                     <div class="panel-body">
-                        <div class="panel-body"><img src={this.state.character.thumbnail} class="img-responsive"
-                                                     class="img-responsive" styles="width:100%" alt="Image"/>
+                        <div class="panel-body">
+               <Row>
+            <Col xs={7} md ={5}>
+            <img src={this.state.character.thumbnail} class="img-responsive"
+                                                     class="img-responsive" style={imageStyle} alt="Image"/>
+            </Col>
+            <Col xs={6} md={6}>
                             <h3>Information</h3>
                             <ul>
                                 <li><b>Name:</b> {this.state.character.name}</li>
@@ -46,7 +85,7 @@ class CharacterInstance extends React.Component {
                                     <ul>
                                         {events.length > 0 ? events.map(function (event) {
                                             return (<li key={event.title}><Link
-                                                to={`/event/${event.id}`}>{event.title}</Link></li>)
+                                                to={`/event/${event.id}`} style={{color:'red'}}>{event.title}</Link></li>)
                                         }) : "None"}
                                     </ul>
                                 </li>
@@ -96,6 +135,8 @@ class CharacterInstance extends React.Component {
 
 
                             </ul>
+</Col>
+</Row>
                         </div>
                     </div>
                 </div>
