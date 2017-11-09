@@ -58,7 +58,7 @@ class Movies extends React.Component {
             orderDirection: 'asc',
             q: {
                 'order_by': [{"field": "title", "direction": "asc"}],
-                'filters': []
+                'filters': [{"name": "poster_path", "op": "is_not_null"}]
             }
         };
     }
@@ -105,14 +105,14 @@ class Movies extends React.Component {
 
     /* Resets all options to the way when user first came to site */v
     handleResetFilter() {
-        this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+        this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
         this.updateItems();
     }
 
     /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"sort"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -124,7 +124,7 @@ class Movies extends React.Component {
     /* Displays the "filter" dropdown */
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"filter"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="desc">Has Description</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -163,7 +163,7 @@ class Movies extends React.Component {
                         {this.renderResetFilterButton("Filter")}
                     </div>
                 </div>
-                    
+
                 {/* Go through and display 6 movies per page */}
                 {this.state.moviesGrouped.length == 0 || !this.state.moviesGrouped ? null :
                     this.state.moviesGrouped.map(moviesList =>
@@ -176,7 +176,7 @@ class Movies extends React.Component {
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
-                                        {/* In charge of the popover when you hover over the movies's picture */}
+                                         /* In charge of the popover when you hover over the movies's picture */
                                          <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {movie.name}<br /><br />
@@ -195,7 +195,11 @@ class Movies extends React.Component {
                                                 alt="Image"/>
 
                                         </div>
+
                                         </OverlayTrigger>
+                                        <div className="panel-footer">
+                                            Marvel Characters: {movie.characters.length}
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
@@ -204,7 +208,7 @@ class Movies extends React.Component {
 
                 }
 
-            {/* Display the pagination bar */}
+                {/* Display the pagination bar */}
             <div className='text-center'>
                 {!this.state.numPages
                     ? null

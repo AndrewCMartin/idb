@@ -265,7 +265,7 @@ class Actors extends React.Component {
 
                 }
 
-                {/* Display the pagination bar */}
+                /* Display the pagination bar */
                 <div className='text-center'>
                     {!this.state.numPages
                         ? null
