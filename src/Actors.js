@@ -10,16 +10,17 @@ var axios = require('axios');
 var imageStyles = {
     //height: '500px',
 }
-var changeColor = {
-    backgroundColor: '#2b2b2b',
-    borderColor: 'black',
+
+var panelColor = {
+    backgroundColor: 'black',
+    borderColor: 'white',
 }
 
 var linkColor = {
     color: 'white',
 }
 
-var pageStyle = {
+var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
     borderColor: '#2b2b2b',
@@ -65,10 +66,6 @@ class Actors extends React.Component {
             }
         };
     }
-
-    // componentDidMount() {
-    //     this.updateItems();
-    // }
 
     updateItems() {
         console.log("update");
@@ -118,7 +115,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortby(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
                 <MenuItem eventKey="birthday">Birthday</MenuItem>
@@ -129,7 +126,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonFilter(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
+            <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
                 <MenuItem eventKey="name">ID greater than 9860</MenuItem>
                 <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
@@ -140,7 +137,7 @@ class Actors extends React.Component {
 
     renderDropdownButtonSortDirection(title, i) {
         return (
-            <DropdownButton style={pageStyle} title={title} onSelect={this.handleSelectDirection}>
+            <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
                 <MenuItem eventKey="asc">Ascending</MenuItem>
                 <MenuItem eventKey="desc">Descending</MenuItem>
             </DropdownButton>
@@ -149,7 +146,7 @@ class Actors extends React.Component {
 
     renderResetFilterButton(title) {
         return (
-            <Button style={pageStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
+            <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
             </Button>
         );
     }
@@ -178,7 +175,7 @@ class Actors extends React.Component {
                             <div className="row">{actorList.map(actor =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
-                                          <div className="panel" style={changeColor}>
+                                          <div className="panel" style={panelColor}>
                                             <div className="panel-heading">
                                                 <div style={linkColor}>{actor.name}</div>
                                             </div>
