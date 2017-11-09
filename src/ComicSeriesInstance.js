@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {Row, Col} from 'react-bootstrap'
 var axios = require('axios');
 
+{/* Responsible for styling the content in the body */}
 var containerStyle = {
     backgroundColor: 'black',
     margin:'auto',
@@ -26,8 +27,6 @@ var imageStyle = {
     height: '600px',
 }
 
-
-
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
@@ -37,23 +36,24 @@ var secColStyle = {
 class ComicSeriesInstance extends React.Component {
     constructor(props) {
         super(props);
-    
+        {/* Store series info we get from query */}
         this.state = {
           comic_series: {}
         };
     }
 
     componentDidMount() {
+        {/* Query and store all data */}
         return axios.get("http://marvelus.me/api/comic_series/" + window.location.href.substring(window.location.href.lastIndexOf("/") + 1) ).then(res=> {
             const comic_series = res.data;
-            console.log(comic_series);
             this.setState({comic_series});
         });
     }
 
     render() {
-	const characters = this.state.comic_series.characters || [];
-	const events = this.state.comic_series.events || [];
+        {/* Make containers for characters, events to store the relationship to this model */}
+        const characters = this.state.comic_series.characters || [];
+        const events = this.state.comic_series.events || [];
         return (
             <div class="container" style={containerStyle}>
                     <div class="panel" style={panelStyle} >
@@ -64,6 +64,8 @@ class ComicSeriesInstance extends React.Component {
             <Col xs={5} md={5}>
             <img src={this.state.comic_series.thumbnail} class="img-responsive" class="img-responsive" styles="width:100%" alt="Image" />
             </Col>
+            
+            {/* Information/attributes of the comic series */}
             <Col xs={7} md={7}>
 
             <h3 style={headingStyle}>Description</h3>
@@ -79,6 +81,7 @@ class ComicSeriesInstance extends React.Component {
             <hr></hr>
             <Row>
             <Col xs={6} md={6}>
+                                        {/* Goes through the data in the character lists, and makes linkable */}
                                         <h3 style={secColStyle}>Characters</h3>
                                         <ul> 
             {characters.length > 0 ? characters.map(function(character){
@@ -87,7 +90,7 @@ class ComicSeriesInstance extends React.Component {
                                         </ul>
             </Col>
             <Col xs={6} md={6}>
-
+                                        {/* Goes through the data in the events lists, and makes linkable */}
                                         <h3 style={secColStyle}>Events:</h3>
                                         <ul> 
             {events.length > 0 ? events.map(function(event){

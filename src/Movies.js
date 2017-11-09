@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
 
 var axios = require('axios');
 
@@ -169,23 +169,21 @@ class Movies extends React.Component {
                     this.state.moviesGrouped.map(moviesList =>
                         !moviesList ? null :
                         <div className="row">
-                            {moviesList.map((movie, i) =>
+                        {moviesList.map(movie =>
                             <div className="col-sm-4">
                                 <Link to={"/movie/" + movie.id}>
                                     <div className="panel" style={panelColor}>
                                         <div className="panel-heading">
                                             <div style={linkColor}>{movie.title}</div>
                                         </div>
-                                        <OverlayTrigger trigger={['hover', 'focus']}
-                                                        placement={i === 0 ? "right" : "left"}
-                                                        overlay={<Popover id="popover-trigger-hover-focus">
-                                                            <strong>Title: </strong><br/>
-                                                            {movie.title}<br/><br/>
+                                         /* In charge of the popover when you hover over the movies's picture */
+                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
+                                               <strong>Name: </strong><br />
+                                               {movie.name}<br /><br />
                                                <strong>Character(s): </strong><br />
-                                                            <ul>
-                                                                {movie.characters.length > 0 ? movie.characters.map(function (character) {
-                                                                    return (<li> {character.name} </li>)
-                                                                }) : "None"}</ul>
+                                               {movie.characters.length > 0 ? movie.characters.map(function (character) {
+                                                    return (character.name)
+                                                }) : "None"}<br /><br />
 
 
                                             </Popover>}>

@@ -36,7 +36,7 @@ var secColStyle = {
 class MovieInstance extends React.Component {
     constructor(props) {
         super(props);
-        {/* Store actor info we get from query */}
+        {/* Store movie info we get from query */}
         this.state = {
           movie: {}
         };
@@ -51,7 +51,7 @@ class MovieInstance extends React.Component {
     }
     
     render() {
-        {/* Make containers for characters, movies, tvshows to store the relationship to this model */}
+        {/* Make containers for characters, actors to store the relationship to this model */}
         const actors = this.state.movie.actors || [];
         const characters = this.state.movie.characters || [];
         return (
@@ -65,7 +65,7 @@ class MovieInstance extends React.Component {
             <img src={"http://image.tmdb.org/t/p/w500/" + this.state.movie.poster_path} class="img-responsive" class="img-responsive" style={imageStyle} alt="Image" />
             </Col>
             
-            {/* Information/attributes of the actor */}
+            {/* Information/attributes of the movie */}
             <Col xs={7} md={7}>
                                 
                 
