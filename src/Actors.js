@@ -79,6 +79,7 @@ class Actors extends React.Component {
 
     //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
+        console.log("update");
         var url = 'http://marvelus.me/api/actor';
         var params = {
             results_per_page: this.state.resultsPerPage,
@@ -105,14 +106,14 @@ class Actors extends React.Component {
         this.state.activePage = eventKey;
         this.updateItems();
     }
-    
+
     //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
 
     }
-    
+
     /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
         this.state.q.order_by[0].direction = eventKey;
@@ -222,8 +223,8 @@ class Actors extends React.Component {
                                                     />
                                                 </div>
                                             </div>
-                                            
-                                            /* In charge of the popover when you hover over the actor's picture */
+
+                                              /* In charge of the popover when you hover over the actor's picture */
                                             <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {actor.name}<br /><br />
