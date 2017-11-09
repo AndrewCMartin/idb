@@ -212,7 +212,7 @@ renderResetFilterButton(title) {
 
                                 </div>
                                </OverlayTrigger>
-                               <div className="panel-footer">
+                               <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
                                    Marvel Characters: {show.characters.length}
                                 </div>
                             </div>

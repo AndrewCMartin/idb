@@ -210,7 +210,7 @@ class Movies extends React.Component {
 
                                                     </div>
                                                 </OverlayTrigger>
-                                                <div className="panel-footer">
+                                                <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
                                                     Marvel Characters: {movie.characters.length}
                                                 </div>
                                             </div>

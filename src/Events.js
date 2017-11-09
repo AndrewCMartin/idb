@@ -210,7 +210,7 @@ render() {
 
                                     </div>
                                    </OverlayTrigger>
-                                   <div className="panel-footer">
+                                   <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
                                        Marvel Characters: {event.characters.length}
                                    </div>
                                 </div>
