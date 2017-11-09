@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Style for pictures so all consistent sizes
 var imageStyles = {
     width: '450px',
     height: '350px'
@@ -10,10 +11,11 @@ const About = () => (
         <h1 align="center" styles="font-size: 45px"><b>MARVELUS - Canvas Group 15</b></h1>
 
         <div className="panel-body">
-            {/* <!-- Description superheros, movies, tv shows, comics, creators, events--> */}
+            // General description for the site -- tells what this site is about
             <p align="center" styles="font-size: 25px ; color: darkgray">Marvelus is for users who want to browse
                 superheros, movies, TV shows, comics, creators, events having to do with the Marvel Universe. </p>
 
+            // Start group member information/statistics
             <h3 align="center" styles="color:black">Group Members</h3>
 
             <div className="container" styles="margin-top:100px;">
@@ -130,6 +132,7 @@ const About = () => (
             </div>
             <br/>
 
+            // General group statistics
             <h3 align="center"><b>Statistics</b></h3>
 
             <li align="center"><b>Total No. of Commits:241 </b></li>
@@ -139,8 +142,9 @@ const About = () => (
             <li align="center"><a href="https://github.com/AndrewCMartin/idb"><b>GITHUB REPO</b></a></li>
             <li align="center"><a href="https://trello.com/b/qLTaMYvu/marvelus"><b>TRELLO</b></a></li>
 
+
+            // Links to the required resources
             <h3 align="center"><b>Data</b></h3>
-            {/* <!-- <li align="center" styles= "color: gray"><b>Data Sources: </b> --> */}
 
             <li align="center"><a href="https://developer.marvel.com/docs"><b>Marvel API</b></a>: We did not use any
                 specific libraries to scrape the Marvel API, just the python requests module.
