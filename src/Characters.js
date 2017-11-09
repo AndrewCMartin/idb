@@ -6,6 +6,12 @@ import './ModelStyle.css'
     
 var axios = require('axios');
 
+{/* Responsible for all styling on the page */}
+var imageStyles = {
+    width: '500px',
+    height: '400px'
+}
+
 var panelColor = {
     backgroundColor: 'black',
     borderColor: 'white',
@@ -22,29 +28,23 @@ var dropdownStyle = {
     color: 'white',
 }
 
-
 var linkColor = {
     color: 'white',
 }
 
+{/* Used to split the actor data so there is 3 per row */}
 function splitarray(input, spacing) {
     var output = [];
 
     for (var i = 0; i < input.length; i += spacing) {
         output[output.length] = input.slice(i, i + spacing);
     }
-
     return output;
 }
 
-var imageStyles = {
-    width: '500px',
-    height: '400px'
-}
 class Characters extends React.Component {
     constructor(props) {
         super(props);
-    
         this.handleSelectSort = this.handleSelectSort.bind(this);
         this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -71,9 +71,9 @@ class Characters extends React.Component {
             }
         };
     }
-
+    
+    //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
-        console.log("update");
         axios.get('http://marvelus.me/api/character', {
             params: {
                 results_per_page: this.state.resultsPerPage,
@@ -85,38 +85,40 @@ class Characters extends React.Component {
             const characters = res.data.objects.map(character => character);
             const charactersGrouped = splitarray(characters, 3)
             this.setState({charactersGrouped});
-            console.log(this.state.charactersGrouped);
         });
     }
 
+    //* When you select a page in the pagination bar */
     handleSelect(eventKey) {
         this.state.activePage = eventKey;
         this.updateItems();
     }
-
+    
+    //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
-        // this.state.orderBy = eventKey;
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
-
     }
-
+    
+    /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
-        // this.state.orderDirection = eventKey;
         this.state.q.order_by[0].direction = eventKey;
         this.updateItems();
     }
-
+    
+    /* Select which filter to use */
     handleSelectFilter(eventKey) {
         this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
         this.updateItems();
     }
 
+    /* Resets all options to the way when user first came to site */
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
         this.updateItems();
     }
 
+    /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -128,6 +130,7 @@ class Characters extends React.Component {
         );
     }
 
+    /* Displays the "filter" dropdown */
     renderDropdownButtonFilter(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
@@ -139,6 +142,7 @@ class Characters extends React.Component {
         );
     }
 
+    /* Displays the "order" dropdown */
     renderDropdownButtonSortDirection(title, i) {
         return (
             <DropdownButton style={dropdownStyle} title={title} onSelect={this.handleSelectDirection}>
@@ -148,6 +152,7 @@ class Characters extends React.Component {
         );
     }
 
+    /* Displays the "reset filter" button */
     renderResetFilterButton(title) {
         return (
             <Button style={dropdownStyle} title={title} onClick={this.handleResetFilter}>Reset Filter
@@ -159,7 +164,7 @@ class Characters extends React.Component {
         return (    
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
-
+                    /* Display all sorting, filtering, searching options */
                     <div className='text-center'>
                         {this.renderDropdownButtonSortby("Sort By: ", "name")}
                         {this.renderDropdownButtonSortDirection("Order", "")}
@@ -167,6 +172,8 @@ class Characters extends React.Component {
                         {this.renderResetFilterButton("Filter")}
                     </div>
                 </div>
+                      
+                /* Go through and display 6 actors per page */
                 {this.state.charactersGrouped.length == 0 || !this.state.charactersGrouped ? null :
                     this.state.charactersGrouped.map(charactersList =>
                         !charactersList ? null :
@@ -180,7 +187,7 @@ class Characters extends React.Component {
                                         </div>
                                                      
                                                      
-                                                     
+                                        /* In charge of the popover when you hover over the actor's picture */             
                                         <OverlayTrigger trigger={['hover', 'focus']} placement="left" overlay={<Popover id="popover-trigger-hover-focus">
                                                <strong>Name: </strong><br />
                                                {character.name}<br /><br />
@@ -215,8 +222,9 @@ class Characters extends React.Component {
 
                 }
 
+            
+            /* Display the pagination bar */
             <div className='text-center'>
-
                 {!this.state.numPages
                     ? null
                     : <Pagination

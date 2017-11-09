@@ -30,6 +30,7 @@ var headingStyle={
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
+    color:'#d3d1d1',
 }
 
 class ActorInstance extends React.Component {

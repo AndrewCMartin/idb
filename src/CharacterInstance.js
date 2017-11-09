@@ -4,6 +4,7 @@ import {Col, Row} from 'react-bootstrap'
 
 var axios = require('axios');
 
+{/* Responsible for styling the content in the body */}
 var containerStyle = {
     backgroundColor: 'black',
     margin:'auto',
@@ -27,34 +28,32 @@ var imageStyle = {
     height: '400px',
 }
 
-
-
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
+    color:'#d3d1d1',
 }
-
 
 
 class CharacterInstance extends React.Component {
     constructor(props) {
         super(props);
-        // To store the information of the characters we get from our query
+        {/* Store actor info we get from query */}
         this.state = {
             character: {}
         };
     }
 
     componentDidMount() {
+        {/* Query and store all data */}
         return axios.get("http://marvelus.me/api/character/" + window.location.href.substring(window.location.href.lastIndexOf("/") + 1)).then(res => {
             const character = res.data;
-            console.log(character);
             this.setState({character});
         });
     }
 
     render() {
-        
+        {/* Make containers for characters, movies, tvshows to store the relationship to this model */}
         const actors = this.state.character.actors || [];
         const events = this.state.character.events || [];
         const series = this.state.character.comicseries || [];
@@ -62,7 +61,6 @@ class CharacterInstance extends React.Component {
         const movies = this.state.character.movies || [];
 
         return (
-
             <div class="container" style={containerStyle}>
                 <div class="panel" style={panelStyle}>
                     <div class="panel-heading" style={headingStyle}>
@@ -76,13 +74,14 @@ class CharacterInstance extends React.Component {
                                                      class="img-responsive" style={imageStyle} alt="Image"/>
             </Col>
             <Col xs={7} md={7}>
-
+                                {/* Information/attributes of the actor */}
                                 <h3 style={headingStyle}>Description</h3>
                                 <p>{this.state.character.desc}</p>
                                 <br></br>
                                 <h3 style={headingStyle}>Stories</h3>
                                 <p>{this.state.character.stories}</p>
                                 <br></br>
+            {/* Goes through the data in the actor lists, and makes linkable */}
              <h3 style={headingStyle}>Portrayed by Actors</h3>
                                     <ul>
                                         {actors.length > 0 ? actors.map(function (actor) {
@@ -103,7 +102,7 @@ class CharacterInstance extends React.Component {
           
             
             <br></br>
-                               
+                                   {/* Goes through the data in the events container, lists, and makes linkable */}
                                     <h3 style={secColStyle}>Events</h3>
                                     <br></br>
                                     <ul>
@@ -119,7 +118,7 @@ class CharacterInstance extends React.Component {
             
             <br></br>
 
-                                
+                                    {/* Goes through the data in the comic series container, lists, and makes linkable */}
                                     <h3 style={secColStyle}>Comic Series</h3>
                                     <br></br>
                                     <ul>
@@ -136,7 +135,7 @@ class CharacterInstance extends React.Component {
             
             
             <br></br>
-                                
+                                {/* Goes through the data in the movie container, lists, and makes linkable */}
                                     <h3 style={secColStyle}>Appears in Movies</h3>
                                     <br></br>
                                     <ul>
@@ -151,7 +150,7 @@ class CharacterInstance extends React.Component {
            
             
             <br></br>
-                                
+                                {/* Goes through the data in the tv shows container, lists, and makes linkable */}
                                     <h3 style={secColStyle}>Appears in TV Shows</h3>
                                     <br></br>
                                     <ul>
@@ -161,9 +160,6 @@ class CharacterInstance extends React.Component {
                                         }) : "None"}
                                     </ul>
                                
-
-
-{/*</ul>*/}
 </Col>
 </Row>
                         </div>

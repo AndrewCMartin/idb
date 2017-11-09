@@ -31,6 +31,7 @@ var imageStyle = {
 var secColStyle = {
     textTransform: 'uppercase',
     textAlign: 'center',
+    color:'#d3d1d1',
 }
 
 class MovieInstance extends React.Component {
