@@ -257,6 +257,7 @@ class Characters extends React.Component {
                                         </div>
                                         </OverlayTrigger>
                                     </div>
+                                   </div>
                                 </Link>
                             </div>
                         )}
