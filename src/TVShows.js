@@ -1,6 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
+import {
+    Button,
+    DropdownButton,
+    Form,
+    FormControl,
+    FormGroup,
+    MenuItem,
+    OverlayTrigger,
+    Pagination,
+    Popover
+} from 'react-bootstrap'
 import Highlighter from 'react-highlight-words'
 import './Header.css'
 import styles from './Actors.css'
@@ -79,10 +89,10 @@ updateItems() {
         q: JSON.stringify(this.state.q),
     };
     if (this.state.search_string.length > 0) {
-        url = 'http://marvelus.me/api/search/tv_show';
+        url = 'http://marvelus.me/api/search/tvshow';
         params['query'] = this.state.search_string;
     }
-    axios.get('http://marvelus.me/api/tv_show', {
+    axios.get(url, {
         params: params
     }).then(res => {
         this.state.numPages = res.data.total_pages;
@@ -124,6 +134,7 @@ handleSelectFilter(eventKey) {
 /* Resets all options to the way when user first came to site */
 handleResetFilter() {
     this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
+    this.state.search_string = '';
     this.updateItems();
 }
     

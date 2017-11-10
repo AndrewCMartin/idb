@@ -295,12 +295,12 @@ def add_series(series):
 
 def load_all():
     r = load_results()
-    add_characters(r["characters"])
-    add_actors(r["actors"])
-    add_movies(r["movies"])
-    add_tvshows(r["tvshows"])
-    # add_events(r["events"])
-    # add_series(r["series"])
+    # add_characters(r["characters"])
+    # add_actors(r["actors"])
+    # add_movies(r["movies"])
+    # add_tvshows(r["tvshows"])
+    add_events(r["events"])
+    add_series(r["series"])
 
 
 if __name__ == '__main__':

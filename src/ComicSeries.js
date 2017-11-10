@@ -1,6 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {Button, Form, FormControl, FormGroup, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import {
+    Button,
+    DropdownButton,
+    Form,
+    FormControl,
+    FormGroup,
+    MenuItem,
+    OverlayTrigger,
+    Pagination,
+    Popover
+} from 'react-bootstrap'
 import Highlighter from 'react-highlight-words'
 import './Header.css'
 import styles from './Actors.css'
@@ -88,7 +98,7 @@ updateItems() {
         params['query'] = this.state.search_string;
 
     }
-    axios.get('http://marvelus.me/api/comic_series', {
+    axios.get(url, {
         params: params
     }).then(res => {
         this.state.numPages = res.data.total_pages;
