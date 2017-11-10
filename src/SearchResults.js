@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Col, Pagination, Panel, Row} from 'react-bootstrap'
+import {Col, Pagination, Row} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
+import styles from './Highlighter.css'
+import './SearchResults.css'
 
 var axios = require('axios');
 
@@ -25,7 +28,7 @@ class SearchResults extends React.Component {
         super(props);
 
         this.state = {
-            query_string: "",
+            query_string: decodeURI(window.location.href.substring(window.location.href.lastIndexOf("=") + 1)),
             results_per_page: 6,
             actor_results: {},
             character_results: {},
@@ -42,6 +45,27 @@ class SearchResults extends React.Component {
         this.updateEventItems = this.updateEventItems.bind(this);
         this.updateMovieItems = this.updateMovieItems.bind(this);
         this.updateTVShowItems = this.updateTVShowItems.bind(this);
+
+        this.updateActorItems(1);
+        this.updateCharacterItems(1);
+        this.updateComicItems(1);
+        this.updateMovieItems(1);
+        this.updateTVShowItems(1);
+        this.updateEventItems(1);
+
+    }
+
+    componentDidUpdate() {
+        var newString = decodeURI(window.location.href.substring(window.location.href.lastIndexOf("=") + 1));
+        if (newString != this.state.query_string) {
+            this.state.query_string = newString;
+            this.updateActorItems(1);
+            this.updateCharacterItems(1);
+            this.updateComicItems(1);
+            this.updateMovieItems(1);
+            this.updateTVShowItems(1);
+            this.updateEventItems(1);
+        }
 
     }
 
@@ -99,17 +123,6 @@ class SearchResults extends React.Component {
         });
     }
 
-    componentDidMount() {
-        this.state.query_string = window.location.href.substring(window.location.href.lastIndexOf("=") + 1);
-
-        this.updateActorItems(1);
-        this.updateCharacterItems(1);
-        this.updateComicItems(1);
-        this.updateMovieItems(1);
-        this.updateTVShowItems(1);
-        this.updateEventItems(1);
-    }
-
 
     render() {
         var ulStyles = {
@@ -123,6 +136,8 @@ class SearchResults extends React.Component {
         };
 
 
+        const query = this.state.query_string || '';
+        const searchWords = this.state.query_string ? this.state.query_string.split(" ") : [];
         const actors = this.state.actor_results.objects || [];
         const characters = this.state.character_results.objects || [];
         const comics = this.state.comic_results.objects || [];
@@ -138,18 +153,26 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/actor/${actor.id}`}>
-                                    <Panel header={actor.name} footer={"Movies: " + actor.movies.length}>
-                                        <img
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={actor.name}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={"https://image.tmdb.org/t/p/w185" + actor.image}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : this.state.actor_results.length > 0 ? "None" : "Loading..."}
+                    }) : this.state.actor_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
 
                 <div className='text-center'>
@@ -175,18 +198,27 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/movie/${movie.id}`}>
-                                    <Panel header={movie.title}>
-                                        <img
+
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={movie.title}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={"https://image.tmdb.org/t/p/w185" + movie.poster_path}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : "None"}
+                    }) : this.state.movie_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
                 <div className='text-center'>
                     {!this.state.movie_results.total_pages
@@ -212,18 +244,27 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/tvshow/${tvshow.id}`}>
-                                    <Panel header={tvshow.name}>
-                                        <img
+
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={tvshow.name}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={"https://image.tmdb.org/t/p/w185" + tvshow.poster_path}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : "None"}
+                    }) : this.state.tvshow_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
                 <div className='text-center'>
                     {!this.state.tvshow_results.total_pages
@@ -248,18 +289,26 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/character/${character.id}`}>
-                                    <Panel header={character.name} footer={"Actors: " + character.actors.length}>
-                                        <img
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={character.name}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={character.thumbnail}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : "None"}
+                    }) : this.state.character_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
 
                 <div className='text-center'>
@@ -287,18 +336,27 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/comic_series/${comic.id}`}>
-                                    <Panel header={comic.title}>
-                                        <img
+
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={comic.title}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={comic.thumbnail}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : "None"}
+                    }) : this.state.comic_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
                 <div className='text-center'>
                     {!this.state.event_results.total_pages
@@ -324,18 +382,26 @@ class SearchResults extends React.Component {
                         return (
                             <Col md={2} sm={4} xs={12}>
                                 <Link to={`/event/${event.id}`}>
-                                    <Panel header={event.title}>
-                                        <img
+                                    <div className="panel" style={changeColor}>
+                                        <div className="panel-heading" style={linkColor}>
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={searchWords}
+                                                autoEscape={true}
+                                                textToHighlight={event.title}
+                                            /></div>
+                                        <div className="panel-body"><img
                                             src={event.thumbnail}
                                             className="img-responsive" style={imageStyles}
                                             alt="Image"/>
-                                    </Panel>
+                                        </div>
+                                    </div>
 
                                 </Link>
                             </Col>
 
                         )
-                    }) : "None"}
+                    }) : this.state.event_results.num_results === 0 ? "None" : "Loading..."}
                 </Row>
 
                 <div className='text-center'>

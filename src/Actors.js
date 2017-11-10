@@ -193,7 +193,7 @@ class Actors extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search in Actors..."
+                                    placeholder="Search..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
@@ -225,13 +225,23 @@ class Actors extends React.Component {
 
                                             {/* In charge of the popover when you hover over the actor's picture */}
 
-                                            <OverlayTrigger trigger={['hover', 'focus']} 
-                                                            placement={i === 0 ? "right" : "left"}
-                                                            overlay={<Popover id="popover-trigger-hover-focus">
-                                               <strong><u>{actor.name}</u></strong>
+                                              <OverlayTrigger trigger={['hover', 'focus']}
+                                                              placement={i === 0 ? "right" : "left"}
+                                                              overlay={<Popover id="popover-trigger-hover-focus">
+                                                                  <strong><u>{<Highlighter
+                                                                      highlightClassName={styles.Highlight}
+                                                                      searchWords={this.state.search_string.split(" ")}
+                                                                      autoEscape={true}
+                                                                      textToHighlight={actor.name}
+                                                                  />}</u></strong>
                                                <br /><br />
                                                <strong>Bio: </strong>
-                                               {actor.bio}<br />
+                                                                  {<Highlighter
+                                                                      highlightClassName={styles.Highlight}
+                                                                      searchWords={this.state.search_string.split(" ")}
+                                                                      autoEscape={true}
+                                                                      textToHighlight={actor.bio}
+                                                                  />}<br/>
                                                <strong>Birthday: </strong>
                                                {actor.birthday}<br />
                                                <strong># of TV Shows: </strong>
@@ -255,7 +265,8 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
-                                            <div className="panel-footer">
+                                              <div className="panel-footer"
+                                                   style={{backgroundColor: 'black', color: 'white'}}>
                                                Marvel Characters: {actor.characters.length}
                                             </div>
                                         </div>

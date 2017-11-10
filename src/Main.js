@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import {Route, Switch, withRouter} from 'react-router-dom'
 import Home from './Home'
 import About from './About'
 import Characters from './Characters'
@@ -50,4 +50,4 @@ const Main = () => (
   </main>
 )
 
-export default Main
+export default withRouter(Main);
