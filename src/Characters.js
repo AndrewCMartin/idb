@@ -21,6 +21,7 @@ var panelColor = {
 
 var linkColor = {
     color: 'white',
+    textAlign: 'center',
 }
 
 var dropdownStyle = {
@@ -207,6 +208,10 @@ class Characters extends React.Component {
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
+
+                                        <div className="panel-heading" style={{textAlign:'center'}}>
+                                            
+
                                         <div className="panel-heading">
                                             <div style={linkColor}>
                                                {/* For character search -- highlights the word found */}
@@ -217,6 +222,7 @@ class Characters extends React.Component {
                                                 textToHighlight={character.name}
                                                 /> 
                                             </div>
+
                                         </div>
                                                      
                                                      
@@ -248,6 +254,7 @@ class Characters extends React.Component {
                                         </div>
                                         </OverlayTrigger>
                                     </div>
+                                   </div>
                                 </Link>
                             </div>
                         )}

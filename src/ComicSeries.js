@@ -22,6 +22,7 @@ var panelColor = {
 
 var linkColor = {
     color: 'white',
+    textAlign: 'center',
 }
 
 var dropdownStyle = {

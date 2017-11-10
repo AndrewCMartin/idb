@@ -1,522 +1,479 @@
----
-  swagger: "2.0"
-  info: 
-    version: "1.0.0"
-    title: "MarvelUs API"
-    description: "MarvelUs is a simple API allowing users to view all things related to Marvel - movies, TV shows, characters, actors, comic series, and events."
-    contact: 
-      name: "Swagger API Team"
-    license: 
-      name: "MIT"
-  host: "marvelus.me"
-  basePath: "/api/"
-  schemes: 
-    - "http"
-  consumes: 
-    - "application/json"
-  produces: 
-    - "application/json"
+basePath: /api
+consumes:
+  - application/json
+definitions:
+  Actor:
+    properties:
+      bio:
+        format: string
+        type: string
+      birthday:
+        format: date
+        type: string
+      id:
+        format: int32
+        type: integer
+      image:
+        format: string
+        type: string
+      name:
+        format: string
+        type: string
+    type: object
+  Character:
+    properties:
+      desc:
+        format: string
+        type: string
+      id:
+        format: int32
+        type: integer
+      name:
+        format: string
+        type: string
+      stories:
+        format: string
+        type: string
+      thumbnail:
+        format: string
+        type: string
+    type: object
+  ComicSeries:
+    properties:
+      desc:
+        format: string
+        type: string
+      end_year:
+        format: int32
+        type: integer
+      id:
+        format: int32
+        type: integer
+      rating:
+        format: float
+        type: number
+      runtime:
+        format: int32
+        type: integer
+      start_year:
+        format: int32
+        type: integer
+      thumbnail:
+        format: string
+        type: string
+      title:
+        format: string
+        type: string
+    type: object
+  Event:
+    properties:
+      creators:
+        format: string
+        type: string
+      desc:
+        format: string
+        type: string
+      id:
+        format: int32
+        type: integer
+      start:
+        format: date
+        type: string
+      thumbnail:
+        format: string
+        type: string
+      title:
+        format: string
+        type: string
+    type: object
+  Movie:
+    properties:
+      adult:
+        format: bool
+        type: boolean
+      id:
+        format: int32
+        type: integer
+      lang:
+        format: string
+        type: string
+      overview:
+        format: string
+        type: string
+      poster_path:
+        format: string
+        type: string
+      rating:
+        format: float
+        type: number
+      release_date:
+        format: date
+        type: string
+      runtime:
+        format: int32
+        type: integer
+      title:
+        format: string
+        type: string
+    type: object
+  TvShow:
+    properties:
+      id:
+        format: int32
+        type: integer
+      last_air_date:
+        format: date
+        type: string
+      name:
+        format: string
+        type: string
+      num_episodes:
+        format: int32
+        type: integer
+      num_seasons:
+        format: int32
+        type: integer
+      overview:
+        format: string
+        type: string
+      poster_path:
+        format: string
+        type: string
+      rating:
+        format: float
+        type: number
+    type: object
+host: marvelus.me
+info: {
+  "title" : "marvelus",
+  "version" : "0.1"
+}
+paths:
+  /actor:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List actor
+          schema:
+            items:
+              $ref: '#/definitions/Actor'
+            title: actor
+            type: array
+      tags:
+        - Actor
+  '/actor/{actorId}':
+    get:
+      parameters:
+        - description: ID of Actor
+          in: path
+          name: actorId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success actor
+          schema:
+            $ref: '#/definitions/Actor'
+            title: actor
+      tags:
+        - Actor
+  /character:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List character
+          schema:
+            items:
+              $ref: '#/definitions/Character'
+            title: character
+            type: array
+      tags:
+        - Character
+  '/character/{characterId}':
+    get:
+      parameters:
+        - description: ID of Character
+          in: path
+          name: characterId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success character
+          schema:
+            $ref: '#/definitions/Character'
+            title: character
+      tags:
+        - Character
+  /comic_series:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List comic_series
+          schema:
+            items:
+              $ref: '#/definitions/ComicSeries'
+            title: comic_series
+            type: array
+      tags:
+        - ComicSeries
+  '/comic_series/{comicseriesId}':
+    get:
+      parameters:
+        - description: ID of ComicSeries
+          in: path
+          name: comicseriesId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success comic_series
+          schema:
+            $ref: '#/definitions/ComicSeries'
+            title: comic_series
+      tags:
+        - ComicSeries
+  /event:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List event
+          schema:
+            items:
+              $ref: '#/definitions/Event'
+            title: event
+            type: array
+      tags:
+        - Event
+  '/event/{eventId}':
+    get:
+      parameters:
+        - description: ID of Event
+          in: path
+          name: eventId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success event
+          schema:
+            $ref: '#/definitions/Event'
+            title: event
+      tags:
+        - Event
+  /movie:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List movie
+          schema:
+            items:
+              $ref: '#/definitions/Movie'
+            title: movie
+            type: array
+      tags:
+        - Movie
+  '/movie/{movieId}':
+    get:
+      parameters:
+        - description: ID of Movie
+          in: path
+          name: movieId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success movie
+          schema:
+            $ref: '#/definitions/Movie'
+            title: movie
+      tags:
+        - Movie
+  /tv_show:
+    get:
+      parameters:
+        - description: searchjson
+          in: query
+          name: q
+          type: string
+      responses:
+        '200':
+          description: List tv_show
+          schema:
+            items:
+              $ref: '#/definitions/TvShow'
+            title: tv_show
+            type: array
+      tags:
+        - TvShow
+  '/tv_show/{tvshowId}':
+    get:
+      parameters:
+        - description: ID of TvShow
+          in: path
+          name: tvshowId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Success tv_show
+          schema:
+            $ref: '#/definitions/TvShow'
+            title: tv_show
+      tags:
+        - TvShow
+        
+  '/search/actor':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List actor
+          schema:
+            items:
+              $ref: '#/definitions/Actor'
+            title: actor
+            type: array
+      tags:
+        - Search
 
-  paths: 
-    /characters: 
-      get: 
-        description: "Returns all characters"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "character response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/Character"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-
-    /characters/{id}: 
-      get: 
-        description: "Returns a character based on a single ID"
-        operationId: "findCharacterById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of character to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "character response"
-            schema: 
-              $ref: "#/definitions/Character"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /movies: 
-      get: 
-        description: "Returns all movies"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "movie response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/Movie"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-
-    /movies/{id}: 
-      get: 
-        description: "Returns a movie based on a single ID"
-        operationId: "findMovieById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of movie to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "movie response"
-            schema: 
-              $ref: "#/definitions/Movie"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /events: 
-      get: 
-        description: "Returns all events"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "event response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/Event"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /events/{id}: 
-      get: 
-        description: "Returns an event based on a single ID"
-        operationId: "findEventById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of event to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "event response"
-            schema: 
-              $ref: "#/definitions/Event"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /tvshows: 
-      get: 
-        description: "Returns all tv shows"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "tv show response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/TVShow"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /tvshows/{id}: 
-      get: 
-        description: "Returns a tv show based on a single ID"
-        operationId: "findTVShowById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of tv show to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "tv show response"
-            schema: 
-              $ref: "#/definitions/TVShow"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /comicseries: 
-      get: 
-        description: "Returns all comic series"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "comic series response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/Comic"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /comicseries/{id}: 
-      get: 
-        description: "Returns a comic series based on a single ID"
-        operationId: "findComicSeriesById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of comic series to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "comic series response"
-            schema: 
-              $ref: "#/definitions/Comic"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /actors: 
-      get: 
-        description: "Returns all actors"
-        operationId: "findPets"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "limit"
-            in: "query"
-            description: "maximum number of results to return"
-            required: false
-            type: "integer"
-            format: "int32"
-        responses: 
-          "200":
-            description: "actor response"
-            schema: 
-              type: "array"
-              items: 
-                $ref: "#/definitions/Actor"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-    /actors/{id}: 
-      get: 
-        description: "Returns an actor based on a single ID"
-        operationId: "findActorById"
-        produces: 
-          - "application/json"
-        parameters: 
-          - 
-            name: "id"
-            in: "path"
-            description: "ID of actor to fetch"
-            required: true
-            type: "integer"
-            format: "int64"
-        responses: 
-          "200":
-            description: "actor response"
-            schema: 
-              $ref: "#/definitions/Actor"
-          default: 
-            description: "unexpected error"
-            schema: 
-              $ref: "#/definitions/ErrorModel"
-  definitions: 
-    Character: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            power:
-              type: "string"
-              
-            origin:
-              type: "string"
-              
-            realname:
-              type: "string"
-              
-            movies:
-              type: "string"
-              
-            comics:
-              type: "string"
-  
-    Movie: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            releasedate:
-              type: "string"
-              
-            cast:
-              type: "string"
-              
-            avgrating:
-              type: "string"
-              
-            overview:
-              type: "string"
-              
-            characters:
-              type: "string"
-    TVShow: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            description:
-              type: "string"
-              
-            airdate:
-              type: "string"
-              
-            genres:
-              type: "string"
-              
-            avgrating:
-              type: "string"
-              
-            cast:
-              type: "string"
-              
-            characters:
-              type: "string"
-    Event: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            date:
-              type: "string"
-              
-            characters:
-              type: "string"
-              
-            description:
-              type: "string"
-              
-            comics:
-              type: "string"
-              
-            creators:
-              type: "string"
-    Comic: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            issues:
-              type: "integer"
-              format: "int64"
-            
-            date:
-              type: "string"
-              
-            character:
-              type: "string"
-              
-            events:
-              type: "string"
-              
-            description:
-              type: "string"
-    Actor: 
-      type: "object"
-      allOf: 
-        - 
-          required: 
-            - "id"
-          properties: 
-            id: 
-              type: "integer"
-              format: "int64"
-            
-            name: 
-              type: "string"
-              
-            birthyear:
-              type: "integer"
-              format: "int64"
-              
-            works:
-              type: "string"
-              
-            characters:
-              type: "string"
-              
-            nonmarvelworks:
-              type: "string"
-    ErrorModel: 
-      type: "object"
-      required: 
-        - "code"
-        - "message"
-      properties: 
-        code: 
-          type: "integer"
-          format: "int32"
-        message: 
-          type: "string"
+  '/search/character':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List character
+          schema:
+            items:
+              $ref: '#/definitions/Character'
+            title: character
+            type: array
+      tags:
+        - Search
 
 
-# Marvelus
+  '/search/comic_series':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List comic_series
+          schema:
+            items:
+              $ref: '#/definitions/ComicSeries'
+            title: comic_series
+            type: array
+      tags:
+        - Search
 
-#Polls is a simple API allowing consumers to view polls and vote in them.
+  '/search/event':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List event
+          schema:
+            items:
+              $ref: '#/definitions/Event'
+            title: event
+            type: array
+      tags:
+        - Search
 
-# Characters
-## Character Collection
-## Character
+  '/search/movie':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List movie
+          schema:
+            items:
+              $ref: '#/definitions/Movie'
+            title: movie
+            type: array
+      tags:
+        - Search
 
-# Movies
-## Movie Collection
-## Movie
+  '/search/tvshow':
+    get:
+      parameters:
+        - description: Text to search for
+          in: query
+          name: query 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List tv_show
+          schema:
+            items:
+              $ref: '#/definitions/TvShow'
+            title: tv_show
+            type: array
+      tags:
+        - Search
 
-# TV Shows
-## TV Show Collection
-## Tv Show
-
-# Events
-## Events
-## Event
-
-# Comic Series
-## Comic Series Collection
-## Comic
-
-# Actors
-## Actors
-## Actor
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+swagger: '2.0'
+tags:
+  - name: Actor
+  - name: Character
+  - name: ComicSeries
+  - name: Event
+  - name: Movie
+  - name: TvShow
+  - name: Search
