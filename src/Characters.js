@@ -19,6 +19,7 @@ var panelColor = {
 
 var linkColor = {
     color: 'white',
+    textAlign: 'center',
 }
 
 var dropdownStyle = {
@@ -182,7 +183,7 @@ class Characters extends React.Component {
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
-                                        <div className="panel-heading">
+                                        <div className="panel-heading" style={{textAlign:'center'}}>
                                             <div style={linkColor}>{character.name}</div>
                                         </div>
                                                      

@@ -3,6 +3,16 @@ import {Carousel, Container, Slide} from 'react-bootstrap'
 
 var imageStyles = {
     height: "850px",
+    width: "1600px"
+}
+
+var headerStyle={
+    fontSize: '150px',
+    color: 'black',
+    textDecoration: 'bold',
+    textShadow: '2px 1px gray',
+    textAlign: 'center',
+    opacity: '0.0',
 }
 
 
@@ -10,6 +20,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+            
                 <Carousel controls={false}>
                     <Carousel.Item>
                         <img className="center-block" alt="900x500"
@@ -29,7 +40,8 @@ class Home extends React.Component {
                 </Carousel>
 
                 <div>
-                    <h1 className="text-center text-danger"><b>MARVELUS</b></h1>
+            <h1 style={headerStyle}><b>MARVELUS</b></h1>
+                    
                 </div>
             </div>
         )
