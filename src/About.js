@@ -69,8 +69,8 @@ const About = () => (
                             travel.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 53</b></li>
-                        <li><b>No. of Issues: </b>10 </li>
+                        <li><b>No. of Commits: </b>84</li>
+                        <li><b>No. of Issues: </b>14</li>
                         <li><b>No. of Unit Tests: </b> 6</li>
 
                     </div>
@@ -87,10 +87,10 @@ const About = () => (
                             photos, videos, or music, I think art is an important outlet that everyone should try.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: 14</b></li>
+                        <li><b>No. of Commits: </b>20</li>
                         <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Issues: </b></li>
-                        <li><b>No. of Unit Tests: </b> 2</li>
+                        <li><b>No. of Issues: </b>11</li>
+                        <li><b>No. of Unit Tests: </b> 6</li>
 
                     </div>
 
@@ -107,9 +107,9 @@ const About = () => (
                             of the Marvel creations, most notably Spider-Man.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: 70</b></li>
-                        <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Unit Tests: </b>2</li>
+                        <li><b>No. of Commits: </b>68</li>
+                        <li><b>No. of Issues: </b>11</li>
+                        <li><b>No. of Unit Tests: </b>6</li>
 
                     </div>
 
@@ -144,8 +144,8 @@ const About = () => (
                             of 2019 with a Bachelor's degree in Computer Science.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 38</b></li>
-                        <li><b>No. of Issues: </b> 8</li>
+                        <li><b>No. of Commits: </b>27</li>
+                        <li><b>No. of Issues: </b> 11</li>
                         <li><b>No. of Unit Tests: </b> 2</li>
 
                     </div>
@@ -160,10 +160,10 @@ const About = () => (
                             Marvel Cinematic Universe. She will be graduating in May of 2019 with a Bachelor's degree in
                             Computer Science.
                         </li>
-                        <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: 66</b></li>
-                        <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Unit Tests: </b>2</li>
+                        <li><b>Responsibilities: </b>Front end</li>
+                        <li><b>No. of Commits: </b>90</li>
+                        <li><b>No. of Issues: </b> 11</li>
+                        <li><b>No. of Unit Tests: </b>4</li>
                     </div>
                 </div>
             </div>
@@ -174,9 +174,9 @@ const About = () => (
     <Col xs={4} md={4}>
             <h3 align="center" style={{color: 'white'}}><b>Statistics</b></h3>
             
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Commits:241 </b></li>
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Issues:42</b></li>
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Unit Tests: </b>13</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Commits: </b>338</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Issues:</b>58</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Unit Tests: </b>25</li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="http://docs.andrewcmartin.apiary.io/#" style={{color: '#c12c2c'}}><b>Apiary API</b></a></li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://github.com/AndrewCMartin/idb" style={{color: '#c12c2c'}}><b>GITHUB REPO</b></a></li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://trello.com/b/qLTaMYvu/marvelus" style={{color: '#c12c2c'}}><b>TRELLO</b></a></li>

@@ -27,6 +27,7 @@ var panelColor = {
 
 var linkColor = {
     color: 'white',
+    textAlign: 'center',
 }
 
 var dropdownStyle = {
@@ -121,7 +122,7 @@ class Actors extends React.Component {
 
     /* Select which filter to use */
     handleSelectFilter(eventKey) {
-        this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
+        this.state.q.filters.push({"name": "id", "op": "gt", "val": 9860});
         this.updateItems();
     }
 
@@ -135,7 +136,7 @@ class Actors extends React.Component {
     /* Live change as user types into search bar */
     handleSearchChange(eventKey) {
         this.state.search_string = eventKey.target.value;
-        this.updateItems()
+        this.updateItems();
     }
 
     /* Displays the "sort by" dropdown */
@@ -193,7 +194,7 @@ class Actors extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search..."
+                                    placeholder="Search in Actors..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
@@ -265,8 +266,7 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
-                                              <div className="panel-footer"
-                                                   style={{backgroundColor: 'black', color: 'white'}}>
+                                            <div className="panel-footer" style={{backgroundColor:'black',color:'white'}}>
                                                Marvel Characters: {actor.characters.length}
                                             </div>
                                         </div>

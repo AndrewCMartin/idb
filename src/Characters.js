@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Button, Form, FormControl, FormGroup, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
 import Highlighter from 'react-highlight-words'
-
-import styles from './Actors.css'
 import './Header.css'
+import styles from './Actors.css'
 import './ModelStyle.css'
     
 var axios = require('axios');
@@ -22,6 +21,7 @@ var panelColor = {
 
 var linkColor = {
     color: 'white',
+    textAlign: 'center',
 }
 
 var dropdownStyle = {
@@ -52,6 +52,7 @@ class Characters extends React.Component {
         this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelectFilter = this.handleSelectFilter.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleResetFilter = this.handleResetFilter.bind(this);
         this.updateItems = this.updateItems.bind(this);
 
@@ -80,9 +81,9 @@ class Characters extends React.Component {
     updateItems() {
         var url = 'http://marvelus.me/api/character';
         var params = {
-                results_per_page: this.state.resultsPerPage,
-                page: this.state.activePage,
-                q: JSON.stringify(this.state.q),
+            results_per_page: this.state.resultsPerPage,
+            page: this.state.activePage,
+            q: JSON.stringify(this.state.q),
         };
         if (this.state.search_string.length > 0) {
             url = 'http://marvelus.me/api/search/character';
@@ -132,7 +133,7 @@ class Characters extends React.Component {
     /* Live change as user types into search bar */
     handleSearchChange(eventKey) {
         this.state.search_string = eventKey.target.value;
-        this.updateItems()
+        this.updateItems();
     }
 
     /* Displays the "sort by" dropdown */
@@ -191,16 +192,13 @@ class Characters extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search in Characters..."
+                                    placeholder="Search Characters..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
                     </div>
                 </div>
                       
-                <form>
-                </form>
-                                    
                 {/* Go through and display 6 characters per page */}
                 {this.state.charactersGrouped.length == 0 || !this.state.charactersGrouped ? null :
                     this.state.charactersGrouped.map(charactersList =>
@@ -210,16 +208,21 @@ class Characters extends React.Component {
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
+
+                                        <div className="panel-heading" style={{textAlign:'center'}}>
+                                            
+
                                         <div className="panel-heading">
                                             <div style={linkColor}>
-                                                {/* For actor search -- highlights the word found */}
-                                                    <Highlighter
-                                                        highlightClassName={styles.Highlight}
-                                                        searchWords={this.state.search_string.split(" ")}
-                                                        autoEscape={true}
-                                                        textToHighlight={character.name}
-                                                    />
+                                               {/* For character search -- highlights the word found */}
+                                                <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={this.state.search_string.split(" ")}
+                                                autoEscape={true}
+                                                textToHighlight={character.name}
+                                                /> 
                                             </div>
+
                                         </div>
                                                      
                                                      
@@ -251,6 +254,7 @@ class Characters extends React.Component {
                                         </div>
                                         </OverlayTrigger>
                                     </div>
+                                   </div>
                                 </Link>
                             </div>
                         )}
