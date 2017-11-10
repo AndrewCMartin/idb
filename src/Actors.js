@@ -121,7 +121,7 @@ class Actors extends React.Component {
 
     /* Select which filter to use */
     handleSelectFilter(eventKey) {
-        this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
+        this.state.q.filters.push({"name": "id", "op": "gt", "val": 9860});
         this.updateItems();
     }
 
@@ -135,7 +135,7 @@ class Actors extends React.Component {
     /* Live change as user types into search bar */
     handleSearchChange(eventKey) {
         this.state.search_string = eventKey.target.value;
-        this.updateItems()
+        this.updateItems();
     }
 
     /* Displays the "sort by" dropdown */
@@ -155,8 +155,8 @@ class Actors extends React.Component {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"filter"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
-                <MenuItem eventKey="movies">Appears In Movie(s)</MenuItem>
-                <MenuItem eventKey="tvshows">Appears In TV Show(s)</MenuItem>
+                <MenuItem eventKey="name">ID greater than 9860</MenuItem>
+                <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
             </DropdownButton>
         );
     }
@@ -193,7 +193,7 @@ class Actors extends React.Component {
                             <FormGroup controlId="formBasicText">
                                 <FormControl
                                     type="text"
-                                    placeholder="Search..."
+                                    placeholder="Search Actors..."
                                     onChange={this.handleSearchChange}/>
                             </FormGroup>
                         </Form>
@@ -255,7 +255,7 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
-                                            <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
+                                            <div className="panel-footer">
                                                Marvel Characters: {actor.characters.length}
                                             </div>
                                         </div>

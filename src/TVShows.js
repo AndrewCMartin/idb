@@ -1,6 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
+import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, OverlayTrigger, Pagination, Popover} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
+import './Header.css'
+import styles from './Actors.css'
+import './ModelStyle.css'
 
 var axios = require('axios');
 
@@ -40,6 +44,7 @@ class TVShows extends React.Component{
     this.handleSelectDirection = this.handleSelectDirection.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleSelectFilter = this.handleSelectFilter.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleResetFilter = this.handleResetFilter.bind(this);
     this.updateItems = this.updateItems.bind(this);
 
@@ -49,6 +54,7 @@ class TVShows extends React.Component{
 
 getInitialState() {
     return {
+        search_string: '',
         shows: [],
         showsGrouped: [],
         numPages: 1,
@@ -65,12 +71,18 @@ getInitialState() {
 
 //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
 updateItems() {
+    var url = 'http://marvelus.me/api/tv_show';
+    var params = {
+        results_per_page: this.state.resultsPerPage,
+        page: this.state.activePage,
+        q: JSON.stringify(this.state.q),
+    };
+    if (this.state.search_string.length > 0) {
+        url = 'http://marvelus.me/api/search/tv_show';
+        params['query'] = this.state.search_string;
+    }
     axios.get('http://marvelus.me/api/tv_show', {
-        params: {
-            results_per_page: this.state.resultsPerPage,
-            page: this.state.activePage,
-            q: JSON.stringify(this.state.q),
-        }
+        params: params
     }).then(res => {
         this.state.numPages = res.data.total_pages;
         const shows = res.data.objects.map(show => show);
@@ -112,6 +124,12 @@ handleSelectFilter(eventKey) {
 handleResetFilter() {
     this.state.q.filters = [{"name": "poster_path", "op": "is_not_null"}];
     this.updateItems();
+}
+    
+/* Live change as user types into search bar */
+handleSearchChange(eventKey) {
+    this.state.search_string = eventKey.target.value;
+    this.updateItems()
 }
 
 /* Displays the "sort by" dropdown */
@@ -163,10 +181,18 @@ renderResetFilterButton(title) {
           <div className="row">
               {/* Display all sorting, filtering, searching options */}
               <div className='text-center'>
-                  {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                  {this.renderDropdownButtonSortDirection("Order", "")}
-                  {this.renderDropdownButtonFilter("Filter", "")}
-                  {this.renderResetFilterButton("Filter")}
+                  <Form inline>  
+                      {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                      {this.renderDropdownButtonSortDirection("Order", "")}
+                      {this.renderDropdownButtonFilter("Filter", "")}
+                      {this.renderResetFilterButton("Filter")}
+                      <FormGroup controlId="formBasicText">
+                          <FormControl
+                              type="text"
+                              placeholder="Search TV Shows..."
+                              onChange={this.handleSearchChange}/>
+                          </FormGroup>
+                  </Form>
               </div>
           </div>
         
@@ -180,8 +206,15 @@ renderResetFilterButton(title) {
                         <Link to={"/tvshow/" + show.id}>
                             <div className="panel" style={panelColor}>
                                 <div className="panel-heading">
-                                    <div style={linkColor}>{show.name}</div>
+                                    <div style={linkColor}>
                                     {/* For tv show search -- highlights the word found */}
+                                        <Highlighter
+                                            highlightClassName={styles.Highlight}
+                                            searchWords={this.state.search_string.split(" ")}
+                                            autoEscape={true}
+                                            textToHighlight={show.name}
+                                        />
+                                   </div>
                                 </div>
                                  {/* In charge of the popover when you hover over the tv shows's picture */}       
                                  <OverlayTrigger trigger={['hover', 'focus']} 

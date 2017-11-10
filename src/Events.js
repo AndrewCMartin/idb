@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
+import './Header.css'
+import styles from './Actors.css'
+import './ModelStyle.css'
 
 var axios = require('axios');
 
@@ -26,7 +30,6 @@ var dropdownStyle = {
 
 function splitarray(input, spacing) {
     var output = [];
-
     for (var i = 0; i < input.length; i += spacing) {
         output[output.length] = input.slice(i, i + spacing);
     }
@@ -42,6 +45,7 @@ class Events extends React.Component{
     this.handleSelect = this.handleSelect.bind(this);
     this.handleSelectFilter = this.handleSelectFilter.bind(this);
     this.handleResetFilter = this.handleResetFilter.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
     this.updateItems = this.updateItems.bind(this);
 
     this.state = this.getInitialState();
@@ -50,6 +54,7 @@ class Events extends React.Component{
 
 getInitialState() {
     return {
+        search_string: '',
         events: [],
         eventsGrouped: [],
         numPages: 1,
@@ -66,12 +71,18 @@ getInitialState() {
 
 //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
 updateItems() {
-    axios.get('http://marvelus.me/api/event', {
-        params: {
-            results_per_page: this.state.resultsPerPage,
-            page: this.state.activePage,
-            q: JSON.stringify(this.state.q),
-        }
+    var url = 'http://marvelus.me/api/event';
+    var params = {
+        results_per_page: this.state.resultsPerPage,
+        page: this.state.activePage,
+        q: JSON.stringify(this.state.q),
+    };
+    if (this.state.search_string.length > 0) {
+        url = 'http://marvelus.me/api/search/event';
+        params['query'] = this.state.search_string;
+    }
+    axios.get(url, {
+        params: params
     }).then(res => {
         this.state.numPages = res.data.total_pages;
         const events = res.data.objects.map(event => event);
@@ -112,6 +123,12 @@ handleSelectFilter(eventKey) {
 /* Resets all options to the way when user first came to site */
 handleResetFilter() {
     this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+    this.updateItems();
+}
+    
+/* Live change as user types into search bar */
+handleSearchChange(eventKey) {
+    this.state.search_string = eventKey.target.value;
     this.updateItems();
 }
 
@@ -163,10 +180,18 @@ render() {
             <div className="row">
                 {/* Display all sorting, filtering, searching options */}
                 <div className='text-center'>
-                    {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                    {this.renderDropdownButtonSortDirection("Order", "")}
-                    {this.renderDropdownButtonFilter("Filter", "")}
-                    {this.renderResetFilterButton("Filter")}
+                    <Form inline>
+                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                        {this.renderDropdownButtonSortDirection("Order", "")}
+                        {this.renderDropdownButtonFilter("Filter", "")}
+                        {this.renderResetFilterButton("Filter")}
+                        <FormGroup controlId="formBasicText">
+                            <FormControl
+                                type="text"
+                                placeholder="Search Events..."
+                                onChange={this.handleSearchChange}/>
+                        </FormGroup>
+                    </Form>
                 </div>
             </div>
             
@@ -180,7 +205,15 @@ render() {
                             <Link to={"/event/" + event.id}>
                                 <div className="panel" style={panelColor}>
                                     <div className="panel-heading">
-                                        <div style={linkColor}>{event.title}</div>
+                                        <div style={linkColor}>
+                                            {/* For event search -- highlights the word found */}
+                                            <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={this.state.search_string.split(" ")}
+                                                autoEscape={true}
+                                                textToHighlight={event.title}
+                                            />
+                                        </div>
                                     </div>
                                              
                                     {/* In charge of the popover when you hover over the event's picture */}         

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Button, Form, FormControl, FormGroup, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
 import './Header.css'
+import styles from './Actors.css'
 import './ModelStyle.css'
     
 var axios = require('axios');
@@ -49,6 +51,7 @@ class Characters extends React.Component {
         this.handleSelectDirection = this.handleSelectDirection.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSelectFilter = this.handleSelectFilter.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
         this.handleResetFilter = this.handleResetFilter.bind(this);
         this.updateItems = this.updateItems.bind(this);
 
@@ -58,6 +61,7 @@ class Characters extends React.Component {
 
     getInitialState() {
         return {
+            search_string: '',
             characters: [],
             charactersGrouped: [],
             numPages: 1,
@@ -74,12 +78,19 @@ class Characters extends React.Component {
     
     //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
-        axios.get('http://marvelus.me/api/character', {
-            params: {
-                results_per_page: this.state.resultsPerPage,
-                page: this.state.activePage,
-                q: JSON.stringify(this.state.q),
-            }
+        var url = 'http://marvelus.me/api/character';
+        var params = {
+            results_per_page: this.state.resultsPerPage,
+            page: this.state.activePage,
+            q: JSON.stringify(this.state.q),
+        };
+        if (this.state.search_string.length > 0) {
+            url = 'http://marvelus.me/api/search/character';
+            params['query'] = this.state.search_string;
+
+        }
+        axios.get(url, {
+            params: params
         }).then(res => {
             this.state.numPages = res.data.total_pages;
             const characters = res.data.objects.map(character => character);
@@ -115,6 +126,12 @@ class Characters extends React.Component {
     /* Resets all options to the way when user first came to site */
     handleResetFilter() {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
+        this.updateItems();
+    }
+    
+    /* Live change as user types into search bar */
+    handleSearchChange(eventKey) {
+        this.state.search_string = eventKey.target.value;
         this.updateItems();
     }
 
@@ -166,10 +183,18 @@ class Characters extends React.Component {
                 <div className="row">
                     {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
-                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                        {this.renderDropdownButtonSortDirection("Order", "")}
-                        {this.renderDropdownButtonFilter("Filter", "")}
-                        {this.renderResetFilterButton("Filter")}
+                        <Form inline>
+                            {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                            {this.renderDropdownButtonSortDirection("Order", "")}
+                            {this.renderDropdownButtonFilter("Filter", "")}
+                            {this.renderResetFilterButton("Filter")}
+                            <FormGroup controlId="formBasicText">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search Characters..."
+                                    onChange={this.handleSearchChange}/>
+                            </FormGroup>
+                        </Form>
                     </div>
                 </div>
                       
@@ -183,7 +208,15 @@ class Characters extends React.Component {
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
                                         <div className="panel-heading">
-                                            <div style={linkColor}>{character.name}</div>
+                                            <div style={linkColor}>
+                                               {/* For character search -- highlights the word found */}
+                                                <Highlighter
+                                                highlightClassName={styles.Highlight}
+                                                searchWords={this.state.search_string.split(" ")}
+                                                autoEscape={true}
+                                                textToHighlight={character.name}
+                                                /> 
+                                            </div>
                                         </div>
                                                      
                                                      
