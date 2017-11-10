@@ -256,7 +256,7 @@ class Actors extends React.Component {
 
                                             </div>
                                             </OverlayTrigger>
-                                            <div className="panel-footer">
+                                            <div className="panel-footer" style={{backgroundColor:'black',color:'white'}}>
                                                Marvel Characters: {actor.characters.length}
                                             </div>
                                         </div>

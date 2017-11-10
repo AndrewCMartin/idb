@@ -213,7 +213,7 @@ class Characters extends React.Component {
                                     <div className="panel" style={panelColor}>
 
                                         <div className="panel-heading" style={{textAlign:'center'}}>
-                                            <div style={linkColor}>{character.name}</div>
+                                            
 
                                         <div className="panel-heading">
                                             <div style={linkColor}>
