@@ -102,8 +102,11 @@ handleSelectDirection(eventKey) {
 
 /* Select which filter to use */
 handleSelectFilter(eventKey) {
-    this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
-    this.updateItems();
+    if(eventKey == "num_seasons") {
+        this.state.q.filters.push({"name": eventKey, "op": "gt", "val":1});        
+    } else {
+        this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
+    }    this.updateItems();
 }
 
 /* Resets all options to the way when user first came to site */
@@ -129,8 +132,8 @@ renderDropdownButtonFilter(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectFilter}>
-            <MenuItem eventKey="desc">Has Description</MenuItem>
-            <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
+                    <MenuItem eventKey="num_seasons">Ran for more than 1 season</MenuItem>
+                    <MenuItem eventKey="characters">Has Characters</MenuItem>
 
         </DropdownButton>
     );

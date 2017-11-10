@@ -102,7 +102,11 @@ class Movies extends React.Component {
 
     /* Select which filter to use */
     handleSelectFilter(eventKey) {
-        this.state.q.filters.push({"name": eventKey, "op": "is_not_null"});
+        if(eventKey == "lang") {
+            this.state.q.filters.push({"name": eventKey, "op": "equals", "val":"en"});            
+        } else { 
+            this.state.q.filters.push({"name": eventKey, "op": "gte", "val":7});            
+        }
         this.updateItems();
     }
 
@@ -130,8 +134,8 @@ class Movies extends React.Component {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
-                <MenuItem eventKey="desc">Has Description</MenuItem>
-                <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
+                <MenuItem eventKey="lang">In English</MenuItem>
+                <MenuItem eventKey="rating">7+ star Rating</MenuItem>
 
             </DropdownButton>
         );

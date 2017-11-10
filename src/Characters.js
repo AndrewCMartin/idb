@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, DropdownButton, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import {Button, DropdownButton, Form, FormControl, FormGroup, MenuItem, Pagination, OverlayTrigger, Popover} from 'react-bootstrap'
+import Highlighter from 'react-highlight-words'
+
+import styles from './Actors.css'
 import './Header.css'
 import './ModelStyle.css'
     
@@ -59,6 +62,7 @@ class Characters extends React.Component {
 
     getInitialState() {
         return {
+            search_string: '',
             characters: [],
             charactersGrouped: [],
             numPages: 1,
@@ -75,12 +79,19 @@ class Characters extends React.Component {
     
     //* Rerenders/updates the page to get the new data triggered by pagination, sorting, etc */
     updateItems() {
-        axios.get('http://marvelus.me/api/character', {
-            params: {
+        var url = 'http://marvelus.me/api/character';
+        var params = {
                 results_per_page: this.state.resultsPerPage,
                 page: this.state.activePage,
                 q: JSON.stringify(this.state.q),
-            }
+        };
+        if (this.state.search_string.length > 0) {
+            url = 'http://marvelus.me/api/search/character';
+            params['query'] = this.state.search_string;
+
+        }
+        axios.get(url, {
+            params: params
         }).then(res => {
             this.state.numPages = res.data.total_pages;
             const characters = res.data.objects.map(character => character);
@@ -118,6 +129,12 @@ class Characters extends React.Component {
         this.state.q.filters = [{"name": "image", "op": "is_not_null"}];
         this.updateItems();
     }
+    
+    /* Live change as user types into search bar */
+    handleSearchChange(eventKey) {
+        this.state.search_string = eventKey.target.value;
+        this.updateItems()
+    }
 
     /* Displays the "sort by" dropdown */
     renderDropdownButtonSortby(title, i) {
@@ -125,8 +142,6 @@ class Characters extends React.Component {
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectSort}>
                 <MenuItem eventKey="name">Name</MenuItem>
-                <MenuItem eventKey="birthday">Birthday</MenuItem>
-
             </DropdownButton>
         );
     }
@@ -136,8 +151,10 @@ class Characters extends React.Component {
         return (
             <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                             onSelect={this.handleSelectFilter}>
-                <MenuItem eventKey="desc">Has Description</MenuItem>
-                <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
+                <MenuItem eventKey="events">Has Event(s)</MenuItem>
+                <MenuItem eventKey="tvshows">Has TV Show(s)</MenuItem>
+                <MenuItem eventKey="series">Has Comic Serie(s)</MenuItem>
+                <MenuItem eventKey="movies">Has Movie(s)</MenuItem>
 
             </DropdownButton>
         );
@@ -167,13 +184,24 @@ class Characters extends React.Component {
                 <div className="row">
                     {/* Display all sorting, filtering, searching options */}
                     <div className='text-center'>
-                        {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                        {this.renderDropdownButtonSortDirection("Order", "")}
-                        {this.renderDropdownButtonFilter("Filter", "")}
-                        {this.renderResetFilterButton("Filter")}
+                        <Form inline>
+                            {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                            {this.renderDropdownButtonSortDirection("Order", "")}
+                            {this.renderDropdownButtonFilter("Filter", "")}
+                            {this.renderResetFilterButton("Filter")}
+                            <FormGroup controlId="formBasicText">
+                                <FormControl
+                                    type="text"
+                                    placeholder="Search in Characters..."
+                                    onChange={this.handleSearchChange}/>
+                            </FormGroup>
+                        </Form>
                     </div>
                 </div>
                       
+                <form>
+                </form>
+                                    
                 {/* Go through and display 6 characters per page */}
                 {this.state.charactersGrouped.length == 0 || !this.state.charactersGrouped ? null :
                     this.state.charactersGrouped.map(charactersList =>
@@ -183,8 +211,21 @@ class Characters extends React.Component {
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
                                     <div className="panel" style={panelColor}>
+
                                         <div className="panel-heading" style={{textAlign:'center'}}>
                                             <div style={linkColor}>{character.name}</div>
+
+                                        <div className="panel-heading">
+                                            <div style={linkColor}>
+                                                {/* For actor search -- highlights the word found */}
+                                                    <Highlighter
+                                                        highlightClassName={styles.Highlight}
+                                                        searchWords={this.state.search_string.split(" ")}
+                                                        autoEscape={true}
+                                                        textToHighlight={character.name}
+                                                    />
+                                            </div>
+
                                         </div>
                                                      
                                                      
