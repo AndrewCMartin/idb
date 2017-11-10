@@ -122,7 +122,8 @@ renderDropdownButtonSortby(title, i) {
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectSort}>
             <MenuItem eventKey="name">Name</MenuItem>
-            <MenuItem eventKey="birthday">Birthday</MenuItem>
+            <MenuItem eventKey="start_year">Start Year</MenuItem>
+            <MenuItem eventKey="end_year">End Year</MenuItem>
 
         </DropdownButton>
     );
@@ -133,9 +134,8 @@ renderDropdownButtonFilter(title, i) {
     return (
         <DropdownButton style={dropdownStyle} title={title} key={"name"} id={'dropdown-basic-${i}'}
                         onSelect={this.handleSelectFilter}>
-            <MenuItem eventKey="desc">Has Description</MenuItem>
-            <MenuItem eventKey="birthday">Appears In TV Show(s)</MenuItem>
-
+            <MenuItem eventKey="events">Has Events</MenuItem>
+            <MenuItem eventKey="characters">Has Characters</MenuItem>
         </DropdownButton>
     );
 }
