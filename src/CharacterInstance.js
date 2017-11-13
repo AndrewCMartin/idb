@@ -88,7 +88,7 @@ class CharacterInstance extends React.Component {
 
 
                                             return (
-                                                <p key={actor.name}><Link to={'/actor/${actor.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link>
+                                                <p key={actor.name}><Link to={`/actor/${actor.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link>
                                                 </p>)
                                         }) : "None"}
 
@@ -108,7 +108,7 @@ class CharacterInstance extends React.Component {
                                     <ul>
                                         {events.length > 0 ? events.map(function (event) {
                                             return (<li key={event.title} style={{color:'#d3d1d1'}}><Link
-                                                to={'/event/${event.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{event.title}</Link></li>)
+                                                to={`/event/${event.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{event.title}</Link></li>)
                                         }) : "None"}
                                     </ul>
                                 
@@ -124,7 +124,7 @@ class CharacterInstance extends React.Component {
                                     <ul>
                                         {series.length > 0 ? series.map(function (series_instance) {
                                             return (<li key={series_instance.title} style={{color:'#d3d1d1'}}><Link
-                                                to={'/comic_series/${series_instance.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{series_instance.title}</Link>
+                                                to={`/comic_series/${series_instance.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{series_instance.title}</Link>
                                             </li>)
                                         }) : "None"}
                                     </ul>
@@ -141,7 +141,7 @@ class CharacterInstance extends React.Component {
                                     <ul>
                                         {movies.length > 0 ? movies.map(function (movie) {
                                             return (<li key={movie.title} style={{color:'#d3d1d1'}}><Link
-                                                to={'/movie/${movie.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{movie.title}</Link></li>)
+                                                to={`/movie/${movie.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{movie.title}</Link></li>)
                                         }) : "None"}
                                     </ul>
                                 
@@ -156,7 +156,7 @@ class CharacterInstance extends React.Component {
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
                                             return (<li key={tv_show.name} style={{color:'#d3d1d1'}}><Link
-                                                to={'/tvshow/${tv_show.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
+                                                to={`/tvshow/${tv_show.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
                                         }) : "None"}
                                     </ul>
                                

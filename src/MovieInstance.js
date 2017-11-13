@@ -93,7 +93,7 @@ class MovieInstance extends React.Component {
                 <ul>
 
         {characters.length > 0 ? characters.map(function(character) {
-        return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={'/character/${character.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
+        return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={`/character/${character.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
         }) :<li>None</li>}
                                         </ul>
                                     
@@ -103,7 +103,7 @@ class MovieInstance extends React.Component {
                 <ul>
                 {actors.length > 0 ? actors.map(function(actor) {
 
-            return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={'/actor/${actor.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
+            return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={`/actor/${actor.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
 		}) : <li>None</li>}
                                         </ul>
                                     

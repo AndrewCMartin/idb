@@ -82,7 +82,7 @@ class ComicSeriesInstance extends React.Component {
                                         <h3 style={secColStyle}>Characters</h3>
                                         <ul> 
             {characters.length > 0 ? characters.map(function(character){
-		return (<li key={character.name}style={{color:'#d3d1d1'}}><Link to={'/character/${character.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
+		return (<li key={character.name}style={{color:'#d3d1d1'}}><Link to={`/character/${character.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
 	    }) : <li>None</li>}
                                         </ul>
             </Col>
@@ -91,7 +91,7 @@ class ComicSeriesInstance extends React.Component {
                                         <h3 style={secColStyle}>Events:</h3>
                                         <ul> 
             {events.length > 0 ? events.map(function(event){
-		return(<li key={event.title}style={{color:'#d3d1d1'}}><Link to={'/event/${event.id}'}style={{color:'#ed2f2f', fontSize: '17px'}}>{event.title}</Link></li>)
+		return(<li key={event.title}style={{color:'#d3d1d1'}}><Link to={`/event/${event.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{event.title}</Link></li>)
 	    }) : <li>None</li>}
                                         </ul>
                                 </Col>

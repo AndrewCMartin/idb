@@ -83,7 +83,7 @@ class EventInstance extends React.Component {
                                         <h3 style={secColStyle}>Characters</h3>
                                         <ul> 
                                             {characters.length > 0 ? characters.map(function(character) {
-        return (<li key={character.name}><Link to={'/character/${character.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
+        return (<li key={character.name}><Link to={`/character/${character.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
 					    }) : "None"}
                                         </ul>
                                     
@@ -93,7 +93,7 @@ class EventInstance extends React.Component {
                                         <h3 style={secColStyle}>Comics Series</h3>
                                         <ul> 
                                             {series.length > 0 ? series.map(function(series_instance) {
-        return (<li key={series_instance.title}><Link to={'/comic_series/${series_instance.id}'}style={{color:'#ed2f2f', fontSize: '17px'}} >{series_instance.title}</Link></li>)
+        return (<li key={series_instance.title}><Link to={`/comic_series/${series_instance.id}`}style={{color:'#ed2f2f', fontSize: '17px'}} >{series_instance.title}</Link></li>)
 					    }) : "None"}
                                         </ul>
                                     

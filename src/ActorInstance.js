@@ -77,7 +77,7 @@ class ActorInstance extends React.Component {
                                     <h3 style={headingStyle}>Character(s)</h3>
                                         {characters.length > 0 ? characters.map(function (character) {
                                             return (<p key={character.name}><Link
-                                                to={'/character/${character.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></p>)
+                                                to={`/character/${character.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></p>)
                                         }) : "None"}
                              </Col>
                              </Row>
@@ -90,7 +90,7 @@ class ActorInstance extends React.Component {
                                 <ul>
                                     {movies.length > 0 ? movies.map(function (movie) {
                                         return (<li key={movie.title}><Link
-                                            to={'/movie/${movie.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{movie.title}</Link></li>)
+                                            to={`/movie/${movie.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{movie.title}</Link></li>)
                                     }) :<li> "None"</li>}
                                 </ul>
                                 </Col>
@@ -101,7 +101,7 @@ class ActorInstance extends React.Component {
                                     <ul>
                                         {tvshows.length > 0 ? tvshows.map(function (tv_show) {
                                             return (<li key={tv_show.name}><Link
-                                                to={'/tvshow/${tv_show.id}'} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
+                                                to={`/tvshow/${tv_show.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
                                         }) : <li style={{size:'17px'}}>None</li>}
                                     </ul>
                                 </Col>
