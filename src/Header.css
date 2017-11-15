@@ -15,6 +15,7 @@ body {
   color: #333;
   background-color: #f5f5f5;
   border-color: black;
+  margin: 5px;
 }
 
 @font-face {
@@ -26,6 +27,6 @@ body {
 .pagination>li>a,
 .pagination>li.active>a,
 .pagination>li>span {
-    background: red;
+    background: #2b2b2b;
     color: white;
 }

@@ -9,8 +9,7 @@ import SearchBar from "./SearchBar.js"
 // The Header creates links that can be used to navigate
 // between routes.
 //Got the basic outline for the navbar from https://react-bootstrap.github.io/components.html#navigation
-        
-const navbar = {backgroundColor: 'red !important'};
+    
 
 class Header extends React.Component {
     
@@ -28,7 +27,7 @@ class Header extends React.Component {
     
     render(){
         return(
-          <Navbar inverse collapseOnSelect>
+          <Navbar className="navbar-default" inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
                 <a href="/">MARVELUS</a>
@@ -41,7 +40,7 @@ class Header extends React.Component {
             </Nav>
 
             <Navbar.Collapse>
-                <Nav style={navbar}>
+                <Nav>
                 <LinkContainer to="/about">
                 <NavItem eventKey={1}>About</NavItem>
                 </LinkContainer>

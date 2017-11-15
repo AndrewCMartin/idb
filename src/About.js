@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
-
+    
 {/* Style for pictures so all consistent sizes */}
 var imageStyles = {
     width: '450px',
