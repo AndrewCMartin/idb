@@ -21,8 +21,8 @@ var axios = require('axios');
 
 {/* Responsible for all styling on the page */}
 var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
+    backgroundColor: '#2b2b2b',
+    borderColor: '#a59696',
 }
 
 var linkColor = {
@@ -259,16 +259,13 @@ class Actors extends React.Component {
                                             </Popover>}>
 
                                                 <div className="panel-body">
-                                                    <img
+                                                    <img 
                                                     src={"https://image.tmdb.org/t/p/w640/" + actor.image}
                                                     className="img-responsive"
                                                     alt="Image"/>
 
                                             </div>
                                             </OverlayTrigger>
-                                            <div className="panel-footer" style={{backgroundColor:'black',color:'white'}}>
-                                               Marvel Characters: {actor.characters.length}
-                                            </div>
                                         </div>
                                     </Link>
                                 </div>

@@ -29,4 +29,27 @@ body {
 .pagination>li>span {
     background: #2b2b2b;
     color: white;
+    border-color: black; 
+}
+
+.pagination>li.active>a:hover {
+    border-color: red;
+    background-color: black;
+}
+
+.pagination>li.active>a:focus,
+.pagination>li.active>a {
+    border-color: red;
+    background-color: #2b2b2b;
+}
+
+.pagination>li.disabled>a {
+    background-color: #2b2b2b;
+    border-color: black;
+}
+
+.pagination>li>a:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
 }
