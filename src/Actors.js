@@ -25,7 +25,9 @@ var dropdownStyle = {
     color: 'white',
 }
 
-{/* Used to split the actor data so there is 3 per row */}
+{/* Used to split the actor data so there is 3 per row */
+}
+
 function splitarray(input, spacing) {
     var output = [];
     for (var i = 0; i < input.length; i += spacing) {
@@ -94,14 +96,14 @@ class Actors extends React.Component {
         this.state.activePage = eventKey;
         this.updateItems();
     }
-    
+
     //* Select how to sort (what attributes) the actors */
     handleSelectSort(eventKey) {
         this.state.q.order_by[0].field = eventKey;
         this.updateItems()
 
     }
-    
+
     /* Select which way to sort the attributes (asc/desc) */
     handleSelectDirection(eventKey) {
         this.state.q.order_by[0].direction = eventKey;
@@ -173,19 +175,24 @@ class Actors extends React.Component {
             <div className="container" styles="margin-top:100px;">
                 <div className="row">
                     {/* Display all sorting, filtering, searching options */}
+
                     <div className='text-center'>
-                        <Form inline>
-                            {this.renderDropdownButtonSortby("Sort By: ", "name")}
-                            {this.renderDropdownButtonSortDirection("Order", "")}
-                            {this.renderDropdownButtonFilter("Filter", "")}
-                            {this.renderResetFilterButton("Filter")}
-                            <FormGroup controlId="formBasicText">
-                                <FormControl
-                                    type="text"
-                                    placeholder="Search in Actors..."
-                                    onChange={this.handleSearchChange}/>
-                            </FormGroup>
-                        </Form>
+                        <form onSubmit={e => {
+                            e.preventDefault()
+                        }}>
+                            <Form inline>
+                                {this.renderDropdownButtonSortby("Sort By: ", "name")}
+                                {this.renderDropdownButtonSortDirection("Order", "")}
+                                {this.renderDropdownButtonFilter("Filter", "")}
+                                {this.renderResetFilterButton("Filter")}
+                                <FormGroup controlId="formBasicText">
+                                    <FormControl
+                                        type="text"
+                                        placeholder="Search in Actors..."
+                                        onChange={this.handleSearchChange}/>
+                                </FormGroup>
+                            </Form>
+                        </form>
                     </div>
                 </div>
 
@@ -199,60 +206,60 @@ class Actors extends React.Component {
                             <div className="row">{actorList.map((actor, i) =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
-                                          <div className="panel" >
+                                        <div className="panel">
                                             <div className="panel-heading">
-                                                
-                                                 {/* For actor search -- highlights the word found */}
-                                                    <Highlighter
-                                                        highlightClassName={styles.Highlight}
-                                                        searchWords={this.state.search_string.split(" ")}
-                                                        autoEscape={true}
-                                                        textToHighlight={actor.name}
-                                                    />
-                                                
+
+                                                {/* For actor search -- highlights the word found */}
+                                                <Highlighter
+                                                    highlightClassName={styles.Highlight}
+                                                    searchWords={this.state.search_string.split(" ")}
+                                                    autoEscape={true}
+                                                    textToHighlight={actor.name}
+                                                />
+
                                             </div>
 
                                             {/* In charge of the popover when you hover over the actor's picture */}
 
-                                              <OverlayTrigger trigger={['hover', 'focus']}
-                                                              placement={i === 0 ? "right" : "left"}
-                                                              overlay={<Popover id="popover-trigger-hover-focus">
-                                                                  <strong><u>{<Highlighter
-                                                                      highlightClassName={styles.Highlight}
-                                                                      searchWords={this.state.search_string.split(" ")}
-                                                                      autoEscape={true}
-                                                                      textToHighlight={actor.name}
-                                                                  />}</u></strong>
-                                               <br /><br />
-                                               <strong>Bio: </strong>
-                                                                  {<Highlighter
-                                                                      highlightClassName={styles.Highlight}
-                                                                      searchWords={this.state.search_string.split(" ")}
-                                                                      autoEscape={true}
-                                                                      textToHighlight={actor.bio}
-                                                                  />}<br/>
-                                               <strong>Birthday: </strong>
-                                               {actor.birthday}<br />
-                                               <strong># of TV Shows: </strong>
-                                               {actor.tvshows.length}<br />
-                                               <strong># of Movies: </strong>
-                                               {actor.movies.length}<br />
-                                               <strong>Character(s): </strong>
-                                               <ul>
-                                               {actor.characters.length > 0 ? actor.characters.map(function (character) {
-                                                    return (<li>{character.name}</li>)
-                                                }) : "None"}
-                                               </ul>
+                                            <OverlayTrigger trigger={['hover', 'focus']}
+                                                            placement={i === 0 ? "right" : "left"}
+                                                            overlay={<Popover id="popover-trigger-hover-focus">
+                                                                <strong><u>{<Highlighter
+                                                                    highlightClassName={styles.Highlight}
+                                                                    searchWords={this.state.search_string.split(" ")}
+                                                                    autoEscape={true}
+                                                                    textToHighlight={actor.name}
+                                                                />}</u></strong>
+                                                                <br/><br/>
+                                                                <strong>Bio: </strong>
+                                                                {<Highlighter
+                                                                    highlightClassName={styles.Highlight}
+                                                                    searchWords={this.state.search_string.split(" ")}
+                                                                    autoEscape={true}
+                                                                    textToHighlight={actor.bio}
+                                                                />}<br/>
+                                                                <strong>Birthday: </strong>
+                                                                {actor.birthday}<br/>
+                                                                <strong># of TV Shows: </strong>
+                                                                {actor.tvshows.length}<br/>
+                                                                <strong># of Movies: </strong>
+                                                                {actor.movies.length}<br/>
+                                                                <strong>Character(s): </strong>
+                                                                <ul>
+                                                                    {actor.characters.length > 0 ? actor.characters.map(function (character) {
+                                                                        return (<li>{character.name}</li>)
+                                                                    }) : "None"}
+                                                                </ul>
 
-                                            </Popover>}>
+                                                            </Popover>}>
 
                                                 <div className="panel-body">
-                                                    <img 
-                                                    src={"https://image.tmdb.org/t/p/w640/" + actor.image}
-                                                    className="img-responsive"
-                                                    alt="Image"/>
+                                                    <img
+                                                        src={"https://image.tmdb.org/t/p/w640/" + actor.image}
+                                                        className="img-responsive"
+                                                        alt="Image"/>
 
-                                            </div>
+                                                </div>
                                             </OverlayTrigger>
                                         </div>
                                     </Link>
