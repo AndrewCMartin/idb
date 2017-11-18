@@ -18,17 +18,6 @@ import './ModelStyle.css'
 
 var axios = require('axios');
 
-{/* Responsible for all styling on the page */}
-var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -216,9 +205,9 @@ renderResetFilterButton(title) {
                 {showsList.map((show, i) =>
                     <div className="col-sm-4">
                         <Link to={"/tvshow/" + show.id}>
-                            <div className="panel" style={panelColor}>
+                            <div className="panel">
                                 <div className="panel-heading">
-                                    <div style={linkColor}>
+                                    <div>
                                     {/* For tv show search -- highlights the word found */}
                                         <Highlighter
                                             highlightClassName={styles.Highlight}
@@ -260,9 +249,7 @@ renderResetFilterButton(title) {
 
                                 </div>
                                </OverlayTrigger>
-                               <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
-                                   Marvel Characters: {show.characters.length}
-                                </div>
+                               
                             </div>
                         </Link>
                     </div>

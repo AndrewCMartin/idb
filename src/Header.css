@@ -11,12 +11,37 @@ body {
   background-repeat: no-repeat;
 
 }
-.panel-default > .panel-heading {
-  color: #333;
-  background-color: #f5f5f5;
-  border-color: black;
-  margin: 5px;
+
+.panel > .panel-body > .img-responsive{
+    border: 0px solid;
+    border-color: #a59696;
 }
+.panel {
+    color: #cccccc;
+    border-radius: 0;
+    background-color: #2b2b2b;
+    border-color: #cccccc;
+    border: 2px solid;
+}
+
+.panel > .panel-body {
+    padding: 0px;
+    border-color: #cccccc;
+}
+
+.panel > .panel-heading{
+    font-size:150%;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    
+}
+
+.dropdownbutton > .button {
+    color: red;
+}
+
 
 @font-face {
     font-family: "TradeGothicLTStd";

@@ -2,12 +2,12 @@ import React from 'react'
 import {Carousel, Container, Slide} from 'react-bootstrap'
 
 var imageStyles = {
-    height: "850px",
-    width: "1600px"
+    height: "500px",
+    width: "1000px"
 }
 
 var headerStyle={
-    fontSize: '150px',
+    fontSize: '325px',
     color: 'black',
     textDecoration: 'bold',
     textShadow: '2px 1px gray',

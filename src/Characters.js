@@ -14,16 +14,6 @@ var imageStyles = {
     height: '400px'
 }
 
-var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -31,9 +21,6 @@ var dropdownStyle = {
     color: 'white',
 }
 
-var linkColor = {
-    color: 'white',
-}
 
 {/* Used to split the character data so there is 3 per row */}
 function splitarray(input, spacing) {
@@ -207,13 +194,10 @@ class Characters extends React.Component {
                         {charactersList.map((character, i) =>
                             <div className="col-sm-4">
                                 <Link to={"/character/" + character.id}>
-                                    <div className="panel" style={panelColor}>
-
-                                        <div className="panel-heading" style={{textAlign:'center'}}>
-                                            
+                                    <div className="panel">
 
                                         <div className="panel-heading">
-                                            <div style={linkColor}>
+                                            <div>
                                                {/* For character search -- highlights the word found */}
                                                 <Highlighter
                                                 highlightClassName={styles.Highlight}
@@ -222,8 +206,8 @@ class Characters extends React.Component {
                                                 textToHighlight={character.name}
                                                 /> 
                                             </div>
+                                         </div>
 
-                                        </div>
                                                      
                                                      
                                         {/* In charge of the popover when you hover over the character's picture */}             
@@ -254,7 +238,7 @@ class Characters extends React.Component {
                                         </div>
                                         </OverlayTrigger>
                                     </div>
-                                   </div>
+                                   
                                 </Link>
                             </div>
                         )}

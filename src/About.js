@@ -3,17 +3,18 @@ import {Row, Col} from 'react-bootstrap'
     
 {/* Style for pictures so all consistent sizes */}
 var imageStyles = {
-    width: '450px',
-    height: '350px'
+    width: 'auto',
+    height: 'auto'
 }
 var panelStyle={
-    height: '175vh',
+    height: 'auto',
     width: '125vh',
     textAlign:'center',
     //backgroundColor: 'white',
     backgroundColor: 'black',
 }
 var containerStyle={
+    align: 'center',
     marginTop: '10px',
     //color:'black',
     color:'white',
@@ -77,7 +78,7 @@ const About = () => (
 
                     <div className="col-sm-4">
                         <div className="panel-body"><img
-                            src="https://d1b10bmlvqabco.cloudfront.net/attach/j65v8kewrx56xk/ijpb8t3798u7b/j7ppgtaf2ybt/cs373.jpeg?w=400&h=400"
+                            src="https://hannahanees.files.wordpress.com/2017/11/bhavish.jpg"
                             className="img-circle img-responsive img-center" style={imageStyles} alt="Image"/></div>
                         <h4 align="center"><b> Bhavish Yalamanchi</b></h4>
 

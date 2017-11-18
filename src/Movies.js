@@ -8,18 +8,6 @@ import './ModelStyle.css'
 
 var axios = require('axios');
 
-
-{/* Responsible for all styling on the page */}
-var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -206,9 +194,9 @@ class Movies extends React.Component {
                                 {moviesList.map((movie, i) =>
                                     <div className="col-sm-4">
                                         <Link to={"/movie/" + movie.id}>
-                                            <div className="panel" style={panelColor}>
+                                            <div className="panel">
                                                 <div className="panel-heading">
-                                                    <div style={linkColor}>
+                                                    <div>
                                                         {/* For movie search -- highlights the word found */}
                                                            <Highlighter
                                                                 highlightClassName={styles.Highlight}
@@ -249,9 +237,7 @@ class Movies extends React.Component {
 
                                                     </div>
                                                 </OverlayTrigger>
-                                                <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
-                                                    Marvel Characters: {movie.characters.length}
-                                                </div>
+                                                
                                             </div>
                                         </Link>
                                     </div>
