@@ -18,18 +18,6 @@ import './ModelStyle.css'
 
 var axios = require('axios');
 
-
-{/* Responsible for all styling on the page */}
-var panelColor = {
-    backgroundColor: '#2b2b2b',
-    borderColor: '#a59696',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -211,9 +199,9 @@ class Actors extends React.Component {
                             <div className="row">{actorList.map((actor, i) =>
                                 <div className="col-sm-4">
                                     <Link to={"/actor/" + actor.id}>
-                                          <div className="panel" style={panelColor}>
+                                          <div className="panel" >
                                             <div className="panel-heading">
-                                                <div style={linkColor}>
+                                                
                                                  {/* For actor search -- highlights the word found */}
                                                     <Highlighter
                                                         highlightClassName={styles.Highlight}
@@ -221,7 +209,7 @@ class Actors extends React.Component {
                                                         autoEscape={true}
                                                         textToHighlight={actor.name}
                                                     />
-                                                </div>
+                                                
                                             </div>
 
                                             {/* In charge of the popover when you hover over the actor's picture */}

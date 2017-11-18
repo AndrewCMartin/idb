@@ -8,17 +8,6 @@ import './ModelStyle.css'
 
 var axios = require('axios');
 
-{/* Responsible for all styling on the page */}
-var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -204,9 +193,9 @@ render() {
                     {eventsList.map((event, i) =>
                         <div className="col-sm-4">
                             <Link to={"/event/" + event.id}>
-                                <div className="panel" style={panelColor}>
+                                <div className="panel">
                                     <div className="panel-heading">
-                                        <div style={linkColor}>
+                                        <div>
                                             {/* For event search -- highlights the word found */}
                                             <Highlighter
                                                 highlightClassName={styles.Highlight}
@@ -248,9 +237,7 @@ render() {
 
                                     </div>
                                    </OverlayTrigger>
-                                   <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
-                                       Marvel Characters: {event.characters.length}
-                                   </div>
+                                  
                                 </div>
                             </Link>
                         </div>

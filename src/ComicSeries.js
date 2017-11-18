@@ -25,16 +25,6 @@ var imageStyles = {
     height: '450px',
 }
 
-var panelColor = {
-    backgroundColor: 'black',
-    borderColor: 'white',
-}
-
-var linkColor = {
-    color: 'white',
-    textAlign: 'center',
-}
-
 var dropdownStyle = {
     margin: '10px',
     backgroundColor: '#2b2b2b',
@@ -214,13 +204,15 @@ render() {
             {this.state.comicsGrouped.length == 0 || !this.state.comicsGrouped ? null :
                 this.state.comicsGrouped.map(comicsList =>
                     !comicsList ? null :
+           
                     <div className="row">
                     {comicsList.map((comic, i) =>
+                        
                         <div className="col-sm-4">
                             <Link to={"/comic_series/" + comic.id}>
-                                <div className="panel" style={panelColor}>
+                                <div className="panel">
                                     <div className="panel-heading">
-                                        <div style={linkColor}>
+                                        <div>
                                             {/* For series search -- highlights the word found */}
                                             <Highlighter
                                                 highlightClassName={styles.Highlight}
@@ -263,13 +255,13 @@ render() {
 
                                     </div>
                                     </OverlayTrigger>
-                                    <div className="panel-footer" style={{backgroundColor: 'black', color: 'white'}}>
-                                        Marvel Characters: {comic.characters.length}
-                                    </div>
                                 </div>
+                              
                             </Link>
-                        </div>
+                          </div>
+                        
                     )}
+                 
                     </div>)
 
             }
