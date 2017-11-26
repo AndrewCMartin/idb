@@ -87,11 +87,25 @@ Canvas Group 15
 ---
 
 # What can we do better?
++++
+- Filtering
+  - Works well at first, but then just stops
+  - Could be handling multiple requests inefficiently
+  - Could also NOT be handling requests at all after a certain amount
++++
+- Design
+  - More it more like the official website
 
 ---
 
 # What puzzles us?
-
++++
+- Loading speed
+  - Filtering and sorting are slow
++++
+- Specifically searching
+  - Does what it needs to do
+  - But sometimes takes a long time
 
 ---
 
