@@ -94,7 +94,7 @@ Canvas Group 15
   - Could also NOT be handling requests at all after a certain amount
 +++
 - Design
-  - More it more like the official website
+  - Make it more like the official website
 
 ---
 
