@@ -1,14 +1,18 @@
-# Flux 
+# MarvelUS 
 
-An application architecture for React
+Canvas Group 15
+
 
 ---
 
-### Flux Design
+### Introductions
 
-- Dispatcher: Manages Data Flow
-- Stores: Handle State & Logic
-- Views: Render Data via React
+Tesia Wu
+Hannah Anees
+Helen Salgi
+Bhavish Yalamanchi
+Andrew Martin
+Sunaina Krishnamoorthy
 
 ---
 
