@@ -122,7 +122,7 @@ Canvas Group 17
   - Minimalistic and simple
   - Neat and well-organized
 +++
-- Global search & drop-down menu
+- [Global search & drop-down menu](http://boardgamedb.me/)
   - Looks very professional
   - Very nice to use
 +++
@@ -135,7 +135,7 @@ Canvas Group 17
 # What did we learn from their website?
 +++
 - More to board games than previously thought
-  - Massive events are held
+  - [Massive events](http://boardgamedb.me/events?per_page=18&sort=name&page=1) are held
   - Different kinds of board games are created
 
 ---
@@ -143,11 +143,11 @@ Canvas Group 17
 # What can they do better?
 +++
 - Instance pages
-  - Some pages we had to scroll a lot
+  - Some pages we had to [scroll a lot](http://boardgamedb.me/genre/1002)
   - Hard to go through
 +++
 - Model pages
-  - 18 per page
+  - [18 per page](http://boardgamedb.me/games?per_page=18&sort=name&page=1)
   - So must scroll a while to get to the pagination bar
 +++
 - Navigation
