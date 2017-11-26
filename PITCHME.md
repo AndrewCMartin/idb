@@ -115,6 +115,62 @@ Canvas Group 17
 
 ---
 
+# What did they do well?
+
++++
+- Pleasing design
+  - Minimalistic and simple
+  - Neat and well-organized
++++
+- Global search & drop-down menu
+  - Looks very professional
+  - Very nice to use
++++
+- Navigation
+  - Smooth transitions
+  - Some links connect to other sites
+
+---
+
+# What did we learn from their website?
++++
+- More to board games than previously thought
+  - Massive events are held
+  - Different kinds of board games are created
+
+---
+
+# What can they do better?
++++
+- Instance pages
+  - Some pages we had to scroll a lot
+  - Hard to go through
++++
+- Model pages
+  - 18 per page
+  - So must scroll a while to get to the pagination bar
++++
+- Navigation
+  - Some links were broken
+  - Like [this one](http://boardgamedb.me/boardgamecategory/2726/age-reason)
+
+---
+
+# What puzzles us about their website?
++++
+- Design
+  - It's a bit plain for a board game site
++++
+- Pagination
+  - Why choose 18 results per page if you still have to scroll quite a bit?
++++
+- API
+  - JSON responses aren't correctly formatted?
+  - Returning an empty dict
+
+---
+
+
 ### Visualization
 
 
