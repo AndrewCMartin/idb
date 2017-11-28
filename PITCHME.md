@@ -1,4 +1,4 @@
-# MarvelUS 
+## MarvelUS 
 
 Canvas Group 15
 
@@ -27,11 +27,11 @@ Canvas Group 15
 
 ---
 
-# What did we do well?
+### What did we do well?
 
 +++
-- Good design that fits our topic
-  - Which is instantly apparent to the user
+- Intuitive design that fits our topic
+  - It is instantly apparent to the user
   - Good balance: semi-minimalistic yet detailed
 +++
 - Easy to navigate
@@ -39,25 +39,26 @@ Canvas Group 15
   - Recognizable links on every page
 +++
 - Fun to see how everything connects
-  - So its fun and easy to learn/explore everything Marvel
+  - Easy to learn about and explore the Marvel universe  
   
 ---
 
-# What did we learn?
+### What did we learn?
 
 +++
-## Technically
+### Technically
 +++
 
-- Scraping from the API
+- Scraping data from ReSTful APIs
+- Working with a database
 
 +++
-- Using various tools we've never known before
+- Using various new tools, libraries and software
   - React-Bootstrap
   - Postman
   - SQLAlchemy
   - GCP
-  - And more
+  - and more
 +++
 
 - Hosting/managing the website
@@ -65,11 +66,10 @@ Canvas Group 15
 +++
 
 - Integrating JavaScript and CSS
-- Working with a database
 
 ---
 
-## Other
+### Other
 
 +++
 - Working in a large team
@@ -82,11 +82,11 @@ Canvas Group 15
 +++
 - Seeing how things connect in Marvel
   - Similarities between comic characters and movie characters
-  - Learning something before watching Thor: Ragnarok
+  - Watching Thor: Ragnarok!
 
 ---
 
-# What can we do better?
+### What can we do better?
 +++
 - Filtering
   - Works well at first, but then just stops
@@ -94,11 +94,12 @@ Canvas Group 15
   - Could also NOT be handling requests at all after a certain amount
 +++
 - Design
-  - Make it more like the official website
+  - Make the functionality more like the official website
+  - Add movie trailers and twitter feeds wherever possible
 
 ---
 
-# What puzzles us?
+### What puzzles us?
 +++
 - Loading speed
   - Filtering and sorting are slow
@@ -109,13 +110,13 @@ Canvas Group 15
 
 ---
 
-### Other Critique
+## Other Critique
 
-Canvas Group 17
+Canvas Group 17 - Board Game DB
 
 ---
 
-# What did they do well?
+### What did they do well?
 
 +++
 - Pleasing design
@@ -132,7 +133,7 @@ Canvas Group 17
 
 ---
 
-# What did we learn from their website?
+### What did we learn from their website?
 +++
 - More to board games than previously thought
   - [Massive events](http://boardgamedb.me/events?per_page=18&sort=name&page=1) are held
@@ -140,7 +141,7 @@ Canvas Group 17
 
 ---
 
-# What can they do better?
+### What can they do better?
 +++
 - Instance pages
   - Some pages we had to [scroll a lot](http://boardgamedb.me/genre/1002)
@@ -156,7 +157,7 @@ Canvas Group 17
 
 ---
 
-# What puzzles us about their website?
+### What puzzles us about their website?
 +++
 - Design
   - It's a bit plain for a board game site
@@ -171,7 +172,7 @@ Canvas Group 17
 ---
 
 
-### Visualization
+## Visualization
 
 
 ---
