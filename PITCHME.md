@@ -1,5 +1,3 @@
-theme : moon
-
 ## MarvelUS 
 
 Canvas Group 15
