@@ -31,6 +31,7 @@ body {
 
 .panel > .panel-heading{
     font-size:150%;
+    text-transform: uppercase;
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 5px;
@@ -77,4 +78,12 @@ body {
     background-color: black;
     color: white;
     border-color: black;
+}
+.popover{
+    background-color: black;
+    color: #bcbcbc;
+}
+
+.popover > .arrow{
+    color: black;
 }

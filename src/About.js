@@ -196,8 +196,8 @@ const About = () => (
 </Col>
 <Col xs={4} md={4}>
             <h3 align="center" style={{color: 'white'}}><b>Tools used</b></h3>
-                <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://utexas.box.com/s/mtm6b1masafnlhjobbrifqgw1gehpp2f" style={{color: '#c12c2c'}}>Technical report</a></li>
-            <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://utexas.box.com/s/8vxeogs7lsiceuwts8rgjz9vcfj8e034"style={{color: '#c12c2c'}}>UML Diagram</a></li>
+                <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://hannahanees.gitbooks.io/technical-report/content/" style={{color: '#c12c2c'}}>Technical report</a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a  href="https://hannahanees.gitbooks.io/uml-diagram/content/"style={{color: '#c12c2c'}}>UML Diagram</a></li>
     </Col>
     </Row>
         </div>
