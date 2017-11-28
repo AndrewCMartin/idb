@@ -1,0 +1,30 @@
+.instance > .panel {
+    color: #cccccc;
+    border-radius: 0;
+    background-color: black;
+    border-color: black;
+}
+
+.instance > .panel > .panel-heading{
+    font-size:150%;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: black;
+    border-color: white;
+    
+}
+
+h3{
+    color:#d3d1d1;
+    border-color: white;
+    text-transform: uppercase;
+}
+
+h4{
+    color:#d3d1d1;
+    font-size: 150%;
+    text-transform: uppercase;
+    text-align: center;
+}
