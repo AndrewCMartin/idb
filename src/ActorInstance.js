@@ -34,12 +34,12 @@ class ActorInstance extends React.Component {
                 <div class="panel" >
                     <div class="panel-heading"><h1>{this.state.actor.name}</h1></div>
                     <div class="panel-body">
-                            <Row>
+                        <Row>
                             <Col xs={5} md={5}>
                             <img src={"https://image.tmdb.org/t/p/w640/" + this.state.actor.image}
-                                      class="img-responsive" class="img-responsive" style={{width:'400px', height:'550px'}} alt="Image"/>
+                                        class="img-responsive" class="img-responsive"  alt="Image"/>
                             </Col>
-                    
+                
                             {/* Information/attributes of the actor */}
                             <Col xs={7} md={7}>
                                     <h3>Birthday</h3>
@@ -68,6 +68,7 @@ class ActorInstance extends React.Component {
                                     }) :<li> "None"</li>}
                                 </ul>
                                 </Col>
+
                                 <Col xs={6} md={6}>
 
                                 {/* Goes through the data in the character lists, and makes linkable */}

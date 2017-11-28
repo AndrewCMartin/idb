@@ -37,16 +37,14 @@ class CharacterInstance extends React.Component {
             <div class="instance">
                 <div class="panel">
                     <div class="panel-heading">
-           
-            <h1>{this.state.character.name}</h1></div>
+                        <h1>{this.state.character.name}</h1></div>
                     <div class="panel-body">
-                        <div class="panel-body">
-            <Row>
-            <Col xs={5} md ={5}>
-            <img src={this.state.character.thumbnail} class="img-responsive"
-                                                     class="img-responsive" style={{width:'400px', height: '400px'}} alt="Image"/>
-            </Col>
-            <Col xs={7} md={7}>
+                        <Row>
+                            <Col xs={5} md ={5}>
+                            <img src={this.state.character.thumbnail} class="img-responsive"
+                                                                    class="img-responsive" style={{width:'400px', height: '400px'}} alt="Image"/>
+                            </Col>
+                            <Col xs={7} md={7}>
                                 {/* Information/attributes of the character */}
                                 <h3 >Description</h3>
                                 <p>{this.state.character.desc}</p>
@@ -54,8 +52,8 @@ class CharacterInstance extends React.Component {
                                 <h3 >Stories</h3>
                                 <p>{this.state.character.stories}</p>
                                 <br></br>
-            {/* Goes through the data in the actors lists, and makes linkable */}
-             <h3 >Portrayed by Actors</h3>
+                                {/* Goes through the data in the actors lists, and makes linkable */}
+                                <h3 >Portrayed by Actors</h3>
                                     <ul>
                                         {actors.length > 0 ? actors.map(function (actor) {
 
@@ -67,15 +65,13 @@ class CharacterInstance extends React.Component {
 
 
                                     </ul>
-            </Col>
-            </Row>
-            <hr></hr>
-            <Row>
-            <Col xs={3} md={3}>
-          
-            
-            <br></br>
-                                   {/* Goes through the data in the events container, lists, and makes linkable */}
+                            </Col>
+                        </Row>
+                        <hr></hr>
+                        <Row>
+                            <Col xs={3} md={3}>
+                                <br></br>
+                                {/* Goes through the data in the events container, lists, and makes linkable */}
                                     <h4>Events</h4>
                                     <br></br>
                                     <ul>
@@ -84,30 +80,26 @@ class CharacterInstance extends React.Component {
                                                 to={`/event/${event.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{event.title}</Link></li>)
                                         }) : "None"}
                                     </ul>
+                                    
+                            </Col>
+                            <Col xs={3} md={3}>       
+                                <br></br>
+                                {/* Goes through the data in the comic series container, lists, and makes linkable */}
+                                <h4>Comic Series</h4>
+                                <br></br>
+                                <ul>
+                                    {series.length > 0 ? series.map(function (series_instance) {
+                                        return (<li key={series_instance.title} style={{color:'#d3d1d1'}}><Link
+                                            to={`/comic_series/${series_instance.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{series_instance.title}</Link>
+                                        </li>)
+                                    }) : "None"}
+                                </ul>
                                 
-            </Col>
-            <Col xs={3} md={3}>
-            
-            
-            <br></br>
+                            </Col>
 
-                                    {/* Goes through the data in the comic series container, lists, and makes linkable */}
-                                    <h4>Comic Series</h4>
-                                    <br></br>
-                                    <ul>
-                                        {series.length > 0 ? series.map(function (series_instance) {
-                                            return (<li key={series_instance.title} style={{color:'#d3d1d1'}}><Link
-                                                to={`/comic_series/${series_instance.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{series_instance.title}</Link>
-                                            </li>)
-                                        }) : "None"}
-                                    </ul>
-                                
-             </Col>
 
-            <Col xs={3} md={3}>
-            
-            
-            <br></br>
+                            <Col xs={3} md={3}>    
+                                <br></br>
                                 {/* Goes through the data in the movie container, lists, and makes linkable */}
                                     <h4>Appears in Movies</h4>
                                     <br></br>
@@ -118,27 +110,24 @@ class CharacterInstance extends React.Component {
                                         }) : "None"}
                                     </ul>
                                 
-                   </Col>
-            <Col xs={3} md={3}>
-           
-            
-            <br></br>
+                            </Col>
+                            <Col xs={3} md={3}>
+                                <br></br>
                                 {/* Goes through the data in the tv shows container, lists, and makes linkable */}
-                                    <h4>Appears in TV Shows</h4>
-                                    <br></br>
-                                    <ul>
-                                        {tvshows.length > 0 ? tvshows.map(function (tv_show) {
-                                            return (<li key={tv_show.name} style={{color:'#d3d1d1'}}><Link
-                                                to={`/tvshow/${tv_show.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
-                                        }) : "None"}
-                                    </ul>
+                                <h4>Appears in TV Shows</h4>
+                                <br></br>
+                                <ul>
+                                    {tvshows.length > 0 ? tvshows.map(function (tv_show) {
+                                        return (<li key={tv_show.name} style={{color:'#d3d1d1'}}><Link
+                                            to={`/tvshow/${tv_show.id}`} style={{color:'#ed2f2f', fontSize: '17px'}}>{tv_show.name}</Link></li>)
+                                    }) : "None"}
+                                </ul>
                                
-</Col>
-</Row>
+                            </Col>
+                        </Row>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
 
         );
