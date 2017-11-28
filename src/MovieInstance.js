@@ -60,55 +60,49 @@ class MovieInstance extends React.Component {
                         <div class="panel-heading" style={headingStyle}> <h1>{this.state.movie.title}</h1> </div>
                         <div class="panel-body">
                             <div class="panel-body">
-            <Row>
-            <Col xs={5} md={5}>
-            <img src={"http://image.tmdb.org/t/p/w500/" + this.state.movie.poster_path} class="img-responsive" class="img-responsive" style={imageStyle} alt="Image" />
-            </Col>
+                                <Row>
+                                    <Col xs={5} md={5}>
+                                        <img src={"http://image.tmdb.org/t/p/w500/" + this.state.movie.poster_path} class="img-responsive" class="img-responsive" style={imageStyle} alt="Image" />
+                                    </Col>
             
-            {/* Information/attributes of the movie */}
-            <Col xs={7} md={7}>
-                                
-                
-                    
-                                    <h3 style={headingStyle}>Release Date:</h3>
-                                    <p>{this.state.movie.release_date}</p>
-                                    <h3 style={headingStyle}>Overview</h3>
-                                    <p>{this.state.movie.overview}</p>
-                                    <h3 style={headingStyle}>Certificate</h3>
-                                    <p>{this.state.movie.adult}</p>
-                                    <h3 style={headingStyle}>Original Language</h3>
-                                    <p>{this.state.movie.lang}</p>
-                                    <h3 style={headingStyle}>Runtime</h3>
-                                    <p>{this.state.movie.runtime} minutes</p>
-                                    <h3 style={headingStyle}>Rating</h3>
-                                    <p>{this.state.movie.rating}/10</p>
-            </Col>
-            </Row>
-            <hr></hr>
-            <Row>
-            <Col xs={6} md={6}>
-           
-            
-                                    <h3 style={secColStyle}>Main Characters</h3>
-                <ul>
+                                    {/* Information/attributes of the movie */}
+                                    <Col xs={7} md={7}>                    
+                                        <h3 style={headingStyle}>Release Date:</h3>
+                                        <p>{this.state.movie.release_date}</p>
+                                        <h3 style={headingStyle}>Overview</h3>
+                                        <p>{this.state.movie.overview}</p>
+                                        <h3 style={headingStyle}>Certificate</h3>
+                                        <p>{this.state.movie.adult}</p>
+                                        <h3 style={headingStyle}>Original Language</h3>
+                                        <p>{this.state.movie.lang}</p>
+                                        <h3 style={headingStyle}>Runtime</h3>
+                                        <p>{this.state.movie.runtime} minutes</p>
+                                        <h3 style={headingStyle}>Rating</h3>
+                                        <p>{this.state.movie.rating}/10</p>
+                                    </Col>  
+                                </Row>
+                                <hr></hr>
+                                <Row>
+                                    <Col xs={6} md={6}>
+                                        <h3 style={secColStyle}>Main Characters</h3>
+                                        <ul>
+                                            {characters.length > 0 ? characters.map(function(character) {
+                                            return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={`/character/${character.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
+                                            }) :<li>None</li>}
+                                        </ul>
+                                        
+                                    </Col>
+                                    <Col xs={6} md={6}>
+                                        <h3 style={secColStyle}>Cast</h3> 
+                                        <ul>
+                                            {actors.length > 0 ? actors.map(function(actor) {
 
-        {characters.length > 0 ? characters.map(function(character) {
-        return (<li key={character.name} style={{color:'#d3d1d1'}}><Link to={`/character/${character.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{character.name}</Link></li>)
-        }) :<li>None</li>}
+                                        return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={`/actor/${actor.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
+                                    }) : <li>None</li>}
                                         </ul>
                                     
-                </Col>
-                <Col xs={6} md={6}>
-                                    <h3 style={secColStyle}>Cast</h3> 
-                <ul>
-                {actors.length > 0 ? actors.map(function(actor) {
-
-            return (<li key={actor.name} style={{color:'#d3d1d1'}}><Link to={`/actor/${actor.id}`}style={{color:'#ed2f2f', fontSize: '17px'}}>{actor.name}</Link></li>)
-		}) : <li>None</li>}
-                                        </ul>
-                                    
-                                 </Col>
-                                 </Row>
+                                    </Col>
+                                </Row>
                             </div>
                         </div>
                     </div>
