@@ -50,7 +50,19 @@ Canvas Group 15
 +++
 
 - Scraping data from ReSTful APIs
+  - Using the Python requests library
+  - Using HTTP methods like GETs and POSTs
+  
++++
 - Working with a database
+  - Using MySQL and learning SQL commands
+  - The flasksqlalchemy library
+  - Implementing search using flask whooshalchemy
+  
++++
+- Creating a REST API
+  - Using the flask restless library
+  - Documenting an API
 
 +++
 - Using various new tools, libraries and software
@@ -154,6 +166,11 @@ Canvas Group 17 - Board Game DB
 - Navigation
   - Some links were broken
   - Like [this one](http://boardgamedb.me/boardgamecategory/2726/age-reason)
+  
++++
+- Code
+  - The APIs could have been created using Flask-Restless
+  - Would have eliminated having to manually create jsons
 
 ---
 
@@ -173,6 +190,13 @@ Canvas Group 17 - Board Game DB
 
 
 ## Visualization
-
++++
+- We created a visualization of Board Game DB's website
+  - We created a stacked area chart using NVD3
+  - The number of board games that were created each year are plotted against time
+  - The games are divided according to their genres
+  
++++
+[Visualization](http://marvelus.me/visualization)
 
 ---
