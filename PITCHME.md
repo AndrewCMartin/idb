@@ -18,7 +18,7 @@ Canvas Group 15
 
 ### Demonstration
 
-[MarvelUs](http://marvelus.me)
+[Marvelus](http://marvelus.me)
 
 
 ---
