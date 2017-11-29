@@ -174,10 +174,7 @@ Canvas Group 17 - Board Game DB
 - Instance pages
   - Some pages we had to [scroll a lot](http://boardgamedb.me/genre/1002)
   - Hard to go through
-+++
-- Model pages
-  - [18 per page](http://boardgamedb.me/games?per_page=18&sort=name&page=1)
-  - So must scroll a while to get to the pagination bar
+
 +++
 - Navigation
   - Some links were broken
@@ -196,6 +193,7 @@ Canvas Group 17 - Board Game DB
   - It is a bit plain for a board game site
 +++
 - Pagination
+  - [18 per page](http://boardgamedb.me/games?per_page=18&sort=name&page=1)
   - Have to scroll quite a bit to reach the pagination bar
   - Would have been nice to either have the pagination bar at the top, or have fewer results per page
 
