@@ -70,8 +70,8 @@ const About = () => (
                             travel.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: </b>84</li>
-                        <li><b>No. of Issues: </b>14</li>
+                        <li><b>No. of Commits: </b>87</li>
+                        <li><b>No. of Issues: </b>17</li>
                         <li><b>No. of Unit Tests: </b> 6</li>
 
                     </div>
@@ -88,9 +88,8 @@ const About = () => (
                             photos, videos, or music, I think art is an important outlet that everyone should try.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: </b>20</li>
-                        <li><b>No. of Issues: </b> 8</li>
-                        <li><b>No. of Issues: </b>11</li>
+                        <li><b>No. of Commits: </b>24</li>
+                        <li><b>No. of Issues: </b>14</li>
                         <li><b>No. of Unit Tests: </b> 6</li>
 
                     </div>
@@ -108,9 +107,9 @@ const About = () => (
                             of the Marvel creations, most notably Spider-Man.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: </b>68</li>
-                        <li><b>No. of Issues: </b>11</li>
-                        <li><b>No. of Unit Tests: </b>6</li>
+                        <li><b>No. of Commits: </b>80</li>
+                        <li><b>No. of Issues: </b>14</li>
+                        <li><b>No. of Unit Tests: </b>4</li>
 
                     </div>
 
@@ -131,6 +130,7 @@ const About = () => (
                             graduating in May 2020.
                         </li>
                         <li><b>Observer</b></li>
+                        <li><b>Commits:</b>1</li>
 
                     </div>
 
@@ -145,8 +145,8 @@ const About = () => (
                             of 2019 with a Bachelor's degree in Computer Science.
                         </li>
                         <li><b>Responsibilities: </b>Database and back end</li>
-                        <li><b>No. of Commits: </b>27</li>
-                        <li><b>No. of Issues: </b> 11</li>
+                        <li><b>No. of Commits: </b>36</li>
+                        <li><b>No. of Issues: </b> 14</li>
                         <li><b>No. of Unit Tests: </b> 2</li>
 
                     </div>
@@ -162,8 +162,8 @@ const About = () => (
                             Computer Science.
                         </li>
                         <li><b>Responsibilities: </b>Front end</li>
-                        <li><b>No. of Commits: </b>90</li>
-                        <li><b>No. of Issues: </b> 11</li>
+                        <li><b>No. of Commits: </b>115</li>
+                        <li><b>No. of Issues: </b> 14</li>
                         <li><b>No. of Unit Tests: </b>4</li>
                     </div>
                 </div>
@@ -175,12 +175,14 @@ const About = () => (
     <Col xs={4} md={4}>
             <h3 align="center" style={{color: 'white'}}><b>Statistics</b></h3>
             
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Commits: </b>338</li>
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Issues:</b>58</li>
-            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Unit Tests: </b>25</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Commits: </b>397</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Issues:</b>73</li>
+            <li align="center" style={{color: 'white',fontSize:'17px'}}><b>Total No. of Unit Tests: </b>22</li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="http://docs.andrewcmartin.apiary.io/#" style={{color: '#c12c2c'}}><b>Apiary API</b></a></li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://github.com/AndrewCMartin/idb" style={{color: '#c12c2c'}}><b>GITHUB REPO</b></a></li>
             <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://trello.com/b/qLTaMYvu/marvelus" style={{color: '#c12c2c'}}><b>TRELLO</b></a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="https://gitpitch.com/AndrewCMartin/idb#/" style={{color: '#c12c2c'}}><b>GitPitch</b></a></li>
+            <li align="center" style={{fontSize:'17px', color: 'white'}}><a href="http://marvelus.me/vis" style={{color: '#c12c2c'}}><b>Visualization of BGDB</b></a></li>
              
 </Col>
 <Col xs={4} md={4}>
