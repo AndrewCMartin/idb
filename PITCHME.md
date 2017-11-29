@@ -211,5 +211,3 @@ Canvas Group 17 - Board Game DB
 
 +++
 [Visualization](http://marvelus.me/visualization)
-
----
