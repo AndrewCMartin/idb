@@ -137,18 +137,6 @@ class TestAPI(BaseTestConfig):
         for key in correct_data:
             self.assertEqual(correct_data[key], result_data[key])
 
-    def test_search_actor(self):
-        a = Actor.query.whoosh_search('tom').all()
-        tom_holland = Actor.query.filter_by(id=1136406).first()
-        tommy = Actor.query.filter_by(id=2176).first
-        self.assertIn(tom_holland, a)
-        self.assertIn(tommy, a)
-
-    def test_search_movie(self):
-        search_results = Movie.query.whoosh_search('hulk').all()
-        hulk_movie = Movie.query.filter_by(id=1724).first()
-        self.assertIn(hulk_movie, search_results)
-
     def test_search_comic1(self):
         a = ComicSeries.query.whoosh_search('Example_series2').all()
         comic1 = ComicSeries.query.filter_by(id=412).first()
@@ -159,16 +147,6 @@ class TestAPI(BaseTestConfig):
         comic1 = ComicSeries.query.filter_by(id=554).first()
         self.assertIn(comic1, a)
         self.assertIn(comic2, a)
-
-    def test_search_movie_2(self):
-        search_results = Movie.query.whoosh_search('black').all()
-        black_panther_movie = Movie.query.filter_by(id=284054).first()
-        self.assertIn(black_panther_movie, search_results)
-
-    def test_search_event_1(self):
-        search_results = Event.query.whoosh_search('ultron').all()
-        ultron_event = Event.query.filter_by(id=314).first()
-        self.assertIn(ultron_event, search_results)
 
     def test_search_movie(self):
         search_results = Movie.query.whoosh_search('Example_movie')
@@ -192,24 +170,6 @@ class TestAPI(BaseTestConfig):
         self.assertIn(sam_jackson, a)
 
     def test_search_tv_show_1(self):
-        search_results = TvShow.query.whoosh_search('agent carter').all()
-        agent_carter_tvshow = TvShow.query.filter_by(id=61550).first()
-        self.assertIn(agent_carter_tvshow, search_results)
-
-    def test_search_tv_show_2(self):
-        search_results = TvShow.query.whoosh_search('marvel').all()
-        luke_cage_tvshow = TvShow.query.filter_by(id=59427).first()
-        self.assertIn(luke_cage_tvshow, search_results)
-
-    def test_search_character(self):
-        search_results = Character.query.whoosh_search('iron man').all()
-        iron_man_character = Character.query.filter_by(id=1009368).first()
-        self.assertIn(iron_man_character, search_results)
-
-    def test_search_character_2(self):
-        search_results = Character.query.whoosh_search('captain america').all()
-        captain_america_character = Character.query.filter_by(id=1009220).first()
-        self.assertIn(captain_america_character, search_results)
         search_results = TvShow.query.whoosh_search('Example_name')
         agent_carter_tvshow = TvShow.query.filter_by(id=678)
         self.assertIn(agent_carter_tvshow, search_results)
