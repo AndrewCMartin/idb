@@ -139,8 +139,8 @@ class TestAPI(BaseTestConfig):
 
 
     def test_search_movie(self):
-        search_results = Movie.query.whoosh_search('hulk').all()
-        hulk_movie = Movie.query.filter_by(id=1724).first()
+        search_results = Movie.query.whoosh_search('The Incredible Hulk')
+        hulk_movie = Movie.query.filter_by(id=1724)
         self.assertIn(hulk_movie, search_results)
 
     def test_search_comic1(self):
@@ -155,8 +155,8 @@ class TestAPI(BaseTestConfig):
         self.assertIn(comic2, a)
 
     def test_search_movie_2(self):
-        search_results = Movie.query.whoosh_search('black').all()
-        black_panther_movie = Movie.query.filter_by(id=284054).first()
+        search_results = Movie.query.whoosh_search('Black Panther')
+        black_panther_movie = Movie.query.filter_by(id=284054)
         self.assertIn(black_panther_movie, search_results)
 
     def test_search_event_1(self):
@@ -181,21 +181,21 @@ class TestAPI(BaseTestConfig):
         self.assertIn(sam_jackson, a)
 
     def test_search_tv_show_1(self):
-        search_results = TvShow.query.whoosh_search('agent carter').all()
-        agent_carter_tvshow = TvShow.query.filter_by(id=61550).first()
+        search_results = TvShow.query.whoosh_search('agent carter')
+        agent_carter_tvshow = TvShow.query.filter_by(id=61550)
         self.assertIn(agent_carter_tvshow, search_results)
 
     def test_search_tv_show_2(self):
-        search_results = TvShow.query.whoosh_search('marvel').all()
-        luke_cage_tvshow = TvShow.query.filter_by(id=59427).first()
+        search_results = TvShow.query.whoosh_search('jessica jones').all()
+        luke_cage_tvshow = TvShow.query.filter_by(id=38472).first()
         self.assertIn(luke_cage_tvshow, search_results)
 
     def test_search_character(self):
-        search_results = Character.query.whoosh_search('iron man').all()
-        iron_man_character = Character.query.filter_by(id=1009368).first()
+        search_results = Character.query.whoosh_search('iron man')
+        iron_man_character = Character.query.filter_by(id=1009368)
         self.assertIn(iron_man_character, search_results)
 
     def test_search_character_2(self):
-        search_results = Character.query.whoosh_search('captain america').all()
-        captain_america_character = Character.query.filter_by(id=1009220).first()
+        search_results = Character.query.whoosh_search('captain america')
+        captain_america_character = Character.query.filter_by(id=1009220)
         self.assertIn(captain_america_character, search_results)
