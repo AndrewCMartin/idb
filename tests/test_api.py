@@ -159,11 +159,6 @@ class TestAPI(BaseTestConfig):
         black_panther_movie = Movie.query.filter_by(id=284054)
         self.assertIn(black_panther_movie, search_results)
 
-    def test_search_event_1(self):
-        search_results = Event.query.whoosh_search('ultron').all()
-        ultron_event = Event.query.filter_by(id=314).first()
-        self.assertIn(ultron_event, search_results)
-
     def test_search_event_2(self):
         search_results = Event.query.whoosh_search('Example_event').all()
         spider_event = Event.query.filter_by(id=123).first()
