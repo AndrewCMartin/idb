@@ -137,9 +137,6 @@ class TestAPI(BaseTestConfig):
         for key in correct_data:
             self.assertEqual(correct_data[key], result_data[key])
 
-
-    
-
     def test_search_comic1(self):
         a = ComicSeries.query.whoosh_search('Example_series2').all()
         comic1 = ComicSeries.query.filter_by(id=412).first()
@@ -155,7 +152,6 @@ class TestAPI(BaseTestConfig):
         search_results = Movie.query.whoosh_search('Example_movie')
         hulk_movie = Movie.query.filter_by(id=443)
         self.assertIn(hulk_movie, search_results)
-
 
     def test_search_event_2(self):
         search_results = Event.query.whoosh_search('Example_event').all()
