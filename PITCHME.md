@@ -1,4 +1,4 @@
-## MarvelUS 
+# MarvelUS 
 
 Canvas Group 15
 
@@ -46,7 +46,7 @@ Canvas Group 15
 ### What did we learn?
 
 +++
-### Technically
+### Technical Skills
 +++
 
 - Scraping data from ReSTful APIs
@@ -74,10 +74,14 @@ Canvas Group 15
 +++
 
 - Hosting/managing the website
+  - We learnt how to reduce costs of hosting
+  - Using different production and development versions of the website
 
 +++
 
 - Integrating JavaScript and CSS
+  - Learning how to use React
+  - Using React-Bootstrap and React-Router
 
 ---
 
@@ -101,13 +105,22 @@ Canvas Group 15
 ### What can we do better?
 +++
 - Filtering
-  - Works well at first, but then just stops
   - Could be handling multiple requests inefficiently
-  - Could also NOT be handling requests at all after a certain amount
+  - Could also not be handling requests at all after a certain amount
 +++
 - Design
   - Make the functionality more like the official website
   - Add movie trailers and twitter feeds wherever possible
++++
+- Nav Bar
+  - When the screen size is neither large or small, the navbar extends to two lines
+  - The search bar goes to the second line
+  
++++
+- Adding functionality
+  - Trailers to the Movie and TV Show instance pages
+  - Twitter feeds for Actors
+  - Refactoring the website to work on mobile devices
 
 ---
 
@@ -147,9 +160,12 @@ Canvas Group 17 - Board Game DB
 
 ### What did we learn from their website?
 +++
-- More to board games than previously thought
+- More to board games than we previously thought
   - [Massive events](http://boardgamedb.me/events?per_page=18&sort=name&page=1) are held
   - Different kinds of board games are created
+
++++
+- The way the genres of board games have changed over time
 
 ---
 
@@ -177,14 +193,11 @@ Canvas Group 17 - Board Game DB
 ### What puzzles us about their website?
 +++
 - Design
-  - It's a bit plain for a board game site
+  - It is a bit plain for a board game site
 +++
 - Pagination
-  - Why choose 18 results per page if you still have to scroll quite a bit?
-+++
-- API
-  - JSON responses aren't correctly formatted?
-  - Returning an empty dict
+  - Have to scroll quite a bit to reach the pagination bar
+  - Would have been nice to either have the pagination bar at the top, or have fewer results per page
 
 ---
 
@@ -194,8 +207,10 @@ Canvas Group 17 - Board Game DB
 - We created a visualization of Board Game DB's website
   - We created a stacked area chart using NVD3
   - The number of board games that were created each year are plotted against time
-  - The games are divided according to their genres
-  
+
++++
+- The visualisation shows how the genres of board games have changed over time
+
 +++
 [Visualization](http://marvelus.me/visualization)
 
