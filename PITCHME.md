@@ -209,4 +209,4 @@ Canvas Group 17 - Board Game DB
 - The visualisation shows how the genres of board games have changed over time
 
 +++
-[Visualization](http://marvelus.me/visualization)
+[Visualization](http://marvelus.me/vis)
