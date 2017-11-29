@@ -86,6 +86,12 @@ def search_event():
     return make_search_response(Event)
 
 
+@app.route('/vis')
+def show_visualization():
+    vis_dir = os.path.join(BASE_DIR, 'visualization')
+    return send_from_directory(vis_dir, 'index.html')
+
+
 # Serve React App
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
