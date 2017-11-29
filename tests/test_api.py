@@ -138,43 +138,65 @@ class TestAPI(BaseTestConfig):
             self.assertEqual(correct_data[key], result_data[key])
 
     def test_search_comic1(self):
+        m = ComicSeries(412, "Example_series2", "", False, None, None)
+        db.session.merge(m)
+        db.session.commit()
         a = ComicSeries.query.whoosh_search('Example_series2').all()
         comic1 = ComicSeries.query.filter_by(id=412).first()
         self.assertIn(comic1, a)
 
     def test_search_comic2(self):
+        s = ComicSeries(554, "Example_series1", "", False, None, None)
+        db.session.merge(s)
+        db.session.commit()
         a = ComicSeries.query.whoosh_search('Example_series1').all()
         comic1 = ComicSeries.query.filter_by(id=554).first()
         self.assertIn(comic1, a)
-        self.assertIn(comic2, a)
 
     def test_search_movie(self):
-        search_results = Movie.query.whoosh_search('Example_movie')
-        hulk_movie = Movie.query.filter_by(id=443)
+        m = Movie(443, "Example movie", "", False, "", 200, None, "en", 5)
+        db.session.merge(m)
+        db.session.commit()
+        search_results = Movie.query.whoosh_search('movie').all()
+        hulk_movie = Movie.query.filter_by(id=443).first()
         self.assertIn(hulk_movie, search_results)
 
     def test_search_event_2(self):
-        search_results = Event.query.whoosh_search('Example_event').all()
-        spider_event = Event.query.filter_by(id=123).first()
+        e = Event(253, "Example_event", "Description", "/.jpg", 5134, "")
+        db.session.merge(e)
+        db.session.commit()
+        search_results = Event.query.whoosh_search('example_event').all()
+        spider_event = Event.query.filter_by(id=253).first()
         self.assertIn(spider_event, search_results)
 
     def test_search_actor(self):
-        a = Actor.query.whoosh_search('Natalie Dormer').all()
+        a = Actor(123, "Natalie Dormer", None, "Model", "gorgeous.jpg")
+        db.session.merge(a)
+        db.session.commit()
+        a = Actor.query.whoosh_search('Natalie').all()
         tom_holland = Actor.query.filter_by(id=123).first()
         self.assertIn(tom_holland, a)
-        self.assertIn(tommy, a)
 
     def test_search_actor_2(self):
-        a = Actor.query.whoosh_search('Emma Watson').all()
+        a = Actor(129, "Emma Watson", None, "She is pretty good looking", "model.jpg")
+        db.session.merge(a)
+        db.session.commit()
+        a = Actor.query.whoosh_search('Watson').all()
         sam_jackson = Actor.query.filter_by(id=129).first()
         self.assertIn(sam_jackson, a)
 
     def test_search_tv_show_1(self):
-        search_results = TvShow.query.whoosh_search('Example_name')
-        agent_carter_tvshow = TvShow.query.filter_by(id=678)
+        t = TvShow(678, "Example_name", "Description", "/.jpg", None, None, 0, 0)
+        db.session.merge(t)
+        db.session.commit()
+        search_results = TvShow.query.whoosh_search('Example_name').all()
+        agent_carter_tvshow = TvShow.query.filter_by(id=678).first()
         self.assertIn(agent_carter_tvshow, search_results)
 
     def test_search_character(self):
-        search_results = Character.query.whoosh_search('Example_name')
-        iron_man_character = Character.query.filter_by(id=123)
+        c = Character(123, "Example name", "Description", "/.jpg", "")
+        db.session.merge(c)
+        db.session.commit()
+        search_results = Character.query.whoosh_search('example').all()
+        iron_man_character = Character.query.filter_by(id=123).first()
         self.assertIn(iron_man_character, search_results)
