@@ -18,6 +18,7 @@ class TestInstances(unittest.TestCase):
     def test_instances(self):
         driver = self.driver
         driver.get("http://marvelus.me/")
+        # Goes through all the tabs and checks all the URLs
         driver.find_element_by_link_text("Characters").click()
         self.assertEqual("http://marvelus.me/characters", driver.current_url)
         driver.find_element_by_xpath("/html/body/div[@id='root']/div/main/div[@class='container']/div[@class='row'][2]/div[@class='col-sm-4'][1]/a/div[@class='panel']/div[@class='panel-heading']/div[@class='panel-heading']/div/span/span").click()

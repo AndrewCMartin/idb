@@ -18,13 +18,17 @@ class TestSearch(unittest.TestCase):
     def test_search(self):
         driver = self.driver
         driver.get("http://marvelus.me")
+        # Find the global search bar and search Tom Holland
         driver.find_element_by_id("formBasicText").clear()
         driver.find_element_by_id("formBasicText").send_keys("Tom Holland")
         driver.find_element_by_id("formBasicText").send_keys(Keys.ENTER)
+        # Wait for it to search
         time.sleep(7)
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Actor Results[\s\S]*$")
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Tom Holland[\s\S]*$")
+        # Click on the panel that goes to Tom Holland's page
         driver.find_element_by_xpath("/html/body/div[@id='root']/div/main/div[@class='container']/div[@class='row'][1]/div[@class='col-md-2 col-sm-4 col-xs-12']/a/div[@class='panel']/div[@class='panel-heading']").click()
+        # Wait for it to load
         time.sleep(2)
         self.assertEqual("http://marvelus.me/actor/1136406", driver.current_url)
 

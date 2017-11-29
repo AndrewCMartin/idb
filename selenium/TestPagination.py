@@ -19,10 +19,13 @@ class TestPagination(unittest.TestCase):
         driver.get("http://marvelus.me")
         driver.find_element_by_link_text("Events").click()
         self.assertEqual("http://marvelus.me/events", driver.current_url)
+        # Selects page 5 on the pagination bar
         driver.find_element_by_xpath("/html/body/div[@id='root']/div/main/div[@class='container']/div[@class='text-center']/ul[@class='pagination pagination-lg']/li[7]/a").click()
+        # Wait to load
         time.sleep(2)
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*House of M[\s\S]*$")
         time.sleep(2)
+        # Selects page 10 on the pagination bar
         driver.find_element_by_xpath("/html/body/div[@id='root']/div/main/div[@class='container']/div[@class='text-center']/ul[@class='pagination pagination-lg']/li[12]/a").click()
         time.sleep(2)
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Spider-Island[\s\S]*$")

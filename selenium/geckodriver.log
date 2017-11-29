@@ -1692,3 +1692,118 @@ JavaScript error: http://marvelus.me/static/js/main.95d4a443.js, line 1: Error: 
 [Child 20981, Chrome_ChildThread] WARNING: pipe error (34): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 20981, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 20981, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917462368	geckodriver	INFO	geckodriver 0.19.1
+1511917462370	geckodriver	INFO	Listening on 127.0.0.1:52561
+1511917463441	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.U4YJixJICVrt"
+1511917463876	Marionette	INFO	Enabled via --marionette
+1511917465000	Marionette	INFO	Listening on port 41346
+1511917465050	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917465089	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917465118	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917465151	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917465151	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917465295	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917465821	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917466056	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917466344	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917470643	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 22363, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 22363, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917836142	geckodriver	INFO	geckodriver 0.19.1
+1511917836144	geckodriver	INFO	Listening on 127.0.0.1:56728
+1511917837218	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.wwXAfQEi2mEU"
+1511917837607	Marionette	INFO	Enabled via --marionette
+1511917838735	Marionette	INFO	Listening on port 32890
+1511917838829	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917838868	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917838889	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917838936	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917838936	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917839110	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917839616	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917846999	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 22705, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 22705, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917860489	geckodriver	INFO	geckodriver 0.19.1
+1511917860492	geckodriver	INFO	Listening on 127.0.0.1:53810
+1511917861559	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.XKHQevwf8E4b"
+1511917861942	Marionette	INFO	Enabled via --marionette
+1511917862987	Marionette	INFO	Listening on port 36517
+1511917863066	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917863109	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917863126	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917863154	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917863154	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917863320	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917863891	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917864130	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 22861, Chrome_ChildThread] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 22861, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917876299	geckodriver	INFO	geckodriver 0.19.1
+1511917876302	geckodriver	INFO	Listening on 127.0.0.1:41143
+1511917877371	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.vgNKd7uMhVtY"
+1511917877790	Marionette	INFO	Enabled via --marionette
+1511917878870	Marionette	INFO	Listening on port 32871
+1511917878882	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917878921	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917878967	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917878988	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917878989	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917879158	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917879683	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917879925	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917880394	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917880621	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917880846	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917881180	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917881436	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 23014, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 23014, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917889342	geckodriver	INFO	geckodriver 0.19.1
+1511917889345	geckodriver	INFO	Listening on 127.0.0.1:46466
+1511917890412	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.yjvIBiTmlbR6"
+1511917890808	Marionette	INFO	Enabled via --marionette
+1511917891850	Marionette	INFO	Listening on port 42863
+1511917891922	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917891965	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917891987	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917892018	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917892018	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917892191	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917892719	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917892960	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917893175	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917893425	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 23159, Chrome_ChildThread] WARNING: pipe error (18): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917904792	geckodriver	INFO	geckodriver 0.19.1
+1511917904794	geckodriver	INFO	Listening on 127.0.0.1:46442
+1511917905864	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.fytLvf7jNE32"
+1511917906378	Marionette	INFO	Enabled via --marionette
+1511917907448	Marionette	INFO	Listening on port 33933
+1511917907471	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917907514	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917907545	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917907574	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917907575	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917907758	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917909079	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+1511917909313	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917909907	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1511917914199	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 23309, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 23309, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1511917923384	geckodriver	INFO	geckodriver 0.19.1
+1511917923387	geckodriver	INFO	Listening on 127.0.0.1:37148
+1511917924464	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.en8b0zki4Byz"
+1511917924862	Marionette	INFO	Enabled via --marionette
+1511917925948	Marionette	INFO	Listening on port 41887
+1511917925973	Marionette	WARN	TLS certificate errors will be ignored for this session
+1511917926012	Marionette	DEBUG	Register listener.js for window 2147483649
+1511917926027	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1511917926048	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1511917926048	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1511917926231	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://marvelus.me/"
+1511917926675	Marionette	DEBUG	Received DOM event "pageshow" for "http://marvelus.me/"
+[Child 23463, Chrome_ChildThread] WARNING: pipe error (34): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 23463, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 23463, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-HLWaua/firefox-57.0+build4/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

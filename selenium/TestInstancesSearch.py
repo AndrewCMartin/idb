@@ -19,7 +19,9 @@ class TestInstancesSearch(unittest.TestCase):
         driver = self.driver
         driver.get("http://marvelus.me/")
         driver.find_element_by_link_text("Movies").click()
+        # Go to the search bar in instance page
         driver.find_element_by_xpath("/html/body/div[@id='root']/div/main/div[@class='container']/div[@class='row'][1]/div[@class='text-center']/form[@class='form-inline']/div[@class='form-group']/input[@id='formBasicText']").send_keys("Spider")
+        # Wait for it to load
         time.sleep(5)
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Spider-Man: Homecoming[\s\S]*$")
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Untitled Spider-Man: Homecoming Sequel[\s\S]*$")

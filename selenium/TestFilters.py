@@ -19,10 +19,13 @@ class TestFilters(unittest.TestCase):
         driver.get("http://marvelus.me")
         driver.find_element_by_link_text("Actors").click()
         self.assertEqual("http://marvelus.me/actors", driver.current_url)
+        # Get the 'Sort By:' drop down menu
         driver.find_element_by_id("dropdown-basic-${i}").click()
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Birthday[\s\S]*$")
         driver.find_element_by_link_text("Birthday").click()
+        # Wait to load
         time.sleep(2)
+        # All instances should be really old people
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Jack Kirby[\s\S]*$")
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Stan Lee[\s\S]*$")
         self.assertRegexpMatches(driver.find_element_by_css_selector("BODY").text, r"^[\s\S]*Harry Dean Stanton[\s\S]*$")
