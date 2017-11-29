@@ -83,9 +83,8 @@ Canvas Group 15
   - Learning how to use React
   - Using React-Bootstrap and React-Router
 
----
-
-### Other
++++
+### Other things we learnt
 
 +++
 - Working in a large team
