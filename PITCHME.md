@@ -49,7 +49,7 @@ Canvas Group 15
 ### Technical Skills
 +++
 
-- Scraping data from ReSTful APIs
+- Scraping data from RESTful APIs
   - Using the Python requests library
   - Using HTTP methods like GETs and POSTs
   
