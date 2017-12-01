@@ -164,7 +164,8 @@ Canvas Group 17 - Board Game DB
   - Different kinds of board games are created
 
 +++
-- The way the genres of board games have changed over time
+- Filtering drop-down
+  - Options are displayed in a drop-down menu that allows you to search for those options
 
 ---
 
