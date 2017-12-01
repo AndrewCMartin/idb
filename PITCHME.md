@@ -125,8 +125,8 @@ Canvas Group 15
 
 ### What puzzles us?
 +++
-- Loading speed
-  - Filtering and sorting are slow
+- Caching
+  - Browsers would cache old versions of our frontend code after deploying
 +++
 - Specifically searching
   - Does what it needs to do
