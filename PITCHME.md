@@ -9,9 +9,9 @@ Canvas Group 15
 - Tesia Wu
 - Hannah Anees
 - Helen Salgi
-- Bhavish Yalamanchi
-- Andrew Martin
 - Sunaina Krishnamoorthy
+- Andrew Martin
+- Bhavish Yalamanchi
 
 
 ---
