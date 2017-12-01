@@ -177,7 +177,6 @@ Canvas Group 17 - Board Game DB
 +++
 - Navigation
   - Some links were broken
-  - Like [this one](http://boardgamedb.me/boardgamecategory/2726/age-reason)
   
 +++
 - Code
