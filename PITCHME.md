@@ -52,6 +52,7 @@ Canvas Group 15
 - Scraping data from RESTful APIs
   - Using the Python requests library
   - Using HTTP methods like GETs and POSTs
+  - Connecting our 2 different data sources through characters
   
 +++
 - Working with a database
@@ -109,7 +110,7 @@ Canvas Group 15
 +++
 - Design
   - Make the functionality more like the official website
-  - Add movie trailers and twitter feeds wherever possible
+  - Add movie trailers and Twitter feeds wherever possible
 +++
 - Nav Bar
   - When the screen size is neither large or small, the navbar extends to two lines
@@ -165,7 +166,8 @@ Canvas Group 17 - Board Game DB
 
 +++
 - Filtering drop-down
-  - Options are displayed in a drop-down menu that allows you to search for those options
+  - Options are displayed in a drop-down menu
+  - Also allows you to search for those selected options
 
 ---
 
