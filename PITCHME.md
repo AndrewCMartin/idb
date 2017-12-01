@@ -181,8 +181,8 @@ Canvas Group 17 - Board Game DB
   
 +++
 - Code
-  - The APIs could have been created using Flask-Restless
-  - Would have eliminated having to manually create jsons
+  - The API responses include how many pages, but not how many results 
+  - When displaying related models, they were represented as lists of (id, name), instead of objects with keys and values
 
 ---
 
